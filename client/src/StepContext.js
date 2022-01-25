@@ -83,6 +83,21 @@ const StepContext = () => {
 
         formData.append('others', userData.others)
 
+        // files data appending
+        formData.append('rationcardnumber', userData.rationcardnumber)
+        formData.append('rentrecieptormaintenanceserialnumber', userData.rentrecieptormaintenanceserialnumber)
+        formData.append('electricconsumernumber', userData.electricconsumernumber)
+        formData.append('insuranceid', userData.insuranceid)
+        formData.append('salarycertificateid', userData.salarycertificateid)
+        formData.append('bankaccountdetails', userData.bankaccountdetails)
+        formData.append('jaincertificateid', userData.jaincertificateid)
+        formData.append('telephoneaccountnumber', userData.telephoneaccountnumber)
+        formData.append('referralletterserialnumber', userData.referralletterserialnumber)
+        formData.append('aadharnumber', userData.aadharnumber)
+        formData.append('schoolorcollegefeesserialnumber', userData.schoolorcollegefeesserialnumber)
+
+
+
 
         // Miscellaneous appending
         formData.append('pathshalachildren', userData.pathshalachildren)
