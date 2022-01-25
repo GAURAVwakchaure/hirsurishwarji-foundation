@@ -20,11 +20,11 @@ export default function FirstStep() {
         var nativetown = document.getElementById('nativetown').value
         var phonenumber = document.getElementById('phonenumber').value
         var mobilenumber = document.getElementById('mobilenumber').value
-        var aadharnumber = document.getElementById('aadharnumber').value
+        // var aadharnumber = document.getElementById('aadharnumber').value
         var creed = document.getElementById('creed').value
         var categoryselect = document.getElementById('categoryselect').value
         var jainism = document.getElementById('jainismslect').checked
-        console.log(name, fhname, add1, add2, state, city, pincode, nativetown, phonenumber, mobilenumber, aadharnumber, creed, jainism, categoryselect)
+        console.log(name, fhname, add1, add2, state, city, pincode, nativetown, phonenumber, mobilenumber, creed, jainism, categoryselect)
         if (name == null || name === '' || name.length < 2  || name.length > 50) {
             alert("Please Enter the Name !  Length of Name, atleast of 2 characters and less than 50 characters")
             setStep(1)
@@ -69,10 +69,6 @@ export default function FirstStep() {
 
         }else if (mobilenumber == null || mobilenumber === '' || mobilenumber.length > 12 || mobilenumber.length < 10) {
             alert("Mobile number should be of at least 10 digit and not more than 12 digit")
-            setStep(1)
-
-        } else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
-            alert("Aadhar Number Should be of 12 digit")
             setStep(1)
 
         }
