@@ -155,7 +155,7 @@ const formschema = new mongoose.Schema({
     type: String,
     required: [true, "please check your data entry, Image is specified!"]
   }],
-  Status : String,
+  status : String,
   Q1: {
     type: String,
     required: [true, "please check your data entry, no Q1 Answer specified!"],
