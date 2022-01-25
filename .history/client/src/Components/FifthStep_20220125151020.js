@@ -16,19 +16,19 @@ export default function FifthStep() {
         let bike = document.getElementById('bike').value
         let phones = document.getElementById('phones').value
         if (tv == null || tv === "" || tv.length < 1  || tv.length > 2){
-            alert("Enter TV (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter TV Qantity ! At least 1 Digit and not more than 2 digit")
         }else if(cable == null || cable === "" || cable.length < 1  || cable.length > 2){
-            alert("Enter Cable (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Cable ! At least 1 Digit and not more than 2 digit")
         }else if(fridge == null || fridge === "" || fridge.length < 1  || fridge.length > 2){
-            alert("Enter Fridge (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Fridge ! At least 1 Digit and not more than 2 digit")
         }else if(washingmachine == null || washingmachine === "" || washingmachine.length < 1  || washingmachine.length > 2){
-            alert("Enter Washingmachine (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Washingmachine ! At least 1 Digit and not more than 2 digit")
         }else if(vehicle == null || vehicle === "" || vehicle.length < 1  || vehicle.length > 2){
-            alert("Enter Vehicle (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Vehicle ! At least 1 Digit and not more than 2 digit")
         }else if(bike == null || bike === "" || bike.length < 1  || bike.length > 2){
-            alert("Enter Bike (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Bike ! At least 1 Digit and not more than 2 digit")
         }else if(phones == null || phones === "" || phones.length < 1  || phones.length > 2){
-            alert("Enter Phones (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Phones ! At least 1 Digit and not more than 2 digit")
         }else{
             setStep(6)
         }

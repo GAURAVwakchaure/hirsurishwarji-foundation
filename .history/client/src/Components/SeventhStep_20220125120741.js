@@ -19,31 +19,6 @@ export default function SeventhStep() {
 
 
     }
-    const handleeducationgrantNext = () =>{
-        var egname = document.getElementById('egname').value
-        var egadd = document.getElementById('egadd').value
-        var egcdname = document.getElementById('egcdname').value
-        var egafee = document.getElementById('egafee').value
-        var egmoneyneed = document.getElementById('egmoneyneed').value
-        if (egname == null || egname === '' || egname.length < 2  || egname.length > 50) {
-            alert("Enter Name !  Length of atleast of 2 characters and less than 50 characters")
-        } 
-        else if (egadd == null || egadd === '' || egadd.length < 2  || egadd.length > 50) {
-            alert("Enter Address !  Length of atleast of 2 characters and less than 50 characters")
-        }
-        else if (egcdname == null || egcdname === '' || egcdname.length < 2  || egcdname.length > 20) {
-            alert("Enter Course/Degree Name !  Length of atleast of 2 characters and less than 20 characters")
-        }
-        else if (egafee == null || egafee === '' || egafee.length < 1  || egafee.length > 8) {
-            alert("Enter Annual Fees !  Length of atleast of 1 digit and less than 8 digit")
-        }
-        else if (egmoneyneed == null || egmoneyneed=== '' || egmoneyneed.length < 1  || egmoneyneed.length > 8) {
-            alert("Enter Money Needed !  Length of atleast of 1 digit and less than 8 digit")
-        }
-        else {
-            setStep(9)
-        }
-    }
     return (
         <div>
             <Card style={{ width: '56ch' }} className='mx-auto'>
@@ -101,10 +76,10 @@ export default function SeventhStep() {
                         <div>
                             <div><h6 id="edgl1" >3. School/College : </h6></div>
 
-                            <TextField id='egname' label="Name" className ="required" value={userData['egscname']} onChange={(e) => setUserData({ ...userData, "egscname": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            <TextField id='egadd' label="Address" className ="required" value={userData['egscaddress']} onChange={(e) => setUserData({ ...userData, "egscaddress": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            <TextField id='egcdname' label="Course/Degree Name" className ="required" value={userData['egcoursename']} onChange={(e) => setUserData({ ...userData, "egcoursename": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            <TextField id='egafee' label="Annual Fees" type="number" className ="required" value={userData['egannualfees']} onChange={(e) => setUserData({ ...userData, "egannualfees": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="Name" value={userData['egscname']} onChange={(e) => setUserData({ ...userData, "egscname": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField label="Address" value={userData['egscaddress']} onChange={(e) => setUserData({ ...userData, "egscaddress": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="Course/Degree Name" value={userData['egcoursename']} onChange={(e) => setUserData({ ...userData, "egcoursename": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="Annual Fees" value={userData['egannualfees']} onChange={(e) => setUserData({ ...userData, "egannualfees": e.target.value })} margin='normal' variant='standard' color="primary" />
                             <TextField label="Details of Course" value={userData['egdetailsofcourse']} onChange={(e) => setUserData({ ...userData, "egdetailsofcourse": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div><br />
                         <div>
@@ -114,18 +89,17 @@ export default function SeventhStep() {
                             <TextField label="" id="outlined-sized-small" value={userData['egindependent']} onChange={(e) => setUserData({ ...userData, "egindependent": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div><br />
                         <div>
-                          <h6 id="edgl1" className ="requireds" ><p>4. Money Needed :</p></h6>
-                            <TextField id='egmoneyneed' type="number" label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <h6 id="edgl1" >4. Money Needed : </h6>
+                            <TextField label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div><br />
                         <div>
                             <h6 id="edgl1" >5. Self Manage Contribution: </h6>
 
-                            <TextField label="" type="number" value={userData['egselfmanagecontribution']} onChange={(e) => setUserData({ ...userData, "egselfmanagecontribution": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField label="" value={userData['egselfmanagecontribution']} onChange={(e) => setUserData({ ...userData, "egselfmanagecontribution": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div><br />
                         <div>
                             <Button variant='contained' color='secondary' onClick={() => setStep(6)}>Back</Button><span> </span>
-                            {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button> */}
-                            <Button variant='contained' color='primary' onClick={handleeducationgrantNext}>Next</Button>
+                            <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button>
                         </div><br />
                     </div></Box>
             </Card>

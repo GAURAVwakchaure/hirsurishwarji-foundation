@@ -12,8 +12,8 @@ export default function TenthStep() {
         let referredby = document.getElementById('referredby').value
         let referraladdress = document.getElementById('referraladdress').value
         let surveydoneby = document.getElementById('surveydoneby').value
-        // let surveydetails = document.getElementById('surveydetails').value
-        // let specialnotes = document.getElementById('specialnotes').value
+        let surveydetails = document.getElementById('surveydetails').value
+        let specialnotes = document.getElementById('specialnotes').value
 
         if (referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50) {
             alert("Enter Referred By ! Length of atleast of 2 characters and less than 50 characters")
@@ -21,13 +21,11 @@ export default function TenthStep() {
             alert("Enter Referral Address ! Length of atleast of 2 characters and less than 50 characters")
         } else if (surveydoneby == null || surveydoneby === "" || surveydoneby.length < 2  || surveydoneby.length > 50) {
             alert("Enter survey done by ! Length of atleast of 2 characters and less than 50 characters")
-        } 
-        // else if (surveydetails == null || surveydetails === "" || surveydetails.length < 2  || surveydetails.length > 50) {
-        //     alert("Enter Survey Details ! Length of atleast of 2 characters and less than 50 characters")
-        // } else if (specialnotes == null || specialnotes === "" || specialnotes.length < 2  || specialnotes.length > 50) {
-        //     alert("Enter special notes ! Length of atleast of 2 characters and less than 50 characters")
-        // }
-         else {
+        } else if (surveydetails == null || surveydetails === "" || surveydetails.length < 2  || surveydetails.length > 50) {
+            alert("Enter Survey Details ! Length of atleast of 2 characters and less than 50 characters")
+        } else if (specialnotes == null || specialnotes === "" || specialnotes.length < 2  || specialnotes.length > 50) {
+            alert("Enter special notes ! Length of atleast of 2 characters and less than 50 characters")
+        } else {
             setStep(11)
         }
 
@@ -49,13 +47,13 @@ export default function TenthStep() {
                 >
                     <div>
                         <div>
-                            <TextField label="Referred By: " className ="required" id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField label="Referred By: " id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div>
                         <div>
-                            <TextField label="Address of Referral: " className ="required" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="Address of Referral: " id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div>
                         <div>
-                            <TextField label="Survey Done By:" className ="required" id="surveydoneby" value={userData['surveydoneby']} onChange={(e) => setUserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField label="Survey Done By:" id="surveydoneby" value={userData['surveydoneby']} onChange={(e) => setUserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             <TextField label="Survey Details:" id="surveydetails" value={userData['surveydetails']} onChange={(e) => setUserData({ ...userData, "surveydetails": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             <TextField label="Special Notes:" id="specialnotes" value={userData['specialnotes']} onChange={(e) => setUserData({ ...userData, "specialnotes": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div><br />

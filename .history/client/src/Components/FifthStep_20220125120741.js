@@ -16,19 +16,19 @@ export default function FifthStep() {
         let bike = document.getElementById('bike').value
         let phones = document.getElementById('phones').value
         if (tv == null || tv === "" || tv.length < 1  || tv.length > 2){
-            alert("Enter TV (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter TV Qantity ! At least 1 Digit and not more than 2 digit")
         }else if(cable == null || cable === "" || cable.length < 1  || cable.length > 2){
-            alert("Enter Cable (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Cable ! At least 1 Digit and not more than 2 digit")
         }else if(fridge == null || fridge === "" || fridge.length < 1  || fridge.length > 2){
-            alert("Enter Fridge (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Fridge ! At least 1 Digit and not more than 2 digit")
         }else if(washingmachine == null || washingmachine === "" || washingmachine.length < 1  || washingmachine.length > 2){
-            alert("Enter Washingmachine (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Washingmachine ! At least 1 Digit and not more than 2 digit")
         }else if(vehicle == null || vehicle === "" || vehicle.length < 1  || vehicle.length > 2){
-            alert("Enter Vehicle (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Vehicle ! At least 1 Digit and not more than 2 digit")
         }else if(bike == null || bike === "" || bike.length < 1  || bike.length > 2){
-            alert("Enter Bike (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Bike ! At least 1 Digit and not more than 2 digit")
         }else if(phones == null || phones === "" || phones.length < 1  || phones.length > 2){
-            alert("Enter Phones (in quantity) ! At least 1 Digit and not more than 2 digit")
+            alert("Enter Phones ! At least 1 Digit and not more than 2 digit")
         }else{
             setStep(6)
         }
@@ -51,25 +51,22 @@ export default function FifthStep() {
                 >
                     <div>
                         <div>
-                        <p class="right">*Enter 0 Wheraver Required</p>
+                            <TextField type="number" label="T.V. (in quantity)" id = "tv" value={userData['tv']} onChange={(e) => setUserData({ ...userData, "tv": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div>
                         <div>
-                            <TextField type="number" className ="required" label="T.V. (in quantity)" id = "tv" value={userData['tv']} onChange={(e) => setUserData({ ...userData, "tv": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField type="number" label="Cable (in quantity)" id = "cable" value={userData['cable']} onChange={(e) => setUserData({ ...userData, "cable": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div>
                         <div>
-                            <TextField type="number" className ="required" label="Cable (in quantity)" id = "cable" value={userData['cable']} onChange={(e) => setUserData({ ...userData, "cable": e.target.value })} margin='normal' variant='standard' color="primary" />
-                        </div>
-                        <div>
-                            <TextField type="number" className ="required" label="Fridge (in quantity)" id = "fridge" value={userData['fridge']} onChange={(e) => setUserData({ ...userData, "fridge": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField type="number" label="Fridge (in quantity)" id = "fridge" value={userData['fridge']} onChange={(e) => setUserData({ ...userData, "fridge": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             <div>
-                                <TextField type="number" className ="required" label="Washing Machine (in quantity)" id = "washingmachine" value={userData['wahingmachine']} onChange={(e) => setUserData({ ...userData, "washingmachine": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                <TextField type="number" label="Washing Machine (in quantity)" id = "washingmachine" value={userData['wahingmachine']} onChange={(e) => setUserData({ ...userData, "washingmachine": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
 
                             </div>
-                            <TextField type="number" className ="required" label="Vehicle (in quantity)" id = "vehicle" value={userData['vehicle']} onChange={(e) => setUserData({ ...userData, "vehicle": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField type="number" label="Vehicle (in quantity)" id = "vehicle" value={userData['vehicle']} onChange={(e) => setUserData({ ...userData, "vehicle": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div>
                         <div>
-                            <TextField type="number" className ="required" label="Bike (in quantity)" id="bike" value={userData['bike']} onChange={(e) => setUserData({ ...userData, "bike": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            <TextField type="number" className ="required" label="Phones (in quantity) " id = "phones" value={userData['phones']} onChange={(e) => setUserData({ ...userData, "phones": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField type="number" label="Bike (in quantity)" id="bike" value={userData['bike']} onChange={(e) => setUserData({ ...userData, "bike": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField type="number" label="Phones (in quantity) " id = "phones" value={userData['phones']} onChange={(e) => setUserData({ ...userData, "phones": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div>
                         <br></br>
                         <div>

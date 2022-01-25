@@ -68,8 +68,7 @@ export default function FirstStep() {
             alert("Please Enter Mobile number! Mobile number should be of at least 10 digit and not more than 12 digit")
             setStep(1)
 
-        } 
-        else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
+        } else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
             alert("Please Enter Aadhar Number! Aadhar Number Should be of 12 digit")
             setStep(1)
 

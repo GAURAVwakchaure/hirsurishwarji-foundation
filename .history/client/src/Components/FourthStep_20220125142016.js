@@ -36,9 +36,9 @@ export default function FourthStep() {
         // let other = document.getElementById('other').value
         let areaofflat = document.getElementById('totalareaofflat').value
         if(maintenance == null || maintenance === '' || maintenance.length < 1  || maintenance.length > 7){
-            alert("Enter Maintenance Expense! At least 1 Digit and not more than 7 digit")
+            alert("Enter maintenance ! At least 1 Digit and not more than 7 digit")
         }else if(electricbill == null || electricbill === '' || electricbill.length < 1  || electricbill.length > 7){
-            alert("Enter Electric Expense ! At least 1 Digit and not more than 7 digit")
+            alert("Enter electric bill ! At least 1 Digit and not more than 7 digit")
         }
         // else if(telephone == null || telephone === '' || telephone.length < 1  || telephone.length > 7){
         //     alert("Enter telephone bill ! At least 1 Digit and not more than 7 digit")
@@ -49,9 +49,9 @@ export default function FourthStep() {
         //     alert("Enter tuition fees ! At least 1 Digit and not more than 7 digit")
         // }
         else if(medical == null || medical === '' || medical.length < 1  || medical.length > 7){
-            alert("Enter Medical Expense ! At least 1 Digit and not more than 7 digit")
+            alert("Enter medical bill ! At least 1 Digit and not more than 7 digit")
         }else if(groceries == null || groceries === '' || groceries.length < 1  || groceries.length > 7){
-            alert("Enter Groceries Expense ! At least 1 Digit and not more than 7 digit")
+            alert("Enter groceries bill ! At least 1 Digit and not more than 7 digit")
         }
         // else if(other == null || other === '' || other.length < 1  || other.length > 7){
         //     alert("Enter other bill ! At least 1 Digit and not more than 7 digit")
@@ -116,7 +116,7 @@ export default function FourthStep() {
                         </div>
 
                         <div>
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br />
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br />
 
                             < br />
 

@@ -34,15 +34,15 @@ export default function FirstStep() {
 
         } 
         else if (add1 == null || add1 === '' || add1.length < 2  || add1.length > 50) {
-            alert("Enter address line 1 !  Length of Address line1, atleast of 2 characters and less than 50 characters")
+            alert("Enter address line 1 !!  Length of Address line1, atleast of 2 characters and less than 50 characters")
             setStep(1)
 
         }
-        // else if (add2 == null || add2 === '' || add2.length < 2  || add2.length > 50) {
-        //     alert("Enter address line 2 !  Length of Address line2, atleast of 2 characters and less than 50 characters")
-        //     setStep(1)
+        else if (add2 == null || add2 === '' || add2.length < 2  || add2.length > 50) {
+            alert("Enter address line 2 !  Length of Address line2, atleast of 2 characters and less than 50 characters")
+            setStep(1)
 
-        // }
+        }
         else if (city == null || city === '' || city.length < 2  || city.length > 20) {
             alert("Enter City ! Length of City, atleast of 2 characters and less than 20 characters");
             setStep(1)
@@ -58,27 +58,29 @@ export default function FirstStep() {
             setStep(1)
 
         }
-        // else if (nativetown == null || nativetown === '' || nativetown.length < 2  || nativetown.length > 20) {
-        //     alert("Enter Native town !  Length of Native Town, atleast of 2 characters and less than 20 characters")
-        //     setStep(1)
-
-        // }
-        //  
-        else if (mobilenumber == null || mobilenumber === '' || mobilenumber.length > 12 || mobilenumber.length < 10) {
-            alert("Please Enter Mobile number! Mobile number should be of at least 10 digit and not more than 12 digit")
-            setStep(1)
-
-        } 
-        else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
-            alert("Please Enter Aadhar Number! Aadhar Number Should be of 12 digit")
+        else if (nativetown == null || nativetown === '' || nativetown.length < 2  || nativetown.length > 20) {
+            alert("Enter Native town !  Length of Native Town, atleast of 2 characters and less than 20 characters")
             setStep(1)
 
         }
-        // else if (creed == null || creed === '' || creed.length < 2  || creed.length > 20) {
-        //     alert("Enter Creed !  Length of Creed, atleast of 2 characters and less than 20 characters")
-        //     setStep(1)
+         else if (phonenumber == null || phonenumber === '' || phonenumber.length > 12 || phonenumber.length < 10) {
+            alert("Phone number should be of at least 10 digit and not more than 12 digit")
+            setStep(1)
 
-        // }
+        }else if (mobilenumber == null || mobilenumber === '' || mobilenumber.length > 12 || mobilenumber.length < 10) {
+            alert("Mobile number should be of at least 10 digit and not more than 12 digit")
+            setStep(1)
+
+        } else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
+            alert("Aadhar Number Should be of 12 digit")
+            setStep(1)
+
+        }
+        else if (creed == null || creed === '' || creed.length < 2  || creed.length > 20) {
+            alert("Enter Creed !  Length of Creed, atleast of 2 characters and less than 20 characters")
+            setStep(1)
+
+        }
         else if (categoryselect == null || categoryselect === '') {
             alert("Select category")
             setStep(1)
@@ -115,28 +117,28 @@ export default function FirstStep() {
                 >
                     <div>
                         <div>
-                            <TextField id="name" className ="required" label="Name " value={userData['name']} onChange={(e) => setUserData({ ...userData, "name": e.target.value })} margin='normal' variant='standard' color="primary" placeholder='First_Name     Middle_Name     Last_Name' /><span>  </span>
+                            <TextField id="name" label="Name " value={userData['name']} onChange={(e) => setUserData({ ...userData, "name": e.target.value })} margin='normal' variant='standard' color="primary" placeholder='First_Name     Middle_Name     Last_Name' /><span>  </span>
                         </div>
                         <div>
-                            <TextField id="fhname" className ="required" label="Father's / Husband's Name " value={userData['fhname']} onChange={(e) => setUserData({ ...userData, "fhname": e.target.value })} margin='normal' variant='standard' color="primary" placeholder='First_Name     Middle_Name     Last_Name' />
+                            <TextField id="fhname" label="Father's / Husband's Name " value={userData['fhname']} onChange={(e) => setUserData({ ...userData, "fhname": e.target.value })} margin='normal' variant='standard' color="primary" placeholder='First_Name     Middle_Name     Last_Name' />
                         </div>
                         <div>
-                            <TextField id="add1" className ="required" label="Address 1 " value={userData['add1']} onChange={(e) => setUserData({ ...userData, "add1": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Room no, Building/Flate/Housing Name" /><span>  </span>
+                            <TextField id="add1" label="Address 1 " value={userData['add1']} onChange={(e) => setUserData({ ...userData, "add1": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Room no, Building/Flate/Housing Name" /><span>  </span>
                             <TextField id="add2" label="Address 2 " value={userData['add2']} onChange={(e) => setUserData({ ...userData, "add2": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Near by Place, Road Name, Town" />
                         </div>
                         <div>
-                            <TextField id="city" className ="required" label="City " value={userData['city']} onChange={(e) => setUserData({ ...userData, "city": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your City" /><span>  </span>
-                            <TextField id="state" className ="required" label="State" value={userData['state']} onChange={(e) => setUserData({ ...userData, "state": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your State" />
+                            <TextField id="city" label="City " value={userData['city']} onChange={(e) => setUserData({ ...userData, "city": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your City" /><span>  </span>
+                            <TextField id="state" label="State" value={userData['state']} onChange={(e) => setUserData({ ...userData, "state": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your State" />
                             
                         </div>
                         <div>
-                            <TextField id="pincode" className ="required" type="number" label="Pincode " value={userData['pincode']} onChange={(e) => setUserData({ ...userData, "pincode": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 6 Digit PIN Code" /><span>  </span>
+                            <TextField id="pincode" type="number" label="Pincode " value={userData['pincode']} onChange={(e) => setUserData({ ...userData, "pincode": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 6 Digit PIN Code" /><span>  </span>
                             <TextField id="nativetown" label="Native Town " value={userData['nativetown']} onChange={(e) => setUserData({ ...userData, "nativetown": e.target.value })} margin='normal' variant='standard' color="primary"  placeholder="Please Enter Native Town" />
                         </div>
                         <div>
                             <TextField id="phonenumber" type="number" label="Phone Number " value={userData['phonenumber']} onChange={(e) => setUserData({ ...userData, "phonenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter Phone Number" /><span>  </span>
-                            <TextField id="mobilenumber" className ="required" type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" />
-                            <TextField id="aadharnumber" className ="required" type="number" label="Aadhar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 12 Digit Aadhar Number" />
+                            <TextField id="mobilenumber" type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" />
+                            {/* <TextField id="aadharnumber" type="number" label="Aadhar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 12 Digit Aadhar Number" /> */}
                         </div>
                         <div>
 
@@ -144,7 +146,7 @@ export default function FirstStep() {
                         </div><br />
 
                         <div>
-                        <h6 id="category" className='requireds'><p>Category</p>
+                            <h6 id="category">Category
                             </h6>
 
                             <select class="form-select" aria-label="Default select example" id="categoryselect" value={userData['category']} onChange={(e) => setUserData({ ...userData, 'category': e.target.value })}>

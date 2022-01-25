@@ -61,13 +61,13 @@ export default function EighthStep() {
             setStep(8)
 
         } 
-        else if (mgaprxexpenses == null || mgaprxexpenses === '' || mgaprxexpenses.length < 1  || mgaprxexpenses.length > 8) {
-            alert("Enter Approx Expenses !  Length of atleast of 1 digit and less than 8 digit")
+        else if (mgaprxexpenses == null || mgaprxexpenses === '' || mgaprxexpenses.length < 2  || mgaprxexpenses.length > 8) {
+            alert("Enter Approx Expenses !  Length of atleast of 2 digit and less than 8 digit")
             setStep(8)
 
         } 
-        else if (mgamountneeded == null || mgamountneeded === '' || mgamountneeded.length < 1  || mgamountneeded.length > 8) {
-            alert("Enter Amount Needed !  Length of atleast of 1 digit and less than 8 digit")
+        else if (mgamountneeded == null || mgamountneeded === '' || mgamountneeded.length < 2  || mgamountneeded.length > 8) {
+            alert("Enter Amount Needed !  Length of atleast of 2 digit and less than 8 digit")
             setStep(8)
 
         } 
@@ -81,8 +81,8 @@ export default function EighthStep() {
         //     setStep(8)
 
         // } 
-        else if (mgmedicalamount == null || mgmedicalamount === '' || mgmedicalamount.length < 1  || mgmedicalamount.length > 8) {
-            alert("Enter Medical Amount !  Length of atleast of 1 digit and less than 8 digit")
+        else if (mgmedicalamount == null || mgmedicalamount === '' || mgmedicalamount.length < 2  || mgmedicalamount.length > 50) {
+            alert("Enter Medical Amount !  Length of atleast of 2 characters and less than 50 characters")
             setStep(8)
 
         } 

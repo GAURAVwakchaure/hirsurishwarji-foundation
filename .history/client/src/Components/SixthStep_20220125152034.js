@@ -121,7 +121,7 @@ export default function SixthStep() {
                                                     value={dependenttableData["dependent" + newVal + "name"]}
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
                                                 /></td>
-                                                <td><input id='dtage' type="number" style={{ width: "4rem", border: "0" }}
+                                                <td><input id='dtage' type="text" style={{ width: "4rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "age"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}

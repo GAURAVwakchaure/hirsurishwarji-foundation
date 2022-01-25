@@ -52,12 +52,12 @@ export default function SixthStep() {
         } else if (userData['category'] === 'medical') {
             setStep(8)
         }
-        else if (dtname == null || dtname === "" || dtname.length < 2  || dtname.length > 50){
+        else if (dtname == null || dtname === "" || dtname.length < 1  || dtname.length > 2){
             alert("Enter Dependent Name ! Length of Name, atleast of 2 characters and less than 50 characters")
-        }else if(dtage == null || dtage === "" || dtage.length < 1  || dtage.length > 3){
+        }else if(dtage == null || dtage === "" || dtage.length < 1  || dtage.length > 2){
             alert("Enter Dependent Age ! At least 1 Digit and not more than 3 digit")
         }
-        else if(dtincome == null || dtincome === "" || dtincome.length < 1  || dtincome.length > 7){
+        else if(dtincome == null || dtincome === "" || dtincome.length < 1  || dtincome.length > 2){
             alert("Enter Dependent Income ! At least 1 Digit and not more than 7 digit")
         }
         else {
@@ -121,7 +121,7 @@ export default function SixthStep() {
                                                     value={dependenttableData["dependent" + newVal + "name"]}
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
                                                 /></td>
-                                                <td><input id='dtage' type="number" style={{ width: "4rem", border: "0" }}
+                                                <td><input id='dtage' type="text" style={{ width: "4rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "age"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}

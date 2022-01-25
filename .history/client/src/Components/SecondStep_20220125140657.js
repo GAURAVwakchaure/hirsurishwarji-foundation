@@ -27,11 +27,11 @@ export default function SecondStep() {
         var bankaccountdetails = document.getElementById('bankaccountdetails').value
         console.log(file1, file2, file3, file4, file5, file6, file7, file8, file9, file10, file11, file12)
         if (file1 == null || file1 === '') {
-            alert("Please upload Ration Card!")
+            alert("Please upload Ration Card")
             setStep(2)
         }
-        else if (rationcardnumber == null || rationcardnumber === '' || rationcardnumber.length > 12 || rationcardnumber.length < 4 ) {
-            alert("Please Enter Ration card number! Number should be of at least 4 digit and not more than 12 digit")
+        else if (rationcardnumber == null || rationcardnumber === '') {
+            alert("Please Enter Ration card number")
             setStep(2)
         }
         // else if (file2 == null || file2 === '') {
@@ -51,11 +51,11 @@ export default function SecondStep() {
         //     setStep(2)
         // }
         else if (file6 == null || file6 === '') {
-            alert("Please upload Bank Passbook!")
+            alert("Please upload Bank Passbook")
             setStep(2)
         }
-        else if (bankaccountdetails == null || bankaccountdetails === '' || bankaccountdetails.length > 12 || bankaccountdetails.length < 4 ) {
-            alert("Please upload Bank Account Number! Number should be of at least 4 digit and not more than 12 digit")
+        else if (bankaccountdetails == null || bankaccountdetails === '') {
+            alert("Please upload Bank Account Number")
             setStep(2)
         }
         // else if (file7 == null || file7 === '') {
@@ -71,7 +71,7 @@ export default function SecondStep() {
         //     setStep(2)
         // }
         else if (file10 == null || file10 === '') {
-            alert("Please upload Aadhar Card!")
+            alert("Please upload Aadhar Card")
             setStep(2)
         }
         // else if (file11 == null || file11 === '') {
@@ -166,7 +166,7 @@ export default function SecondStep() {
                                     <input required type="file" id="file6" className="form-control form-control-sm auto " name="bankpassbook" onChange={(e) => setUserData({ ...userData, "bankpassbook": e.target.files[0] })} />
                                 </div>
                                 <div className='col-md-6'>
-                                    <TextField id="bankaccountdetails" type="number" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" />
+                                    <TextField id="bankaccountdetails" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" />
                                 </div>
 
                             </div><br></br>
@@ -207,7 +207,7 @@ export default function SecondStep() {
                                     <input required type="file" id="file10" className="form-control form-control-sm auto " name="aadharcard" onChange={(e) => setUserData({ ...userData, "aadharcard": e.target.files[0] })} />
                                 </div>
                                 <div className='col-md-6'>
-                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" />
+                                    <TextField id="aadharnumber" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" />
                                 </div>
 
                             </div><br></br>

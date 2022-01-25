@@ -20,7 +20,7 @@ export default function FirstStep() {
         var nativetown = document.getElementById('nativetown').value
         var phonenumber = document.getElementById('phonenumber').value
         var mobilenumber = document.getElementById('mobilenumber').value
-        var aadharnumber = document.getElementById('aadharnumber').value
+        // var aadharnumber = document.getElementById('aadharnumber').value
         var creed = document.getElementById('creed').value
         var categoryselect = document.getElementById('categoryselect').value
         var jainism = document.getElementById('jainismslect').checked
@@ -69,11 +69,11 @@ export default function FirstStep() {
             setStep(1)
 
         } 
-        else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
-            alert("Please Enter Aadhar Number! Aadhar Number Should be of 12 digit")
-            setStep(1)
+        // else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
+        //     alert("Please Enter Aadhar Number! Aadhar Number Should be of 12 digit")
+        //     setStep(1)
 
-        }
+        // }
         // else if (creed == null || creed === '' || creed.length < 2  || creed.length > 20) {
         //     alert("Enter Creed !  Length of Creed, atleast of 2 characters and less than 20 characters")
         //     setStep(1)
@@ -136,7 +136,7 @@ export default function FirstStep() {
                         <div>
                             <TextField id="phonenumber" type="number" label="Phone Number " value={userData['phonenumber']} onChange={(e) => setUserData({ ...userData, "phonenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter Phone Number" /><span>  </span>
                             <TextField id="mobilenumber" className ="required" type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" />
-                            <TextField id="aadharnumber" className ="required" type="number" label="Aadhar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 12 Digit Aadhar Number" />
+                            {/* <TextField id="aadharnumber" className ="required" type="number" label="Aadhar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 12 Digit Aadhar Number" /> */}
                         </div>
                         <div>
 
