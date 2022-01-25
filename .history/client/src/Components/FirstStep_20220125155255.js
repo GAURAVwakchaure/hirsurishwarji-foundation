@@ -20,7 +20,7 @@ export default function FirstStep() {
         var nativetown = document.getElementById('nativetown').value
         var phonenumber = document.getElementById('phonenumber').value
         var mobilenumber = document.getElementById('mobilenumber').value
-        var aadharnumber = document.getElementById('aadharnumber').value
+        // var aadharnumber = document.getElementById('aadharnumber').value
         var creed = document.getElementById('creed').value
         var categoryselect = document.getElementById('categoryselect').value
         var jainism = document.getElementById('jainismslect').checked

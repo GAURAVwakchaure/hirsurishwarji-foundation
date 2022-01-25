@@ -48,6 +48,23 @@ export const userApplication = (req, res) =>{
               Category:req.body.category,
               Creed: req.body.creed,
               Image: paths,
+
+              Ration_Card_Number:req.body.rationcardnumber,
+              Rent_Reciept_Number:re.body.rentrecieptormaintenanceserialnumber,
+              Electricity_Consumer_Number:req.body.electricconsumernumber,
+              Insurance_ID_Number:req.body.insuranceid,
+              Salary_Certificate_ID:req.body.salarycertificateid,
+              Bank_Account_Details:req.body.bankaccountdetails,
+              Jain_Minority_Certificate_ID:req.body.jaincertificateid,
+              Telephone_Account_Number:req.body.telephoneaccountnumber,
+              Referral_Letter_Serial_Number:req.body.referralletterserialnumber,
+              Aadhaar_Card_Number:req.body.aadharnumber,
+              School_College_Fees_Receipt_Number:req.body.schoolorcollegefeesserialnumber,
+
+
+
+
+
               Q1: req.body.pathshalachildren,
               Q2: req.body.religiouseducation,
               Q3: req.body.templepooja,
