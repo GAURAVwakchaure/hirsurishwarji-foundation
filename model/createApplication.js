@@ -155,6 +155,142 @@ const formschema = new mongoose.Schema({
     type: String,
     required: [true, "please check your data entry, Image is specified!"]
   }],
+
+  Ration_Card_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Rent_Reciept_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Electricity_Consumer_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+  
+  Insurance_ID_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Salary_Certificate_ID: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Bank_Account_Details: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+
+
+  Jain_Minority_Certificate_ID: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Telephone_Account_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Referral_Letter_Serial_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  Aadhaar_Card_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+  School_College_Fees_Receipt_Number: {
+    type: String,
+    required: [true, "please check your data entry, no Creed specified!"],
+    minlength:[2, "Creed minimum 2 letters"],
+    maxlength:20,
+    validate(value){
+      if(!validator.isAlpha((value),'en-US', {ignore: ' '})){
+        throw new Error("Creed is Invalid");
+      }
+    }
+  },
+
+
   status : String,
   Q1: {
     type: String,
