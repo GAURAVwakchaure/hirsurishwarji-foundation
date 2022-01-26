@@ -42,7 +42,7 @@ const formschema = new mongoose.Schema({
   },
   Address_Line2: {
     type: String,
-    required: [true, "please check your data entry, no Address_Line2 specified!"],
+    // required: [true, "please check your data entry, no Address_Line2 specified!"],
     minlength:[2, "add line2 minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -86,7 +86,7 @@ const formschema = new mongoose.Schema({
   },
   Native_Town: {
     type: String,
-    required: [true, "please check your data entry, no Native_Town specified!"],
+    // required: [true, "please check your data entry, no Native_Town specified!"],
     minlength:[2, "native town minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -97,7 +97,7 @@ const formschema = new mongoose.Schema({
   },
   Phone_Number: {
     type: String,
-    required: [true, "please check your data entry, no Phone_Number specified!"],
+    // required: [true, "please check your data entry, no Phone_Number specified!"],
     unique: true,
     minlength:[10, " phone number should be of minimum 10 number"],
     maxlength:12,
@@ -119,21 +119,21 @@ const formschema = new mongoose.Schema({
       }
     }
   },
-  Aadhar_Number:{
-    type: String,
-    required: [true, "please check your data entry, no aadhar number specified specified!"],
-    unique: true,
-    minlength:[12, " aadhar number should be of minimum 12 number"],
-    maxlength:12,
-    validate(value){
-      if(!validator.isNumeric(value)){
-        throw new Error("Aadhar number is Invalid");
-      }
-    }
-  },
+  // Aadhar_Number:{
+  //   type: String,
+  //   required: [true, "please check your data entry, no aadhar number specified specified!"],
+  //   unique: true,
+  //   minlength:[12, " aadhar number should be of minimum 12 number"],
+  //   maxlength:12,
+  //   validate(value){
+  //     if(!validator.isNumeric(value)){
+  //       throw new Error("Aadhar number is Invalid");
+  //     }
+  //   }
+  // },
   Jain: {
     type: String,
-    required: [true, "please check your data entry, no Jain specified!"],
+    // required: [true, "please check your data entry, no Jain specified!"],
   },
   Category:{
     type:String,
@@ -141,7 +141,7 @@ const formschema = new mongoose.Schema({
   },
   Creed: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -153,12 +153,13 @@ const formschema = new mongoose.Schema({
   
   Image: [{
     type: String,
-    required: [true, "please check your data entry, Image is specified!"]
+    // required: [true, "please check your data entry, Image is specified!"]
   }],
 
   Ration_Card_Number: {
     type: String,
     required: [true, "please check your data entry, no Creed specified!"],
+    unique:true,
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -170,7 +171,7 @@ const formschema = new mongoose.Schema({
 
   Rent_Reciept_Number: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -182,7 +183,7 @@ const formschema = new mongoose.Schema({
 
   Electricity_Consumer_Number: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -194,7 +195,7 @@ const formschema = new mongoose.Schema({
   
   Insurance_ID_Number: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -206,7 +207,7 @@ const formschema = new mongoose.Schema({
 
   Salary_Certificate_ID: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -219,6 +220,7 @@ const formschema = new mongoose.Schema({
   Bank_Account_Details: {
     type: String,
     required: [true, "please check your data entry, no Creed specified!"],
+    unique:true,
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -232,7 +234,7 @@ const formschema = new mongoose.Schema({
 
   Jain_Minority_Certificate_ID: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -244,7 +246,7 @@ const formschema = new mongoose.Schema({
 
   Telephone_Account_Number: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -256,7 +258,7 @@ const formschema = new mongoose.Schema({
 
   Referral_Letter_Serial_Number: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -269,6 +271,7 @@ const formschema = new mongoose.Schema({
   Aadhaar_Card_Number: {
     type: String,
     required: [true, "please check your data entry, no Creed specified!"],
+    unique:true,
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -280,7 +283,7 @@ const formschema = new mongoose.Schema({
 
   School_College_Fees_Receipt_Number: {
     type: String,
-    required: [true, "please check your data entry, no Creed specified!"],
+    // required: [true, "please check your data entry, no Creed specified!"],
     minlength:[2, "Creed minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -294,27 +297,27 @@ const formschema = new mongoose.Schema({
   status : String,
   Q1: {
     type: String,
-    required: [true, "please check your data entry, no Q1 Answer specified!"],
+    // required: [true, "please check your data entry, no Q1 Answer specified!"],
   },
   Q2: {
     type: String,
-    required: [true, "please check your data entry, no Q2 Answer specified!"],
+    // required: [true, "please check your data entry, no Q2 Answer specified!"],
   },
   Q3: {
     type: String,
-    required: [true, "please check your data entry, no Q3 Answer specified!"],
+    // required: [true, "please check your data entry, no Q3 Answer specified!"],
   },
   Q4: {
     type: String,
-    required: [true, "please check your data entry, no Q4 Answer specified!"],
+    // required: [true, "please check your data entry, no Q4 Answer specified!"],
   },
   Q5: {
     type: String,
-    required: [true, "please check your data entry, no Q5 Answer specified!"],
+    // required: [true, "please check your data entry, no Q5 Answer specified!"],
   },
   Q6: {
     type: String,
-    required: [true, "please check your data entry, no Q6 Answer specified!"],
+    // required: [true, "please check your data entry, no Q6 Answer specified!"],
   },
   MaintenanceExpense: {
     type: String,
@@ -340,7 +343,7 @@ const formschema = new mongoose.Schema({
   }, 
    TelephoneExpense: {
     type: String,
-    required: [true, "please check your data entry, no telephone Expense specified!"],
+    // required: [true, "please check your data entry, no telephone Expense specified!"],
     minlength:[1, " telephone Exp should be of minimum 1 number"],
     maxlength:7,
     validate(value){
@@ -351,7 +354,7 @@ const formschema = new mongoose.Schema({
   }, 
    EducationExpense: {
     type: String,
-    required: [true, "please check your data entry, no education expense specified!"],
+    // required: [true, "please check your data entry, no education expense specified!"],
     minlength:[1, " Education Exp should be of minimum 1 number"],
     maxlength:7,
     validate(value){
@@ -362,7 +365,7 @@ const formschema = new mongoose.Schema({
   },
   TuitionExpense: {
     type: String,
-    required: [true, "please check your data entry, no Tution expense specified!"],
+    // required: [true, "please check your data entry, no Tution expense specified!"],
     minlength:[1, " Tuition Exp should be of minimum 1 number"],
     maxlength:7,
     validate(value){
@@ -395,7 +398,7 @@ const formschema = new mongoose.Schema({
   },
   OtherExpense: {
     type: String,
-    required: [true, "please check your data entry, no other expense specified!"],
+    // required: [true, "please check your data entry, no other expense specified!"],
     minlength:[1, " other Exp should be of minimum 1 number"],
     maxlength:7,
     validate(value){
@@ -421,7 +424,7 @@ const formschema = new mongoose.Schema({
   },
   RentOrOwnershipStatus: {
     type: String,
-    required: [true, "please check your data entry, no rent or ownership status specified!"]
+    // required: [true, "please check your data entry, no rent or ownership status specified!"]
   },
   TV: {
     type: String,
@@ -540,7 +543,7 @@ const formschema = new mongoose.Schema({
   }, 
   egscname : {
     type: String,
-    // required: [true, "please check your data entry, no school name specified!"],
+    required: [true, "please check your data entry, no school name specified!"],
     minlength:[2, "EG School name minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -551,7 +554,7 @@ const formschema = new mongoose.Schema({
   },
   egscaddress : {
     type: String,
-    // required: [true, "please check your data entry, no school address specified!"],
+    required: [true, "please check your data entry, no school address specified!"],
     minlength:[2, "EG school address minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -562,7 +565,7 @@ const formschema = new mongoose.Schema({
   },
   egcoursename : {
     type: String,
-    // required: [true, "please check your data entry, no course name specified!"],
+    required: [true, "please check your data entry, no course name specified!"],
     minlength:[2, "EG Course name minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -573,7 +576,7 @@ const formschema = new mongoose.Schema({
   },
   egannualfees : {
     type: Number,
-    // required: [true, "please check your data entry, no annual fees specified!"],
+    required: [true, "please check your data entry, no annual fees specified!"],
     minlength:[1, "EG annual fees should be of minimum 1 number"],
     maxlength:6,
     validate(value){
@@ -606,7 +609,7 @@ const formschema = new mongoose.Schema({
   },  
   egmoneyneeded : {
     type: String,
-    // required: [true, "please check your data entry, no money needed specified!"],
+    required: [true, "please check your data entry, no money needed specified!"],
     minlength:[2, "EG money needed minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -665,7 +668,7 @@ const formschema = new mongoose.Schema({
   }, 
   mghname : {
     type: String,
-    // required: [true, "please check your data entry, no school name specified!"],
+    required: [true, "please check your data entry, no school name specified!"],
     minlength:[2, "MG hospital name minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -676,7 +679,7 @@ const formschema = new mongoose.Schema({
   },
   mghaddress : {
     type: String,
-    // required: [true, "please check your data entry, no school address specified!"],
+    required: [true, "please check your data entry, no school address specified!"],
     minlength:[2, "MG hospital address minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -687,7 +690,7 @@ const formschema = new mongoose.Schema({
   },
   mgdiseasedetails : {
     type: String,
-    // required: [true, "please check your data entry, no course name specified!"],
+    required: [true, "please check your data entry, no course name specified!"],
     minlength:[2, "MG Disease name minimum 2 letters"],
     maxlength:20,
     validate(value){
@@ -698,7 +701,7 @@ const formschema = new mongoose.Schema({
   },
   mgaprxexpenses : {
     type: Number,
-    // required: [true, "please check your data entry, no annual fees specified!"],
+    required: [true, "please check your data entry, no annual fees specified!"],
     minlength:[1, "MG approx. expenses should be of minimum 1 number"],
     maxlength:6,
     validate(value){
@@ -709,7 +712,7 @@ const formschema = new mongoose.Schema({
   },
   mgamountneeded : {
     type: String,
-    // required: [true, "please check your data entry, no money needed specified!"],
+    required: [true, "please check your data entry, no money needed specified!"],
     minlength:[2, "MG amount needed minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -742,7 +745,7 @@ const formschema = new mongoose.Schema({
   },  
   mgmedamt : {
     type: String,
-    // required: [true, "please check your data entry, no money needed specified!"],
+    required: [true, "please check your data entry, no money needed specified!"],
     minlength:[2, "MG Medical amount minimum 2 letters"],
     maxlength:50,
     validate(value){
@@ -799,7 +802,7 @@ const formschema = new mongoose.Schema({
   },
   surveydetails : {
     type: String,
-    required: [true, "please check your data entry, no survey detail specified!"],
+    // required: [true, "please check your data entry, no survey detail specified!"],
     minlength:[2, "survey details minimum 2 letters"],
     maxlength:80,
     validate(value){
@@ -810,7 +813,7 @@ const formschema = new mongoose.Schema({
   },
   specialnotes : {
     type: String,
-    required: [true, "please check your data entry, no special notes specified!"],
+    // required: [true, "please check your data entry, no special notes specified!"],
     minlength:[2, "special notes minimum 2 letters"],
     maxlength:50,
     validate(value){

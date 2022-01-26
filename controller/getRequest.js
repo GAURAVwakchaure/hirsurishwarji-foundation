@@ -43,7 +43,7 @@ export const userApplication = (req, res) =>{
               Native_Town: req.body.nativetown,
               Phone_Number: req.body.phonenumber,
               Mobile_Number: req.body.mobilenumber,
-              Aadhar_Number:req.body.aadharnumber,
+              // Aadhar_Number:req.body.aadharnumber,
               Jain: req.body.jainism,
               Category:req.body.category,
               Creed: req.body.creed,
