@@ -25,6 +25,7 @@ export default function SecondStep() {
         var file12 = document.getElementById('file12').value
         var rationcardnumber = document.getElementById('rationcardnumber').value
         var bankaccountdetails = document.getElementById('bankaccountdetails').value
+        var aadharnumber = document.getElementById('aadharnumber').value
         console.log(file1, file2, file3, file4, file5, file6, file7, file8, file9, file10, file11, file12)
         if (file1 == null || file1 === '') {
             alert("Please upload Ration Card!")
@@ -74,6 +75,12 @@ export default function SecondStep() {
             alert("Please upload Aadhar Card!")
             setStep(2)
         }
+        else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
+                alert("Please Enter Aadhar Number! Aadhar Number Should be of 12 digit")
+                setStep(2)
+    
+    
+            }
         // else if (file11 == null || file11 === '') {
         //     alert("Please upload School/College Fees")
         //     setStep(2)
