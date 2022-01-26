@@ -2,9 +2,9 @@ import Form from '../model/createApplication.js'
 
 // import max1 from './getID.js'
 import upload from './fileUpload.js'
-export const getRequest = (request, response) => {
-    response.status(200).json("hi ratnesh here get request called"+max1)
-}
+// export const getRequest = (request, response) => {
+//     response.status(200).json("hi ratnesh here get request called")
+// }
 
 // all application list
 export const getApplicant = (req, res) => {
