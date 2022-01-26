@@ -162,7 +162,7 @@ export default function FirstStep() {
                 >
                     <div>
                         <div>
-                            <span id='invalid' class="text-danger"></span>
+                            <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
                         <div>
                             <TextField id="name" className ="required" label="Name " value={userData['name']} onChange={(e) => setUserData({ ...userData, "name": e.target.value })} margin='normal' variant='standard' color="primary" placeholder='First_Name     Middle_Name     Last_Name' /><br></br> <span id='ename' className='text-danger' >  </span>
