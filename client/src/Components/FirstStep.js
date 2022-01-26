@@ -204,7 +204,7 @@ export default function FirstStep() {
                                 <option value="education">Education</option>
 
                             </select>
-                        </div><br></br><span id='ecategoryselect' className='text-danger'>  </span><br />
+                        </div><br></br><span id='ecategoryselect' className='text-danger'>  </span>
                         <table>
                             <tr>
                                 <td rowSpan={3}> <h6 id="jainism">Are You Jain?</h6></td>

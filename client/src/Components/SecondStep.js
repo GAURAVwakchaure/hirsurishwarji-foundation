@@ -28,68 +28,67 @@ export default function SecondStep() {
         var aadharnumber = document.getElementById('aadharnumber').value
         console.log(file1, file2, file3, file4, file5, file6, file7, file8, file9, file10, file11, file12)
         if (file1 == null || file1 === '') {
-            alert("Please upload Ration Card!")
+            document.getElementById('efile1').innerHTML="Please upload Ration Card !"
             setStep(2)
         }
-        else if (rationcardnumber == null || rationcardnumber === '' || rationcardnumber.length > 12 || rationcardnumber.length < 4 ) {
-            alert("Please Enter Ration card number! Number should be of at least 4 digit and not more than 12 digit")
-            setStep(2)
-        }
-        // else if (file2 == null || file2 === '') {
-        //     alert("Please upload Rent Reciept / Maintenance")
-        //     setStep(2)
-        // }
-        // else if (file3 == null || file3 === '') {
-        //     alert("Please upload Electricity Bill")
-        //     setStep(2)
-        // }
-        // else if (file4 == null || file4 === '') {
-        //     alert("Please upload Medical Insurance")
-        //     setStep(2)
-        // }
-        // else if (file5 == null || file5 === '') {
-        //     alert("Please upload Salary Certificate")
-        //     setStep(2)
-        // }
-        else if (file6 == null || file6 === '') {
-            alert("Please upload Bank Passbook!")
-            setStep(2)
-        }
-        else if (bankaccountdetails == null || bankaccountdetails === '' || bankaccountdetails.length > 12 || bankaccountdetails.length < 4 ) {
-            alert("Please upload Bank Account Number! Number should be of at least 4 digit and not more than 12 digit")
-            setStep(2)
-        }
-        // else if (file7 == null || file7 === '') {
-        //     alert("Please upload jain Minority Certificate")
-        //     setStep(2)
-        // }
-        // else if (file8 == null || file8 === '') {
-        //     alert("Please upload Telephone Bill")
-        //     setStep(2)
-        // }
-        // else if (file9 == null || file9 === '') {
-        //     alert("Please upload Referral Letter")
-        //     setStep(2)
-        // }
-        else if (file10 == null || file10 === '') {
-            alert("Please upload Aadhar Card!")
-            setStep(2)
-        }
-        else if (aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12) {
-                alert("Please Enter Aadhar Number! Aadhar Number Should be of 12 digit")
-                setStep(2)
-    
-    
-            }
-        // else if (file11 == null || file11 === '') {
-        //     alert("Please upload School/College Fees")
-        //     setStep(2)
-        // }
-        // else if (file12 == null || file12 === '') {
-        //     alert("Please upload Others")
-        //     setStep(2)
-        // }
         else {
+            document.getElementById('efile1').innerHTML=" "
+            setStep(2)
+        }
+        if (rationcardnumber == null || rationcardnumber === '') {
+            document.getElementById('erationcardnumber').innerHTML="Please Enter Ration card number !"
+            setStep(2)
+        }
+        else if (rationcardnumber.length > 12 || rationcardnumber.length < 4){
+            document.getElementById('erationcardnumber').innerHTML="Minimum 4 and Maximum 12 digits are allowed !"
+            setStep(2)
+        }
+        else{
+            document.getElementById('erationcardnumber').innerHTML=" "
+            setStep(2)
+        }
+        if (file6 == null || file6 === '') {
+            document.getElementById('efile6').innerHTML="Please upload Bank Passbook !"
+            setStep(2)
+        }
+        else {
+            document.getElementById('efile6').innerHTML=" "
+            setStep(2)
+        }
+        if (bankaccountdetails == null || bankaccountdetails === '') {
+            document.getElementById('ebankaccountdetails').innerHTML="Please upload Bank Account Number !"
+            setStep(2)
+        }
+        else if (bankaccountdetails.length > 12 || bankaccountdetails.length < 4 ) {
+            document.getElementById('ebankaccountdetails').innerHTML="Minimum 4 and Maximum 12 digits are allowed !"
+            setStep(2)
+        }
+        else{
+            document.getElementById('ebankaccountdetails').innerHTML=" "
+        }
+        if (file10 == null || file10 === '') {
+            document.getElementById('efile10').innerHTML="Please upload Aadhar Card !"
+            setStep(2)
+        }
+        else{
+            document.getElementById('efile10').innerHTML=" "
+        }
+        if (aadharnumber == null || aadharnumber === ''){
+            document.getElementById('eaadharnumber').innerHTML="Please Enter Aadhar Number !"
+             setStep(2)
+        }    
+        else if (aadharnumber.length !== 12) {
+            document.getElementById('eaadharnumber').innerHTML="Aadhar Number Should be of 12 digit only !"
+            setStep(2)
+        } 
+        else{
+            document.getElementById('eaadharnumber').innerHTML=" "
+        }   
+        if (file1 == null || file1 === '' || rationcardnumber == null || rationcardnumber === '' || rationcardnumber.length > 12 || rationcardnumber.length < 4 || file6 == null || file6 === '' || bankaccountdetails == null || bankaccountdetails === '' || bankaccountdetails.length > 12 || bankaccountdetails.length < 4 || file10 == null || file10 === '' || aadharnumber == null || aadharnumber === '' || aadharnumber.length !== 12){
+            document.getElementById('invalid').innerHTML="Invalid Input !!"
+        }
+        else {
+            document.getElementById('invalid').innerHTML=" "
             setStep(3)
         }
     }
@@ -119,13 +118,16 @@ export default function SecondStep() {
                     >
 
                         <div>
+                        <div>
+                            <span id='invalid' class="text-danger size font-weight-bold"></span>
+                        </div>
                             <div className='row'>
                                 <div className="col-md-6">
                                 <h6 id="fileLabel" className='requireds'><p>Ration Card</p></h6>
-                                    <input required type="file" id="file1" className="form-control form-control-sm auto " name="rationcard" onChange={(e) => setUserData({ ...userData, "rationcard": e.target.files[0] })} />
+                                    <input required type="file" id="file1" className="form-control form-control-sm auto " name="rationcard" onChange={(e) => setUserData({ ...userData, "rationcard": e.target.files[0] })} /> <span id='efile1' className='text-danger' >  </span>
                                 </div>
                                 <div className="col-md-6">
-                                    <TextField id="rationcardnumber" type="number" className ="required" label="Ration Card Number" value={userData['rationcardnumber']} onChange={(e) => setUserData({ ...userData, "rationcardnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Ration Card Number" />
+                                    <TextField id="rationcardnumber" type="number" className ="required" label="Ration Card Number" value={userData['rationcardnumber']} onChange={(e) => setUserData({ ...userData, "rationcardnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Ration Card Number" /><br></br> <span id='erationcardnumber' className='text-danger' >  </span>
                                 </div>
                             </div><br></br>
 
@@ -170,10 +172,10 @@ export default function SecondStep() {
                             <div className="row">
                                 <div className = "col-md-6">
                                 <h6 id="fileLabel" className='requireds'><p>Bank Passbook</p></h6>
-                                    <input required type="file" id="file6" className="form-control form-control-sm auto " name="bankpassbook" onChange={(e) => setUserData({ ...userData, "bankpassbook": e.target.files[0] })} />
+                                    <input required type="file" id="file6" className="form-control form-control-sm auto " name="bankpassbook" onChange={(e) => setUserData({ ...userData, "bankpassbook": e.target.files[0] })} /> <span id='efile6' className='text-danger' >  </span>
                                 </div>
                                 <div className='col-md-6'>
-                                    <TextField id="bankaccountdetails" type="number" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" />
+                                    <TextField id="bankaccountdetails" type="number" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" /><br></br> <span id='ebankaccountdetails' className='text-danger' >  </span>
                                 </div>
 
                             </div><br></br>
@@ -211,10 +213,10 @@ export default function SecondStep() {
                             <div className='row'>
                                 <div className='col-md-6'>
                                 <h6 id="fileLabel" className='requireds'><p>Aadhar Card </p></h6>
-                                    <input required type="file" id="file10" className="form-control form-control-sm auto " name="aadharcard" onChange={(e) => setUserData({ ...userData, "aadharcard": e.target.files[0] })} />
+                                    <input required type="file" id="file10" className="form-control form-control-sm auto " name="aadharcard" onChange={(e) => setUserData({ ...userData, "aadharcard": e.target.files[0] })} /> <span id='efile10' className='text-danger' >  </span>
                                 </div>
                                 <div className='col-md-6'>
-                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" />
+                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" /><br></br> <span id='eaadharnumber' className='text-danger' >  </span>
                                 </div>
 
                             </div><br></br>
