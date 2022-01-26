@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import autoIncrement from 'mongoose-auto-increment';
 
 const formschema = new mongoose.Schema({
-  id:{
-    type:Number
-  },
   Name: {
     type: String,
     required: [true, "please check your data entry, no Name specified!"],
