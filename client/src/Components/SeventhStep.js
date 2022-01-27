@@ -25,22 +25,59 @@ export default function SeventhStep() {
         var egcdname = document.getElementById('egcdname').value
         var egafee = document.getElementById('egafee').value
         var egmoneyneed = document.getElementById('egmoneyneed').value
-        if (egname == null || egname === '' || egname.length < 2  || egname.length > 50) {
-            alert("Enter Name !  Length of atleast of 2 characters and less than 50 characters")
+        if (egname == null || egname === '') {
+            document.getElementById('eegname').innerHTML="Please Enter Name !"
+        }
+        else if(!isNaN(egname)){
+            document.getElementById('eegname').innerHTML="Numbers are not allowed !"
         } 
-        else if (egadd == null || egadd === '' || egadd.length < 2  || egadd.length > 50) {
-            alert("Enter Address !  Length of atleast of 2 characters and less than 50 characters")
+        else if(egname.length < 2  || egname.length > 50){
+            document.getElementById('eegname').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
         }
-        else if (egcdname == null || egcdname === '' || egcdname.length < 2  || egcdname.length > 20) {
-            alert("Enter Course/Degree Name !  Length of atleast of 2 characters and less than 20 characters")
+        else{
+            document.getElementById('eegname').innerHTML=" "
         }
-        else if (egafee == null || egafee === '' || egafee.length < 1  || egafee.length > 8) {
-            alert("Enter Annual Fees !  Length of atleast of 1 digit and less than 8 digit")
+        if (egadd == null || egadd === '') {
+            document.getElementById('eegadd').innerHTML="Please Enter Address !"
         }
-        else if (egmoneyneed == null || egmoneyneed=== '' || egmoneyneed.length < 1  || egmoneyneed.length > 8) {
-            alert("Enter Money Needed !  Length of atleast of 1 digit and less than 8 digit")
+        else if(egadd.length < 2  || egadd.length > 50){
+            document.getElementById('eegadd').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        }
+        else{
+            document.getElementById('eegadd').innerHTML=" "
+        }
+        if (egcdname == null || egcdname === '') {
+            document.getElementById('eegcdname').innerHTML="Please Enter Course/Degree Name !"
+        }
+        else if(egcdname.length < 2  || egcdname.length > 20){
+            document.getElementById('eegcdname').innerHTML="Minimum 2 and Maximum 20 characters are allowed !"
+        }
+        else{
+            document.getElementById('eegcdname').innerHTML=" "
+        }
+        if (egafee == null || egafee === '') {
+            document.getElementById('eegafee').innerHTML="Please Enter Annual Fees !"
+        }
+        else if(egafee.length < 1  || egafee.length > 8){
+            document.getElementById('eegafee').innerHTML="Minimum 1 and Maximum 8 digits are allowed !"
+        }
+        else{
+            document.getElementById('eegafee').innerHTML=" "
+        }
+        if (egmoneyneed == null || egmoneyneed=== '') {
+            document.getElementById('eegmoneyneed').innerHTML="Please Enter Money Needed !"
+        }
+        else if(egmoneyneed.length < 1  || egmoneyneed.length > 8){
+            document.getElementById('eegmoneyneed').innerHTML="Minimum 1 and Maximum 8 digits are allowed !"
+        }
+        else{
+            document.getElementById('eegmoneyneed').innerHTML=" "
+        }
+        if(egname == null || egname === '' || egname.length < 2  || egname.length > 50 || egadd == null || egadd === '' || egadd.length < 2  || egadd.length > 50 || egcdname == null || egcdname === '' || egcdname.length < 2  || egcdname.length > 20 || egafee == null || egafee === '' || egafee.length < 1  || egafee.length > 8 || egmoneyneed == null || egmoneyneed=== '' || egmoneyneed.length < 1  || egmoneyneed.length > 8){
+            document.getElementById('invalid').innerHTML="Invalid Input !!"
         }
         else {
+            document.getElementById('invalid').innerHTML=" "
             setStep(9)
         }
     }
@@ -59,6 +96,10 @@ export default function SeventhStep() {
                     autoComplete="off"
                 >
                     <div>
+                        <div>
+                            <span id='invalid' class="text-danger size font-weight-bold"></span>
+                        </div>
+                        <br></br>
                         <div><h6 id="edgl1" >1. Unemployed Person : </h6></div>
                         <div>
                             <TextField label="Education" value={userData['egunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "egunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
@@ -101,10 +142,10 @@ export default function SeventhStep() {
                         <div>
                             <div><h6 id="edgl1" >3. School/College : </h6></div>
 
-                            <TextField id='egname' label="Name" className ="required" value={userData['egscname']} onChange={(e) => setUserData({ ...userData, "egscname": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            <TextField id='egadd' label="Address" className ="required" value={userData['egscaddress']} onChange={(e) => setUserData({ ...userData, "egscaddress": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            <TextField id='egcdname' label="Course/Degree Name" className ="required" value={userData['egcoursename']} onChange={(e) => setUserData({ ...userData, "egcoursename": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            <TextField id='egafee' label="Annual Fees" type="number" className ="required" value={userData['egannualfees']} onChange={(e) => setUserData({ ...userData, "egannualfees": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField id='egname' label="Name" className ="required" value={userData['egscname']} onChange={(e) => setUserData({ ...userData, "egscname": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegname' className='text-danger' >  </span>
+                            <TextField id='egadd' label="Address" className ="required" value={userData['egscaddress']} onChange={(e) => setUserData({ ...userData, "egscaddress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegadd' className='text-danger' >  </span>
+                            <TextField id='egcdname' label="Course/Degree Name" className ="required" value={userData['egcoursename']} onChange={(e) => setUserData({ ...userData, "egcoursename": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegcdname' className='text-danger' >  </span>
+                            <TextField id='egafee' label="Annual Fees" type="number" className ="required" value={userData['egannualfees']} onChange={(e) => setUserData({ ...userData, "egannualfees": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegafee' className='text-danger' >  </span>
                             <TextField label="Details of Course" value={userData['egdetailsofcourse']} onChange={(e) => setUserData({ ...userData, "egdetailsofcourse": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div><br />
                         <div>
@@ -115,7 +156,7 @@ export default function SeventhStep() {
                         </div><br />
                         <div>
                           <h6 id="edgl1" className ="requireds" ><p>4. Money Needed :</p></h6>
-                            <TextField id='egmoneyneed' type="number" label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField id='egmoneyneed' type="number" label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegmoneyneed' className='text-danger' >  </span>
                         </div><br />
                         <div>
                             <h6 id="edgl1" >5. Self Manage Contribution: </h6>
