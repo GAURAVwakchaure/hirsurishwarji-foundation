@@ -35,10 +35,23 @@ export default function FourthStep() {
         let groceries = document.getElementById('groceries').value
         // let other = document.getElementById('other').value
         let areaofflat = document.getElementById('totalareaofflat').value
-        if(maintenance == null || maintenance === '' || maintenance.length < 1  || maintenance.length > 7){
-            alert("Enter Maintenance Expense! At least 1 Digit and not more than 7 digit")
-        }else if(electricbill == null || electricbill === '' || electricbill.length < 1  || electricbill.length > 7){
-            alert("Enter Electric Expense ! At least 1 Digit and not more than 7 digit")
+        if(maintenance == null || maintenance === ''){
+            document.getElementById('emaintenance').innerHTML="Please Enter Maintenance Expense !"
+        }
+        else if( maintenance.length < 1  || maintenance.length > 7){
+            document.getElementById('emaintenance').innerHTML="Minimum 1 and Maximum 7 digits are allowed !"
+        }
+        else{
+            document.getElementById('emaintenance').innerHTML=" "
+        }
+        if(electricbill == null || electricbill === ''){
+            document.getElementById('eelectricbill').innerHTML="Please Enter Electric Expense !"
+        }
+        else if(electricbill.length < 1  || electricbill.length > 7){
+            document.getElementById('eelectricbill').innerHTML="Minimum 1 and Maximum 7 digits are allowed !"
+        }
+        else{
+            document.getElementById('eelectricbill').innerHTML=" "
         }
         // else if(telephone == null || telephone === '' || telephone.length < 1  || telephone.length > 7){
         //     alert("Enter telephone bill ! At least 1 Digit and not more than 7 digit")
@@ -48,18 +61,42 @@ export default function FourthStep() {
         // }else if(tuition == null || tuition === '' || tuition.length < 1  || tuition.length > 7){
         //     alert("Enter tuition fees ! At least 1 Digit and not more than 7 digit")
         // }
-        else if(medical == null || medical === '' || medical.length < 1  || medical.length > 7){
-            alert("Enter Medical Expense ! At least 1 Digit and not more than 7 digit")
-        }else if(groceries == null || groceries === '' || groceries.length < 1  || groceries.length > 7){
-            alert("Enter Groceries Expense ! At least 1 Digit and not more than 7 digit")
+        if(medical == null || medical === ''){
+            document.getElementById('emedical').innerHTML="Please Enter Medical Expense !"
+        }
+        else if(medical.length < 1  || medical.length > 7){
+            document.getElementById('emedical').innerHTML="Minimum 1 and Maximum 7 digits are allowed !"
+        }
+        else{
+            document.getElementById('emedical').innerHTML=" "
+        }
+        if(groceries == null || groceries === ''){
+            document.getElementById('egroceries').innerHTML="Please Enter Groceries Expense !"
+        }
+        else if(groceries.length < 1  || groceries.length > 7){
+            document.getElementById('egroceries').innerHTML="Minimum 1 and Maximum 7 digits are allowed !"
+        }
+        else{
+            document.getElementById('egroceries').innerHTML=" "
         }
         // else if(other == null || other === '' || other.length < 1  || other.length > 7){
         //     alert("Enter other bill ! At least 1 Digit and not more than 7 digit")
         // }
-        else if(areaofflat == null || areaofflat === '' || areaofflat.length < 1  || areaofflat.length > 7){
-            alert("Enter area of flat ! At least 1 Digit and not more than 7 digit")
+        if(areaofflat == null || areaofflat === ''){
+            document.getElementById('eareaofflat').innerHTML="Please Enter Area of Flat !"
+        }
+        else if(areaofflat.length < 1  || areaofflat.length > 7){
+            document.getElementById('eareaofflat').innerHTML="Minimum 1 and Maximum 7 digits are allowed !"
         }
         else{
+            document.getElementById('eareaofflat').innerHTML=" "
+        }
+
+        if(maintenance == null || maintenance === '' || maintenance.length < 1  || maintenance.length > 7 || electricbill == null || electricbill === '' || electricbill.length < 1  || electricbill.length > 7 || medical == null || medical === '' || medical.length < 1  || medical.length > 7 || groceries == null || groceries === '' || groceries.length < 1  || groceries.length > 7 || areaofflat == null || areaofflat === '' || areaofflat.length < 1  || areaofflat.length > 7){
+            document.getElementById('invalid').innerHTML="Invalid Input !!"
+        }
+        else{
+            document.getElementById('invalid').innerHTML=" "
             setStep(5)
         }
     }
@@ -92,11 +129,14 @@ export default function FourthStep() {
                         <p class="right">*Enter '0' Wheraver Required</p>
                         </div>
                         <div>
-                            
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = 'maintenance' type="number" label="Maintenance Expense (in Rupess)" className ="required" value={userData['maintenance']} onChange={(e) => setUserData({ ...userData, "maintenance": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
                         <div>
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='electricbill' type="number" label="Electric Expense (in Rupess)" className ="required" value={userData['electricbillexpense']} onChange={(e) => setUserData({ ...userData, "electricbillexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = 'maintenance' type="number" label="Maintenance Expense (in Rupess)" className ="required" value={userData['maintenance']} onChange={(e) => setUserData({ ...userData, "maintenance": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emaintenance' className='text-danger' >  </span>
+                        </div>
+                        <div>
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='electricbill' type="number" label="Electric Expense (in Rupess)" className ="required" value={userData['electricbillexpense']} onChange={(e) => setUserData({ ...userData, "electricbillexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eelectricbill' className='text-danger' >  </span>
                         </div>
                         <div>
                             <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='telephone' type="number" label="Telephone Expense (in Rupess)" value={userData['telephoneexpense']} onChange={(e) => setUserData({ ...userData, "telephoneexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
@@ -107,8 +147,8 @@ export default function FourthStep() {
                             <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Tuition Expense (in Rupess)" id='tuition' value={userData['tuitionexpense']} onChange={(e) => setUserData({ ...userData, "tuitionexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div>
                         <div>
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Medical Expense (in Rupess)" className ="required" id="medical" value={userData['medicalexpense']} onChange={(e) => setUserData({ ...userData, "medicalexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Groceries Expense (in Rupess)" className ="required" id="groceries" value={userData['groceriesexpense']} onChange={(e) => setUserData({ ...userData, "groceriesexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Medical Expense (in Rupess)" className ="required" id="medical" value={userData['medicalexpense']} onChange={(e) => setUserData({ ...userData, "medicalexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emedical' className='text-danger' >  </span>
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Groceries Expense (in Rupess)" className ="required" id="groceries" value={userData['groceriesexpense']} onChange={(e) => setUserData({ ...userData, "groceriesexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='egroceries' className='text-danger' >  </span>
                         </div>
                         <div>
                             <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='other' type="number" label="Other Expense (in Rupess) " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
@@ -116,7 +156,7 @@ export default function FourthStep() {
                         </div>
 
                         <div>
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br />
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eareaofflat' className='text-danger' >  </span>
 
                             < br />
 
