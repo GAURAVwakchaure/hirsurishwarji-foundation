@@ -15,19 +15,44 @@ export default function TenthStep() {
         // let surveydetails = document.getElementById('surveydetails').value
         // let specialnotes = document.getElementById('specialnotes').value
 
-        if (referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50) {
-            alert("Enter Referred By ! Length of atleast of 2 characters and less than 50 characters")
-        } else if (referraladdress == null || referraladdress === "" || referraladdress.length < 2  || referraladdress.length > 50) {
-            alert("Enter Referral Address ! Length of atleast of 2 characters and less than 50 characters")
-        } else if (surveydoneby == null || surveydoneby === "" || surveydoneby.length < 2  || surveydoneby.length > 50) {
-            alert("Enter survey done by ! Length of atleast of 2 characters and less than 50 characters")
+        if (referredby == null || referredby === "") {
+            document.getElementById('ereferredby').innerHTML="Please Enter Referred By !"
         } 
-        // else if (surveydetails == null || surveydetails === "" || surveydetails.length < 2  || surveydetails.length > 50) {
-        //     alert("Enter Survey Details ! Length of atleast of 2 characters and less than 50 characters")
-        // } else if (specialnotes == null || specialnotes === "" || specialnotes.length < 2  || specialnotes.length > 50) {
-        //     alert("Enter special notes ! Length of atleast of 2 characters and less than 50 characters")
-        // }
+        else if(!isNaN(referredby)){
+            document.getElementById('ereferredby').innerHTML="Numbers are not allowed !"
+        }
+        else if(referredby.length < 2  || referredby.length > 50){
+            document.getElementById('ereferredby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        }
+        else{
+            document.getElementById('ereferredby').innerHTML=" "
+        }
+        if (referraladdress == null || referraladdress === "") {
+            document.getElementById('ereferraladdress').innerHTML="Please Enter Referral Address !"
+        } 
+        else if(referraladdress.length < 2  || referraladdress.length > 50){
+            document.getElementById('ereferraladdress').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        }
+        else{
+            document.getElementById('ereferraladdress').innerHTML=" "
+        }
+        if (surveydoneby == null || surveydoneby === "") {
+            document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
+        }
+        else if(!isNaN(surveydoneby)){
+            document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
+        }
+        else if(surveydoneby.length < 2  || surveydoneby.length > 50){
+            document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        } 
+        else{
+            document.getElementById('esurveydoneby').innerHTML=" "
+        }
+        if(referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50 || referraladdress == null || referraladdress === "" || referraladdress.length < 2  || referraladdress.length > 50 || surveydoneby == null || surveydoneby === "" || surveydoneby.length < 2  || surveydoneby.length > 50){
+            document.getElementById('invalid').innerHTML="Invalid Input !!"
+        }
          else {
+            document.getElementById('invalid').innerHTML=" "
             setStep(11)
         }
 
@@ -49,13 +74,16 @@ export default function TenthStep() {
                 >
                     <div>
                         <div>
-                            <TextField label="Referred By: " className ="required" id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
                         <div>
-                            <TextField label="Address of Referral: " className ="required" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="Referred By: " className ="required" id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='ereferredby' className='text-danger' >  </span>
                         </div>
                         <div>
-                            <TextField label="Survey Done By:" className ="required" id="surveydoneby" value={userData['surveydoneby']} onChange={(e) => setUserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField label="Address of Referral: " className ="required" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='ereferraladdress' className='text-danger' >  </span>
+                        </div>
+                        <div>
+                            <TextField label="Survey Done By:" className ="required" id="surveydoneby" value={userData['surveydoneby']} onChange={(e) => setUserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                             <TextField label="Survey Details:" id="surveydetails" value={userData['surveydetails']} onChange={(e) => setUserData({ ...userData, "surveydetails": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             <TextField label="Special Notes:" id="specialnotes" value={userData['specialnotes']} onChange={(e) => setUserData({ ...userData, "specialnotes": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div><br />
