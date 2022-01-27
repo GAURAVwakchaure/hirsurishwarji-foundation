@@ -53,14 +53,6 @@ export default function FourthStep() {
         else{
             document.getElementById('eelectricbill').innerHTML=" "
         }
-        // else if(telephone == null || telephone === '' || telephone.length < 1  || telephone.length > 7){
-        //     alert("Enter telephone bill ! At least 1 Digit and not more than 7 digit")
-        // }
-        // else if(education == null || education === '' || education.length < 1  || education.length > 7){
-        //     alert("Enter education fees ! At least 1 Digit and not more than 7 digit")
-        // }else if(tuition == null || tuition === '' || tuition.length < 1  || tuition.length > 7){
-        //     alert("Enter tuition fees ! At least 1 Digit and not more than 7 digit")
-        // }
         if(medical == null || medical === ''){
             document.getElementById('emedical').innerHTML="Please Enter Medical Expense !"
         }
@@ -79,9 +71,6 @@ export default function FourthStep() {
         else{
             document.getElementById('egroceries').innerHTML=" "
         }
-        // else if(other == null || other === '' || other.length < 1  || other.length > 7){
-        //     alert("Enter other bill ! At least 1 Digit and not more than 7 digit")
-        // }
         if(areaofflat == null || areaofflat === ''){
             document.getElementById('eareaofflat').innerHTML="Please Enter Area of Flat !"
         }
