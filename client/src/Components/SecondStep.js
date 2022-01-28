@@ -175,7 +175,7 @@ export default function SecondStep() {
                                     <input required type="file" id="file6" className="form-control form-control-sm auto " name="bankpassbook" onChange={(e) => setUserData({ ...userData, "bankpassbook": e.target.files[0] })} /> <span id='efile6' className='text-danger' >  </span>
                                 </div>
                                 <div className='col-md-6'>
-                                    <TextField id="bankaccountdetails" type="number" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" /><br></br> <span id='ebankaccountdetails' className='text-danger' >  </span>
+                                    <TextField id="bankaccountdetails" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" /><br></br> <span id='ebankaccountdetails' className='text-danger' >  </span>
                                 </div>
 
                             </div><br></br>
