@@ -134,7 +134,8 @@ export default function SeventhStep() {
                             </table>
                             
                             <div id='loanamount' className="loanamount" style={{ visibility: 'hidden' }}>
-                                <TextField label="Enter Loan Amount" value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                <span label="Enter Loan Amount" value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary"></span>
+                                {/* <TextField label="Enter Loan Amount" value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span> */}
                             </div><br />
 
                         </div>
