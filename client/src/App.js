@@ -4,11 +4,12 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
+import Navbar from "./Components/Navbar"
+// import { Navbar, Container, Nav, NavDropdown} from 'react-bootstrap';
 import Home from './Components/Home';
 import Application from './Components/Application';
 import Form from './Form';
-import { LinkContainer } from 'react-router-bootstrap';
+// import { LinkContainer } from 'react-router-bootstrap';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <Navbar bg="primary" variant="dark">
+          {/* <Navbar bg="primary" variant="dark">
             <Container>
               <Navbar.Brand>Hirsurishwarji Foundation </Navbar.Brand>
               <Nav className="ml-auto">
@@ -30,7 +31,10 @@ function App() {
                 </NavDropdown>
               </Nav>
             </Container>
-          </Navbar><br />
+          </Navbar><br /> */}
+           
+           <Navbar /><br />
+          
 
           <Routes>
             <Route exact path='/' element={<Home />}></Route>

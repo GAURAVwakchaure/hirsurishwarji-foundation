@@ -18,6 +18,25 @@
 @media(min-width:1200px){
   
 }
+
+.bg-colour{
+  background-color: #e6e6e6;
+}
+
+.brandh{
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(#eee, rgb(187, 117, 117));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+
+.brands {
+  font-size: 2.5rem;
+}
+
 .size{
   font-size: 1.2rem;
 }
