@@ -134,10 +134,7 @@ export default function FifthStep() {
                             {/* <Button variant='contained' color='primary' onClick={() => setStep(6)}>Next</Button><span> </span> */}
                             <Button variant='contained' color='primary' onClick={handleFurniture}>Next</Button><span> </span>
 
-                            {/* <Button variant='contained' color='primary' onClick={submitData}>submit</Button><span></span>
-
-                            <Button variant='contained' color='primary' onClick={showData}>showdata</Button> */}
-
+                           
                         </div><br />
                     </div></Box>
             </Card>

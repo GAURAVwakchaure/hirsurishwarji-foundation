@@ -209,7 +209,7 @@ export default function SixthStep() {
 
                             <Button variant='contained' color='secondary' onClick={() => setStep(5)}>Back</Button><span> </span>
 
-                            {/* <Button variant='contained' color='primary' onClick={() => setStep(7)}>Next</Button><span> </span> */}
+                            {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button><span> </span> */}
                             <Button variant='contained' color='primary' onClick={nextPage}>Next</Button><span> </span>
 
 

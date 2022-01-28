@@ -53,7 +53,7 @@ const StepContext = () => {
         formData.append('nativetown', userData.nativetown)
         formData.append('phonenumber', userData.phonenumber)
         formData.append('mobilenumber', userData.mobilenumber)
-        formData.append('aadharnumber', userData.aadharnumber)
+        // formData.append('aadharnumber', userData.aadharnumber)
         formData.append('jainism', userData.jainism)
         formData.append('category', userData.category)
         formData.append('creed', userData.creed)
@@ -208,6 +208,7 @@ const StepContext = () => {
         axios.post("http://localhost:8000/createApplication", formData)
             .then(res => {
                 console.log(res)
+                // window.alert("response after submitting data"+res.data)
                 window.alert(res.data)
             })
             .catch(err => { console.log(err) })
@@ -215,14 +216,13 @@ const StepContext = () => {
         console.log("submitData calling finished")
 
 
-        // axios.post("http://192.168.1.108:8000/post", dependenttableData)
+        // axios.post("http://localhost:8000/createApplication", formData)
         // .then(res => {
         //     console.log(res)
         //     window.alert(res.data)
         // })
         // .catch(err => { console.log(err) })
 
-        console.log("submitData calling finished")
 
 
 

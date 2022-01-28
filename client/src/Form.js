@@ -18,7 +18,7 @@ export default function Form() {
 
   const { currentStep, userData } = useContext(multiStepContext);
 
-  console.log(userData['category'])
+  // console.log("category of user" +userData['category'])
 
   function showStep(step) {
 

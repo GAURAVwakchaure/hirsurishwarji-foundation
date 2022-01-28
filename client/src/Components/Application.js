@@ -78,8 +78,8 @@ export default function Application() {
         { dataField: '_id', text: 'ID', sort: true ,filter: textFilter()  },
         { dataField: 'Name', text: 'Name', sort: true,filter: textFilter() },
         { dataField: 'Mobile_Number', text: 'Mobilenumber', sort: true,filter: textFilter() },
-        { dataField: 'Aadhar_Number', text: 'Aadhaar Number', sort: true,filter: textFilter() },
-        { dataField: 'Status', text: 'Status' },
+        { dataField: 'Aadhaar_Card_Number', text: 'Aadhaar Number', sort: true,filter: textFilter() },
+        { dataField: 'status', text: 'Status' },
         {
             dataField: 'Grant', text: 'Grant', isDummyField: true,
             formatter: grantButton

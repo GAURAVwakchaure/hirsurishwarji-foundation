@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 app.use('/', route)
 
 
-// mongoose.connect("mongodb://localhost:27017/gaurav", { useNewUrlParser: true }).then(() => {
+// mongoose.connect("mongodb://localhost:27017/gaurav", { useNewUrlParser: true }).then(() => {})
 
     // app.listen(PORT, () => {
     //     console.log(`Database is connected and server is running successfully on ${PORT}`)

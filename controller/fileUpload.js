@@ -1,6 +1,7 @@
 import multer from "multer";
 
 // storing file at api side
+console.log("in file upload function")
 var storage = multer.diskStorage({
     destination: function (req, file, callback) {
       callback(null, './uploads');

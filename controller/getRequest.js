@@ -1,14 +1,11 @@
 import Form from '../model/createApplication.js'
 
-// import max1 from './getID.js'
 import upload from './fileUpload.js'
-// export const getRequest = (request, response) => {
-//     response.status(200).json("hi ratnesh here get request called")
-// }
+
 
 // all application list
 export const getApplicant = (req, res) => {
-    Form.find().sort('-_id').select({id:1,Name:1,Mobile_Number:1,Aadhar_Number:1}).exec(function(err,docs){
+    Form.find().sort('-_id').select({id:1,Name:1,Mobile_Number:1,Aadhaar_Card_Number:1,status:1}).exec(function(err,docs){
         res.send(docs)
     })
 }
@@ -17,9 +14,12 @@ export const getApplicant = (req, res) => {
 export const userApplication = (req, res) =>{
     upload(req, res, function (err) {
         if (err) {
-          console.log(err)
+
+          console.log("error in uploading"+err)
           return res.end("Error uploading file.");
         }
+        console.log("no error received after upload")
+
         console.log(req.body)
         console.log(req.files)
         // storing path of files uploaded
@@ -29,6 +29,7 @@ export const userApplication = (req, res) =>{
         })
         // saving data into db
         try {
+          console.log("In trust save method")
             // console.log("in the post "+max1)
             const trust = new Form({
             //   id:max1 + 1,
@@ -43,14 +44,13 @@ export const userApplication = (req, res) =>{
               Native_Town: req.body.nativetown,
               Phone_Number: req.body.phonenumber,
               Mobile_Number: req.body.mobilenumber,
-              // Aadhar_Number:req.body.aadharnumber,
               Jain: req.body.jainism,
               Category:req.body.category,
               Creed: req.body.creed,
               Image: paths,
 
               Ration_Card_Number:req.body.rationcardnumber,
-              Rent_Reciept_Number:re.body.rentrecieptormaintenanceserialnumber,
+              Rent_Reciept_Number:req.body.rentrecieptormaintenanceserialnumber,
               Electricity_Consumer_Number:req.body.electricconsumernumber,
               Insurance_ID_Number:req.body.insuranceid,
               Salary_Certificate_ID:req.body.salarycertificateid,
@@ -60,10 +60,6 @@ export const userApplication = (req, res) =>{
               Referral_Letter_Serial_Number:req.body.referralletterserialnumber,
               Aadhaar_Card_Number:req.body.aadharnumber,
               School_College_Fees_Receipt_Number:req.body.schoolorcollegefeesserialnumber,
-
-
-
-
 
               Q1: req.body.pathshalachildren,
               Q2: req.body.religiouseducation,
@@ -123,6 +119,7 @@ export const userApplication = (req, res) =>{
               surveydetails: req.body.surveydetails,
               specialnotes: req.body.specialnotes       
             });  
+            console.log("data recieved " +trust)
             trust.save()  
             res.send("data uploaded successfully")
           } catch (error) {

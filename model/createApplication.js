@@ -30,7 +30,7 @@ const formschema = new mongoose.Schema({
     // required: [true, "please check your data entry, no State specified!"],
   },
   Pincode: {
-    type: Number,
+    type: String,
     // required: [true, "please check your data entry, no Pincode specified!"],
   },
   Native_Town: {
@@ -38,11 +38,11 @@ const formschema = new mongoose.Schema({
     // required: [true, "please check your data entry, no Native_Town specified!"],
   },
   Phone_Number: {
-    type: Number,
+    type: String,
     // required: [true, "please check your data entry, no Phone_Number specified!"],
   },
   Mobile_Number: {
-    type: Number,
+    type: String,
     // required: [true, "please check your data entry, no Mobile_Number specified!"],
   },
   Aadhar_Number:{
@@ -1164,6 +1164,7 @@ const formschema = new mongoose.Schema({
 //   }
   
 //   });
+
   autoIncrement.initialize(mongoose.connection);
   formschema.plugin(autoIncrement.plugin, 'Form')
 

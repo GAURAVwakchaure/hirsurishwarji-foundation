@@ -180,7 +180,6 @@ export default function FourthStep() {
                             {/* <Button variant='contained' color='primary' onClick={() => setStep(5)}>Next</Button> */}
                             <Button variant='contained' color='primary' onClick={handleexpenses}>Next</Button>
 
-                            {/* <Button variant='contained' color='primary' onClick={submitData}>submit</Button> */}
 
                         </div><br />
                     </div></Box>
