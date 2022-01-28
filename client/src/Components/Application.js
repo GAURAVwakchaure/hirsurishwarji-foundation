@@ -23,7 +23,7 @@ export default function Application() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/ApplicantList`)
+        axios.get(`https://hirsurishwarji-foundation.herokuapp.com/ApplicantList`)
             .then(response => {
                 setAPIData(response.data)
             })
