@@ -4,14 +4,14 @@ import upload from './fileUpload.js'
 
 
 // all application list
-export const getApplicant = (req, res) => {
+export const getApplicantList = (req, res) => {
     Form.find().sort('-_id').select({id:1,Name:1,Mobile_Number:1,Aadhaar_Card_Number:1,status:1}).exec(function(err,docs){
         res.send(docs)
     })
 }
 
 // application creating 
-export const userApplication = (req, res) =>{
+export const createApplication = (req, res) =>{
     upload(req, res, function (err) {
         if (err) {
 
