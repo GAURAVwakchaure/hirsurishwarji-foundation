@@ -112,7 +112,9 @@ body {
   /* min-height: 100vh; */
 }
 
-
+#totalincomevalue{
+  padding-right: 33rem;
+}
 
 .stepper{
   margin-left: 15.5rem; 

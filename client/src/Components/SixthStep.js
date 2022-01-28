@@ -29,6 +29,7 @@ export default function SixthStep() {
     }
     // function to calculate total income
     const totalIncome = () => {
+        // console.log("totalincome function called")
         let total = 0
         for (let i = 1; i <= noOfRows; i++) {
             console.log(i)
@@ -37,6 +38,7 @@ export default function SixthStep() {
         }
         console.log(total)
         setdependenttableData({ ...dependenttableData, ["totalincomedependent"]: total })
+        document.getElementById("totalincomevalue").innerHTML = "Total Income : "+total
     }
     console.log(dependenttableData)
 
@@ -65,6 +67,16 @@ export default function SixthStep() {
 
         }
     }
+
+    // const setIncome = (newVal,e) => {
+    //     console.log("income is :" + e.target.value)
+    //     console.log(newVal)
+    //     totalIncome()
+        // console.log(newVal)
+        // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })
+        // {totalIncome}
+
+    // }
     // console.log(userData)
     return (
         <div className="table1">
@@ -140,7 +152,11 @@ export default function SixthStep() {
                                                 /></td>
                                                 <td><input id='dtincome' type="number" style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "income"]}
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })}
+                                                    onChange = {(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })}
+                                                    onBlur = {totalIncome}
+                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value }),
+                                                
+                                                    // onChange={totalIncome}
                                                 /></td>
                                                 <td><input type="text" style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "religiouseducation"]}
@@ -178,6 +194,7 @@ export default function SixthStep() {
                                     })}
                                 </tbody>
                             </table>
+                            {/* onClick={totalIncome} */}
                             <table class="table table-hover table-bordered p-5 mx-0 my-0">
                                 <thead>
                                     <th scope="col"></th>
@@ -186,7 +203,9 @@ export default function SixthStep() {
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
-                                    <th scope="col" id='totin'>Total Income <input type="text" value={dependenttableData['totalincomedependent']} onClick={totalIncome} style={{ width: "17rem" }} placeholder='Click Here To View Total Income' /></th>
+                                    <th scope="col" id='totin'><span><p id = "totalincomevalue"></p></span>
+                                    {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
+                                    </th>
                                     
                                 </thead>
                                 <tbody>

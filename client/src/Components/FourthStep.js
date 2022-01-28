@@ -23,6 +23,7 @@ export default function FourthStep() {
 
         console.log(total)
         setUserData({ ...userData, "totalexpenses": "Total Expenses : "+total })
+        document.getElementById("totalexpenses").innerHTML = "total expenses are :"+total
     }
 
     const handleexpenses = () => {
@@ -140,8 +141,8 @@ export default function FourthStep() {
                             <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Groceries Expense (in Rupess)" className ="required" id="groceries" value={userData['groceriesexpense']} onChange={(e) => setUserData({ ...userData, "groceriesexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='egroceries' className='text-danger' >  </span>
                         </div>
                         <div>
-                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='other' type="number" label="Other Expense (in Rupess) " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            <TextField inputProps={{ readOnly: true }} label="" value={userData['totalexpenses']} onClick={totalexpenses} margin='normal' variant='standard' color="primary" placeholder='Click Here To View Total Expense' />
+                            <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='other' type="number" onBlur = {totalexpenses} label="Other Expense (in Rupess) " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField inputProps={{ readOnly: true }} label="" id = "totalexpenses" value={userData['totalexpenses']}  margin='normal' variant='standard' color="primary" placeholder='Click Here To View Total Expense' />
                         </div>
 
                         <div>
