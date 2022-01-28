@@ -28,7 +28,7 @@ const StepContext = () => {
 
     const showData = () => {
 
-        axios.get('http://localhost:8000/')
+        axios.get('https://hirsurishwarji-foundation.herokuapp.com/')
             .then((response) => {
                 setFinalData(response.data);
             })
@@ -205,7 +205,7 @@ const StepContext = () => {
         // console.log(formData.get('dependenttable').valueOf('dependent1name'))
 
 
-        axios.post("http://localhost:8000/createApplication", formData)
+        axios.post("https://hirsurishwarji-foundation.herokuapp.com/createApplication", formData)
             .then(res => {
                 console.log(res)
                 // window.alert("response after submitting data"+res.data)
