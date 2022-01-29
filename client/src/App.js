@@ -48,9 +48,9 @@ function App() {
                     <NavDropdown.Item >Home</NavDropdown.Item></LinkContainer>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/form">Apply</a>
-          {/* <LinkContainer to="/form">
-                    <NavDropdown.Item >Apply</NavDropdown.Item></LinkContainer> */}
+          {/* <a class="nav-link" href="/form">Apply</a> */}
+          <LinkContainer to="/form">
+                    <NavDropdown.Item >Apply</NavDropdown.Item></LinkContainer>
         </li>
         <li class="nav-item">
           {/* <a class="nav-link" href="/application">Applicant Records</a> */}
@@ -79,7 +79,7 @@ function App() {
 
           <Routes>
             <Route exact path='/' element={<Home />}></Route>
-            <Route  path='/form' element={<Form />}></Route>
+            <Route exact path='/form' element={<Form />}></Route>
             <Route exact path='/application' element={<Application />}></Route>
           </Routes>          
         </header>
