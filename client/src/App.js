@@ -79,7 +79,7 @@ function App() {
 
           <Routes>
             <Route exact path='/' element={<Home />}></Route>
-            <Route exact path='/form' element={<Form />}></Route>
+            <Route  path='/form' element={<Form />}></Route>
             <Route exact path='/application' element={<Application />}></Route>
           </Routes>          
         </header>
