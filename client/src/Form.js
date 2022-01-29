@@ -58,7 +58,7 @@ export default function Form() {
             <span class="text-vlight">Use the below form to create a new application</span>
             </div>      
       <div class="stepper">
-        <Stepper style = {{width:"80%"}} activeStep={currentStep - 1} orientation="horizontal">
+        <Stepper style = {{width:"100%"}} activeStep={currentStep - 1} orientation="horizontal">
           <Step>
             <StepLabel></StepLabel>
           </Step>
