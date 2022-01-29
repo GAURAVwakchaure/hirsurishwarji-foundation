@@ -77,9 +77,9 @@ export default function Application() {
     const columns = [
         { dataField: '_id', text: 'ID', sort: true ,filter: textFilter()  },
         { dataField: 'Name', text: 'Name', sort: true,filter: textFilter() },
-        { dataField: 'Mobile_Number', text: 'Mobilenumber', sort: true,filter: textFilter() },
-        { dataField: 'Aadhaar_Card_Number', text: 'Aadhaar Number', sort: true,filter: textFilter() },
-        { dataField: 'status', text: 'Status' },
+        { dataField: 'Mobile_Number', text: 'Mobile No.  ', sort: true,filter: textFilter() },
+        { dataField: 'Aadhaar_Card_Number', text: 'Aadhaar No.  ', sort: true,filter: textFilter() },
+        { dataField: 'status', text: 'Status'},
         {
             dataField: 'Grant', text: 'Grant', isDummyField: true,
             formatter: grantButton
@@ -128,11 +128,16 @@ export default function Application() {
                     </ToolkitProvider></> */}
 
                     <div>
-                        <h6>Applicant Details</h6>
+                        <h2 className='fs-title'>Applicant Details</h2><br></br>
                     </div>
-
-
-
+                    {/* <div>
+                    <form class="d-flex">
+                       <input class="ml-auto" type="search" placeholder="Search" aria-label="Search" />
+                       <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    </div>
+                    <br></br><br></br> */}
+                    
                     <BootstrapTable
                         bootstrap4
                         striped
