@@ -12,7 +12,7 @@ import Application from './Components/Application';
 import Form from './Form';
 import { LinkContainer } from 'react-router-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import View from './Components/View';
+// import View from './Components/View';
 
 function App() {
 
