@@ -12,7 +12,7 @@ import Application from './Components/Application';
 import Form from './Form';
 import { LinkContainer } from 'react-router-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-// import View from './Components/View';
+import View from './Components/View';
 
 function App() {
 
@@ -82,7 +82,7 @@ function App() {
             <Route exact path='/' element={<Home />}></Route>
             <Route exact path='/form' element={<Form />}></Route>
             <Route exact path='/application' element={<Application />}></Route>
-            {/* <Route exact path = '/:id' element = {<View/>}></Route> */}
+            <Route exact path = '/:id' element = {<View/>}></Route>
           </Routes>          
         </header>
       </div>

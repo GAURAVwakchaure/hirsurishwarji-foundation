@@ -13,6 +13,8 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 // import filterFactory from 'react-bootstrap-table2-filter';
 import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
+// import { Link } from 'react-router-dom';
+// import { LinkContainer } from 'react-router-bootstrap';
 
 
 
@@ -68,8 +70,10 @@ export default function Application() {
     }
 
     function viewButton(cell, row, rowIndex, formatExtraData) {
+      
         return <div>
-            <button type="button" class="btn btn-outline-info btn-sm">View</button>
+            
+            <button type="button" class="btn btn-outline-info btn-sm" onClick={()=> window.open(`http://localhost:3000/${row._id}`, "_blank")}>View</button>
         </div>
     }
     // filter: textFilter() 
