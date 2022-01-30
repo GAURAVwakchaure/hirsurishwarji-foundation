@@ -12,6 +12,7 @@ import Application from './Components/Application';
 import Form from './Form';
 import { LinkContainer } from 'react-router-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import View from './Components/View';
 
 function App() {
 
@@ -45,22 +46,22 @@ function App() {
         <li class="nav-item">
           {/* <a class="nav-link active" aria-current="page" href="/">Home</a> */}
           <LinkContainer to="/">
-                    <NavDropdown.Item >Home</NavDropdown.Item></LinkContainer>
+                    <NavDropdown.Item ><h6 id = "hometab">Home</h6></NavDropdown.Item></LinkContainer>
         </li>
         <li class="nav-item">
           {/* <a class="nav-link" href="/form">Apply</a> */}
           <LinkContainer to="/form">
-                    <NavDropdown.Item >Apply</NavDropdown.Item></LinkContainer>
+                    <NavDropdown.Item ><h6 id = "applytab">Apply</h6></NavDropdown.Item></LinkContainer>
         </li>
         <li class="nav-item">
           {/* <a class="nav-link" href="/application">Applicant Records</a> */}
           <LinkContainer to="/application">
-                    <NavDropdown.Item >Applicant List</NavDropdown.Item></LinkContainer>
+                    <NavDropdown.Item ><h6 id = "applicanttabl">Applicant List</h6></NavDropdown.Item></LinkContainer>
         </li>
         <li class="nav-item">
           {/* <a class="nav-link" href="#">Contact Us</a> */}
           <LinkContainer to="#">
-                    <NavDropdown.Item >Contact Us</NavDropdown.Item></LinkContainer>
+                    <NavDropdown.Item ><h6 id = "contacttab">Contact Us</h6></NavDropdown.Item></LinkContainer>
         </li>
         {/* <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
@@ -81,6 +82,7 @@ function App() {
             <Route exact path='/' element={<Home />}></Route>
             <Route exact path='/form' element={<Form />}></Route>
             <Route exact path='/application' element={<Application />}></Route>
+            <Route exact path = '/:id' element = {<View/>}></Route>
           </Routes>          
         </header>
       </div>
