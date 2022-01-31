@@ -8,7 +8,7 @@ const route = express.Router()
 // application
 route.get('/ApplicantList',getApplicantList)
 
-route.get('/:id',getUserById)
+route.get('/user/:id',getUserById)
 
 route.post('/createApplication',createApplication)
 

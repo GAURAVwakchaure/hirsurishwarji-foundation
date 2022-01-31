@@ -8,7 +8,7 @@ export default function View() {
     const [userData, setuserData] = useState()
 
     useEffect(() => {
-      axios.get(`https://hirsurishwarji-foundation.herokuapp.com/${id}`)
+      axios.get(`https://hirsurishwarji-foundation.herokuapp.com/user/${id}`)
           .then(response => {
               setuserData(response.data)
           })
