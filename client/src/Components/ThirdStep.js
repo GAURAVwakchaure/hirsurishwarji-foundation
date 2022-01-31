@@ -45,11 +45,7 @@ export default function ThirdStep() {
                 noValidate
                 autoComplete="off"
             >
-                <Card style={{ width: '56ch' }} className='mx-auto'>
-                    <span>
-
-                    </span><br></br>
-                    <h6 class="fs-title" > Miscellaneous Questions</h6><br></br>
+                <Card style={{ width: '60ch' }} className='mx-auto'>
                     <Box
                         component="form"
                         sx={{
@@ -59,7 +55,8 @@ export default function ThirdStep() {
                         autoComplete="off"
                     >
 
-                        <div>
+                        <div className='boxborder'><br></br>
+                        <h6 class="fs-title" > Miscellaneous Questions</h6><br></br>
                             <div>
                                 <table>
                                     <tr>
@@ -219,7 +216,7 @@ export default function ThirdStep() {
                                 {/* <Button variant='contained' color='primary' onClick={handleRadio}>validate</Button><span> </span> */}
 
                             </div><br />
-                        </div>
+                        </div><br></br>
 
                         
                         </Box>

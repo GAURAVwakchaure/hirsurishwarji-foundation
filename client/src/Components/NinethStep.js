@@ -43,10 +43,6 @@ export default function NinethStep() {
         <div className="table1">
 
             <Card style={{ width: '100ch' }} className='mx-auto'>
-                <span>
-
-                </span><br></br>
-                <h6 class="fs-title">Earning Member Details</h6><br></br>
                 <Box
                     component="form"
                     sx={{
@@ -56,7 +52,8 @@ export default function NinethStep() {
                     autoComplete="off"
                 >
 
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Earning Member Details</h6><br></br>
                         <div>
                             <div className="app container mx-10 my-0">
                                 <table className="table table-hover table-bordered p-5">
@@ -98,7 +95,7 @@ export default function NinethStep() {
                                     <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                                 </div>
 
-                                <div className='float-right'>
+                                <div className='float-left'>
                                     <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
                                 </div>
 
@@ -113,7 +110,7 @@ export default function NinethStep() {
 
                             </div><br />
                         </div>                        
-                    </div></Box>
+                    </div><br></br></Box>
             </Card>            
         </div>
     )

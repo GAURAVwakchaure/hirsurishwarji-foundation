@@ -129,18 +129,16 @@ export default function EighthStep() {
     return (
         <div>
             <Card style={{ width: '56ch' }} className='mx-auto'>
-                <span>
-                </span><br></br>
-                <h6 class="fs-title">Medical Grant</h6>
                 <Box
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        '& .MuiTextField-root': { m: 1, width: '44ch' },
                     }}
                     noValidate
                     autoComplete="off"
                 >
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Medical Grant</h6>
                         <div>
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
@@ -209,7 +207,7 @@ export default function EighthStep() {
                             <TextField label="Amount Needed" id='mgamountneeded' className ="required" type="number" value={userData['mgamountneeded']} onChange={(e) => setUserData({ ...userData, "mgamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgamountneeded' className='text-danger' >  </span>
                             <TextField label="Amount Contributed(self)" type="number" id='mgamtcontri' value={userData['mgamtcont']} onChange={(e) => setUserData({ ...userData, "mgamtcont": e.target.value })} margin='normal' variant='standard' color="primary" />
                             <TextField label="Any existing medical aid" id='mgexistingmedaid' value={userData['mgmedicalaid']} onChange={(e) => setUserData({ ...userData, "mgmedicalaid": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            <TextField label="Medical Amount" className ="required" type="number" id='mgmedicalamount' value={userData['mgmedamt']} onChange={(e) => setUserData({ ...userData, "mgmedamt": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgmedicalamount' className='text-danger' >  </span>
+                            <TextField label="Medical Insurance Amount" className ="required" type="number" id='mgmedicalamount' value={userData['mgmedamt']} onChange={(e) => setUserData({ ...userData, "mgmedamt": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgmedicalamount' className='text-danger' >  </span>
                             <TextField label="Medical Insurance Details" id='mgmedinsurance' value={userData['mginsurancedetails']} onChange={(e) => setUserData({ ...userData, "mginsurancedetails": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div><br/>
                             
@@ -220,7 +218,7 @@ export default function EighthStep() {
                         <Button variant='contained' color='primary' onClick={handlemedicalgrantNext}>Next</Button>
                         {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button> */}
                         </div><br />
-                    </div></Box>
+                    </div><br></br></Box>
             </Card>
             {/* 
             <Box

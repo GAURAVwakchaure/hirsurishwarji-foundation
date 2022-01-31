@@ -84,18 +84,16 @@ export default function SeventhStep() {
     return (
         <div>
             <Card style={{ width: '56ch' }} className='mx-auto'>
-                <span>
-                </span><br></br>
-                <h6 class="fs-title">Education Grant</h6>
                 <Box
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        '& .MuiTextField-root': { m: 1, width: '44ch' },
                     }}
                     noValidate
                     autoComplete="off"
                 >
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Education Grant</h6>
                         <div>
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
@@ -169,7 +167,7 @@ export default function SeventhStep() {
                             {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button> */}
                             <Button variant='contained' color='primary' onClick={handleeducationgrantNext}>Next</Button>
                         </div><br />
-                    </div></Box>
+                    </div><br></br></Box>
             </Card>
 
 

@@ -103,11 +103,8 @@ export default function SecondStep() {
                 noValidate
                 autoComplete="off"
             >
-                <Card style={{ width: '110ch' }} className='mx-auto'>
-                    <span>
-
-                    </span><br></br>
-                    <h6 class="fs-title"> Upload Documents</h6><br></br>
+                <Card style={{ width: '85ch' }} className='mx-auto'>
+                    
                     <Box
                         component="form"
                         sx={{
@@ -117,7 +114,8 @@ export default function SecondStep() {
                         autoComplete="off"
                     >
 
-                        <div className='secondpad'>
+                        <div className='secondpad boxborder'><br></br>
+                        <h6 class="fs-title"> Upload Documents</h6><br></br>
                         <div>
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>

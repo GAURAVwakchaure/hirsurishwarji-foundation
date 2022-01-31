@@ -149,18 +149,17 @@ export default function FirstStep() {
         <main>
             <div>
             <Card style={{ width: '56ch' }} className='mx-auto'>
-                <span>
-                </span><br></br>
-                <h6 class="fs-title">Personal Details</h6><br></br>
+                
                 <Box
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        '& .MuiTextField-root': { m: 1, width: '45ch' },
                     }}
                     noValidate
                     autoComplete="off"
                 >
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Personal Details</h6><br></br>
                         <div>
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
@@ -184,8 +183,8 @@ export default function FirstStep() {
                             <TextField id="nativetown" label="Native Town " value={userData['nativetown']} onChange={(e) => setUserData({ ...userData, "nativetown": e.target.value })} margin='normal' variant='standard' color="primary"  placeholder="Please Enter Native Town" />
                         </div>
                         <div>
+                        <TextField id="mobilenumber" className ="required" type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" /><br></br><span id='emobilenumber' className='text-danger'>  </span>
                             <TextField id="phonenumber" type="number" label="Phone Number " value={userData['phonenumber']} onChange={(e) => setUserData({ ...userData, "phonenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter Phone Number" /><span>  </span>
-                            <TextField id="mobilenumber" className ="required" type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" /><br></br><span id='emobilenumber' className='text-danger'>  </span>
                             {/* <TextField id="aadharnumber" className ="required" type="number" label="Aadhar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 12 Digit Aadhar Number" /> */}
                         </div>
                         <div>
@@ -237,7 +236,7 @@ export default function FirstStep() {
                         <Button variant='contained' color='primary' onClick={handleNext}>Next</Button>
                         {/* <Button variant='contained' color='primary' onClick={() => setStep(2)}>Next</Button> */}
                         </div><br />
-                    </div></Box>
+                    </div> <br></br></Box>
             </Card>
             
         </div>

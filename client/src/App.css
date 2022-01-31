@@ -74,7 +74,8 @@
 
 #totin{
   text-align: center;
-  padding-left: 4rem;
+  /* padding-left: 9rem; */
+  padding: auto;
 }
 
 .fs-title {
@@ -244,14 +245,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   margin-left: 40px;
-  text-align: left;
-  opacity: 0.5;  
+  text-align: center;
+  opacity: 0.7;  
   text-decoration-color: aliceblue;
 }
 #jainismselect{
   
   width: 620px;
   margin-left:40px;
+}
+
+#jainismfourth{
+  opacity: 0.7; 
 }
 
 #misclabel{
@@ -348,15 +353,15 @@ body {
 
 #category{
   text-align: left;
-  margin-left:25px;
-  opacity: 0.9;  
+  margin-left:40px;
+  opacity: 0.7;  
   font-family: Arial, Helvetica, sans-serif;
 
 }
 
 #categoryselect{
-  width: 28rem;
-  margin-left:25px
+  width: 25rem;
+  margin-left:39px
 }
 
 .jainradioq1{
@@ -432,5 +437,26 @@ body {
 }
 
 .secondpad{
-  padding: 10px 120px;
+  padding: 10px 40px;
 }
+
+.thirddpad{
+  padding-left: 60px;
+}
+
+.boxborder{
+  border-style: inset;
+  border-radius: 20px;
+}
+
+.rentbox{
+  border-style: ridge;
+  padding-bottom: 1.4rem;
+  margin: 0 10px;
+  border-radius: 20px;
+}
+
+.rent{
+  padding-top: 30px;
+}
+

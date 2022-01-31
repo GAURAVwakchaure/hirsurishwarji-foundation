@@ -26,10 +26,6 @@ export default function EleventhStep() {
         <div className="table1">
 
             <Card style={{ width: '120ch' }} className='mx-auto'>
-                <span>
-
-                </span><br></br>
-                <h6 class="fs-title">Skill Details</h6><br></br>
                 <Box
                     component="form"
                     sx={{
@@ -39,7 +35,8 @@ export default function EleventhStep() {
                     autoComplete="off"
                 >
 
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Skill Details</h6><br></br>
                         <div>
                             <div className="app container mx-8 my-0">
                                 <table class="table table-hover table-bordered p-5">
@@ -90,7 +87,7 @@ export default function EleventhStep() {
                                 <div className='float-left'>
                                     <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                                 </div>
-                                <div className='float-right'>
+                                <div className='float-left'>
                                     <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
                                 </div>
 
@@ -109,7 +106,7 @@ export default function EleventhStep() {
 
                         <div>
                         </div><br />
-                    </div></Box>
+                    </div><br></br></Box>
             </Card>
         </div>
     )

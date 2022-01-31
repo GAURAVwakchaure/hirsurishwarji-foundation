@@ -61,9 +61,6 @@ export default function TenthStep() {
     return (
         <div>
             <Card style={{ width: '56ch' }} className='mx-auto'>
-                <span>
-                </span><br></br>
-                <h6 class="fs-title">Administrative Details</h6><br></br>
                 <Box
                     component="form"
                     sx={{
@@ -72,7 +69,8 @@ export default function TenthStep() {
                     noValidate
                     autoComplete="off"
                 >
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Administrative Details</h6><br></br>
                         <div>
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
@@ -92,7 +90,7 @@ export default function TenthStep() {
                             {/* <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button> */}
                             <Button variant='contained' color='primary' onClick={handleAdmin}>Next</Button>
                         </div><br />
-                    </div></Box>
+                    </div><br></br></Box>
             </Card>
         </div>
     )

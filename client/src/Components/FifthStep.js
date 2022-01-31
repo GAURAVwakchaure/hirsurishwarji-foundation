@@ -90,19 +90,17 @@ export default function FifthStep() {
         <div>
 
             <Card style={{ width: '56ch' }} className='mx-auto'>
-                <span>
-
-                </span><br></br>
-                <h6 class="fs-title">Home Furniture Details</h6><br></br>
+                
                 <Box
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        '& .MuiTextField-root': { m: 1, width: '38ch' },
                     }}
                     noValidate
                     autoComplete="off"
                 >
-                    <div>
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Home Furniture Details</h6><br></br>
                         <div>
                         <p class="right">*Enter 0 Wheraver Required</p>
                         </div>
@@ -136,7 +134,7 @@ export default function FifthStep() {
 
                            
                         </div><br />
-                    </div></Box>
+                    </div><br></br></Box>
             </Card>
             
         </div>

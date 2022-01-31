@@ -82,9 +82,6 @@ export default function SixthStep() {
         <div className="table1">
 
             <Card style={{ width: '130ch' }} className='mx-auto'>
-                <span>
-
-                </span><br></br>
                 <Box
                     component="form"
                     sx={{
@@ -94,7 +91,7 @@ export default function SixthStep() {
                     autoComplete="off"
                 >
 
-                    <div>
+                    <div className='boxborder'><br></br>
                         <h6 class="fs-title">Dependent Details</h6>
                         <div>
                         <p class="right">*Enter 'NA' or '0' Wheraver Required</p>
@@ -112,15 +109,22 @@ export default function SixthStep() {
                                         <th scope="col"><p>Profession</p></th>
                                         <th scope="col" className='requireds'><p>Income</p></th>
                                         <th scope="col">Religious Education</th>
-                                        <th scope="col" colSpan={4}><p>Religious Activities</p></th>
+                                        <th scope="col" colSpan={4}>
+                                            <p>Religious Activities</p>
+                                            {/* <th scope="col" colSpan={7}></th> */}
+                                        <th scope="col" >Kanmool</th>
+                                        <th scope="col" >Navkarshi</th>
+                                        <th scope="col" >Pooja</th>
+                                        <th scope="col" >Night Dinner</th>
+                                        </th>
                                     </tr>
-                                    <tr>
+                                    {/* <tr>
                                         <th scope="col" colSpan={7}></th>
                                         <th scope="col" >Kanmool</th>
                                         <th scope="col" >Navkarshi</th>
                                         <th scope="col" >Pooja</th>
                                         <th scope="col" >Night Dinner</th>
-                                    </tr>
+                                    </tr> */}
                                 </thead>
                                 <tbody>
                                     {[...Array(noOfRows)].map((elementInArray, index) => {
@@ -173,14 +177,14 @@ export default function SixthStep() {
 
 
                                                 /></td>
-                                                <td><input type="text" style={{ width: "7rem", border: "0" }}
+                                                <td><input type="text" style={{ width: "5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "kanmool"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: e.target.value })}
 
 
                                                 /></td>
-                                                <td><input type="text" style={{ width: "7rem", border: "0" }}
+                                                <td><input type="text" style={{ width: "5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "nakarshi"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: e.target.value })}
@@ -188,11 +192,11 @@ export default function SixthStep() {
 
 
                                                 /></td>
-                                                <td><input type="text" style={{ width: "7rem", border: "0" }}
+                                                <td><input type="text" style={{ width: "5rem", border: "0" }}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: e.target.value })}
                                                 /></td>
-                                                <td><input type="text" style={{ width: "7rem", border: "0" }}
+                                                <td><input type="text" style={{ width: "5rem", border: "0" }}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: e.target.value })}
                                                 /></td>
@@ -223,7 +227,7 @@ export default function SixthStep() {
                             <div className='float-left'>
                                 <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                             </div>
-                            <div className='float-right'>
+                            <div className='float-left'>
 
                                 {/* <button type="button" class="btn btn-outline-danger " onClick={() => setNoOfRows(noOfRows - 1)}>Delete</button><span></span> */}
                                 <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
@@ -241,7 +245,7 @@ export default function SixthStep() {
 
 
                         </div><br />
-                    </div>
+                    </div><br></br>
                 </Box>
             </Card>
         </div>
