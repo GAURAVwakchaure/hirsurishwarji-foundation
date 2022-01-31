@@ -133,6 +133,17 @@ export default function SecondStep() {
 
                             <div className='row'>
                                 <div className='col-md-6'>
+                                <h6 id="fileLabel" className='requireds'><p>Aadhar Card </p></h6>
+                                    <input required type="file" id="file10" className="form-control form-control-sm auto " name="aadharcard" onChange={(e) => setUserData({ ...userData, "aadharcard": e.target.files[0] })} /> <span id='efile10' className='text-danger' >  </span>
+                                </div>
+                                <div className='col-md-6'>
+                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" /><br></br> <span id='eaadharnumber' className='text-danger' >  </span>
+                                </div>
+
+                            </div><br></br>
+
+                            <div className='row'>
+                                <div className='col-md-6'>
                                     <h6 id="fileLabel">Rent Reciept / Maintenance </h6>
                                     <input required type="file" id="file2" className="form-control form-control-sm auto " name="rentreciept" onChange={(e) => setUserData({ ...userData, "rentreciept": e.target.files[0] })} />
                                 </div>
@@ -210,16 +221,7 @@ export default function SecondStep() {
                                 </div>
 
                             </div><br></br>
-                            <div className='row'>
-                                <div className='col-md-6'>
-                                <h6 id="fileLabel" className='requireds'><p>Aadhar Card </p></h6>
-                                    <input required type="file" id="file10" className="form-control form-control-sm auto " name="aadharcard" onChange={(e) => setUserData({ ...userData, "aadharcard": e.target.files[0] })} /> <span id='efile10' className='text-danger' >  </span>
-                                </div>
-                                <div className='col-md-6'>
-                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" /><br></br> <span id='eaadharnumber' className='text-danger' >  </span>
-                                </div>
-
-                            </div><br></br>
+                            
                             <div className='row'>
                                 <div className="col-md-6">
                                     <h6 id="fileLabel">School/College Fees</h6>
