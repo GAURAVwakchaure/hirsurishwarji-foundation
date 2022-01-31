@@ -10,8 +10,6 @@ route.get('/ApplicantList',getApplicantList)
 
 route.get('/:id',getUserById)
 
-
-
 route.post('/createApplication',createApplication)
 
 export default route

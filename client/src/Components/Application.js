@@ -73,7 +73,7 @@ export default function Application() {
       
         return <div>
             
-            <button type="button" class="btn btn-outline-info btn-sm" onClick={()=> window.open(`https://hirsurishwarji-foundation.herokuapp.com/user/${row._id}`, "_blank")}>View</button>
+            <button type="button" class="btn btn-outline-info btn-sm" onClick={()=> window.open(`/${row._id}`, "_blank")}>View</button>
         </div>
     }
     // filter: textFilter() 
