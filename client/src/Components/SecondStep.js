@@ -111,130 +111,134 @@ export default function SecondStep() {
                     <Box
                         component="form"
                         sx={{
-                            '& .MuiTextField-root': { m: 1, width: '50ch' },
+                            '& .MuiTextField-root': { m: 1, width: '33ch' },
                         }}
                         noValidate
                         autoComplete="off"
                     >
 
-                        <div>
+                        <div className='secondpad'>
                         <div>
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
+                        
+                        <br></br>
                             <div className='row'>
-                                <div className="col-md-6">
-                                <h6 id="fileLabel" className='requireds'><p>Ration Card</p></h6>
-                                    <input required type="file" id="file1" className="form-control form-control-sm auto " name="rationcard" onChange={(e) => setUserData({ ...userData, "rationcard": e.target.files[0] })} /> <span id='efile1' className='text-danger' >  </span>
+                                <div className='col-md-6'>
+                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" /><br></br> <span id='eaadharnumber' className='text-danger' >  </span>
                                 </div>
-                                <div className="col-md-6">
-                                    <TextField id="rationcardnumber" type="number" className ="required" label="Ration Card Number" value={userData['rationcardnumber']} onChange={(e) => setUserData({ ...userData, "rationcardnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Ration Card Number" /><br></br> <span id='erationcardnumber' className='text-danger' >  </span>
-                                </div>
-                            </div><br></br>
-
-                            <div className='row'>
                                 <div className='col-md-6'>
                                 <h6 id="fileLabel" className='requireds'><p>Aadhar Card </p></h6>
                                     <input required type="file" id="file10" className="form-control form-control-sm auto " name="aadharcard" onChange={(e) => setUserData({ ...userData, "aadharcard": e.target.files[0] })} /> <span id='efile10' className='text-danger' >  </span>
                                 </div>
-                                <div className='col-md-6'>
-                                    <TextField id="aadharnumber" type="number" className ="required" label="Aadhaar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Aadhaar Number" /><br></br> <span id='eaadharnumber' className='text-danger' >  </span>
-                                </div>
 
-                            </div><br></br>
+                            </div><br></br> 
 
                             <div className='row'>
-                                <div className='col-md-6'>
-                                    <h6 id="fileLabel">Rent Reciept / Maintenance </h6>
-                                    <input required type="file" id="file2" className="form-control form-control-sm auto " name="rentreciept" onChange={(e) => setUserData({ ...userData, "rentreciept": e.target.files[0] })} />
+                                <div className="col-md-6">
+                                    <TextField id="rationcardnumber" type="number" className ="required" label="Ration Card Number" value={userData['rationcardnumber']} onChange={(e) => setUserData({ ...userData, "rationcardnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Ration Card Number" /><br></br> <span id='erationcardnumber' className='text-danger' >  </span>
                                 </div>
                                 <div className="col-md-6">
-                                    <TextField id="rentrecieptormaintenanceserialnumber" label="Rent / Maintenance Reciept Serial Number" value={userData['rentrecieptormaintenanceserialnumber']} onChange={(e) => setUserData({ ...userData, "rentrecieptormaintenanceserialnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Rent / Maintenance Reciept Serial Number" />
-                                </div>
+                                <h6 id="fileLabel" className='requireds'><p>Ration Card</p></h6>
+                                    <input required type="file" id="file1" className="form-control form-control-sm auto " name="rationcard" onChange={(e) => setUserData({ ...userData, "rationcard": e.target.files[0] })} /> <span id='efile1' className='text-danger' >  </span>
+                                </div> 
                             </div><br></br>
 
                             <div className="row">
                                 <div className='col-md-6'>
-                                    <h6 id="fileLabel"> Electricity Bill</h6>
-                                    <input required type="file" id="file3" className="form-control form-control-sm auto " name="electricitybill" onChange={(e) => setUserData({ ...userData, "electricitybill": e.target.files[0] })} />
+                                    <TextField id="bankaccountdetails" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" /><br></br> <span id='ebankaccountdetails' className='text-danger' >  </span>
                                 </div>
-                                <div className="col-md-6">
-                                    <TextField id="electricconsumernumber" label="Electricity Consumer Number" value={userData['electricconsumernumber']} onChange={(e) => setUserData({ ...userData, "electricconsumernumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Electricity Consumer Number" />
-                                </div>
-                            </div><br></br>
-                            <div className="row">
-                                <div className='col-md-6'>
-                                    <h6 id="fileLabel">Medical Insurance</h6>
-                                    <input required type="file" id="file4" className="form-control form-control-sm auto " name="medicalinsurance" onChange={(e) => setUserData({ ...userData, "medicalinsurance": e.target.files[0] })} />
-                                </div>
-                                <div className='col-md-6'>
-                                    <TextField id="insuranceid" label="Insurance ID Number" value={userData['insuranceid']} onChange={(e) => setUserData({ ...userData, "insuranceid": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Ration Card Number" />
-                                </div>
-                            </div><br></br>
-                            <div className='row'>
-                                <div className="col-md-6">
-                                    <h6 id="fileLabel">Salary Certificate</h6>
-                                    <input required type="file" id="file5" className="form-control form-control-sm auto " name="salarycertificate" onChange={(e) => setUserData({ ...userData, "salarycertificate": e.target.files[0] })} />
-                                </div>
-                                <div className='col-md-6'>
-                                    <TextField id="salarycertificateid" label="Salary Certificate ID" value={userData['salarycertificateid']} onChange={(e) => setUserData({ ...userData, "salarycertificateid": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Salary Certificate ID" />
-                                </div>
-                            </div><br></br>
-
-                            <div className="row">
                                 <div className = "col-md-6">
                                 <h6 id="fileLabel" className='requireds'><p>Bank Passbook</p></h6>
                                     <input required type="file" id="file6" className="form-control form-control-sm auto " name="bankpassbook" onChange={(e) => setUserData({ ...userData, "bankpassbook": e.target.files[0] })} /> <span id='efile6' className='text-danger' >  </span>
                                 </div>
-                                <div className='col-md-6'>
-                                    <TextField id="bankaccountdetails" className ="required" label="Bank Account Number" value={userData['bankaccountdetails']} onChange={(e) => setUserData({ ...userData, "bankaccountdetails": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="XXXXXXX1234 / ABCD0XXXXXX" /><br></br> <span id='ebankaccountdetails' className='text-danger' >  </span>
-                                </div>
+                            </div><br></br>
 
+                            <div className='row'>
+                                <div className="col-md-6">
+                                    <TextField id="rentrecieptormaintenanceserialnumber" label="Rent / Maintenance Reciept Number" value={userData['rentrecieptormaintenanceserialnumber']} onChange={(e) => setUserData({ ...userData, "rentrecieptormaintenanceserialnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Rent / Maintenance Reciept Serial Number" />
+                                </div>
+                                <div className='col-md-6'>
+                                    <h6 id="fileLabel">Rent Reciept / Maintenance </h6>
+                                    <input required type="file" id="file2" className="form-control form-control-sm auto " name="rentreciept" onChange={(e) => setUserData({ ...userData, "rentreciept": e.target.files[0] })} />
+                                </div>
+                            </div><br></br>
+
+                            <div className="row">
+                                 <div className="col-md-6">
+                                    <TextField id="electricconsumernumber" label="Electricity Consumer Number" value={userData['electricconsumernumber']} onChange={(e) => setUserData({ ...userData, "electricconsumernumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Electricity Consumer Number" />
+                                </div>
+                                <div className='col-md-6'>
+                                    <h6 id="fileLabel"> Electricity Bill</h6>
+                                    <input required type="file" id="file3" className="form-control form-control-sm auto " name="electricitybill" onChange={(e) => setUserData({ ...userData, "electricitybill": e.target.files[0] })} />
+                                </div>
+                            </div><br></br>
+                            <div className="row">
+                                <div className='col-md-6'>
+                                    <TextField id="insuranceid" label="Insurance ID Number" value={userData['insuranceid']} onChange={(e) => setUserData({ ...userData, "insuranceid": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Ration Card Number" />
+                                </div>
+                                <div className='col-md-6'>
+                                    <h6 id="fileLabel">Medical Insurance</h6>
+                                    <input required type="file" id="file4" className="form-control form-control-sm auto " name="medicalinsurance" onChange={(e) => setUserData({ ...userData, "medicalinsurance": e.target.files[0] })} />
+                                </div>
+                            </div><br></br>
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    <TextField id="salarycertificateid" label="Salary Certificate ID" value={userData['salarycertificateid']} onChange={(e) => setUserData({ ...userData, "salarycertificateid": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Salary Certificate ID" />
+                                </div>
+                                <div className="col-md-6">
+                                    <h6 id="fileLabel">Salary Certificate</h6>
+                                    <input required type="file" id="file5" className="form-control form-control-sm auto " name="salarycertificate" onChange={(e) => setUserData({ ...userData, "salarycertificate": e.target.files[0] })} />
+                                </div>
                             </div><br></br>
 
                             <div className="row">
                                 <div className='col-md-6'>
-                                    <h6 id="fileLabel">Jain Minority Certificate </h6>
-                                    <input required type="file" id="file7" className="form-control form-control-sm auto " name="jainminoritycertificate" onChange={(e) => setUserData({ ...userData, "jainminoritycertificate": e.target.files[0] })} />
+                                    <TextField id="jaincertificateid" label="Jain Miority Certificate ID" value={userData['jaincertificateid']} onChange={(e) => setUserData({ ...userData, "jaincertificateid": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Jain Miority Certificate ID" />
                                 </div>
                                 <div className='col-md-6'>
-                                    <TextField id="jaincertificateid" label="Jain Miority Certificate ID" value={userData['jaincertificateid']} onChange={(e) => setUserData({ ...userData, "jaincertificateid": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Jain Miority Certificate ID" />
+                                    <h6 id="fileLabel">Jain Minority Certificate </h6>
+                                    <input required type="file" id="file7" className="form-control form-control-sm auto " name="jainminoritycertificate" onChange={(e) => setUserData({ ...userData, "jainminoritycertificate": e.target.files[0] })} />
                                 </div>
                             </div><br></br>
 
                             <div className='row'>
+                                <div className='col-md-6'>
+                                    <TextField id="telephoneaccountnumber" label="Telephone Account Number" value={userData['telephoneaccountnumber']} onChange={(e) => setUserData({ ...userData, "telephoneaccountnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Telephone Account Number" />
+                                </div>
                                 <div className="col-md-6">
                                     <h6 id="fileLabel">Telephone Bill </h6>
                                     <input required type="file" id="file8" className="form-control form-control-sm auto " name="telephonebill" onChange={(e) => setUserData({ ...userData, "telephonebill": e.target.files[0] })} />
                                 </div>
-                                <div className='col-md-6'>
-                                    <TextField id="telephoneaccountnumber" label="Telephone Account Number" value={userData['telephoneaccountnumber']} onChange={(e) => setUserData({ ...userData, "telephoneaccountnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Telephone Account Number" />
-                                </div>
                             </div><br></br>
 
                             <div className='row'>
+                                <div className='col-md-6'>
+                                    <TextField id="referralletterserialnumber" label="Referral Letter Serial Number" value={userData['referralletterserialnumber']} onChange={(e) => setUserData({ ...userData, "referralletterserialnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Referral Letter Serial Number" />
+                                </div>
                                 <div className='col-md-6'>
                                     <h6 id="fileLabel">Referral Letter </h6>
                                     <input required type="file" id="file9" className="form-control form-control-sm auto " name="referralletter" onChange={(e) => setUserData({ ...userData, "referralletter": e.target.files[0] })} />
                                 </div>
-                                <div className='col-md-6'>
-                                    <TextField id="referralletterserialnumber" label="Referral Letter Serial Number" value={userData['referralletterserialnumber']} onChange={(e) => setUserData({ ...userData, "referralletterserialnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Referral Letter Serial Number" />
-                                </div>
-
                             </div><br></br>
                             
                             <div className='row'>
+                                <div className='col-md-6'>
+                                    <TextField id="schoolorcollegefeesserialnumber" label="School/College Fees Reciept Number" value={userData['schoolorcollegefeesserialnumber']} onChange={(e) => setUserData({ ...userData, "schoolorcollegefeesserialnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder=" School or College Fees Reciept Serial Number" />
+                                </div>
                                 <div className="col-md-6">
                                     <h6 id="fileLabel">School/College Fees</h6>
                                     <input required type="file" id="file11" className="form-control form-control-sm auto " name="schoolcollegefees" onChange={(e) => setUserData({ ...userData, "schoolcollegefees": e.target.files[0] })} />
                                 </div>
-                                <div className='col-md-6'>
-                                    <TextField id="schoolorcollegefeesserialnumber" label="School or College Fees Reciept Serial Reciept Number" value={userData['schoolorcollegefeesserialnumber']} onChange={(e) => setUserData({ ...userData, "schoolorcollegefeesserialnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder=" School or College Fees Reciept Serial Number" />
-                                </div>
-
                             </div><br></br>
-                            <div>
+                            <div className='row'>
+                                <div className='col-md-6'>
+                                    
+                                </div>
+                                <div className="col-md-6">
                                 <h6 id="fileLabel">Others</h6>
                                 <input required type="file" id="file12" className="form-control form-control-sm auto " name="others" onChange={(e) => setUserData({ ...userData, "others": e.target.files[0] })} />
+                                </div>
                             </div><br></br>
                             <div>
                                 <Button variant='contained' color='secondary' onClick={() => setStep(1)}>Back</Button><span> </span>

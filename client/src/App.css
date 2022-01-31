@@ -219,15 +219,16 @@ body {
  */
 
 #fileLabel{
-  text-align: left;
-  margin-left: 2rem;
+  text-align: auto;
+  /* margin-left: 2rem; */
   opacity: 0.9;
 }
 
 #file1, #file2, #file3, #file4, #file5, #file6, #file7, #file8, #file9, #file10, #file11, #file12{
-  width: 28rem;
-  margin-left: 30px;
-  margin-right: 0px;
+  width: 20rem;
+  /* margin-left: 9.9rem; */
+  margin: auto;
+  /* margin-right: 100px; */
 }
 
 #miscellaneous{
@@ -428,4 +429,8 @@ body {
 
 .viewpad{
   padding: 50px 70px;
+}
+
+.secondpad{
+  padding: 10px 120px;
 }

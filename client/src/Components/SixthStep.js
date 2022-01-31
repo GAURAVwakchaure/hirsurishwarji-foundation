@@ -107,6 +107,7 @@ export default function SixthStep() {
                                     <th scope="col"><p>Sr.no</p></th>
                                         <th scope="col" className='requireds'><p>Name</p></th>
                                         <th scope="col" className='requireds'><p>Age</p></th>
+                                        <th scope="col" className='requireds'><p>Aadhar No.</p></th>
                                         <th scope="col"><p>Education</p></th>
                                         <th scope="col"><p>Profession</p></th>
                                         <th scope="col" className='requireds'><p>Income</p></th>
@@ -137,6 +138,13 @@ export default function SixthStep() {
                                                     value={dependenttableData["dependent" + newVal + "age"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}
+                                                /></td>
+                                                <td ><input type="text" style={{ width: "7rem", border: "0" }}
+                                                    value={dependenttableData["dependent" + newVal + "aadhaar_number"]}
+
+                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "aadhaar_number"]: e.target.value })}
+
+
                                                 /></td>
                                                 <td ><input type="text" style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "education"]}
