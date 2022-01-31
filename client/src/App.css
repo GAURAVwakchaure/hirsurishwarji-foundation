@@ -168,6 +168,26 @@ body {
 
 }
 
+
+/* @media only screen and (max-width: 992px){
+    table, thead, tbody, th, td, tr{
+      display: block;
+  }
+   tbody thead tr{
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+   tbody tr { border: 1px solid var(--border);}
+
+   tbody td{
+      border: none;
+      position: relative;
+  }
+
+} */
+
 /* @media only screen and (max-width: 992px){
   thead{
     display: none;
@@ -379,17 +399,33 @@ body {
 }
 
 #hometab{
-  color: #cac8c8;
+  color: #eee;
+}
+#hometab:hover{
+  color: black;
 }
 
 #applytab{
-  color: #cac8c8;
+  color: #eee;
+}
+#applytab:hover{
+  color: black;
 }
 
 #applicanttabl{
-  color: #cac8c8;
+  color: #eee;
+}
+#applicanttabl:hover{
+  color: black;
 }
 
 #contacttab{
-  color: #cac8c8;
+  color: #eee;
+}
+#contacttab:hover{
+  color: black;
+}
+
+.viewpad{
+  padding: 50px 70px;
 }

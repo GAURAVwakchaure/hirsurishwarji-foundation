@@ -199,7 +199,7 @@ export default function FirstStep() {
 
                             <select class="form-select" aria-label="Default select example" id="categoryselect" value={userData['category']} onChange={(e) => setUserData({ ...userData, 'category': e.target.value })}>
                                 <option value="">----Select----</option>
-                                <option value="grocery">Grocery</option>
+                                <option value="grocery">Financial</option>
                                 <option value="medical">Medical</option>
                                 <option value="education">Education</option>
 

@@ -219,7 +219,10 @@ export default function ThirdStep() {
                                 {/* <Button variant='contained' color='primary' onClick={handleRadio}>validate</Button><span> </span> */}
 
                             </div><br />
-                        </div></Box>
+                        </div>
+
+                        
+                        </Box>
                 </Card>
             </Box>
         </div>
