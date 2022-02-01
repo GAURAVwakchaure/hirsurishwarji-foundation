@@ -1,6 +1,7 @@
 import React, { useContext, } from 'react'
 import { Card, } from 'react-bootstrap'
-import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio, RadioGroup } from '@material-ui/core';
+// import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio, RadioGroup } from '@material-ui/core';
+import { Button, TextField, Box } from '@material-ui/core';
 import { multiStepContext } from '../StepContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
@@ -10,20 +11,20 @@ export default function EighthStep() {
     // const {setStep, userData, setUserData } = useContext(multiStepContext);
     const { setStep, userData, setUserData, } = useContext(multiStepContext);
     console.log(userData)
-    const loanStatus = (e) => {
-        setUserData({ ...userData, 'mgloanstatus': e.target.value })
-        if (e.target.value === 'yes') {
-            document.getElementById('loanamount').style.visibility = 'visible'
-        } else {
-            document.getElementById('loanamount').style.visibility = 'hidden'
-        }
+    // const loanStatus = (e) => {
+    //     setUserData({ ...userData, 'mgloanstatus': e.target.value })
+    //     if (e.target.value === 'yes') {
+    //         document.getElementById('loanamount').style.visibility = 'visible'
+    //     } else {
+    //         document.getElementById('loanamount').style.visibility = 'hidden'
+    //     }
 
 
-    }
+    // }
     const handlemedicalgrantNext = () =>{
-        var mgeducation = document.getElementById('mgeducation').value
-        var mgexperience = document.getElementById('mgexperience').value
-        var mgloanamount = document.getElementById('mgloanamount').value
+        // var mgeducation = document.getElementById('mgeducation').value
+        // var mgexperience = document.getElementById('mgexperience').value
+        // var mgloanamount = document.getElementById('mgloanamount').value
         var mghospitalname = document.getElementById('mghospitalname').value
         var mghospitaladdress = document.getElementById('mghospitaladdress').value
         var mgdiseasedetails = document.getElementById('mgdiseasedetails').value
@@ -33,7 +34,7 @@ export default function EighthStep() {
         var mgexistingmedaid = document.getElementById('mgexistingmedaid').value
         var mgmedicalamount = document.getElementById('mgmedicalamount').value
         var mgmedinsurance = document.getElementById('mgmedinsurance').value
-        console.log(mgeducation, mgexperience, mgloanamount, mghospitalname, mghospitaladdress, mgdiseasedetails, mgaprxexpenses, mgamountneeded, mgamtcontri, mgexistingmedaid, mgmedicalamount, mgmedinsurance)
+        // console.log(mgeducation, mgexperience, mgloanamount, mghospitalname, mghospitaladdress, mgdiseasedetails, mgaprxexpenses, mgamountneeded, mgamtcontri, mgexistingmedaid, mgmedicalamount, mgmedinsurance)
 
         // else if (mgloanamount == null || mgloanamount === '' || mgloanamount.length < 1  || mgloanamount.length > 8) {
         //     alert("Enter MG Loan Amount !  Length of atleast of 2 digit and less than 8 digit")
@@ -165,16 +166,13 @@ export default function EighthStep() {
                                                 value={userData['mgloanstatus']}
                                                 onChange={loanStatus}
                                                 row={true}
-
                                                 style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
-
                                             >
                                                 <FormControlLabel value="yes" control={<Radio />} label="Yes" />
                                                 <FormControlLabel value="no" control={<Radio />} label="No" />
                                             </RadioGroup>
                                         </FormControl></div></td>
                                 </tr>
-
                             </table> */}
                             {/* <FormControl component="fieldset">
                                 <FormLabel component="legend"></FormLabel>
@@ -184,9 +182,7 @@ export default function EighthStep() {
                                     // value={value}
                                     onChange={loanStatus}
                                     row={true}
-
                                     style={{ display: 'flex', alignItems: 'left' }}
-
                                 >
                                     <FormControlLabel value="yes" control={<Radio />} label="Yes" />
                                     <FormControlLabel value="no" control={<Radio />} label="No" />
@@ -195,7 +191,6 @@ export default function EighthStep() {
                             {/* <div id='loanamount' style={{ visibility: 'hidden' }}>
                                 <TextField label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             </div><br/>
-
                         </div> */}
 
                         <div><br></br>
@@ -224,7 +219,6 @@ export default function EighthStep() {
             </Card>
             {/* 
             <Box
-
                 component="form"
                 sx={{
                     '& .MuiTextField-root': { m: 1, width: '50ch' },
@@ -233,13 +227,9 @@ export default function EighthStep() {
                 autoComplete="off"
             >
                 <div>
-
-
-
                     {/* <TextField label="Name " value={formData.get('name')} onChange={ (e) => formData.append('name', e.target.value)} margin='normal' variant='outlined' color="secondary" /><span>  </span> */}
 
             {/* <div>
-
                         <labe>Name:</labe><br />
                         <TextField label="Name " value={userData['name']} onChange={(e) => setUserData({ ...userData, "name": e.target.value })} margin='normal' variant='outlined' color="secondary" /><span>  </span>
                     </div>
