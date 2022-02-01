@@ -305,12 +305,14 @@ body {
   background: #b4b4b4;
 }
 #edgl1{
+  color: #585858;
   text-align: left;
   margin-left:40px;
   font-size: 1.3rem;
 }
 
 #dtdetail{
+  color: #585858;
   text-align: left;
   margin-left:40px;
   font-size: 1.1rem;
@@ -482,4 +484,16 @@ body {
 
 .adpad{
   padding-right: 10px;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+.tablehead{
+  font-size: 1rem;
+}
+
+.input{
+  font-size: 1rem;
 }
