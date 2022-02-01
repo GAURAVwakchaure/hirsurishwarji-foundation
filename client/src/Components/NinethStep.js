@@ -80,7 +80,7 @@ export default function NinethStep() {
 
                                                         onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "work"]: e.target.value })}
                                                     /></td>
-                                                    <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                    <td ><input type="number" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "phonenumber"]}
 
                                                         onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "phonenumber"]: e.target.value })}
@@ -91,7 +91,7 @@ export default function NinethStep() {
                                     </tbody>
                                 </table>
 
-                                <div className='float-left'>
+                                <div className='float-left adpad'>
                                     <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                                 </div>
 

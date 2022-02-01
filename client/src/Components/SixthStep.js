@@ -1,16 +1,36 @@
 import React, { useContext, useState } from 'react'
 import { Card, } from 'react-bootstrap'
-import { Box, Button } from '@material-ui/core';
-import { multiStepContext } from '../StepContext';
+// import { Box, Button } from '@material-ui/core';
+// import { multiStepContext } from '../StepContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '..'
+import InputAdornment from '@material-ui/core/InputAdornment'
+// import React, { useContext, } from 'react'
+// import { Card, } from 'react-bootstrap'
+import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio, RadioGroup } from '@material-ui/core';
+import { multiStepContext } from '../StepContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css'
 
 export default function SixthStep() {
 
-    const { setStep, userData, dependenttableData, setdependenttableData } = useContext(multiStepContext);
+    const { setStep, userData, dependenttableData, setdependenttableData, setUserData } = useContext(multiStepContext);
 
     //use of hook for couting
     const [noOfRows, setNoOfRows] = useState(1);
+
+    // const { setStep, userData, setUserData, } = useContext(multiStepContext);
+    console.log(userData)
+    const loanStatus = (e) => {
+        setUserData({ ...userData, 'mgloanstatus': e.target.value })
+        if (e.target.value === 'yes') {
+            document.getElementById('loanamount').style.visibility = 'visible'
+        } else {
+            document.getElementById('loanamount').style.visibility = 'hidden'
+        }
+
+
+    }
 
     const deleteRow = () => {
         // console.log(noOfRows)
@@ -38,7 +58,7 @@ export default function SixthStep() {
         }
         console.log(total)
         setdependenttableData({ ...dependenttableData, ["totalincomedependent"]: total })
-        document.getElementById("totalincomevalue").innerHTML = "Total Income : "+total
+        document.getElementById("totalincomevalue").innerHTML = "Total Income : Rs. "+total
     }
     console.log(dependenttableData)
 
@@ -85,7 +105,7 @@ export default function SixthStep() {
                 <Box
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        '& .MuiTextField-root': { m: 1, width: '35ch' },
                     }}
                     noValidate
                     autoComplete="off"
@@ -143,7 +163,7 @@ export default function SixthStep() {
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}
                                                 /></td>
-                                                <td ><input type="text" style={{ width: "7rem", border: "0" }}
+                                                <td ><input type="number" style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "aadhaar_number"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "aadhaar_number"]: e.target.value })}
@@ -206,25 +226,8 @@ export default function SixthStep() {
                                     })}
                                 </tbody>
                             </table>
-                            {/* onClick={totalIncome} */}
-                            <table class="table table-hover table-bordered p-5 mx-0 my-0">
-                                <thead>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col" id='totin'><span><p id = "totalincomevalue"></p></span>
-                                    {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
-                                    </th>
-                                    
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table><br />
-
-                            <div className='float-left'>
+                            <br></br> 
+                            <div className='float-left adpad'>
                                 <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                             </div>
                             <div className='float-left'>
@@ -232,8 +235,86 @@ export default function SixthStep() {
                                 {/* <button type="button" class="btn btn-outline-danger " onClick={() => setNoOfRows(noOfRows - 1)}>Delete</button><span></span> */}
                                 <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
                             </div>
+                            {/* onClick={totalIncome} */}
+                            {/* <table class="table table-hover table-bordered p-5 mx-0 my-0">
+                                <thead>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col" id='totin'><span><p id = "totalincomevalue"></p></span> */}
+                                    {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
+                                    {/* </th>
+                                    
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table><br /> */}
+
+                            <div id='totin'>
+                            <span><p id = "totalincomevalue">Total Income : Rs.</p></span>
+                            </div> 
 
                         </div><br />
+                        <div className='drentbox'><br></br>
+                        <div><h6 id="dtdetail" >1. Unemployed Person : </h6></div>
+                        <div>
+                            <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                        </div>
+                        <div>
+                            <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
+                        </div><br />
+                        {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
+                        <div>
+                        <table>
+                                <tr>
+                                    <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan?</h6></td>
+                                    <td>
+                                        <div className='jainradio'> <FormControl component="fieldset">
+                                            <FormLabel component="legend"></FormLabel>
+                                            <RadioGroup
+                                                aria-label="gender"
+                                                name="controlled-radio-buttons-group"
+                                                defaultValue="no"
+                                                value={userData['mgloanstatus']}
+                                                onChange={loanStatus}
+                                                row={true}
+
+                                                style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
+
+                                            >
+                                                <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                                                <FormControlLabel value="no" control={<Radio />} label="No" />
+                                            </RadioGroup>
+                                        </FormControl></div></td>
+                                </tr>
+
+                            </table>
+                            {/* <FormControl component="fieldset">
+                                <FormLabel component="legend"></FormLabel>
+                                <RadioGroup
+                                    aria-label="gender"
+                                    name="controlled-radio-buttons-group"
+                                    // value={value}
+                                    onChange={loanStatus}
+                                    row={true}
+
+                                    style={{ display: 'flex', alignItems: 'left' }}
+
+                                >
+                                    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                                    <FormControlLabel value="no" control={<Radio />} label="No" />
+                                </RadioGroup>
+                            </FormControl> */}
+                            <div id='loanamount' style={{ visibility: 'hidden' }}>
+                                <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            </div><br/>
+
+                        </div></div>
+
+
                         <div className='float-center'>
 
                             {/* <Button variant='contained' color='success' onClick={saveData}>Save</Button><span> </span> */}

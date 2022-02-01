@@ -74,7 +74,7 @@ export default function EleventhStep() {
                                                         onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "education"]: e.target.value })}
                                                     /></td>
 
-                                                    <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                    <td ><input type="number" style={{ width: "15rem", border: "0" }}
                                                         value={skilltableData["skill" + newVal + "phonenumber"]}
                                                         onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "phonenumber"]: e.target.value })}
                                                     /></td>
@@ -84,7 +84,7 @@ export default function EleventhStep() {
                                     </tbody>
                                 </table>
 
-                                <div className='float-left'>
+                                <div className='float-left adpad'>
                                     <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                                 </div>
                                 <div className='float-left'>

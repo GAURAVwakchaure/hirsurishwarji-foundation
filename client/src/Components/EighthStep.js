@@ -4,6 +4,7 @@ import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio
 import { multiStepContext } from '../StepContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
+import InputAdornment from '@material-ui/core/InputAdornment'
 
 export default function EighthStep() {
     // const {setStep, userData, setUserData } = useContext(multiStepContext);
@@ -143,15 +144,15 @@ export default function EighthStep() {
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
                         <br></br>
-                        <div><h6 id="edgl1" >1. Unemployed Person : </h6></div>
+                        {/* <div><h6 id="edgl1" >1. Unemployed Person : </h6></div>
                         <div>
                             <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div>
                         <div>
                             <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
-                        </div><br />
+                        </div><br /> */}
                         {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
-                        <div>
+                        {/* <div>
                         <table>
                                 <tr>
                                     <td rowSpan={3}> <h6 id="edgl1">2.Any Loan?</h6></td>
@@ -174,7 +175,7 @@ export default function EighthStep() {
                                         </FormControl></div></td>
                                 </tr>
 
-                            </table>
+                            </table> */}
                             {/* <FormControl component="fieldset">
                                 <FormLabel component="legend"></FormLabel>
                                 <RadioGroup
@@ -191,24 +192,25 @@ export default function EighthStep() {
                                     <FormControlLabel value="no" control={<Radio />} label="No" />
                                 </RadioGroup>
                             </FormControl> */}
-                            <div id='loanamount' style={{ visibility: 'hidden' }}>
+                            {/* <div id='loanamount' style={{ visibility: 'hidden' }}>
                                 <TextField label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             </div><br/>
 
-                        </div>
+                        </div> */}
 
-                        <div>
-                            <div><h6 id="edgl1" >3. Patient Details : </h6></div>
+                        <div><br></br>
+                            <div><h6 id="edgl1" >Patient Details : </h6></div>
 
                             <TextField label="Hospital Name" id='mghospitalname' className ="required" value={userData['mghname']} onChange={(e) => setUserData({ ...userData, "mghname": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emghospitalname' className='text-danger' >  </span>
                             <TextField label="Hospital Address" id='mghospitaladdress' className ="required" value={userData['mghaddress']} onChange={(e) => setUserData({ ...userData, "mghaddress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emghospitaladdress' className='text-danger' >  </span>
                             <TextField label="Disease Details" id='mgdiseasedetails' className ="required" value={userData['mgdiseasedetails']} onChange={(e) => setUserData({ ...userData, "mgdiseasedetails": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgdiseasedetails' className='text-danger' >  </span>
-                            <TextField label="Approx. Expenses" id='mgaprxexpenses' className ="required" type="number" value={userData['mgaprxexpenses']} onChange={(e) => setUserData({ ...userData, "mgaprxexpenses": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgaprxexpenses' className='text-danger' >  </span>
-                            <TextField label="Amount Needed" id='mgamountneeded' className ="required" type="number" value={userData['mgamountneeded']} onChange={(e) => setUserData({ ...userData, "mgamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgamountneeded' className='text-danger' >  </span>
-                            <TextField label="Amount Contributed(self)" type="number" id='mgamtcontri' value={userData['mgamtcont']} onChange={(e) => setUserData({ ...userData, "mgamtcont": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Approx. Expenses" id='mgaprxexpenses' className ="required" type="number" value={userData['mgaprxexpenses']} onChange={(e) => setUserData({ ...userData, "mgaprxexpenses": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgaprxexpenses' className='text-danger' >  </span>
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Amount Needed" id='mgamountneeded' className ="required" type="number" value={userData['mgamountneeded']} onChange={(e) => setUserData({ ...userData, "mgamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgamountneeded' className='text-danger' >  </span>
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Amount Contributed(self)" type="number" id='mgamtcontri' value={userData['mgamtcont']} onChange={(e) => setUserData({ ...userData, "mgamtcont": e.target.value })} margin='normal' variant='standard' color="primary" />
                             <TextField label="Any existing medical aid" id='mgexistingmedaid' value={userData['mgmedicalaid']} onChange={(e) => setUserData({ ...userData, "mgmedicalaid": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            <TextField label="Medical Insurance Amount" className ="required" type="number" id='mgmedicalamount' value={userData['mgmedamt']} onChange={(e) => setUserData({ ...userData, "mgmedamt": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgmedicalamount' className='text-danger' >  </span>
                             <TextField label="Medical Insurance Details" id='mgmedinsurance' value={userData['mginsurancedetails']} onChange={(e) => setUserData({ ...userData, "mginsurancedetails": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Medical Insurance Amount" className ="required" type="number" id='mgmedicalamount' value={userData['mgmedamt']} onChange={(e) => setUserData({ ...userData, "mgmedamt": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emgmedicalamount' className='text-danger' >  </span>
+                            
                         </div><br/>
                             
                         

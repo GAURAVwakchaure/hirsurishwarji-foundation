@@ -4,6 +4,7 @@ import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio
 import { multiStepContext } from '../StepContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
+import InputAdornment from '@material-ui/core/InputAdornment'
 
 export default function SeventhStep() {
     // const {setStep, userData, setUserData } = useContext(multiStepContext);
@@ -98,15 +99,15 @@ export default function SeventhStep() {
                             <span id='invalid' class="text-danger size font-weight-bold"></span>
                         </div>
                         <br></br>
-                        <div><h6 id="edgl1" >1. Unemployed Person : </h6></div>
+                        {/* <div><h6 id="edgl1" >1. Unemployed Person : </h6></div>
                         <div>
                             <TextField label="Education" value={userData['egunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "egunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div>
                         <div>
                             <TextField label="Experience" value={userData['egunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "egunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
-                        </div><br />
+                        </div><br /> */}
                         {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
-                        <div>
+                        {/* <div>
                             <table>
                                 <tr>
                                     <td rowSpan={3}> <h6 id="edgl1">2.Any Loan?</h6></td>
@@ -132,35 +133,35 @@ export default function SeventhStep() {
                             </table>
                             
                             <div id='loanamount' className="loanamount" style={{ visibility: 'hidden' }}>
-                                <span label="Enter Loan Amount" value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary"></span>
+                                <span label="Enter Loan Amount" value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary"></span> */}
                                 {/* <TextField label="Enter Loan Amount" value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span> */}
-                            </div><br />
+                            {/* </div><br />
 
-                        </div>
+                        </div> */}
 
                         <div>
-                            <div><h6 id="edgl1" >3. School/College : </h6></div>
+                            <div><h6 id="edgl1" >School/College : </h6></div>
 
                             <TextField id='egname' label="Name" className ="required" value={userData['egscname']} onChange={(e) => setUserData({ ...userData, "egscname": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegname' className='text-danger' >  </span>
                             <TextField id='egadd' label="Address" className ="required" value={userData['egscaddress']} onChange={(e) => setUserData({ ...userData, "egscaddress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegadd' className='text-danger' >  </span>
                             <TextField id='egcdname' label="Course/Degree Name" className ="required" value={userData['egcoursename']} onChange={(e) => setUserData({ ...userData, "egcoursename": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegcdname' className='text-danger' >  </span>
-                            <TextField id='egafee' label="Annual Fees" type="number" className ="required" value={userData['egannualfees']} onChange={(e) => setUserData({ ...userData, "egannualfees": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegafee' className='text-danger' >  </span>
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egafee' label="Annual Fees" type="number" className ="required" value={userData['egannualfees']} onChange={(e) => setUserData({ ...userData, "egannualfees": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegafee' className='text-danger' >  </span>
                             <TextField label="Details of Course" value={userData['egdetailsofcourse']} onChange={(e) => setUserData({ ...userData, "egdetailsofcourse": e.target.value })} margin='normal' variant='standard' color="primary" />
                         </div><br />
                         <div>
                             <div>
-                                <h6 id="edgl1" >3. Independent : </h6></div>
+                                <h6 id="dtdetail" >Independent : </h6></div>
 
                             <TextField label="" id="outlined-sized-small" value={userData['egindependent']} onChange={(e) => setUserData({ ...userData, "egindependent": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div><br />
                         <div>
-                          <h6 id="edgl1" className ="requireds" ><p>4. Money Needed :</p></h6>
-                            <TextField id='egmoneyneed' type="number" label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegmoneyneed' className='text-danger' >  </span>
+                          <h6 id="dtdetail" className ="requireds" ><p>Money Needed :</p></h6>
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egmoneyneed' type="number" label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegmoneyneed' className='text-danger' >  </span>
                         </div><br />
                         <div>
-                            <h6 id="edgl1" >5. Self Manage Contribution: </h6>
+                            <h6 id="dtdetail" >Self Manage Contribution: </h6>
 
-                            <TextField label="" type="number" value={userData['egselfmanagecontribution']} onChange={(e) => setUserData({ ...userData, "egselfmanagecontribution": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="" type="number" value={userData['egselfmanagecontribution']} onChange={(e) => setUserData({ ...userData, "egselfmanagecontribution": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                         </div><br />
                         <div>
                             <Button variant='contained' color='secondary' onClick={() => setStep(6)}>Back</Button><span> </span>

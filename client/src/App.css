@@ -73,9 +73,9 @@
 }
 
 #totin{
+  color: black;
+  font-weight: bold;
   text-align: center;
-  /* padding-left: 9rem; */
-  padding: auto;
 }
 
 .fs-title {
@@ -136,9 +136,9 @@ body {
   /* min-height: 100vh; */
 }
 
-#totalincomevalue{
+/* #totalincomevalue{
   padding-right: 33rem;
-}
+} */
 
 /* .stepper{
   margin-left: 15.5rem; 
@@ -307,9 +307,14 @@ body {
 #edgl1{
   text-align: left;
   margin-left:40px;
-
+  font-size: 1.3rem;
 }
 
+#dtdetail{
+  text-align: left;
+  margin-left:40px;
+  font-size: 1.1rem;
+}
 
 
 #myInput {
@@ -456,7 +461,25 @@ body {
   border-radius: 20px;
 }
 
+.drentbox{
+  border-style: ridge;
+  padding-bottom: 1.4rem;
+  margin: 30px 390px;
+  border-radius: 20px;
+}
+
 .rent{
   padding-top: 30px;
 }
 
+/* .smalltext{
+  font-size: large;
+} */
+
+.dtcenter{
+  padding: auto;
+}
+
+.adpad{
+  padding-right: 10px;
+}
