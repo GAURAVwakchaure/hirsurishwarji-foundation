@@ -67,6 +67,7 @@ export default function ThirdStep() {
                                                 <RadioGroup
                                                     aria-label="gender"
                                                     id="jainradioq1"
+                                                    defaultValue="yes"
                                                     value={userData['pathshalachildren']}
                                                     onChange={(e) => setUserData({ ...userData, 'pathshalachildren': e.target.value })} row={true}
 
@@ -89,6 +90,7 @@ export default function ThirdStep() {
                                                 <RadioGroup
                                                     aria-label="gender"
                                                     id="jainradioq2"
+                                                    defaultValue="yes"
                                                     value={userData['religiouseducation']}
                                                     onChange={(e) => setUserData({ ...userData, 'religiouseducation': e.target.value })} row={true}
 
@@ -115,6 +117,7 @@ export default function ThirdStep() {
                                                 <RadioGroup
                                                     aria-label="gender"
                                                     id="jainradioq3"
+                                                    defaultValue="yes"
                                                     value={userData['templepooja']}
                                                     onChange={(e) => setUserData({ ...userData, 'templepooja': e.target.value })} row={true}
 
@@ -142,6 +145,7 @@ export default function ThirdStep() {
                                                 <RadioGroup
                                                     aria-label="gender"
                                                     id="jainradioq4"
+                                                    defaultValue="yes"
                                                     value={userData['upashrayvisit']}
                                                     onChange={(e) => setUserData({ ...userData, 'upashrayvisit': e.target.value })}
                                                     row={true}
@@ -169,6 +173,7 @@ export default function ThirdStep() {
                                                 <RadioGroup
                                                     aria-label="gender"
                                                     id="jainradioq5"
+                                                    defaultValue="yes"
                                                     value={userData['kanmoolusage']} onChange={(e) => setUserData({ ...userData, 'kanmoolusage': e.target.value })}
                                                     row={true}
                                                     style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
@@ -194,6 +199,7 @@ export default function ThirdStep() {
                                                 <RadioGroup
                                                     aria-label="gender"
                                                     id="jainradioq6"
+                                                    defaultValue="yes"
                                                     value={userData['kanmoolusagestopped']}
                                                     onChange={(e) => setUserData({ ...userData, 'kanmoolusagestopped': e.target.value })} row={true}
 

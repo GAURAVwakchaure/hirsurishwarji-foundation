@@ -182,7 +182,7 @@ export default function FourthStep() {
                                             <RadioGroup
                                                 aria-label="gender"
                                                 name="controlled-radio-buttons-group"
-
+                                                defaultValue="ownership"
                                                 value={userData['rentownershipstatus']}
                                                 onChange={(e) => setUserData({ ...userData, "rentownershipstatus": e.target.value })} row={true}
 

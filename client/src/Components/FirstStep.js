@@ -217,6 +217,7 @@ export default function FirstStep() {
                                             id="jainismslect"
                                             name="controlled-radio-buttons-group"
                                             value={userData['jainism']}
+                                            defaultValue="yes"
                                             onChange={(e) => setUserData({ ...userData, 'jainism': e.target.value })}
                                             row={true}
 
