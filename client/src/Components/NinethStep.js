@@ -99,7 +99,7 @@ export default function NinethStep() {
                                     <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
                                 </div>
 
-                            </div><br/>
+                            </div><br/><br></br>
                             <div>
                                 {/* <Button variant='contained' color='success' onClick={saveData}>Save</Button><span> </span> */}
 
