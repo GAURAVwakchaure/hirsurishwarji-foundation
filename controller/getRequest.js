@@ -131,7 +131,7 @@ export const createApplication = (req, res) =>{
 // view applicant detail by id
 export const getUserById = (req,res) =>{
   const id =  req.params.id
-  Form.findById(id).exec(function(err,docs){
+  Form.findById(id).select({id:1,Name:1,Mobile_Number:1,Aadhaar_Card_Number:1,status:1}).exec(function(err,docs){
     console.log(docs)
     res.send(docs)
   })
