@@ -3,7 +3,6 @@ import { Card, } from 'react-bootstrap'
 import { Button, TextField, Box, RadioGroup, FormControl, FormControlLabel, FormLabel, Radio } from '@material-ui/core';
 import { multiStepContext } from '../StepContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import InputAdornment from '@material-ui/core/InputAdornment'
 // import NumberInput from 'material-ui-number-input';
 export default function FourthStep() {
     // const {setStep, userData, setUserData } = useContext(multiStepContext);
@@ -24,7 +23,7 @@ export default function FourthStep() {
 
         console.log(total)
         setUserData({ ...userData, "totalexpenses": "Total Expenses : "+total })
-        document.getElementById("totalexpenses").innerHTML = "total expenses are :"+total
+        document.getElementById("totalexpenses").innerHTML = "Total Expenses : "+total+" ₹ "
     }
 
     const handleexpenses = () => {
@@ -126,48 +125,49 @@ export default function FourthStep() {
                             <tr>
                                 <td>
                                   <div>
-                                     <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id = 'maintenance' type="number" label="Maintenance Expense " className ="required" value={userData['maintenance']} onChange={(e) => setUserData({ ...userData, "maintenance": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emaintenance' className='text-danger' >  </span>
+                                     <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = 'maintenance' type="number" label="Maintenance Expense " className ="required" value={userData['maintenance']} onChange={(e) => setUserData({ ...userData, "maintenance": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emaintenance' className='text-danger' >  </span>
                                   </div>
                                 </td>
                                 <td>
                                   <div>
-                                     <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id='electricbill' type="number" label="Electric Expense " className ="required" value={userData['electricbillexpense']} onChange={(e) => setUserData({ ...userData, "electricbillexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eelectricbill' className='text-danger' >  </span>
+                                     <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id='electricbill' type="number" label="Electric Expense " className ="required" value={userData['electricbillexpense']} onChange={(e) => setUserData({ ...userData, "electricbillexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eelectricbill' className='text-danger' >  </span>
                                   </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                   <div>
-                                      <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Medical Expense " className ="required" id="medical" value={userData['medicalexpense']} onChange={(e) => setUserData({ ...userData, "medicalexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emedical' className='text-danger' >  </span>
+                                      <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Medical Expense " className ="required" id="medical" value={userData['medicalexpense']} onChange={(e) => setUserData({ ...userData, "medicalexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='emedical' className='text-danger' >  </span>
                                   </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Groceries Expense " className ="required" id="groceries" value={userData['groceriesexpense']} onChange={(e) => setUserData({ ...userData, "groceriesexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='egroceries' className='text-danger' >  </span>
+                                        <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} type="number" onBlur = {totalexpenses} label="Groceries Expense " className ="required" id="groceries" value={userData['groceriesexpense']} onChange={(e) => setUserData({ ...userData, "groceriesexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='egroceries' className='text-danger' >  </span>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id='telephone' type="number" label="Telephone Expense " value={userData['telephoneexpense']} onChange={(e) => setUserData({ ...userData, "telephoneexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0} id='telephone' type="number" onBlur = {totalexpenses} label="Telephone Expense " value={userData['telephoneexpense']} onChange={(e) => setUserData({ ...userData, "telephoneexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </td>
                                 <td>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id='education' type="number" label="Education Expense " value={userData['educationexpense']} onChange={(e) => setUserData({ ...userData, "educationexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  id='education' type="number" onBlur = {totalexpenses} label="Education Expense " value={userData['educationexpense']} onChange={(e) => setUserData({ ...userData, "educationexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} type="number" label="Tuition Expense " id='tuition' value={userData['tuitionexpense']} onChange={(e) => setUserData({ ...userData, "tuitionexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
+                                    <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  type="number" label="Tuition Expense " onBlur = {totalexpenses} id='tuition' value={userData['tuitionexpense']} onChange={(e) => setUserData({ ...userData, "tuitionexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
                                 </td>
                                 <td className='col-md-7'>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id='other' type="number" onBlur = {totalexpenses} label="Other Expense  " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  id='other' type="number" onBlur = {totalexpenses} label="Other Expense  " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </td>
                             </tr>
                         </table>
                         <br></br>
                         
                         <div>
-                            <TextField InputProps={{ readOnly: true }} label="" id = "totalexpenses" value={userData['totalexpenses']}  margin='normal' variant='standard' color="primary" placeholder='Click Here To View Total Expense' />
+                            <p id = "totalexpenses"></p>
+                            {/* <TextField inputProps={{ readOnly: true }} label="" id = "totalexpenses" value={userData['totalexpenses']}  margin='normal' variant='standard' color="primary" placeholder='Click Here To View Total Expense' /> */}
                         </div>
                         </div>
                         <br></br>
@@ -175,7 +175,7 @@ export default function FourthStep() {
                             <table>
                                 <tr>
                                     <td>
-                                        <TextField InputProps={{ startAdornment: <InputAdornment position="start">sqft.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eareaofflat' className='text-danger' >  </span>
+                                        <TextField inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eareaofflat' className='text-danger' >  </span>
                                     </td>
                                     <td className='rent  col-md-7'> <h6 id="jainismfourth">Rent or Ownership ?</h6></td>
                                         <div className='rent'> <FormControl component="fieldset">

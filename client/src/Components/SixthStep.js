@@ -7,7 +7,7 @@ import '..'
 import InputAdornment from '@material-ui/core/InputAdornment'
 // import React, { useContext, } from 'react'
 // import { Card, } from 'react-bootstrap'
-import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio, RadioGroup } from '@material-ui/core';
+import { Button, TextField, Box, FormControlLabel, FormControl, FormLabel, Radio, RadioGroup, Switch } from '@material-ui/core';
 import { multiStepContext } from '../StepContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
@@ -58,9 +58,10 @@ export default function SixthStep() {
         }
         console.log(total)
         setdependenttableData({ ...dependenttableData, ["totalincomedependent"]: total })
-        document.getElementById("totalincomevalue").innerHTML = "Total Income : Rs. "+total
+        document.getElementById("totalincomevalue").innerHTML = "Total Income : Rs. " + total
     }
     console.log(dependenttableData)
+
 
     // function to decide to go on which page depending on the category selected
 
@@ -92,9 +93,9 @@ export default function SixthStep() {
     //     console.log("income is :" + e.target.value)
     //     console.log(newVal)
     //     totalIncome()
-        // console.log(newVal)
-        // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })
-        // {totalIncome}
+    // console.log(newVal)
+    // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })
+    // {totalIncome}
 
     // }
     // console.log(userData)
@@ -114,15 +115,15 @@ export default function SixthStep() {
                     <div className='boxborder'><br></br>
                         <h6 class="fs-title">Dependent Details</h6>
                         <div>
-                        <p class="right">*Enter 'NA' or '0' Wheraver Required</p>
+                            <p class="right">*Enter 'NA' or '0' Wheraver Required</p>
                         </div>
                         <div className="app container mx-0 my-0 ">
-                            
+
 
                             <table className="table table-hover table-striped table-bordered p-5 mx-0 my-0">
                                 <thead className='tablehead'>
                                     <tr>
-                                    <th scope="col"><p>Sr.no</p></th>
+                                        <th scope="col"><p>Sr.no</p></th>
                                         <th scope="col"><p>Name</p></th>
                                         <th scope="col" ><p>Age</p></th>
                                         <th scope="col" ><p>Aadhaar No.</p></th>
@@ -133,10 +134,10 @@ export default function SixthStep() {
                                         <th scope="col" colSpan={4}>
                                             <p>Religious Activities</p>
                                             {/* <th scope="col" colSpan={7}></th> */}
-                                        <th scope="col" >Kanmool</th>
-                                        <th scope="col" >Navkarshi</th>
-                                        <th scope="col" >Pooja</th>
-                                        <th scope="col" >Night Dinner</th>
+                                            <th scope="col" >Kanmool</th>
+                                            <th scope="col" >Navkarshi</th>
+                                            <th scope="col" >Pooja</th>
+                                            <th scope="col" >Night Dinner</th>
                                         </th>
                                     </tr>
                                 </thead>
@@ -148,7 +149,7 @@ export default function SixthStep() {
                                         return (
                                             <tr>
                                                 <th scope="row">{index + 1}</th>
-                                                <td ><input id='dtname' type="text" className='input' style={{width: "6.5rem", border: "0" }}
+                                                <td ><input id='dtname' type="text" className='input' style={{ width: "6.5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "name"]}
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
                                                 /></td>
@@ -178,11 +179,11 @@ export default function SixthStep() {
                                                 /></td>
                                                 <td><input id='dtincome' className='input' type="number" style={{ width: "5.5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "income"]}
-                                                    onChange = {(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })}
-                                                    onBlur = {totalIncome}
-                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value }),
-                                                
-                                                    // onChange={totalIncome}
+                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })}
+                                                    onBlur={totalIncome}
+                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value }),
+
+                                                // onChange={totalIncome}
                                                 /></td>
                                                 <td><input type="text" className='input' style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "religiouseducation"]}
@@ -191,36 +192,85 @@ export default function SixthStep() {
 
 
                                                 /></td>
-                                                <td><input type="text" className='input' style={{ width: "5rem", border: "0" }}
+                                                <td colSpan={1}>
+                                                    <Switch
+                                                        size="small"
+                                                        onChange={(e, val) => {
+                                                            if (val === true) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })
+                                                            } else if (val === false) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'no' })
+
+                                                            }
+                                                        }}
+                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })}
+
+
+
+                                                    />
+
+
+                                                    {/* <input type="text" className='input' style={{ width: "5rem", border: "0" }}
+
                                                     value={dependenttableData["dependent" + newVal + "kanmool"]}
 
                                                     onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: e.target.value })}
 
 
-                                                /></td>
-                                                <td><input type="text" className='input' style={{ width: "5rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "nakarshi"]}
+                                                /> */}
+                                                </td>
+                                                <td colSpan={1}>
+                                                    <Switch
+                                                        size="small"
+                                                        onChange={(e, val) => {
+                                                            if (val === true) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'yes' })
+                                                            } else if (val === false) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'no' })
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: e.target.value })}
+                                                            }
+                                                        }}
 
+                                                    />
 
+                                                </td>
+                                                <td colSpan={1}>
 
-                                                /></td>
-                                                <td><input type="text" className='input' style={{ width: "5rem", border: "0" }}
+                                                    <Switch
+                                                        size="small"
+                                                        onChange={(e, val) => {
+                                                            if (val === true) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'yes' })
+                                                            } else if (val === false) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'no' })
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: e.target.value })}
-                                                /></td>
-                                                <td><input type="text" className='input' style={{ width: "5rem", border: "0" }}
+                                                            }
+                                                        }}
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: e.target.value })}
-                                                /></td>
+                                                    />
+
+                                                </td>
+                                                <td colSpan={1}>
+                                                    <Switch
+                                                        size="small"
+                                                        onChange={(e, val) => {
+                                                            if (val === true) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'yes' })
+                                                            } else if (val === false) {
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'no' })
+
+                                                            }
+                                                        }}
+
+                                                    />
+                                                </td>
                                             </tr>
 
                                         );
                                     })}
                                 </tbody>
                             </table>
-                            <br></br> 
+                            <br></br>
                             <div className='float-left adpad'>
                                 <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
                             </div>
@@ -239,8 +289,8 @@ export default function SixthStep() {
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col" id='totin'><span><p id = "totalincomevalue"></p></span> */}
-                                    {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
-                                    {/* </th>
+                            {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
+                            {/* </th>
                                     
                                 </thead>
                                 <tbody>
@@ -248,45 +298,45 @@ export default function SixthStep() {
                             </table><br /> */}
 
                             <div id='totin'>
-                            <span><p id = "totalincomevalue">Total Income : Rs.</p></span>
-                            </div> 
+                                <span><p id="totalincomevalue">Total Income : Rs.</p></span>
+                            </div>
 
                         </div><br /><hr class="solid"></hr>
                         <div className='drentbox'><br></br>
-                        <div><h6 id="dtdetail" >1. Unemployed Person : </h6></div>
-                        <div>
-                            <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                        </div>
-                        <div>
-                            <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
-                        </div><br />
-                        {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
-                        <div>
-                        <table>
-                                <tr>
-                                    <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan?</h6></td>
-                                    <td>
-                                        <div className='jainradio'> <FormControl component="fieldset">
-                                            <FormLabel component="legend"></FormLabel>
-                                            <RadioGroup
-                                                aria-label="gender"
-                                                name="controlled-radio-buttons-group"
-                                                defaultValue="no"
-                                                value={userData['mgloanstatus']}
-                                                onChange={loanStatus}
-                                                row={true}
+                            <div><h6 id="dtdetail" >1. Unemployed Person : </h6></div>
+                            <div>
+                                <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                            </div>
+                            <div>
+                                <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            </div><br />
+                            {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan?</h6></td>
+                                        <td>
+                                            <div className='jainradio'> <FormControl component="fieldset">
+                                                <FormLabel component="legend"></FormLabel>
+                                                <RadioGroup
+                                                    aria-label="gender"
+                                                    name="controlled-radio-buttons-group"
+                                                    defaultValue="no"
+                                                    value={userData['mgloanstatus']}
+                                                    onChange={loanStatus}
+                                                    row={true}
 
-                                                style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
+                                                    style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
 
-                                            >
-                                                <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-                                                <FormControlLabel value="no" control={<Radio />} label="No" />
-                                            </RadioGroup>
-                                        </FormControl></div></td>
-                                </tr>
+                                                >
+                                                    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                                                    <FormControlLabel value="no" control={<Radio />} label="No" />
+                                                </RadioGroup>
+                                            </FormControl></div></td>
+                                    </tr>
 
-                            </table>
-                            {/* <FormControl component="fieldset">
+                                </table>
+                                {/* <FormControl component="fieldset">
                                 <FormLabel component="legend"></FormLabel>
                                 <RadioGroup
                                     aria-label="gender"
@@ -305,8 +355,11 @@ export default function SixthStep() {
                             <span id='loanamount' style={{ visibility: 'hidden' }}>
                                 <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             </span><br/>
+                                <div id='loanamount' style={{ visibility: 'hidden' }}>
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                </div><br />
 
-                        </div></div>
+                            </div></div>
 
 
                         <div className='float-center'>
