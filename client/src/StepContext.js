@@ -216,26 +216,26 @@ const StepContext = () => {
         // console.log(formData.get('dependenttable').valueOf('dependent1name'))
 
 
-        // axios.post("https://hirsurishwarji-foundation.herokuapp.com/createApplication", formData)
-        //     .then(res => {
-        //         console.log(res)
-        //         // window.alert("response after submitting data"+res.data)
-        //         window.alert(res.data)
-        //     })
-        //     .catch(err => { console.log(err) })
+        axios.post("https://hirsurishwarji-foundation.herokuapp.com/createApplication", formData)
+            .then(res => {
+                console.log(res)
+                // window.alert("response after submitting data"+res.data)
+                window.alert(res.data)
+            })
+            .catch(err => { console.log(err) })
 
-        // console.log("submitData calling finished")
+        console.log("submitData calling finished")
 
 
-        axios.post("http://localhost:8000/createApplication", formData)
-        .then(res => {
-            console.log(res)
-            window.alert(res.data)
-        })
-        .catch(err => { console.log(err) })
+        // axios.post("http://localhost:8000/createApplication", formData)
+        // .then(res => {
+        //     console.log(res)
+        //     window.alert(res.data)
+        // })
+        // .catch(err => { console.log(err) })
 
-        setUserData('');
-        setStep(1);
+        // setUserData('');
+        // setStep(1);
 
     }
 
