@@ -307,10 +307,9 @@ const formschema = new mongoose.Schema({
     type: String,
     // required: [true, "please check your data entry, no Q6 Answer specified!"],
   },
-  dependenttable :{
-    type:Array,
-    "default":[]
-  },
+  dependenttable :[{
+    type:String,
+  }],
   egunemployedpersoneducation : String,
   egunemployedpersonexperience : String,
   egloanstatus : String,

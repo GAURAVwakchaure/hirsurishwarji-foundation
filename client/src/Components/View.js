@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import { Button, TextField, Box } from '@material-ui/core';
 import { Card, } from 'react-bootstrap'
-
+import InputAdornment from '@material-ui/core/InputAdornment'
 // import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 // import AdapterDateFns from '@mui/lab/AdapterDateFns';
 // import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -18,6 +18,23 @@ export default function View(props) {
   const [userData, setuserData] = useState([])
 
 
+  const submit = () => {
+    let surveydoneby = document.getElementById('surveydoneby').value
+   
+    if (surveydoneby == null || surveydoneby === "") {
+        document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
+    }
+    else if(!isNaN(surveydoneby)){
+        document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
+    }
+    else if(surveydoneby.length < 2  || surveydoneby.length > 50){
+        document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+    } 
+    else{
+        document.getElementById('esurveydoneby').innerHTML=" "
+        alert('Survey Details Submited Sucessfully.')
+    }
+}
 
   //   useEffect(() => {
   //     const url = `https://hirsurishwarji-foundation.herokuapp.com/user/${id}`;
@@ -642,12 +659,12 @@ export default function View(props) {
           <TextField label="Survey Done By:" className ="required" id="surveydoneby" margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
           </td>
           <td className='thpad'>
-          <TextField label="Special Notes:" id="specialnotes"  margin='normal' variant='standard' color="primary" />
+          <TextField label="Survey Details:" id="surveydetails"  margin='normal' variant='standard' color="primary" /><span>  </span>
           </td>
         </tr>
         <tr>
           <td className='thpad'>
-          <TextField label="Survey Details:" id="surveydetails"  margin='normal' variant='standard' color="primary" /><span>  </span>
+          <TextField label="Special Notes:" id="specialnotes"  margin='normal' variant='standard' color="primary" />
           </td>
           <td className='thpad'>
            <div className='datepick'>
@@ -664,12 +681,55 @@ export default function View(props) {
         </tr>
       </table><br></br><br></br>
 
-      <div>
-        <p>Above details for Application {id} are correct and ready for Approved.</p>
-      </div>
-
+      {/* <div>
+        <p>Above details for Application ID {id} are correct and ready for Approve.</p>
+      </div> */}
+      
       </div>
       </div><br></br>
+      <button  className='btn btn-primary' onClick={submit}>
+        Submit
+      </button><br></br><br></br>
+      
+
+      <hr class="solid"></hr><br></br>
+    <div>
+      <h6 class="fs-title">Approval Details</h6>
+    </div>
+    <br></br>
+    <div  className='viewadminborder'><br></br>
+    <table className='center'>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Approved By:" className ="required" id="approvedby" margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+          </td>
+          <td className='thpad'>
+          <TextField label="Approved Amount:" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} className ="required" type='number' id="approvedamount"  margin='normal' variant='standard' color="primary" /><span>  </span>
+          </td>
+        </tr>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Comments:" id="comments"  margin='normal' variant='standard' color="primary" />
+          </td>
+          <td className='thpad'>
+           <div className='datepick'>
+                <tr>
+                  <td>
+                  <p className='date'>Date :</p>
+                  </td>
+                  <td>
+                  <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
+                  </td>
+                </tr>
+            </div>
+          </td>
+        </tr>
+      </table><br></br>
+      <div>
+        <input type='checkbox' style={{width:'30px'}} /><span>  Above details for Application ID {id} are correct and ready for Approve.</span>
+      </div><br></br>
+    </div><br></br><br></br>
+
       </Box></Card>
       <Button variant='contained' color='secondary'>Reject</Button><span> </span>
       <Button variant='contained' color='primary'>Approve</Button><br></br><br></br><br></br><br></br>
