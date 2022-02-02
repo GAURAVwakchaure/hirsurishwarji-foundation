@@ -67,8 +67,7 @@ export default function TenthStep() {
                         '& .MuiTextField-root': { m: 1, width: '50ch' },
                     }}
                     noValidate
-                    autoComplete="off"
-                >
+                    autoComplete="off">
                     <div className='boxborder'><br></br>
                     {/* <h6 class="fs-title">Administrative Details</h6><br></br> */}
                         {/* <div>
@@ -80,11 +79,11 @@ export default function TenthStep() {
                         <div>
                             <TextField label="Address of Referral: " className ="required" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='ereferraladdress' className='text-danger' >  </span>
                         </div> */}
-                        <div>
+                        {/* <div>
                             <TextField label="Survey Done By:" className ="required" id="surveydoneby" value={userData['surveydoneby']} onChange={(e) => setUserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                             <TextField label="Survey Details:" id="surveydetails" value={userData['surveydetails']} onChange={(e) => setUserData({ ...userData, "surveydetails": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             <TextField label="Special Notes:" id="specialnotes" value={userData['specialnotes']} onChange={(e) => setUserData({ ...userData, "specialnotes": e.target.value })} margin='normal' variant='standard' color="primary" />
-                        </div><br />
+                        </div><br /> */}
                         <div>
                             <Button variant='contained' color='secondary' onClick={() => setStep(9)}>Back</Button><span> </span>
                             {/* <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button> */}

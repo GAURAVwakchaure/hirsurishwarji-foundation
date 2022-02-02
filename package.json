@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@syncfusion/ej2-react-calendars": "^19.4.48",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",

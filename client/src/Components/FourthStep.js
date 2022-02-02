@@ -176,7 +176,7 @@ export default function FourthStep() {
                             <table>
                                 <tr>
                                     <td>
-                                        <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eareaofflat' className='text-danger' >  </span>
+                                        <TextField InputProps={{ startAdornment: <InputAdornment position="start">sqft</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} id = "totalareaofflat" type="number" label="Total Area of Flat (in sqft) " className ="required" value={userData['areaofflat']} onChange={(e) => setUserData({ ...userData, "areaofflat": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eareaofflat' className='text-danger' >  </span>
                                     </td>
                                     <td className='rent  col-md-7'> <h6 id="jainismfourth">Rent or Ownership ?</h6></td>
                                         <div className='rent'> <FormControl component="fieldset">

@@ -2,6 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+import { Button, TextField, Box } from '@material-ui/core';
+import { Card, } from 'react-bootstrap'
+
+// import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+// import AdapterDateFns from '@mui/lab/AdapterDateFns';
+// import LocalizationProvider from '@mui/lab/LocalizationProvider';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css'
+import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+
 export default function View(props) {
   const { id } = useParams()
   const [userData, setuserData] = useState([])
@@ -83,8 +94,8 @@ export default function View(props) {
 
     <div class="form-title">
       <h2 class="fs-title">Details for Application ID: {id}</h2>
-    </div>
-    <div className='viewpad' id='view'>
+    </div><br></br>
+    <div className='viewpad viewborder' id='view'><br></br>
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -609,12 +620,61 @@ export default function View(props) {
         Update
       </button>
 
+    </div><br></br><br></br><hr class="solid"></hr><br></br>
+    <div>
+      <h6 class="fs-title">Survey Details</h6>
     </div>
+    <br></br>
+    <Card style={{ width: '147ch' }} className='mx-auto'>
+                <Box
+                    component="form"
+                    sx={{
+                        '& .MuiTextField-root': { m: 1, width: '40ch' },
+                    }}
+                    noValidate
+                    autoComplete="off">
+                      <div className='viewadminborder'><br></br>
+                    
+    <div>
+      <table className='center'>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Survey Done By:" className ="required" id="surveydoneby" margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+          </td>
+          <td className='thpad'>
+          <TextField label="Special Notes:" id="specialnotes"  margin='normal' variant='standard' color="primary" />
+          </td>
+        </tr>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Survey Details:" id="surveydetails"  margin='normal' variant='standard' color="primary" /><span>  </span>
+          </td>
+          <td className='thpad'>
+           <div className='datepick'>
+                <tr>
+                  <td>
+                  <p className='date'>Date :</p>
+                  </td>
+                  <td>
+                  <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
+                  </td>
+                </tr>
+            </div>
+          </td>
+        </tr>
+      </table><br></br><br></br>
 
+      <div>
+        <p>Above details for Application {id} are correct and ready for Approved.</p>
+      </div>
 
-
-
-  </div>;
+      </div>
+      </div><br></br>
+      </Box></Card>
+      <Button variant='contained' color='secondary'>Reject</Button><span> </span>
+      <Button variant='contained' color='primary'>Approve</Button><br></br><br></br><br></br><br></br>
+      
+  </div>
 }
 
 
