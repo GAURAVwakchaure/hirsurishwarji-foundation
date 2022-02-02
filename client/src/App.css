@@ -33,13 +33,20 @@
 }
 
 .datepick{
-  width: 22rem;
+  width: 24rem;
   margin-left: auto;
   margin-right: auto;
   padding-right: 80px;
   /* padding-left: 20px; */
   margin-top: 1.8rem;
   font-size: 2rem;
+}
+
+.datepick2{
+  width: 13rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3rem;
 }
 
 .center {

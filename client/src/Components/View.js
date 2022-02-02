@@ -15,7 +15,7 @@ import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
 export default function View(props) {
   const { id } = useParams()
-  const [userData, setuserData] = useState([])
+  const [userData, setuserData, setUserData] = useState([])
 
 
   const submit = () => {
@@ -687,7 +687,10 @@ export default function View(props) {
       
       </div>
       </div><br></br>
-      <button  className='btn btn-primary' onClick={submit}>
+      {/* <button  className='btn btn-primary' onClick={submit}>
+        Submit
+      </button><br></br><br></br> */}
+      <button  className='btn btn-primary' >
         Submit
       </button><br></br><br></br>
       
@@ -704,27 +707,23 @@ export default function View(props) {
           <TextField label="Approved By:" className ="required" id="approvedby" margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
           </td>
           <td className='thpad'>
-          <TextField label="Approved Amount:" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} className ="required" type='number' id="approvedamount"  margin='normal' variant='standard' color="primary" /><span>  </span>
+          <TextField label="Amount Needed" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egmoneyneed' type="number" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" />
           </td>
         </tr>
         <tr>
           <td className='thpad'>
-          <TextField label="Comments:" id="comments"  margin='normal' variant='standard' color="primary" />
+          <TextField label="Approved Amount:" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} className ="required" type='number' id="approvedamount"  margin='normal' variant='standard' color="primary" /><span>  </span>
           </td>
           <td className='thpad'>
-           <div className='datepick'>
-                <tr>
-                  <td>
-                  <p className='date'>Date :</p>
-                  </td>
-                  <td>
-                  <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
-                  </td>
-                </tr>
-            </div>
+          <TextField label="Comments:" id="comments"  margin='normal' variant='standard' color="primary" />
           </td>
         </tr>
-      </table><br></br>
+      </table>
+      {/* <div className='datepick2'>
+      <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
+      </div> */}
+      <br></br>
+      
       <div>
         <input type='checkbox' style={{width:'30px'}} /><span>  Above details for Application ID {id} are correct and ready for Approve.</span>
       </div><br></br>
