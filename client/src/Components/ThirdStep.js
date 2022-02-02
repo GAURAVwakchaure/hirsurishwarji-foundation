@@ -15,7 +15,6 @@ export default function ThirdStep() {
 
     const { setStep, userData, setUserData, } = useContext(multiStepContext);
     console.log(userData)
-
     // const handleRadio = () => {
     // let radioq1 = document.getElementsById("jainradioq1").checked
     // let radioq2 = document.getElementsById("jainradioq2").checked

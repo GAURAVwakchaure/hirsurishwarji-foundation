@@ -56,7 +56,7 @@ export default function NinethStep() {
                     <h6 class="fs-title">Earning Member Details</h6><br></br>
                         <div>
                             <div className="app container mx-10 my-0">
-                                <table className="table table-hover table-bordered p-5">
+                                <table className="table table-striped table-hover table-bordered p-5">
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>

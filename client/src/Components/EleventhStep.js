@@ -39,7 +39,7 @@ export default function EleventhStep() {
                     <h6 class="fs-title">Skill Details</h6><br></br>
                         <div>
                             <div className="app container mx-8 my-0">
-                                <table class="table table-hover table-bordered p-5">
+                                <table class="table table-striped table-hover table-bordered p-5">
                                     <thead>
                                         <tr>
                                             <th scope="col">No</th>

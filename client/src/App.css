@@ -140,6 +140,17 @@ body {
   color: #673AB7;
 }
 
+#totalexpenses:hover{
+  color: #673AB7;
+}
+
+#totalexpenses{
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* .stepper{
   margin-left: 15.5rem; 
 }  */

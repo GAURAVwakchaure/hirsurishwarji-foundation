@@ -355,10 +355,7 @@ export default function SixthStep() {
                             <span id='loanamount' style={{ visibility: 'hidden' }}>
                                 <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             </span><br/>
-                                <div id='loanamount' style={{ visibility: 'hidden' }}>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                                </div><br />
-
+                               
                             </div></div>
 
 
