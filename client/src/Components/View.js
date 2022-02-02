@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 export default function View(props) {
   const { id } = useParams()
@@ -43,6 +43,17 @@ export default function View(props) {
 
 
   console.log("userData of given id", userData)
+
+
+  const update = () => {
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/${id}`, userData)
+    .then(res => {
+      window.alert(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
 
 
@@ -508,7 +519,7 @@ export default function View(props) {
             
             <td>Sr.no: 1</td>
             <td>Name</td>
-            <td>uname</td>
+            <td>{userData['dependt1name']}</td>
             <td>Age:</td>
             <td>Uage:</td>
             <td>Aahaar No:</td>
@@ -592,6 +603,11 @@ export default function View(props) {
           </tr>
         </tbody>
       </table>
+
+
+      <button  className='btn btn-primary' onClick={update}>
+        Update
+      </button>
 
     </div>
 

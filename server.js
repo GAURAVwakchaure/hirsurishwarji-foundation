@@ -46,6 +46,6 @@ app.use(bodyParser.json())
 
           
     app.listen(PORT, function () {
-        console.log("atlas server started");
+        console.log("atlas server started",PORT);
       
       });

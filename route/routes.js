@@ -1,6 +1,6 @@
 
 import express, { Router } from 'express';
-import { getApplicantList,createApplication,getUserById} from '../controller/getRequest.js';
+import { getApplicantList,createApplication,getUserById,updateUserById} from '../controller/getRequest.js';
 
 const route = express.Router()
 
@@ -11,5 +11,7 @@ route.get('/ApplicantList',getApplicantList)
 route.get('/user/:id',getUserById)
 
 route.post('/createApplication',createApplication)
+
+route.put('/user/:id',updateUserById)
 
 export default route

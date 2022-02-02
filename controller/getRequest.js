@@ -138,3 +138,21 @@ export const getUserById = (req,res) =>{
 
 }
 
+
+// update by Id
+export const updateUserById = async(req, res) => {
+  const id = req.params.id;
+
+  Form.findByIdAndUpdate(id,req.body,function(err,docs){
+    if (err){
+      console.log(err)
+  }
+  else{
+      console.log("Updated User : ", docs);
+  }
+  })
+
+  res.send("User's Data Updated Successfully")
+  console.log(id)
+  console.log(req.body)
+}
