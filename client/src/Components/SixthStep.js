@@ -14,7 +14,7 @@ import '../App.css'
 
 export default function SixthStep() {
 
-    const { setStep, userData, dependenttableData, setdependenttableData, setUserData } = useContext(multiStepContext);
+    const { setStep, userData, dependenttableData, setdependenttableData, setUserData, dependettablearray } = useContext(multiStepContext);
 
     //use of hook for couting
     const [noOfRows, setNoOfRows] = useState(1);
@@ -61,14 +61,20 @@ export default function SixthStep() {
         document.getElementById("totalincomevalue").innerHTML = "Total Income : Rs. " + total
     }
     console.log(dependenttableData)
+    console.log("user data hooks", userData)
 
 
     // function to decide to go on which page depending on the category selected
 
+
+
+
     const nextPage = () => {
+
         // var dtname = document.getElementById('dtname').value
         // var dtage = document.getElementById('dtage').value
         // var dtincome = document.getElementById('dtincome').value
+        
 
         if (userData['category'] === 'education') {
             setStep(7)
@@ -99,118 +105,125 @@ export default function SixthStep() {
 
     // }
     // console.log(userData)
-    return (
-        <div className="table1">
-
-            <Card style={{ width: '130ch' }} className='mx-auto'>
-                <Box
-                    component="form"
-                    sx={{
-                        '& .MuiTextField-root': { m: 1, width: '35ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                >
-
-                    <div className='boxborder'><br></br>
-                        <h6 class="fs-title">Dependent Details</h6>
-                        <div>
-                            <p class="right">*Enter 'NA' or '0' Wheraver Required</p>
-                        </div>
-                        <div className="app container mx-0 my-0 ">
 
 
-                            <table className="table table-hover table-striped table-bordered p-5 mx-0 my-0">
-                                <thead className='tablehead'>
-                                    <tr>
-                                        <th scope="col"><p>Sr.no</p></th>
-                                        <th scope="col"><p>Name</p></th>
-                                        <th scope="col" ><p>Age</p></th>
-                                        <th scope="col" ><p>Aadhaar No.</p></th>
-                                        <th scope="col"><p>Education</p></th>
-                                        <th scope="col"><p>Profession</p></th>
-                                        <th scope="col" ><p>Income</p></th>
-                                        <th scope="col" >Religious Education</th>
-                                        <th scope="col" colSpan={4}>
-                                            <p>Religious Activities</p>
-                                            {/* <th scope="col" colSpan={7}></th> */}
-                                            <th scope="col" >Kanmool</th>
-                                            <th scope="col" >Navkarshi</th>
-                                            <th scope="col" >Pooja</th>
-                                            <th scope="col" >Night Dinner</th>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {[...Array(noOfRows)].map((elementInArray, index) => {
+    
 
-                                        var newVal = index + 1
+    console.log("dependenttablearray ", dependettablearray)
+    console.log("userdata hook", userData)
 
-                                        return (
-                                            <tr>
-                                                <th scope="row">{index + 1}</th>
-                                                <td ><input id='dtname' type="text" className='input' style={{ width: "6.5rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "name"]}
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
-                                                /></td>
-                                                <td><input id='dtage' className='input' type="number" style={{ width: "3rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "age"]}
+        return (
+            <div className="table1">
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}
-                                                /></td>
-                                                <td ><input type="number" className='input' style={{ width: "7rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "aadhaar_number"]}
+                <Card style={{ width: '130ch' }} className='mx-auto'>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& .MuiTextField-root': { m: 1, width: '35ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "aadhaar_number"]: e.target.value })}
+                        <div className='boxborder'><br></br>
+                            <h6 class="fs-title">Dependent Details</h6>
+                            <div>
+                                <p class="right">*Enter 'NA' or '0' Wheraver Required</p>
+                            </div>
+                            <div className="app container mx-0 my-0 ">
 
 
-                                                /></td>
-                                                <td ><input type="text" className='input' style={{ width: "6.5rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "education"]}
+                                <table className="table table-hover table-striped table-bordered p-5 mx-0 my-0">
+                                    <thead className='tablehead'>
+                                        <tr>
+                                            <th scope="col"><p>Sr.no</p></th>
+                                            <th scope="col"><p>Name</p></th>
+                                            <th scope="col" ><p>Age</p></th>
+                                            <th scope="col" ><p>Aadhaar No.</p></th>
+                                            <th scope="col"><p>Education</p></th>
+                                            <th scope="col"><p>Profession</p></th>
+                                            <th scope="col" ><p>Income</p></th>
+                                            <th scope="col" >Religious Education</th>
+                                            <th scope="col" colSpan={4}>
+                                                <p>Religious Activities</p>
+                                                {/* <th scope="col" colSpan={7}></th> */}
+                                                <th scope="col" >Kanmool</th>
+                                                <th scope="col" >Navkarshi</th>
+                                                <th scope="col" >Pooja</th>
+                                                <th scope="col" >Night Dinner</th>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {[...Array(noOfRows)].map((elementInArray, index) => {
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "education"]: e.target.value })}
+                                            var newVal = index + 1
 
+                                            return (
+                                                <tr>
+                                                    <th scope="row">{index + 1}</th>
+                                                    <td ><input id='dtname' type="text" className='input' style={{ width: "6.5rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "name"]}
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
+                                                    /></td>
+                                                    <td><input id='dtage' className='input' type="number" style={{ width: "3rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "age"]}
 
-                                                /></td>
-                                                <td><input type="text" className='input' style={{ width: "6rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "profession"]}
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}
+                                                    /></td>
+                                                    <td ><input type="number" className='input' style={{ width: "7rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "aadhaar_number"]}
 
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "profession"]: e.target.value })}
-                                                /></td>
-                                                <td><input id='dtincome' className='input' type="number" style={{ width: "5.5rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "income"]}
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })}
-                                                    onBlur={totalIncome}
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value }),
-
-                                                // onChange={totalIncome}
-                                                /></td>
-                                                <td><input type="text" className='input' style={{ width: "7rem", border: "0" }}
-                                                    value={dependenttableData["dependent" + newVal + "religiouseducation"]}
-
-                                                    onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "religiouseducation"]: e.target.value })}
-
-
-                                                /></td>
-                                                <td colSpan={1}>
-                                                    <Switch
-                                                        size="small"
-                                                        onChange={(e, val) => {
-                                                            if (val === true) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })
-                                                            } else if (val === false) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'no' })
-
-                                                            }
-                                                        }}
-                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })}
-
-
-
-                                                    />
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "aadhaar_number"]: e.target.value })}
 
 
-                                                    {/* <input type="text" className='input' style={{ width: "5rem", border: "0" }}
+                                                    /></td>
+                                                    <td ><input type="text" className='input' style={{ width: "6.5rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "education"]}
+
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "education"]: e.target.value })}
+
+
+                                                    /></td>
+                                                    <td><input type="text" className='input' style={{ width: "6rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "profession"]}
+
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "profession"]: e.target.value })}
+                                                    /></td>
+                                                    <td><input id='dtincome' className='input' type="number" style={{ width: "5.5rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "income"]}
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value })}
+                                                        onBlur={totalIncome}
+                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "income"]: e.target.value }),
+
+                                                    // onChange={totalIncome}
+                                                    /></td>
+                                                    <td><input type="text" className='input' style={{ width: "7rem", border: "0" }}
+                                                        value={dependenttableData["dependent" + newVal + "religiouseducation"]}
+
+                                                        onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "religiouseducation"]: e.target.value })}
+
+
+                                                    /></td>
+                                                    <td colSpan={1}>
+                                                        <Switch
+                                                            size="small"
+                                                            onChange={(e, val) => {
+                                                                if (val === true) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })
+                                                                } else if (val === false) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'no' })
+
+                                                                }
+                                                            }}
+                                                        // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })}
+
+
+
+                                                        />
+
+
+                                                        {/* <input type="text" className='input' style={{ width: "5rem", border: "0" }}
 
                                                     value={dependenttableData["dependent" + newVal + "kanmool"]}
 
@@ -218,69 +231,69 @@ export default function SixthStep() {
 
 
                                                 /> */}
-                                                </td>
-                                                <td colSpan={1}>
-                                                    <Switch
-                                                        size="small"
-                                                        onChange={(e, val) => {
-                                                            if (val === true) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'yes' })
-                                                            } else if (val === false) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'no' })
+                                                    </td>
+                                                    <td colSpan={1}>
+                                                        <Switch
+                                                            size="small"
+                                                            onChange={(e, val) => {
+                                                                if (val === true) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'yes' })
+                                                                } else if (val === false) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'no' })
 
-                                                            }
-                                                        }}
+                                                                }
+                                                            }}
 
-                                                    />
+                                                        />
 
-                                                </td>
-                                                <td colSpan={1}>
+                                                    </td>
+                                                    <td colSpan={1}>
 
-                                                    <Switch
-                                                        size="small"
-                                                        onChange={(e, val) => {
-                                                            if (val === true) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'yes' })
-                                                            } else if (val === false) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'no' })
+                                                        <Switch
+                                                            size="small"
+                                                            onChange={(e, val) => {
+                                                                if (val === true) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'yes' })
+                                                                } else if (val === false) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'no' })
 
-                                                            }
-                                                        }}
+                                                                }
+                                                            }}
 
-                                                    />
+                                                        />
 
-                                                </td>
-                                                <td colSpan={1}>
-                                                    <Switch
-                                                        size="small"
-                                                        onChange={(e, val) => {
-                                                            if (val === true) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'yes' })
-                                                            } else if (val === false) {
-                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'no' })
+                                                    </td>
+                                                    <td colSpan={1}>
+                                                        <Switch
+                                                            size="small"
+                                                            onChange={(e, val) => {
+                                                                if (val === true) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'yes' })
+                                                                } else if (val === false) {
+                                                                    setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'no' })
 
-                                                            }
-                                                        }}
+                                                                }
+                                                            }}
 
-                                                    />
-                                                </td>
-                                            </tr>
+                                                        />
+                                                    </td>
+                                                </tr>
 
-                                        );
-                                    })}
-                                </tbody>
-                            </table>
-                            <br></br>
-                            <div className='float-left adpad'>
-                                <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
-                            </div>
-                            <div className='float-left'>
+                                            );
+                                        })}
+                                    </tbody>
+                                </table>
+                                <br></br>
+                                <div className='float-left adpad'>
+                                    <button type="button" class="btn btn-outline-primary " onClick={() => setNoOfRows(noOfRows + 1)}>Add</button><span></span>
+                                </div>
+                                <div className='float-left'>
 
-                                {/* <button type="button" class="btn btn-outline-danger " onClick={() => setNoOfRows(noOfRows - 1)}>Delete</button><span></span> */}
-                                <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
-                            </div>
-                            {/* onClick={totalIncome} */}
-                            {/* <table class="table table-hover table-bordered p-5 mx-0 my-0">
+                                    {/* <button type="button" class="btn btn-outline-danger " onClick={() => setNoOfRows(noOfRows - 1)}>Delete</button><span></span> */}
+                                    <button type="button" class="btn btn-outline-danger " onClick={deleteRow}>Delete</button><span></span>
+                                </div>
+                                {/* onClick={totalIncome} */}
+                                {/* <table class="table table-hover table-bordered p-5 mx-0 my-0">
                                 <thead>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
@@ -289,54 +302,54 @@ export default function SixthStep() {
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col" id='totin'><span><p id = "totalincomevalue"></p></span> */}
-                            {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
-                            {/* </th>
+                                {/* <input type="text" value={dependenttableData['totalincomedependent']}  style={{ width: "17rem" }}  /> */}
+                                {/* </th>
                                     
                                 </thead>
                                 <tbody>
                                 </tbody>
                             </table><br /> */}
 
-                            <div id='totin'>
-                                <span><p id="totalincomevalue">Total Income : Rs.</p></span>
-                            </div>
+                                <div id='totin'>
+                                    <span><p id="totalincomevalue">Total Income : Rs.</p></span>
+                                </div>
 
-                        </div><br /><hr class="solid"></hr>
-                        <div className='drentbox'><br></br>
-                            <div><h6 id="dtdetail" >1. Unemployed Person : </h6></div>
-                            <div>
-                                <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            </div>
-                            <div>
-                                <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
-                            </div><br />
-                            {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan?</h6></td>
-                                        <td>
-                                            <div className='jainradio'> <FormControl component="fieldset">
-                                                <FormLabel component="legend"></FormLabel>
-                                                <RadioGroup
-                                                    aria-label="gender"
-                                                    name="controlled-radio-buttons-group"
-                                                    defaultValue="no"
-                                                    value={userData['mgloanstatus']}
-                                                    onChange={loanStatus}
-                                                    row={true}
+                            </div><br /><hr class="solid"></hr>
+                            <div className='drentbox'><br></br>
+                                <div><h6 id="dtdetail" >1. Unemployed Person : </h6></div>
+                                <div>
+                                    <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                </div>
+                                <div>
+                                    <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
+                                </div><br />
+                                {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan?</h6></td>
+                                            <td>
+                                                <div className='jainradio'> <FormControl component="fieldset">
+                                                    <FormLabel component="legend"></FormLabel>
+                                                    <RadioGroup
+                                                        aria-label="gender"
+                                                        name="controlled-radio-buttons-group"
+                                                        defaultValue="no"
+                                                        value={userData['mgloanstatus']}
+                                                        onChange={loanStatus}
+                                                        row={true}
 
-                                                    style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
+                                                        style={{ marginleft: '2rem', display: 'flex', alignItems: 'left' }}
 
-                                                >
-                                                    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-                                                    <FormControlLabel value="no" control={<Radio />} label="No" />
-                                                </RadioGroup>
-                                            </FormControl></div></td>
-                                    </tr>
+                                                    >
+                                                        <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                                                        <FormControlLabel value="no" control={<Radio />} label="No" />
+                                                    </RadioGroup>
+                                                </FormControl></div></td>
+                                        </tr>
 
-                                </table>
-                                {/* <FormControl component="fieldset">
+                                    </table>
+                                    {/* <FormControl component="fieldset">
                                 <FormLabel component="legend"></FormLabel>
                                 <RadioGroup
                                     aria-label="gender"
@@ -352,27 +365,27 @@ export default function SixthStep() {
                                     <FormControlLabel value="no" control={<Radio />} label="No" />
                                 </RadioGroup>
                             </FormControl> */}
-                            <span id='loanamount' style={{ visibility: 'hidden' }}>
-                                <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            </span><br/>
-                               
-                            </div></div>
+                                    <span id='loanamount' style={{ visibility: 'hidden' }}>
+                                        <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    </span><br />
+
+                                </div></div>
 
 
-                        <div className='float-center'>
+                            <div className='float-center'>
 
-                            {/* <Button variant='contained' color='success' onClick={saveData}>Save</Button><span> </span> */}
+                                {/* <Button variant='contained' color='success' onClick={saveData}>Save</Button><span> </span> */}
 
-                            <Button variant='contained' color='secondary' onClick={() => setStep(5)}>Back</Button><span> </span>
+                                <Button variant='contained' color='secondary' onClick={() => setStep(5)}>Back</Button><span> </span>
 
-                            {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button><span> </span> */}
-                            <Button variant='contained' color='primary' onClick={nextPage}>Next</Button><span> </span>
+                                {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>Next</Button><span> </span> */}
+                                <Button variant='contained' color='primary' onClick={nextPage}>Next</Button><span> </span>
 
 
-                        </div><br />
-                    </div><br></br>
-                </Box>
-            </Card>
-        </div>
-    )
-}
+                            </div><br />
+                        </div><br></br>
+                    </Box>
+                </Card>
+            </div>
+        )
+    }

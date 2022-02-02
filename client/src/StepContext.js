@@ -8,7 +8,7 @@ const StepContext = () => {
     const [currentStep, setStep] = useState(1);
     const [userData, setUserData] = useState([]);
     const [finalData, setFinalData] = useState([]);
-    const dependettablearray = [];
+    let dependettablearray = [];
     const [dependenttableData, setdependenttableData] = useState([]);
     const [earningmembertableData, setearningmembertableData] = useState([])
     const earningmembertablearray = []
@@ -192,28 +192,14 @@ const StepContext = () => {
 
         // Dependent details
 
-        formData.append("dependenttable",userData.dependenttable)
-        console.log(userData.dependenttable)
+        for (const [key, value] of Object.entries(dependenttableData)) {
+            dependettablearray.push(`${key}: ${value}`);
+        }
+        formData.append('dependenttable', dependettablearray)
 
 
-        // for (const [key, value] of Object.entries(dependenttableData)) {
-        //     dependettablearray.push(`${key}: ${value}`);
-        // }
+        console.log("dependent array after submitting", dependettablearray)
 
-        // dependenttableData.forEach(function(value, key){
-        //     console.log(value)
-        // })
-
-        // for(var in dependenttableData){
-        //     console.log(dependenttableData['var'])
-        // }
-
-        // formData.append('dependenttable', dependettablearray)
-
-
-        // console.log(dependettablearray)
-        // console.log(userData)
-        // console.log(formData.get('dependenttable').valueOf('dependent1name'))
 
 
         axios.post("https://hirsurishwarji-foundation.herokuapp.com/createApplication", formData)
@@ -243,7 +229,7 @@ const StepContext = () => {
         <div>
             <multiStepContext.Provider value={{
                 currentStep, setStep, userData, setUserData, finalData, setFinalData, formData, submitData, showData, dependettablearray, dependenttableData, setdependenttableData,
-                earningmembertableData, setearningmembertableData, earningmembertablearray, skilltableData, setskilltableData, skilltableDataarray, formData
+                earningmembertableData, setearningmembertableData, earningmembertablearray, skilltableData, setskilltableData, skilltableDataarray, 
             }}>
                 <App />
             </multiStepContext.Provider>
