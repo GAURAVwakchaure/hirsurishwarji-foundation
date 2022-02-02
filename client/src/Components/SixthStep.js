@@ -302,9 +302,9 @@ export default function SixthStep() {
                                     <FormControlLabel value="no" control={<Radio />} label="No" />
                                 </RadioGroup>
                             </FormControl> */}
-                            <div id='loanamount' style={{ visibility: 'hidden' }}>
+                            <span id='loanamount' style={{ visibility: 'hidden' }}>
                                 <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                            </div><br/>
+                            </span><br/>
 
                         </div></div>
 

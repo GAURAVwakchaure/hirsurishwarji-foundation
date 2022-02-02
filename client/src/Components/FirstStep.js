@@ -176,8 +176,8 @@ export default function FirstStep() {
                             <TextField id="add2" label="Address 2 " value={userData['add2']} onChange={(e) => setUserData({ ...userData, "add2": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Near by Place, Road Name, Town" />
                         </div>
                         <div>
-                            <TextField  inputProps={{ readOnly: true }} id="city" className ="required"  label="" value="Mumbai" onChange={(e) => setUserData({ ...userData, "city": "Mumbai" })} margin='normal' variant='standard' color="primary"  /><br></br><span id='ecity' className='text-danger'>  </span>
-                            <TextField id="state" className ="required" label="" value="Maharashtra" onChange={(e) => setUserData({ ...userData, "state": "Maharashtra" })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your State" /><br></br><span id='estate' className='text-danger'>  </span>
+                            <TextField  inputProps={{ readOnly: true }} id="city" className ="required"  label="City" value="Mumbai" onChange={(e) => setUserData({ ...userData, "city": "Mumbai" })} margin='normal' variant='standard' color="primary"  /><br></br><span id='ecity' className='text-danger'>  </span>
+                            <TextField inputProps={{ readOnly: true }} id="state" className ="required" label="State" value="Maharashtra" onChange={(e) => setUserData({ ...userData, "state": "Maharashtra" })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your State" /><br></br><span id='estate' className='text-danger'>  </span>
                             
                         </div>
                         <div>
