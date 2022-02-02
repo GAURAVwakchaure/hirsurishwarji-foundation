@@ -1,369 +1,616 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-export default function View() {
+export default function View(props) {
+  const { id } = useParams()
+  const [userData, setuserData] = useState([])
 
-    const {id} = useParams()
-    const [userData, setuserData] = useState()
 
-    useEffect(() => {
-      axios.get(`https://hirsurishwarji-foundation.herokuapp.com/user/${id}`)
-          .then(response => {
-              setuserData(response.data)
-          })
-  }, [])
 
-  console.log(userData)
-    // alert(id)
+  //   useEffect(() => {
+  //     const url = `https://hirsurishwarji-foundation.herokuapp.com/user/${id}`;
 
-    
+  //     const fetchData = async () => {
+  //         try {
+  //             const response = await fetch(url);
+  //             const json = await response.json();
+  //             setuserData(json)
+
+  //             // console.log(json);            
+  //         } catch (error) {
+  //             console.log("error", error);
+  //         }
+  //     };
+  //     fetchData();
+  // }, []);
+
+
+  // console.log(userData['dependenttable'].length)
+
+
+
+
+  useEffect(() => {
+    loadUser();
+  }, []);
+
+
+  const loadUser = async () => {
+    const result = await axios.get(`https://hirsurishwarji-foundation.herokuapp.com/user/${id}`)
+    setuserData(result.data);
+  }
+
+
+  console.log("userData of given id", userData)
+
+
+
+
+
+  // console.log(Object.entries(userData))
+
+
+  // for (const [key, value] of Object.entries(userData['dependenttable'])) {
+  //   console.log(`${value}`);
+  // }
+
+
+
+
+  // userData.map(items => {
+  //   console.log(items.Name)
+  // })
+
+  // for (let [key, value] of Object.entries(userData)) {
+  //   console.log(`${key},${value}`)
+  // }
+
   return <div>
 
-{/* 
-{Object.keys(userData).map((key) => (
-  <h1>{userData[key]}</h1>
+    {/* <input type={"text"} readOnly value={userData['Image']}></input> */}
+
+    <div class="form-title">
+      <h2 class="fs-title">Details for Application ID: {id}</h2>
+    </div>
+    <div className='viewpad' id='view'>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Personal Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Name']} onChange={(e) => setuserData({ ...userData, "Name": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Father/Husband Name:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" id="ex2" value={userData['Father_or_Husband_Name']} onChange={(e) => setuserData({ ...userData, "Father_or_Husband_Name": e.target.value })} type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Address Line 1:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Address_Line1']} onChange={(e) => setuserData({ ...userData, "Address_Line1": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Address Line 2:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Address_Line2']} onChange={(e) => setuserData({ ...userData, "Address_Line2": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>City:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['City']} onChange={(e) => setuserData({ ...userData, "City": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>State:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['State']} onChange={(e) => setuserData({ ...userData, "State": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>PIN Code:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Pincode']} onChange={(e) => setuserData({ ...userData, "Pincode": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Native Town:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Native_Town']} onChange={(e) => setuserData({ ...userData, "Native_Town": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Phone No.:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Phone_Number']} onChange={(e) => setuserData({ ...userData, "Phone_Number": e.target.value })} id="ex2" type="Number" />
+              </div>
+            </td>
+            <td>Mobile No.:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Mobile_Number']} onChange={(e) => setuserData({ ...userData, "Mobile_Number": e.target.value })} id="ex2" type="Number" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Creed:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Creed']} onChange={(e) => setuserData({ ...userData, "Creed": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Category:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Category']} onChange={(e) => setuserData({ ...userData, "Category": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Jain:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Jain']} onChange={(e) => setuserData({ ...userData, "Jain": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Documents Uploaded</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ration Card:</td>
+            <td>
 
 
+            </td>
+            <td>Ration Card Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Ration_Card_Number']} onChange={(e) => setuserData({ ...userData, "Ration_Card_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Rent/Maintenance Receipt:</td>
+            <td>URENT</td>
+            <td>Rent/Maintenance Receipt Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Rent_Reciept_Number']} onChange={(e) => setuserData({ ...userData, "Rent_Reciept_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Electric Bill:</td>
+            <td>UEBILL</td>
+            <td>Electric Bill Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Electricity_Consumer_Number']} onChange={(e) => setuserData({ ...userData, "Jain": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Medical Insurance:</td>
+            <td>UMINSURANCE</td>
+            <td>Medical Insurance Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Insurance_ID_Number']} onChange={(e) => setuserData({ ...userData, "Insurance_ID_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Salary Certificate:</td>
+            <td>USCERTI</td>
+            <td>Salary Certificate Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Salary_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Salary_Certificate_ID": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Bank Passbook:</td>
+            <td>UBPASSBOOK</td>
+            <td>Bank Passbook Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Bank_Account_Details']} onChange={(e) => setuserData({ ...userData, "Bank_Account_Details": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Jain Minority Certificate:</td>
+            <td>UJMCERTI</td>
+            <td>Jain Minority Certificate Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Jain_Minority_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Jain_Minority_Certificate_ID": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Telephone Bill:</td>
+            <td>UTBILL</td>
+            <td>Telephone Bill Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Telephone_Account_Number']} onChange={(e) => setuserData({ ...userData, "Telephone_Account_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Referral Letter:</td>
+            <td>URLETTER</td>
+            <td>Referral Letter Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Referral_Letter_Serial_Number']} onChange={(e) => setuserData({ ...userData, "Referral_Letter_Serial_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Aadhar Card:</td>
+            <td>UACARD</td>
+            <td>Aadhar Card Number:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Aadhaar_Card_Number']} onChange={(e) => setuserData({ ...userData, "Aadhaar_Card_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>School/College Fees Receipt:</td>
+            <td>USCFRECEIPT</td>
+            <td>School/College Fees Receipt:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['School_College_Fees_Receipt_Number']} onChange={(e) => setuserData({ ...userData, "School_College_Fees_Receipt_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Others:</td>
+            <td>UOTHERS</td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Miscellaneous Question</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pathshala Children:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Q1']} onChange={(e) => setuserData({ ...userData, "Q1": e.target.value })} id="ex2" type="text" />
+              </div></td>
+            <td>Religious Education Impart:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Q2']} onChange={(e) => setuserData({ ...userData, "Q2": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Temple Pooja:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Q3']} onChange={(e) => setuserData({ ...userData, "Q3": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Upashray Visit:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Q4']} onChange={(e) => setuserData({ ...userData, "Q4": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Usage of Kanmool:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Q5']} onChange={(e) => setuserData({ ...userData, "Q5": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Kanmool Usage Stooped:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Q6']} onChange={(e) => setuserData({ ...userData, "Q6": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Monthly Expenses Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maintenance Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['MaintenanceExpense']} onChange={(e) => setuserData({ ...userData, "MaintenanceExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Electric Expense:</td>
+            <td>
 
-))}
-     */}
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['ElectricBillExpense']} onChange={(e) => setuserData({ ...userData, "ElectricBillExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Telephone Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['TelephoneExpense']} onChange={(e) => setuserData({ ...userData, "TelephoneExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Education Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['EducationExpense']} onChange={(e) => setuserData({ ...userData, "EducationExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Tuition Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['TuitionExpense']} onChange={(e) => setuserData({ ...userData, "TuitionExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Medical Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['MedicalExpense']} onChange={(e) => setuserData({ ...userData, "MedicalExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Groceries Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['GroceriesExpense']} onChange={(e) => setuserData({ ...userData, "GroceriesExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Other Expense:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['OtherExpense']} onChange={(e) => setuserData({ ...userData, "OtherExpense": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td></td>
 
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['TotalExpense']} onChange={(e) => setuserData({ ...userData, "TotalExpense": e.target.value })} id="ex2" type="text" />
+              </div></td>
+          </tr>
+          <tr>
+            <td>Total Area of Flat:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['AreaOfFlat']} onChange={(e) => setuserData({ ...userData, "AreaOfFlat": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Rent or Ownership:</td>
+            <td>
 
-
-    
-
-      
-
-          <div class="form-title">
-            <h2 class="fs-title">Details for Application ID: {id}</h2>
-          </div>
-
-          <div className='viewpad' id='view'>
-          <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Personal Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Name:</td>
-                        <td>name</td>
-                        <td>Father/Husband Name:</td>
-                        <td>{id}</td>
-                    </tr>
-                    <tr>
-                        <td>Address Line 1:</td>
-                        <td>{id}</td>
-                        <td>Address Line 2:</td>
-                        <td>{id}</td>
-                    </tr>
-                    <tr>
-                        <td>City:</td>
-                        <td>UCITY</td>
-                        <td>State:</td>
-                        <td>USTATE</td>
-                    </tr>
-                    <tr>
-                        <td>PIN Code:</td>
-                        <td>UPIN</td>
-                        <td>Native Town:</td>
-                        <td>UNTOWN</td>
-                    </tr>
-                    <tr>
-                        <td>Phone No.:</td>
-                        <td>UPHNO</td>
-                        <td>Mobile No.:</td>
-                        <td>UMONO</td>
-                    </tr>
-                    <tr>
-                        <td>Creed:</td>
-                        <td>UCREED</td>
-                        <td>Category:</td>
-                        <td>UCategory</td>
-                    </tr>
-                    <tr>
-                        <td>Jain:</td>
-                        <td>UJAIN</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Documents Uploaded</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Ration Card:</td>
-                        <td>URATION</td>
-                        <td>Ration Card Number:</td>
-                        <td>URATIONN</td>
-                    </tr>
-                    <tr>
-                        <td>Rent/Maintenance Receipt:</td>
-                        <td>URENT</td>
-                        <td>Rent/Maintenance Receipt Number:</td>
-                        <td>URENTN</td>
-                    </tr>
-                    <tr>
-                        <td>Electric Bill:</td>
-                        <td>UEBILL</td>
-                        <td>Electric Bill Number:</td>
-                        <td>UEBILL</td>
-                    </tr>
-                    <tr>
-                        <td>Medical Insurance:</td>
-                        <td>UMINSURANCE</td>
-                        <td>Medical Insurance Number:</td>
-                        <td>UMINSURANCE</td>
-                    </tr>
-                    <tr>
-                        <td>Salary Certificate:</td>
-                        <td>USCERTI</td>
-                        <td>Salary Certificate Number:</td>
-                        <td>USCERTI</td>
-                    </tr>
-                    <tr>
-                        <td>Bank Passbook:</td>
-                        <td>UBPASSBOOK</td>
-                        <td>Bank Passbook Number:</td>
-                        <td>UBPASSBOOK</td>
-                    </tr>
-                    <tr>
-                        <td>Jain Minority Certificate:</td>
-                        <td>UJMCERTI</td>
-                        <td>Jain Minority Certificate Number:</td>
-                        <td>UJMCERTI</td>
-                    </tr>
-                    <tr>
-                        <td>Telephone Bill:</td>
-                        <td>UTBILL</td>
-                        <td>Telephone Bill Number:</td>
-                        <td>UTBILL</td>
-                    </tr>
-                    <tr>
-                        <td>Referral Letter:</td>
-                        <td>URLETTER</td>
-                        <td>Referral Letter Number:</td>
-                        <td>URLETTER</td>
-                    </tr>
-                    <tr>
-                        <td>Aadhar Card:</td>
-                        <td>UACARD</td>
-                        <td>Aadhar Card Number:</td>
-                        <td>UACARD</td>
-                    </tr>
-                    <tr>
-                        <td>School/College Fees Receipt:</td>
-                        <td>USCFRECEIPT</td>
-                        <td>School/College Fees Receipt:</td>
-                        <td>USCFRECEIPT</td>
-                    </tr>
-                    <tr>
-                        <td>Others:</td>
-                        <td>UOTHERS</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Miscellaneous Question</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Pathshala Children:</td>
-                        <td>UAQ1</td>
-                        <td>Religious Education Impart:</td>
-                        <td>UAQ2</td>
-                        <td>Temple Pooja:</td>
-                        <td>UAQ3</td>
-                    </tr>
-                    <tr>
-                        <td>Upashray Visit:</td>
-                        <td>UAQ4</td>
-                        <td>Usage of Kanmool:</td>
-                        <td>UAQ5</td>
-                        <td>Kanmool Usage Stooped:</td>
-                        <td>UAQ6</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Monthly Expenses Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Maintenance Expense:</td>
-                        <td>UAQ1</td>
-                        <td>Electric Expense:</td>
-                        <td>UAQ2</td>
-                        <td>Telephone Expense:</td>
-                        <td>UAQ3</td>
-                    </tr>
-                    <tr>
-                        <td>Education Expense:</td>
-                        <td>UAQ4</td>
-                        <td>Tuition Expense:</td>
-                        <td>UAQ5</td>
-                        <td>Medical Expense:</td>
-                        <td>UAQ6</td>
-                    </tr>
-                    <tr>
-                        <td>Groceries Expense:</td>
-                        <td>UAQ4</td>
-                        <td>Other Expense:</td>
-                        <td>UAQ5</td>
-                        <td>Total Expense:</td>
-                        <td>UAQ6</td>
-                    </tr>
-                    <tr>
-                        <td>Total Area of Flat:</td>
-                        <td>UAQ4</td>
-                        <td>Rent or Ownership:</td>
-                        <td>UAQ5</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Home Furniture Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>T.V:</td>
-                        <td>UAQ1</td>
-                        <td>Cable:</td>
-                        <td>UAQ2</td>
-                        <td>Fridgee:</td>
-                        <td>UAQ3</td>
-                        <td>Washing Machine:</td>
-                        <td>UAQ4</td>
-                    </tr>
-                    <tr>
-                        <td>Vehicle:</td>
-                        <td>UAQ5</td>
-                        <td>Medical Expense:</td>
-                        <td>Bike</td>
-                        <td>Phones:</td>
-                        <td>Bike</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Dependent Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Sr.no: 1</td>
-                        <td>Name</td>
-                        <td>uname</td>
-                        <td>Age:</td>
-                        <td>Uage:</td>
-                        <td>Aahaar No:</td>
-                        <td>Uadhar:</td>
-                        <td>Income:</td>
-                        <td>Uincome</td>
-                    </tr>
-                    <tr>
-                        <td>Education:</td>
-                        <td>uedg:</td>
-                        <td>Profession:</td>
-                        <td>UPro</td>
-                        <td>Religious Education:</td>
-                        <td>UAQ5</td>
-                    </tr>
-                    <tr>
-                        <td>Kanmool:</td>
-                        <td>Bike</td>
-                        <td>Navkarshi:</td>
-                        <td>Bike</td>
-                        <td>Pooja:</td>
-                        <td>Bike</td>
-                        <td>Night Dinner:</td>
-                        <td>Bike</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Earning Member Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Name:</td>
-                        <td>uname</td>
-                        <td>Work:</td>
-                        <td>uwork</td>
-                        <td>Phone Number:</td>
-                        <td>uph no</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Skill Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Name:</td>
-                        <td>uname</td>
-                        <td>Work:</td>
-                        <td>uwork</td>
-                        <td>Education:</td>
-                        <td>uph no</td>
-                        <td>Phone Number:</td>
-                        <td>uph no</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br></br>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Administrative Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Referred By:</td>
-                        <td>uname</td>
-                        <td>Address of Referral:</td>
-                        <td>uwork</td>
-                        <td>Survey Done By:</td>
-                        <td>uph no</td>
-                    </tr>
-                </tbody>
-            </table>
-
-          </div>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['RentOrOwnershipStatus']} onChange={(e) => setuserData({ ...userData, "RentOrOwnershipStatus": e.target.value })} id="ex2" type="text" />
+              </div>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Home Furniture Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>T.V:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['TV']} onChange={(e) => setuserData({ ...userData, "TV": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Cable:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Cable']} onChange={(e) => setuserData({ ...userData, "Cable": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Fridge:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Fridge']} onChange={(e) => setuserData({ ...userData, "Fridge": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Washing Machine:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['WashingMachine']} onChange={(e) => setuserData({ ...userData, "WashingMachine": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Vehicle:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Vehicle']} onChange={(e) => setuserData({ ...userData, "Vehicle": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Bike</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Bike']} onChange={(e) => setuserData({ ...userData, "Bike": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Phones:</td>
+            <td>
+            <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Phones']} onChange={(e) => setuserData({ ...userData, "Phones": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Dependent Details</th>
+          </tr>
+        </thead>
+        <tbody>
           
+          <tr>
+            
+            <td>Sr.no: 1</td>
+            <td>Name</td>
+            <td>uname</td>
+            <td>Age:</td>
+            <td>Uage:</td>
+            <td>Aahaar No:</td>
+            <td>Uadhar:</td>
+            <td>Income:</td>
+            <td>Uincome</td>
+          </tr>
+          <tr>
+            <td>Education:</td>
+            <td>uedg:</td>
+            <td>Profession:</td>
+            <td>UPro</td>
+            <td>Religious Education:</td>
+            <td>UAQ5</td>
+          </tr>
+          <tr>
+            <td>Kanmool:</td>
+            <td>Bike</td>
+            <td>Navkarshi:</td>
+            <td>Bike</td>
+            <td>Pooja:</td>
+            <td>Bike</td>
+            <td>Night Dinner:</td>
+            <td>Bike</td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Earning Member Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td>uname</td>
+            <td>Work:</td>
+            <td>uwork</td>
+            <td>Phone Number:</td>
+            <td>uph no</td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Skill Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td>uname</td>
+            <td>Work:</td>
+            <td>uwork</td>
+            <td>Education:</td>
+            <td>uph no</td>
+            <td>Phone Number:</td>
+            <td>uph no</td>
+          </tr>
+        </tbody>
+      </table>
+      <br></br>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Administrative Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Referred By:</td>
+            <td>uname</td>
+            <td>Address of Referral:</td>
+            <td>uwork</td>
+            <td>Survey Done By:</td>
+            <td>uph no</td>
+          </tr>
+        </tbody>
+      </table>
 
-      
+    </div>
+
+
+
 
   </div>;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

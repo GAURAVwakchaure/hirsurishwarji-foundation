@@ -129,8 +129,8 @@ export default function FifthStep() {
                         <div>
                             <Button variant='contained' color='secondary' onClick={() => setStep(4)}>Back</Button><span> </span>
 
-                            {/* <Button variant='contained' color='primary' onClick={() => setStep(6)}>Next</Button><span> </span> */}
-                            <Button variant='contained' color='primary' onClick={handleFurniture}>Next</Button><span> </span>
+                            <Button variant='contained' color='primary' onClick={() => setStep(6)}>Next</Button><span> </span>
+                            {/* <Button variant='contained' color='primary' onClick={handleFurniture}>Next</Button><span> </span> */}
 
                            
                         </div><br />

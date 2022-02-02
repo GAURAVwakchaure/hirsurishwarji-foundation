@@ -71,23 +71,23 @@ export default function Application() {
     }
 
     function ViewButton(cell, row, rowIndex, formatExtraData) {
-      
-        
-        return <div> 
-            <Link to = {`/${row._id}`}>        
-            <button type="button" class="btn btn-outline-info btn-sm" >View</button>
+        return <div>
+            <Link to={`/${row._id}`}>
+                <button type="button" class="btn btn-outline-info btn-sm" >View</button>
 
-            </Link>   
+            </Link>
         </div>
     }
     // filter: textFilter() 
     // const { SearchBar } = Search
     const columns = [
-        { dataField: '_id', text: 'ID', sort: true ,filter: textFilter()  },
-        { dataField: 'Name', text: 'Name', sort: true,filter: textFilter() },
-        { dataField: 'Mobile_Number', text: 'Mobile No.  ', sort: true,filter: textFilter() },
-        { dataField: 'Aadhaar_Card_Number', text: 'Aadhaar No.  ', sort: true,filter: textFilter() },
-        { dataField: 'status', text: 'Status'},
+        { dataField: '_id', text: 'ID', sort: true, filter: textFilter() },
+        { dataField: 'Name', text: 'Name', sort: true, filter: textFilter() },
+        { dataField: 'Mobile_Number', text: 'Mobile No.  ', sort: true, filter: textFilter() },
+        { dataField: 'Aadhaar_Card_Number', text: 'Aadhaar No.  ', sort: true, filter: textFilter() },
+        { dataField: 'Ration_Card_Number', text: 'Ration Card Number:' , sort: true, filter: textFilter()},
+        { dataField: 'status', text: 'Status' },
+
         {
             dataField: 'Grant', text: 'Grant', isDummyField: true,
             formatter: grantButton
@@ -110,10 +110,10 @@ export default function Application() {
     return (
         <main id="site-main">
             <div>
-            <div className='container'>
+                <div className='container'>
 
-                <div className='row'>
-{/* <>
+                    <div className='row'>
+                        {/* <>
                     <ToolkitProvider
                         keyField="_id"
                         data={APIData}
@@ -135,36 +135,36 @@ export default function Application() {
                         }
                     </ToolkitProvider></> */}
 
-                    <div>
-                        <h2 className='fs-title'>Applicant Details</h2><br></br>
-                    </div>
-                    {/* <div>
+                        <div>
+                            <h2 className='fs-title'>Applicant Details</h2><br></br>
+                        </div>
+                        {/* <div>
                     <form class="d-flex">
                        <input class="ml-auto" type="search" placeholder="Search" aria-label="Search" />
                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     </div>
                     <br></br><br></br> */}
-                    
-                    <BootstrapTable
-                        bootstrap4
-                        striped
-                        hover
-                        condensed
-                        keyField='_id'
-                        columns={columns}
-                        data={APIData}
-                        pagination={pagination}
-                        filter={filterFactory()}
-                    />
+
+                        <BootstrapTable
+                            bootstrap4
+                            striped
+                            hover
+                            condensed
+                            keyField='_id'
+                            columns={columns}
+                            data={APIData}
+                            pagination={pagination}
+                            filter={filterFactory()}
+                        />
+
+                    </div>
 
                 </div>
 
-            </div>
 
 
-
-            {/* <Card style={{ width: '100ch' }} className='mx-auto'>
+                {/* <Card style={{ width: '100ch' }} className='mx-auto'>
                 <span>
                 </span><br></br>
                 <h3><i>Applicant Details:</i></h3><br></br>
@@ -186,7 +186,7 @@ export default function Application() {
 
 
 
-            {/* {APIData.map((data) => 
+                {/* {APIData.map((data) => 
 
                 <BootstrapTable keyField='id' columns={columns}></BootstrapTable>
 
@@ -198,8 +198,8 @@ export default function Application() {
 
 
 
-        </div>
+            </div>
         </main>
-        
+
     )
 }

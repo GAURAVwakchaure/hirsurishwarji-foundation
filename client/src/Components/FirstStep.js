@@ -9,6 +9,8 @@ export default function FirstStep() {
     // const {setStep, userData, setUserData } = useContext(multiStepContext);
     const { setStep, userData, setUserData, } = useContext(multiStepContext);
 
+    // setUserData({ ...userData, "city": "Mumbai" })
+
     const handleNext = () => {
         var name = document.getElementById('name').value
         var fhname = document.getElementById('fhname').value
@@ -174,8 +176,8 @@ export default function FirstStep() {
                             <TextField id="add2" label="Address 2 " value={userData['add2']} onChange={(e) => setUserData({ ...userData, "add2": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Near by Place, Road Name, Town" />
                         </div>
                         <div>
-                            <TextField id="city" className ="required" label="City " value={userData['city']} onChange={(e) => setUserData({ ...userData, "city": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your City" /><br></br><span id='ecity' className='text-danger'>  </span>
-                            <TextField id="state" className ="required" label="State" value={userData['state']} onChange={(e) => setUserData({ ...userData, "state": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your State" /><br></br><span id='estate' className='text-danger'>  </span>
+                            <TextField  inputProps={{ readOnly: true }} id="city" className ="required"  label="" value="Mumbai" onChange={(e) => setUserData({ ...userData, "city": "Mumbai" })} margin='normal' variant='standard' color="primary"  /><br></br><span id='ecity' className='text-danger'>  </span>
+                            <TextField id="state" className ="required" label="" value="Maharashtra" onChange={(e) => setUserData({ ...userData, "state": "Maharashtra" })} margin='normal' variant='standard' color="primary" placeholder="Please Enter your State" /><br></br><span id='estate' className='text-danger'>  </span>
                             
                         </div>
                         <div>
@@ -183,7 +185,7 @@ export default function FirstStep() {
                             <TextField id="nativetown" label="Native Town " value={userData['nativetown']} onChange={(e) => setUserData({ ...userData, "nativetown": e.target.value })} margin='normal' variant='standard' color="primary"  placeholder="Please Enter Native Town" />
                         </div>
                         <div>
-                        <TextField id="mobilenumber" className ="required" type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" /><br></br><span id='emobilenumber' className='text-danger'>  </span>
+                        <TextField id="mobilenumber" className ="required"  type="number" label="Mobile Number" value={userData['mobilenumber']} onChange={(e) => setUserData({ ...userData, "mobilenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 10 Digit Mobile Number" /><br></br><span id='emobilenumber' className='text-danger'>  </span>
                             <TextField id="phonenumber" type="number" label="Phone Number " value={userData['phonenumber']} onChange={(e) => setUserData({ ...userData, "phonenumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter Phone Number" /><span>  </span>
                             {/* <TextField id="aadharnumber" className ="required" type="number" label="Aadhar Number" value={userData['aadharnumber']} onChange={(e) => setUserData({ ...userData, "aadharnumber": e.target.value })} margin='normal' variant='standard' color="primary" placeholder="Please Enter 12 Digit Aadhar Number" /> */}
                         </div>

@@ -4,9 +4,6 @@ import axios from 'axios'
 
 export const multiStepContext = React.createContext();
 
-
-
-
 const StepContext = () => {
     const [currentStep, setStep] = useState(1);
     const [userData, setUserData] = useState([]);
@@ -22,9 +19,11 @@ const StepContext = () => {
 
     // const [userfiles,setUserFiles] = useState('')
 
-    console.log(dependenttableData)
+    // console.log(dependenttableData)
+    // console.log("dependenttablearray", dependettablearray)
 
     const formData = new FormData()
+
 
     const showData = () => {
 
@@ -193,38 +192,47 @@ const StepContext = () => {
 
         // Dependent details
 
+        formData.append("dependenttable",userData.dependenttable)
+        console.log(userData.dependenttable)
 
-        for (const [key, value] of Object.entries(dependenttableData)) {
-            dependettablearray.push(`${key}: ${value}`);
-        }
 
-        formData.append('dependenttable', dependettablearray)
+        // for (const [key, value] of Object.entries(dependenttableData)) {
+        //     dependettablearray.push(`${key}: ${value}`);
+        // }
 
-        console.log(dependettablearray)
+        // dependenttableData.forEach(function(value, key){
+        //     console.log(value)
+        // })
+
+        // for(var in dependenttableData){
+        //     console.log(dependenttableData['var'])
+        // }
+
+        // formData.append('dependenttable', dependettablearray)
+
+
+        // console.log(dependettablearray)
         // console.log(userData)
         // console.log(formData.get('dependenttable').valueOf('dependent1name'))
 
 
-        axios.post("https://hirsurishwarji-foundation.herokuapp.com/createApplication", formData)
-            .then(res => {
-                console.log(res)
-                // window.alert("response after submitting data"+res.data)
-                window.alert(res.data)
-            })
-            .catch(err => { console.log(err) })
+        // axios.post("https://hirsurishwarji-foundation.herokuapp.com/createApplication", formData)
+        //     .then(res => {
+        //         console.log(res)
+        //         // window.alert("response after submitting data"+res.data)
+        //         window.alert(res.data)
+        //     })
+        //     .catch(err => { console.log(err) })
 
-        console.log("submitData calling finished")
-
-
-        // axios.post("http://localhost:8000/createApplication", formData)
-        // .then(res => {
-        //     console.log(res)
-        //     window.alert(res.data)
-        // })
-        // .catch(err => { console.log(err) })
+        // console.log("submitData calling finished")
 
 
-
+        axios.post("http://localhost:8000/createApplication", formData)
+        .then(res => {
+            console.log(res)
+            window.alert(res.data)
+        })
+        .catch(err => { console.log(err) })
 
         setUserData('');
         setStep(1);
@@ -235,7 +243,7 @@ const StepContext = () => {
         <div>
             <multiStepContext.Provider value={{
                 currentStep, setStep, userData, setUserData, finalData, setFinalData, formData, submitData, showData, dependettablearray, dependenttableData, setdependenttableData,
-                earningmembertableData, setearningmembertableData, earningmembertablearray, skilltableData, setskilltableData, skilltableDataarray
+                earningmembertableData, setearningmembertableData, earningmembertablearray, skilltableData, setskilltableData, skilltableDataarray, formData
             }}>
                 <App />
             </multiStepContext.Provider>

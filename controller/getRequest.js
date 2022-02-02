@@ -5,7 +5,7 @@ import upload from './fileUpload.js'
 
 // all application list
 export const getApplicantList = (req, res) => {
-    Form.find().sort('-_id').select({id:1,Name:1,Mobile_Number:1,Aadhaar_Card_Number:1,status:1}).exec(function(err,docs){
+    Form.find().sort('-_id').select({id:1,Name:1,Mobile_Number:1,Aadhaar_Card_Number:1,status:1,Ration_Card_Number:1}).exec(function(err,docs){
         res.send(docs)
     })
 }
