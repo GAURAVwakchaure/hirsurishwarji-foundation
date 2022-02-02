@@ -105,7 +105,7 @@ export default function NinethStep() {
 
                                 <Button variant='contained' color='secondary' onClick={backPage}>Back</Button><span> </span>
 
-                                <Button variant='contained' color='primary' onClick={() => setStep(10)}>Next</Button><span> </span>
+                                <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button><span> </span>
 
 
                             </div><br />

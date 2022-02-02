@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Card, } from 'react-bootstrap'
-import { Button, Box } from '@material-ui/core';
+import { Button, TextField, Box } from '@material-ui/core';
 import { multiStepContext } from '../StepContext';
 // import { Table } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,10 +8,41 @@ import '..'
 
 
 export default function EleventhStep() {
-    const { setStep, userData, submitData, skilltableData,setskilltableData} = useContext(multiStepContext);
+    const { setStep, setUserData, userData, submitData, skilltableData,setskilltableData} = useContext(multiStepContext);
     //use of hook for couting
     const [noOfRows, setNoOfRows] = useState(1);
+        // let referredby = document.getElementById('referredby').value
+        // let referraladdress = document.getElementById('referraladdress').value
+        // // let surveydetails = document.getElementById('surveydetails').value
+        // // let specialnotes = document.getElementById('specialnotes').value
 
+        // if (referredby == null || referredby === "") {
+        //     document.getElementById('ereferredby').innerHTML="Please Enter Referred By !"
+        // } 
+        // else if(!isNaN(referredby)){
+        //     document.getElementById('ereferredby').innerHTML="Numbers are not allowed !"
+        // }
+        // else if(referredby.length < 2  || referredby.length > 50){
+        //     document.getElementById('ereferredby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        // }
+        // else{
+        //     document.getElementById('ereferredby').innerHTML=" "
+        // }
+        // if (referraladdress == null || referraladdress === "") {
+        //     document.getElementById('ereferraladdress').innerHTML="Please Enter Referral Address !"
+        // } 
+        // else if(referraladdress.length < 2  || referraladdress.length > 50){
+        //     document.getElementById('ereferraladdress').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        // }
+        // else{
+        //     document.getElementById('ereferraladdress').innerHTML=" "
+        // }
+        // if(referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50 || referraladdress == null || referraladdress === "" || referraladdress.length < 2  || referraladdress.length > 50 ){
+        //     document.getElementById('invalid').innerHTML="Invalid Input !!"
+        // }
+        //  else {
+        //     document.getElementById('invalid').innerHTML=" "
+        // }
 
     const deleteRow = () => {
         delete skilltableData["skill" + noOfRows + "name"]
@@ -29,7 +60,7 @@ export default function EleventhStep() {
                 <Box
                     component="form"
                     sx={{
-                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        '& .MuiTextField-root': { m: 1, width: '40ch' },
                     }}
                     noValidate
                     autoComplete="off"
@@ -92,13 +123,32 @@ export default function EleventhStep() {
                                 </div>
 
                             </div><br></br><br></br>
+                            {/* <hr class="solid"></hr><br></br> */}
+
+                            <div className='dadminbox'><br></br>
+                            <h6 class="fs-title">Administrative Details</h6><br></br>
+
+                            <div>
+                                <span id='invalid' class="text-danger size font-weight-bold"></span>
+                            </div>
+                            <div>
+                                <TextField label="Referred By: " className ="" id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> 
+                                {/* <span id='ereferredby' className='text-danger' >  </span> */}
+                            </div>
+                            <div>
+                                <TextField label="Address of Referral: " className ="" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> 
+                                {/* <span id='ereferraladdress' className='text-danger' >  </span> */}
+                            </div>
+                            </div>
+
                             <div>
 
                                 {/* <Button variant='contained' color='success' onClick={saveData}>Save</Button><span> </span> */}
 
-                                <Button variant='contained' color='secondary' onClick={() => setStep(10)}>Back</Button><span> </span>
+                                <Button variant='contained' color='secondary' onClick={() => setStep(9)}>Back</Button><span> </span>
 
                                 <Button variant='contained' color='primary' onClick={submitData}>Submit</Button><span> </span>
+                                
 
 
                             </div><br />

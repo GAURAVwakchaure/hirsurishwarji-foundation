@@ -481,6 +481,13 @@ body {
   border-radius: 20px;
 }
 
+.dadminbox{
+  border-style: ridge;
+  padding-bottom: 1.4rem;
+  margin: 30px 320px;
+  border-radius: 20px;
+}
+
 .rent{
   padding-top: 30px;
 }

@@ -86,9 +86,9 @@ export default function Form() {
           <Step>
             <StepLabel></StepLabel>
           </Step>
-          <Step>
+          {/* <Step>
             <StepLabel></StepLabel>
-          </Step>
+          </Step> */}
           <Step>
             <StepLabel></StepLabel>
           </Step>
