@@ -1,6 +1,8 @@
 import Form from '../model/createApplication.js'
 
-import upload from './fileUpload.js'
+import upload from './fileUpload.js';
+
+import path from 'path';
 
 
 // all application list
@@ -25,6 +27,7 @@ export const createApplication = (req, res) =>{
         // storing path of files uploaded
         const paths = []
         req.files.forEach(function(value, key) {
+          paths.push(value.fieldname)
           paths.push(value.path)
         })
         // saving data into db
@@ -155,4 +158,26 @@ export const updateUserById = async(req, res) => {
   res.send("User's Data Updated Successfully")
   console.log(id)
   console.log(req.body)
+}
+
+
+export const getFile  = async(req, res, next) => {
+  var options = {
+    root: path.join('./uploads'),
+    dotfiles: 'deny',
+    headers: {
+      'x-timestamp': Date.now(),
+      'x-sent': true
+    }
+  }
+
+  var fileName = req.params.name
+  console.log(fileName)
+  res.sendFile(fileName, options, function(err){
+    if(err){
+      next(err)
+    }else{
+      console.log('sent', fileName)
+    }
+  })
 }
