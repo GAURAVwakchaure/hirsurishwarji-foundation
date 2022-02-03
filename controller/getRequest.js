@@ -28,7 +28,7 @@ export const createApplication = (req, res) =>{
         const paths = []
         req.files.forEach(function(value, key) {
           paths.push(value.fieldname)
-          paths.push(value.path)
+          paths.push(value.originalname)
         })
         // saving data into db
         try {
