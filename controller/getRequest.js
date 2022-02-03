@@ -181,3 +181,15 @@ export const getFile  = async(req, res, next) => {
     }
   })
 }
+// export const submit = async (_id) => {
+//   try{
+//     const result = await Form.updateOne ({_id},{
+//       $set :{
+//         status :"Survey Done"
+//       }
+//     });
+//     console.log(result);
+//   }catch(err){
+//     console.log(err);
+//   }
+// }

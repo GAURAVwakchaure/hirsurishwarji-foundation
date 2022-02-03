@@ -61,7 +61,9 @@ export default function Application() {
 
     function grantButton(cell, row, rowIndex, formatExtraData) {
         return <div>
+            <Link to={`/grant/${row._id}`}>
             <button type="button" class="btn btn-outline-success btn-sm">Grant</button>
+            </Link>
         </div>
     }
     function referButton(cell, row, rowIndex, formatExtraData) {

@@ -13,6 +13,7 @@ import Form from './Form';
 import { LinkContainer } from 'react-router-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import View from './Components/View';
+import Grant from './Components/Grant';
 
 function App() {
 
@@ -83,6 +84,7 @@ function App() {
             <Route exact path='/form' element={<Form />}></Route>
             <Route exact path='/application' element={<Application />}></Route>
             <Route exact path = '/:id' element = {<View/>}></Route>
+            <Route exact path = '/grant/:id' element = {<Grant/>}></Route>
           </Routes>          
         </header>
       </div>
