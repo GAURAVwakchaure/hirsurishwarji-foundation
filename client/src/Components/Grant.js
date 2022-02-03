@@ -13,7 +13,7 @@ export default function Grant() {
     const { id } = useParams()
 
     const grant = () => {
-        axios.put(`http://hirsurishwarji-foundation.herokuapp.com/user/updateGrant/${id}`)
+        axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateGrant/${id}`)
         .then(res => {
           window.alert(res.data)
         })
@@ -23,7 +23,7 @@ export default function Grant() {
       }
     
       const grantreject = () => {
-        axios.put(`http://hirsurishwarji-foundation.herokuapp.com/user/updateGrantreject/${id}`)
+        axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateGrantreject/${id}`)
         .then(res => {
           window.alert(res.data)
         })

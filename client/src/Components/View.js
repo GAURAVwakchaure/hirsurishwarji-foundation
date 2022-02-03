@@ -92,7 +92,7 @@ export default function View(props) {
 
 
   const update = () => {
-    axios.put(`http://hirsurishwarji-foundation.herokuapp.com/user/${id}`, userData)
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/${id}`, userData)
       .then(res => {
         window.alert(res.data)
       })
@@ -102,7 +102,7 @@ export default function View(props) {
   }
 
   const submit = () => {
-    axios.put(`http://hirsurishwarji-foundation.herokuapp.com/user/updateSurvey/${id}`)
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateSurvey/${id}`)
     .then(res => {
       window.alert(res.data)
     })
@@ -112,7 +112,7 @@ export default function View(props) {
   }
 
   const approve = () => {
-    axios.put(`http://hirsurishwarji-foundation.herokuapp.com/user/updateApprove/${id}`)
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateApprove/${id}`)
     .then(res => {
       window.alert(res.data)
     })
@@ -122,7 +122,7 @@ export default function View(props) {
   }
 
   const reject = () => {
-    axios.put(`http://hirsurishwarji-foundation.herokuapp.com/user/updateReject/${id}`)
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateReject/${id}`)
     .then(res => {
       window.alert(res.data)
     })
