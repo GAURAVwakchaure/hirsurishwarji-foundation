@@ -273,7 +273,7 @@ export const updateGrantreject = async (req, res) => {
   try{
     const result = await Form.findByIdAndUpdate({_id: id},{
       $set :{
-        s :"Grant Rejected"
+        status :"Grant Rejected"
       }
     }
     ,{
