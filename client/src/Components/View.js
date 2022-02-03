@@ -12,29 +12,47 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+import Form from '../Form';
 
 export default function View(props) {
   const { id } = useParams()
-  const [userData, setuserData, setUserData] = useState([])
+  const [userData, setuserData,] = useState([])
+  console.log('user data in view file', userData)
 
+  // const submit = () => {
+  //   let surveydoneby = document.getElementById('surveydoneby').value
 
-  const submit = () => {
-    let surveydoneby = document.getElementById('surveydoneby').value
-
-    if (surveydoneby == null || surveydoneby === "") {
-      document.getElementById('esurveydoneby').innerHTML = "Please Enter survey done by !"
-    }
-    else if (!isNaN(surveydoneby)) {
-      document.getElementById('esurveydoneby').innerHTML = "Numbers are not allowed !"
-    }
-    else if (surveydoneby.length < 2 || surveydoneby.length > 50) {
-      document.getElementById('esurveydoneby').innerHTML = "Minimum 2 and Maximum 50 characters are allowed !"
-    }
-    else {
-      document.getElementById('esurveydoneby').innerHTML = " "
-      alert('Survey Details Submited Sucessfully.')
-    }
-  }
+  //   if (surveydoneby == null || surveydoneby === "") {
+  //     document.getElementById('esurveydoneby').innerHTML = "Please Enter survey done by !"
+  //   }
+  //   else if (!isNaN(surveydoneby)) {
+  //     document.getElementById('esurveydoneby').innerHTML = "Numbers are not allowed !"
+  //   }
+  //   else if (surveydoneby.length < 2 || surveydoneby.length > 50) {
+  //     document.getElementById('esurveydoneby').innerHTML = "Minimum 2 and Maximum 50 characters are allowed !"
+  //   }
+  //   else {
+  //     document.getElementById('esurveydoneby').innerHTML = " "
+  //     alert('Survey Details Submited Sucessfully.')
+  //   }
+  // }
+    
+    // let surveydoneby = document.getElementById('surveydoneby').value
+   
+    // if (surveydoneby == null || surveydoneby === "") {
+    //     document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
+    // }
+    // else if(!isNaN(surveydoneby)){
+    //     document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
+    // }
+    // else if(surveydoneby.length < 2  || surveydoneby.length > 50){
+    //     document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+    // } 
+    // else{
+    //     document.getElementById('esurveydoneby').innerHTML=" "
+    //     document.getElementsByName('status').value='submit'
+    //     alert('Survey Details Submited Sucessfully.')
+    // }
 
   //   useEffect(() => {
   //     const url = `https://hirsurishwarji-foundation.herokuapp.com/user/${id}`;
@@ -83,6 +101,35 @@ export default function View(props) {
       })
   }
 
+  const submit = () => {
+    axios.put(`http://localhost:8000/user/updateSurvey/${id}`)
+    .then(res => {
+      window.alert(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  const approve = () => {
+    axios.put(`http://localhost:8000/user/updateApprove/${id}`)
+    .then(res => {
+      window.alert(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  const reject = () => {
+    axios.put(`http://localhost:8000/user/updateReject/${id}`)
+    .then(res => {
+      window.alert(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
 
 
@@ -865,7 +912,7 @@ export default function View(props) {
             <table className='center'>
               <tr>
                 <td className='thpad'>
-                  <TextField label="Survey Done By:" className="required" id="surveydoneby" margin='normal' variant='standard' color="secondary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+                  <TextField label="Survey Done By:" className="required" id="surveydoneby"  onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="secondary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                 </td>
                 <td className='thpad'>
                   <TextField label="Survey Details:" id="surveydetails" margin='normal' variant='standard' color="secondary" /><span>  </span>
@@ -896,12 +943,8 @@ export default function View(props) {
 
           </div>
         </div><br></br>
-        {/* <button  className='btn btn-secondary' onClick={submit}>
-        Submit
-      </button><br></br><br></br> */}
-        <button className='btn btn-secondary' >
-          Submit
-        </button><br></br><br></br>
+        <Button variant='contained' color='primary' onClick={submit} >Submit</Button>
+        <br></br><br></br>
 
 
         <hr class="solid"></hr><br></br>
@@ -916,7 +959,7 @@ export default function View(props) {
                 <TextField label="Approved By:" className="required" id="approvedby" margin='normal' variant='standard' color="secondary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
               </td>
               <td className='thpad'>
-                <TextField label="Amount Needed" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} id='egmoneyneed' type="number" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="secondary" />
+                <TextField label="Amount Needed" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} id='egmoneyneed' type="number" value={userData['egmoneyneeded']} onChange={(e) => setuserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="secondary" />
               </td>
             </tr>
             <tr>
@@ -929,6 +972,35 @@ export default function View(props) {
             </tr>
           </table>
           {/* <div className='datepick2'>
+       <Button variant='contained' color='primary' onClick={submit} >Submit</Button><span> </span>
+      <br></br><br></br>
+      
+
+      <hr class="solid"></hr><br></br>
+    <div>
+      <h6 class="fs-title">Approval Details</h6>
+    </div>
+    <br></br>
+    <div  className='viewadminborder'><br></br>
+    <table className='center'>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Approved By:" className ="required" id="approvedby" margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+          </td>
+          <td className='thpad'>
+          <TextField label="Amount Needed" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egmoneyneed' type="number" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" />
+          </td>
+        </tr>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Approved Amount:" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} className ="required" type='number' id="approvedamount"  margin='normal' variant='standard' color="primary" /><span>  </span>
+          </td>
+          <td className='thpad'>
+          <TextField label="Comments:" id="comments"  margin='normal' variant='standard' color="primary" />
+          </td>
+        </tr>
+      </table>
+      {/* <div className='datepick2'>
       <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
       </div> */}
           <br></br>
@@ -939,9 +1011,10 @@ export default function View(props) {
         </div><br></br><br></br>
 
       </Box></Card>
-    <Button variant='contained' color='secondary'>Reject</Button><span> </span>
-    <Button variant='contained' color='secondary'>Approve</Button><br></br><br></br><br></br><br></br>
 
+      <Button variant='contained' color='secondary' onClick={reject}>Reject</Button><span> </span>
+      <Button variant='contained' color='primary' onClick={approve} >Approve</Button><br></br><br></br><br></br><br></br>
+      
   </div>
 }
 

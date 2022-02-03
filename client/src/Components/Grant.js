@@ -11,6 +11,29 @@ import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
 export default function Grant() {
     const { id } = useParams()
+
+    const grant = () => {
+        axios.put(`http://localhost:8000/user/updateGrant/${id}`)
+        .then(res => {
+          window.alert(res.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+    
+      const grantreject = () => {
+        axios.put(`http://localhost:8000/user/updateGrantreject/${id}`)
+        .then(res => {
+          window.alert(res.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+
+
+
     return<div>
         <div class="form-title">
             <h2 class="fs-title">Grant for Application ID: {id}</h2>
@@ -51,8 +74,8 @@ export default function Grant() {
                         
                         <br></br>
                         <div>
-                            <Button variant='contained' color='secondary'>Reject</Button><span> </span>
-                            <Button variant='contained' color='primary'>Apprrove</Button><span> </span>
+                            <Button variant='contained' color='secondary' onClick={grantreject} >Reject</Button><span> </span>
+                            <Button variant='contained' color='primary' onClick={grant}>Grant</Button><span> </span>
 
                            
                         </div><br />
