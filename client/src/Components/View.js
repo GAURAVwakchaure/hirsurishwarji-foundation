@@ -830,7 +830,10 @@ export default function View(props) {
           {userData.dependenttable ?
                 userData.dependenttable.map(function (d) {
                   return (
-                    <td className = "deptab">{d}</td>
+                    <tr>
+                    <td >{d}</td>
+
+                    </tr>
                   )
                 })
 
