@@ -129,6 +129,11 @@ const StepContext = () => {
         formData.append('vehicle', userData.vehicle)
         formData.append('bike', userData.bike)
         formData.append('phones', userData.phones)
+        formData.append('unemployedpersoneducation', userData.unemployedpersoneducation)
+        formData.append('unemployedpersonexperience', userData.unemployedpersonexperience)
+        formData.append('loanstatus', userData.loanstatus)
+        formData.append('loanamount', userData.loanamount)
+        formData.append('financialamountneeded', userData.financialamountneeded)
 
 
         // education grant
@@ -136,7 +141,7 @@ const StepContext = () => {
             formData.append('egunemployedpersoneducation', userData.egunemployedpersoneducation)
             formData.append('egunemployedpersonexperience', userData.egunemployedpersonexperience)
             formData.append('egloanstatus', userData.egloanstatus)
-            formData.append('loanamount', userData.loanamount)
+            formData.append('egloanamount', userData.egloanamount)
             formData.append('egscname', userData.egscname)
             formData.append('egscaddress', userData.egscaddress)
             formData.append('egcoursename', userData.egcoursename)

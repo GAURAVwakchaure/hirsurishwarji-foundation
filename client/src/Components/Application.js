@@ -62,7 +62,7 @@ export default function Application() {
     function grantButton(cell, row, rowIndex, formatExtraData) {
         return <div>
             <Link to={`/grant/${row._id}`}>
-            <button type="button" class="btn btn-outline-success btn-sm">Grant</button>
+            <button type="button" class="btn btn-outline-success btn-sm">Approve</button>
             </Link>
         </div>
     }
@@ -91,7 +91,7 @@ export default function Application() {
         { dataField: 'status', text: 'Status' },
 
         {
-            dataField: 'Grant', text: 'Grant', isDummyField: true,
+            dataField: 'Approve', text: 'Approve', isDummyField: true,
             formatter: grantButton
         },
         {

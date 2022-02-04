@@ -387,18 +387,22 @@ export default function SixthStep() {
 
                         </div><br /><hr class="solid"></hr>
                         <div className='drentbox'><br></br>
-                            <div><h6 id="dtdetail" >1. Unemployed Person : </h6></div>
+                            <h6 id="dtdetail" >1. Unemployed Person : </h6>
                             <div>
-                                <TextField label="Education" id='mgeducation' value={userData['mgunemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                <TextField label="Education" id='mgeducation' value={userData['unemployedpersoneducation']} onChange={(e) => setUserData({ ...userData, "unemployedpersoneducation": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             </div>
                             <div>
-                                <TextField label="Experience" id='mgexperience' value={userData['mgunemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "mgunemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
+                                <TextField label="Experience" id='mgexperience' value={userData['unemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "unemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
                             </div><br />
+                                <h6 id="dtdetail" >2. Financial Loan Amount Needed : </h6>
+                                <div>
+                                <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} type="number" id='floanamountneeded' value={userData['financialamountneeded']} onChange={(e) => setUserData({ ...userData, "financialamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                </div><br></br>
                             {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
-                            <div>
+                           
                                 <table>
                                     <tr>
-                                        <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan?</h6></td>
+                                        <td rowSpan={3}> <h6 id="dtdetail">3. Any Previous Loan?</h6></td>
                                         <td>
                                             <div className='jainradio'> <FormControl component="fieldset">
                                                 <FormLabel component="legend"></FormLabel>
@@ -406,7 +410,7 @@ export default function SixthStep() {
                                                     aria-label="gender"
                                                     name="controlled-radio-buttons-group"
                                                     defaultValue="no"
-                                                    value={userData['mgloanstatus']}
+                                                    value={userData['loanstatus']}
                                                     onChange={loanStatus}
                                                     row={true}
 
@@ -437,10 +441,10 @@ export default function SixthStep() {
                                 </RadioGroup>
                             </FormControl> */}
                                 <span id='loanamount' style={{ visibility: 'hidden' }}>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['mgloanamount']} onChange={(e) => setUserData({ ...userData, "mgloanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </span><br />
 
-                            </div></div>
+                            </div>
 
 
                         <div className='float-center'>

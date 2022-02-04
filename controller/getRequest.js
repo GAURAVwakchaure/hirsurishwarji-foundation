@@ -42,14 +42,14 @@ export const createApplication = (req, res) =>{
               Father_or_Husband_Name: req.body.fhname == "undefined" ? "" :req.body.fhname,
               Address_Line1: req.body.add1 == "undefined" ? "" :req.body.add1,
               Address_Line2: req.body.add2 == "undefined" ? "" :req.body.add2,
-              City: req.body.city== "undefined" ? "" :req.body.city,
-              State: req.body.state== "undefined" ? "" :req.body.state,
+              City: req.body.city== "undefined" ? "Mumbai" :req.body.city,
+              State: req.body.state== "undefined" ? "Maharashtra" :req.body.state,
               Pincode: req.body.pincode  == "undefined" ? "" :req.body.pincode,
               Native_Town: req.body.nativetown  == "undefined" ? "" :req.body.nativetown,
               Phone_Number: req.body.phonenumber  == "undefined" ? "" :req.body.phonenumber,
               Mobile_Number: req.body.mobilenumber  == "undefined" ? "" :req.body.mobilenumber,
-              Jain: req.body.jainism  == "undefined" ? "" :req.body.jainism,
-              Category:req.body.category == "undefined" ? "" :req.body.category ,
+              Jain: req.body.jainism  == "undefined" ? "Yes" :req.body.jainism,
+              Category:req.body.category == "undefined" ? "Financial" :req.body.category ,
 
               
 
@@ -125,20 +125,14 @@ export const createApplication = (req, res) =>{
               // surveydoneby: req.body.surveydoneby,
               // surveydetails: req.body.surveydetails,
               // specialnotes: req.body.specialnotes,
-              approvedby: req.body.approvedby,
-              approvedammount: req.body.approvedammount,
-              comments: req.body.comments,
-              bankname: req.body.bankname,
-              bankaccountno: req.body.bankaccountno,
-              chequeneft: req.body.chequeneft,
+              
 
-
-              Q1: req.body.pathshalachildren== "undefined" ? "" :req.body.pathshalachildren,
-              Q2: req.body.religiouseducation== "undefined" ? "" :req.body.religiouseducation,
-              Q3: req.body.templepooja== "undefined" ? "" :req.body.templepooja,
-              Q4: req.body.upashrayvisit== "undefined" ? "" :req.body.upashrayvisit,
-              Q5: req.body.kanmoolusage== "undefined" ? "" :req.body.kanmoolusage,
-              Q6: req.body.kanmoolusagestopped== "undefined" ? "" :req.body.kanmoolusagestopped,
+              Q1: req.body.pathshalachildren== "undefined" ? "Yes" :req.body.pathshalachildren,
+              Q2: req.body.religiouseducation== "undefined" ? "Yes" :req.body.religiouseducation,
+              Q3: req.body.templepooja== "undefined" ? "Yes" :req.body.templepooja,
+              Q4: req.body.upashrayvisit== "undefined" ? "Yes" :req.body.upashrayvisit,
+              Q5: req.body.kanmoolusage== "undefined" ? "Yes" :req.body.kanmoolusage,
+              Q6: req.body.kanmoolusagestopped== "undefined" ? "Yes" :req.body.kanmoolusagestopped,
               MaintenanceExpense: req.body.maintenance== "undefined" ? "" :req.body.maintenance,
               ElectricBillExpense: req.body.electricbillexpense== "undefined" ? "" :req.body.electricbillexpense,
               TelephoneExpense: req.body.telephoneexpense== "undefined" ? "" :req.body.telephoneexpense,
@@ -149,7 +143,7 @@ export const createApplication = (req, res) =>{
               OtherExpense: req.body.otherexpense == "undefined" ? "" :req.body.otherexpense,
               TotalExpense: req.body.totalexpenses == "undefined" ? "" :req.body.totalexpenses,
               AreaOfFlat: req.body.areaofflat  == "undefined" ? "" :req.body.areaofflat,
-              RentOrOwnershipStatus: req.body.rentownershipstatus == "undefined" ? "" :req.body.rentownershipstatus,
+              RentOrOwnershipStatus: req.body.rentownershipstatus == "undefined" ? "Ownership" :req.body.rentownershipstatus,
               TV:req.body.tv == "undefined" ? "" :req.body.tv,
               Cable:req.body.cable == "undefined" ? "" :req.body.cable,
               Fridge:req.body.fridge == "undefined" ? "" :req.body.fridge,
@@ -158,10 +152,15 @@ export const createApplication = (req, res) =>{
               Bike:req.body.bike == "undefined" ? "" :req.body.bike,
               Phones:req.body.phones == "undefined" ? "" :req.body.phones,             
               dependenttable : req.body.dependenttable == "undefined" ? "" :req.body.dependenttable,
+              unemployedpersoneducation : req.body.unemployedpersoneducation == "undefined" ? "" :req.body.unemployedpersoneducation,
+              unemployedpersonexperience : req.body.unemployedpersonexperience == "undefined" ? "" :req.body.unemployedpersonexperience,
+              loanstatus : req.body.loanstatus == "undefined" ? "No" :req.body.loanstatus,
+              loanamount : req.body.loanamount == "undefined" ? "" :req.body.loanamount,
+              financialamountneeded : req.body.financialamountneeded == "undefined" ? "" :req.body.financialamountneeded,
               egunemployedpersoneducation: req.body.egunemployedpersoneducation == "undefined" ? "" :req.body.egunemployedpersoneducation,
               egunemployedpersonexperience: req.body.egunemployedpersonexperience == "undefined" ? "" :req.body.egunemployedpersonexperience,
-              egloanstatus: req.body.egloanstatus == "undefined" ? "" :req.body.egloanstatus,
-              loanamount: req.body.loanamount == "undefined" ? "" :req.body.loanamount,
+              egloanstatus: req.body.egloanstatus == "undefined" ? "No" :req.body.egloanstatus,
+              egloanamount: req.body.loanamount == "undefined" ? "" :req.body.egloanamount,
               egscname: req.body.egscname == "undefined" ? "" :req.body.egscname,
               egscaddress: req.body.egscaddress == "undefined" ? "" :req.body.egscaddress,
               egcoursename: req.body.egcoursename == "undefined" ? "" :req.body.egcoursename,
@@ -172,7 +171,7 @@ export const createApplication = (req, res) =>{
               egselfmanagecontribution: req.body.egselfmanagecontribution== "undefined" ? "" :req.body.egselfmanagecontribution,
               mgunemployedpersoneducation: req.body.mgunemployedpersoneducation== "undefined" ? "" :req.body.mgunemployedpersoneducation,
               mgunemployedpersonexperience: req.body.mgunemployedpersonexperience== "undefined" ? "" :req.body.mgunemployedpersonexperience,
-              mgloanstatus: req.body.mgloanstatus== "undefined" ? "" :req.body.mgloanstatus,
+              mgloanstatus: req.body.mgloanstatus== "undefined" ? "No" :req.body.mgloanstatus,
               mgloanamount: req.body.mgloanamount== "undefined" ? "" :req.body.mgloanamount,
               mghname: req.body.mghname== "undefined" ? "" :req.body.mghname,
               mghaddress: req.body.mghaddress== "undefined" ? "" :req.body.mghaddress,
@@ -189,7 +188,13 @@ export const createApplication = (req, res) =>{
               referraladdress: req.body.referraladdress== "undefined" ? "" :req.body.referraladdress,
               surveydoneby: req.body.surveydoneby== "undefined" ? "" :req.body.surveydoneby,
               surveydetails: req.body.surveydetails== "undefined" ? "" :req.body.surveydetails,
-              specialnotes: req.body.specialnotes == "undefined" ? "" :req.body.specialnotes,      
+              specialnotes: req.body.specialnotes == "undefined" ? "" :req.body.specialnotes,
+              approvedby: req.body.approvedby == "undefined" ? "" : req.body.approvedby,
+              approvedammount: req.body.approvedammount == "undefined" ? "" : req.body.approvedammount,
+              comments: req.body.comments == "undefined" ? "" : req.body.comments,
+              bankname: req.body.bankname == "undefined" ? "" : req.body.bankname ,
+              bankaccountno: req.body.bankaccountno == "undefined" ? "" : req.body.bankaccountno,
+              chequeneft: req.body.chequeneft == "undefined" ? "" : req.body.chequeneft      
             });  
             console.log("data recieved " +trust)
             trust.save()  
@@ -383,3 +388,17 @@ export const updateGrant = async (req, res) => {
 //   }
 //   res.send("Application Grant Rejected ! ")
 // }
+
+const getRation = async () => {
+  try{
+    const ration =await Form
+    .find({Ration_Card_Number : 1234567890})
+    .select({Name : 1})
+    console.log(ration);
+  }
+  catch(err){
+    console.log(err);
+  }
+}
+
+getRation();
