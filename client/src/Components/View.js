@@ -102,7 +102,7 @@ export default function View(props) {
   }
 
   const submit = () => {
-    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateSurvey/${id}`)
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateSurvey/${id}`, userData)
       .then(res => {
         window.alert(res.data)
       })
@@ -111,25 +111,25 @@ export default function View(props) {
       })
   }
 
-  const approve = () => {
-    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateApprove/${id}`)
-      .then(res => {
-        window.alert(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+  // const approve = () => {
+  //   axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateApprove/${id}`)
+  //     .then(res => {
+  //       window.alert(res.data)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }
 
-  const reject = () => {
-    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateReject/${id}`)
-      .then(res => {
-        window.alert(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+  // const reject = () => {
+  //   axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateReject/${id}`)
+  //     .then(res => {
+  //       window.alert(res.data)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }
 
 
 
@@ -930,31 +930,31 @@ export default function View(props) {
           <div>
             <table className='center'>
               <tr>
-                <td className='thpad'>
-                  <TextField label="Survey Done By:" className="required" id="surveydoneby" onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="secondary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+              <td>
+                <label className='vadminlable1 required'>Survey Done By:</label>
+                <input type='text' className="form-control" id="ex2" value={userData['surveydoneby']} onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                 </td>
-                <td className='thpad'>
-                  <TextField label="Survey Details:" id="surveydetails" margin='normal' variant='standard' color="secondary" /><span>  </span>
+                <td>
+                <label className='vadminlable'>Survey Details:</label> 
+                <input type='text' className="form-control" id="ex2" value={userData['surveydetails']} onChange={(e) => setuserData({ ...userData, "surveydetails": e.target.value })}  /> <br></br><span>  </span>
                 </td>
               </tr>
               <tr>
-                <td className='thpad'>
-                  <TextField label="Special Notes:" id="specialnotes" margin='normal' variant='standard' color="secondary" />
+              <td>
+                <label className='vadminlable'>Special Notes:</label> 
+                <input type='text' className="form-control" id="ex2" value={userData['specialnotes']} onChange={(e) => setuserData({ ...userData, "specialnotes": e.target.value })} /><br></br>
                 </td>
-                <td className='thpad'>
+                <td>
                   <div className='datepick'>
                     <tr>
                       <td>
-                        <p className='date'>Date :</p>
-                      </td>
-                      <td>
-                        <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
+                      <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105'></DatePickerComponent></p>
                       </td>
                     </tr>
                   </div>
                 </td>
               </tr>
-            </table><br></br><br></br>
+              </table><br></br>
 
             {/* <div>
         <p>Above details for Application ID {id} are correct and ready for Approve.</p>
@@ -962,11 +962,11 @@ export default function View(props) {
 
           </div>
         </div><br></br>
-        <Button variant='contained' color='primary' onClick={submit} >Submit</Button>
+        <Button variant='contained' color='primary' onClick={submit} >Submit</Button><br></br><br></br>
         <br></br><br></br>
 
 
-        <hr class="solid"></hr><br></br>
+        {/* <hr class="solid"></hr><br></br>
         <div>
           <h6 class="fs-title">Approval Details</h6>
         </div>
@@ -989,7 +989,7 @@ export default function View(props) {
                 <TextField label="Comments:" id="comments" margin='normal' variant='standard' color="secondary" />
               </td>
             </tr>
-          </table>
+          </table> */}
           {/* <div className='datepick2'>
        <Button variant='contained' color='primary' onClick={submit} >Submit</Button><span> </span>
       <br></br><br></br>
@@ -1022,17 +1022,17 @@ export default function View(props) {
       {/* <div className='datepick2'>
       <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
       </div> */}
-          <br></br>
+          {/* <br></br>
 
           <div>
             <input type='checkbox' style={{ width: '30px' }} /><span>  Above details for Application ID {id} are correct and ready for Approve.</span>
           </div><br></br>
-        </div><br></br><br></br>
+        </div><br></br><br></br> */}
 
       </Box></Card>
 
-    <Button variant='contained' color='secondary' onClick={reject}>Reject</Button><span> </span>
-    <Button variant='contained' color='primary' onClick={approve} >Approve</Button><br></br><br></br><br></br><br></br>
+    {/* <Button variant='contained' color='secondary' onClick={reject}>Reject</Button><span> </span>
+    <Button variant='contained' color='primary' onClick={approve} >Approve</Button><br></br><br></br><br></br><br></br> */}
 
   </div>
 }

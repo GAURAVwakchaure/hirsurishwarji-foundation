@@ -393,7 +393,10 @@ const getRation = async () => {
   try{
     const ration =await Form
     .find({Ration_Card_Number : 1234567890})
-    .select({Name : 1})
+    .select({Name: 1})
+    .select({status : 1})
+    .select({Category : 1})
+    .select({approvedammount : 1})
     console.log(ration);
   }
   catch(err){
