@@ -197,13 +197,21 @@ const StepContext = () => {
 
         // Dependent details
 
-        for (const [key, value] of Object.entries(dependenttableData)) {
-            dependettablearray.push(`${key}: ${value}`);
-        }
-        formData.append('dependenttable', dependettablearray)
+        // for (const [key, value] of Object.entries(dependenttableData)) {
+        //     dependettablearray.push(`${key}: ${value}`);
+        // }
+        // formData.append('dependenttable', dependettablearray)
 
 
-        console.log("dependent array after submitting", dependettablearray)
+        console.log("dependent array after submitting", userData.dependenttable)
+
+        // formData.append('dependenttable', userData.dependenttable)
+
+        userData.dependenttable.forEach((item) => formData.append("dependenttable", item))
+
+
+        console.log("dependent data in formdata object",formData.getAll('dependenttable'))
+
 
 
 
@@ -234,7 +242,7 @@ const StepContext = () => {
         <div>
             <multiStepContext.Provider value={{
                 currentStep, setStep, userData, setUserData, finalData, setFinalData, formData, submitData, showData, dependettablearray, dependenttableData, setdependenttableData,
-                earningmembertableData, setearningmembertableData, earningmembertablearray, skilltableData, setskilltableData, skilltableDataarray, 
+                earningmembertableData, setearningmembertableData, earningmembertablearray, skilltableData, setskilltableData, skilltableDataarray,
             }}>
                 <App />
             </multiStepContext.Provider>

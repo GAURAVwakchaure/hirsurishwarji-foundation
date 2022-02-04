@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
+
 
 import { Button, TextField, Box } from '@material-ui/core';
 import { Card, } from 'react-bootstrap'
@@ -12,7 +13,6 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
-import Form from '../Form';
 
 export default function View(props) {
   const { id } = useParams()
@@ -36,23 +36,23 @@ export default function View(props) {
   //     alert('Survey Details Submited Sucessfully.')
   //   }
   // }
-    
-    // let surveydoneby = document.getElementById('surveydoneby').value
-   
-    // if (surveydoneby == null || surveydoneby === "") {
-    //     document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
-    // }
-    // else if(!isNaN(surveydoneby)){
-    //     document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
-    // }
-    // else if(surveydoneby.length < 2  || surveydoneby.length > 50){
-    //     document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
-    // } 
-    // else{
-    //     document.getElementById('esurveydoneby').innerHTML=" "
-    //     document.getElementsByName('status').value='submit'
-    //     alert('Survey Details Submited Sucessfully.')
-    // }
+
+  // let surveydoneby = document.getElementById('surveydoneby').value
+
+  // if (surveydoneby == null || surveydoneby === "") {
+  //     document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
+  // }
+  // else if(!isNaN(surveydoneby)){
+  //     document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
+  // }
+  // else if(surveydoneby.length < 2  || surveydoneby.length > 50){
+  //     document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+  // } 
+  // else{
+  //     document.getElementById('esurveydoneby').innerHTML=" "
+  //     document.getElementsByName('status').value='submit'
+  //     alert('Survey Details Submited Sucessfully.')
+  // }
 
   //   useEffect(() => {
   //     const url = `https://hirsurishwarji-foundation.herokuapp.com/user/${id}`;
@@ -102,34 +102,34 @@ export default function View(props) {
   }
 
   const submit = () => {
-    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateSurvey/${id}`, userData)
-    .then(res => {
-      window.alert(res.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateSurvey/${id}`)
+      .then(res => {
+        window.alert(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
-  // const approve = () => {
-  //   axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateApprove/${id}`)
-  //   .then(res => {
-  //     window.alert(res.data)
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //   })
-  // }
+  const approve = () => {
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateApprove/${id}`)
+      .then(res => {
+        window.alert(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
-  // const reject = () => {
-  //   axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateReject/${id}`)
-  //   .then(res => {
-  //     window.alert(res.data)
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //   })
-  // }
+  const reject = () => {
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updateReject/${id}`)
+      .then(res => {
+        window.alert(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
 
 
@@ -157,6 +157,31 @@ export default function View(props) {
   //   // href = {'https://hirsurishwarji-foundation.herokuapp.com/user/file/'+userData.Image[1] }
 
   // }
+  // const dependenttable = (
+  //   userData.dependenttable ?
+
+  //   Object.entries(userData.dependenttable).forEach(([key, value]) => {
+  //     console.log(`${key} ${value}`); 
+  //     <td>{`${val}`}</td>
+  //     // "a 5", "b 7", "c 9"
+  //   })
+
+
+  // : <li></li>
+  // )
+
+  // const [dependenttableData, setdependenttableData,] = useState([])
+
+  // var data = ''
+  // userData.dependenttable?
+  //    Object.entries(userData.dependenttable).forEach(([key, value]) => {
+  //     data.append(<td>{value}</td>)
+  //     // "a 5", "b 7", "c 9"
+  //   })
+
+  // :<li></li>
+
+
 
   return <div>
 
@@ -300,8 +325,8 @@ export default function View(props) {
             <td>
               {
                 userData.Image
-                  ? userData.Image[2] ? 
-                  <p>{userData.Image[2]}</p>
+                  ? userData.Image[2] ?
+                    <p>{userData.Image[2]}</p>
                     : <span />
                   : <span />
               }
@@ -309,9 +334,9 @@ export default function View(props) {
             <td>
               {
                 userData.Image
-                  ? userData.Image[3] ? 
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[3]}>
-                      {userData.Image[3]}</a>                    : <span />
+                  ? userData.Image[3] ?
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[3]}>
+                      {userData.Image[3]}</a> : <span />
                   : <span />
               }
             </td></tr><tr>
@@ -327,8 +352,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[5] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[5]}>
-                      {userData.Image[5]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[5]}>
+                      {userData.Image[5]}</a> : <span />
                   : <span />
               }
             </td>
@@ -343,9 +368,9 @@ export default function View(props) {
             <td>
               {
                 userData.Image
-                  ? userData.Image[7] ? 
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[7]}>
-                      {userData.Image[7]}</a>                    : <span />
+                  ? userData.Image[7] ?
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[7]}>
+                      {userData.Image[7]}</a> : <span />
                   : <span />
               }
             </td></tr><tr>
@@ -361,8 +386,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[9] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[9]}>
-                      {userData.Image[9]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[9]}>
+                      {userData.Image[9]}</a> : <span />
                   : <span />
               }
             </td>
@@ -378,8 +403,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[11] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[11]}>
-                      {userData.Image[11]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[11]}>
+                      {userData.Image[11]}</a> : <span />
                   : <span />
               }
             </td></tr><tr>
@@ -394,9 +419,9 @@ export default function View(props) {
             <td>
               {
                 userData.Image
-                  ? userData.Image[13] ? 
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[13]}>
-                      {userData.Image[13]}</a>                    : <span />
+                  ? userData.Image[13] ?
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[13]}>
+                      {userData.Image[13]}</a> : <span />
                   : <span />
               }
             </td>
@@ -412,8 +437,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[15] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[15]}>
-                      {userData.Image[15]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[15]}>
+                      {userData.Image[15]}</a> : <span />
                   : <span />
               }
             </td></tr><tr>
@@ -429,8 +454,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[17] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[17]}>
-                      {userData.Image[17]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[17]}>
+                      {userData.Image[17]}</a> : <span />
                   : <span />
               }
             </td>
@@ -446,8 +471,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[19] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[19]}>
-                      {userData.Image[19]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[19]}>
+                      {userData.Image[19]}</a> : <span />
                   : <span />
               }
             </td></tr><tr>
@@ -463,8 +488,8 @@ export default function View(props) {
               {
                 userData.Image
                   ? userData.Image[21] ?
-<a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[21]}>
-                      {userData.Image[21]}</a>                    : <span />
+                    <a href={'https://hirsurishwarji-foundation.herokuapp.com/user/file/' + userData.Image[21]}>
+                      {userData.Image[21]}</a> : <span />
                   : <span />
               }
             </td>
@@ -799,36 +824,27 @@ export default function View(props) {
         </thead>
         <tbody>
 
-          <tr>
+          {/* {data}
+             */}
 
-            <td>Sr.no: 1</td>
-            <td>Name</td>
-            <td>{userData['dependt1name']}</td>
-            <td>Age:</td>
-            <td>Uage:</td>
-            <td>Aahaar No:</td>
-            <td>Uadhar:</td>
-            <td>Income:</td>
-            <td>Uincome</td>
-          </tr>
-          <tr>
-            <td>Education:</td>
-            <td>uedg:</td>
-            <td>Profession:</td>
-            <td>UPro</td>
-            <td>Religious Education:</td>
-            <td>UAQ5</td>
-          </tr>
-          <tr>
-            <td>Kanmool:</td>
-            <td>Bike</td>
-            <td>Navkarshi:</td>
-            <td>Bike</td>
-            <td>Pooja:</td>
-            <td>Bike</td>
-            <td>Night Dinner:</td>
-            <td>Bike</td>
-          </tr>
+          {userData.dependenttable ?
+                userData.dependenttable.map(function (d) {
+                  return (
+                    <td className = "deptab">{d}</td>
+                  )
+                })
+
+                :<li></li>            
+            }
+
+
+
+          
+
+
+
+
+
         </tbody>
       </table>
       <br></br>
@@ -911,42 +927,44 @@ export default function View(props) {
           <div>
             <table className='center'>
               <tr>
-                <td>
-                <label className='vadminlable1 required'>Survey Done By:</label>
-                <input type='text' className="form-control" id="ex2" value={userData['surveydoneby']} onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+                <td className='thpad'>
+                  <TextField label="Survey Done By:" className="required" id="surveydoneby" onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="secondary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                 </td>
-                <td>
-                <label className='vadminlable'>Survey Details:</label> 
-                <input type='text' className="form-control" id="ex2" value={userData['surveydetails']} onChange={(e) => setuserData({ ...userData, "surveydetails": e.target.value })}  /> <br></br><span>  </span>
+                <td className='thpad'>
+                  <TextField label="Survey Details:" id="surveydetails" margin='normal' variant='standard' color="secondary" /><span>  </span>
                 </td>
               </tr>
               <tr>
-                <td>
-                <label className='vadminlable'>Special Notes:</label> 
-                <input type='text' className="form-control" id="ex2" value={userData['specialnotes']} onChange={(e) => setuserData({ ...userData, "specialnotes": e.target.value })} /><br></br>
+                <td className='thpad'>
+                  <TextField label="Special Notes:" id="specialnotes" margin='normal' variant='standard' color="secondary" />
                 </td>
-                <td>
+                <td className='thpad'>
                   <div className='datepick'>
                     <tr>
                       <td>
-                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105'></DatePickerComponent></p>
+                        <p className='date'>Date :</p>
+                      </td>
+                      <td>
+                        <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
                       </td>
                     </tr>
                   </div>
                 </td>
               </tr>
-            </table><br></br>
+            </table><br></br><br></br>
 
             {/* <div>
         <p>Above details for Application ID {id} are correct and ready for Approve.</p>
       </div> */}
-      <Button variant='contained' color='primary' onClick={submit} >Submit</Button><br></br><br></br>
+
           </div>
         </div><br></br>
+        <Button variant='contained' color='primary' onClick={submit} >Submit</Button>
+        <br></br><br></br>
+
+
         <hr class="solid"></hr><br></br>
-        
-        
-        {/* <div>
+        <div>
           <h6 class="fs-title">Approval Details</h6>
         </div>
         <br></br>
@@ -954,37 +972,65 @@ export default function View(props) {
           <table className='center'>
             <tr>
               <td className='thpad'>
-              <label className='adminlable'>Approved By:</label> 
-                <input type='text' className="form-control" id="ex2" value={userData['approvedby']} onChange={(e) => setuserData({ ...userData, "approvedby": e.target.value })} /><br></br> <span id='eapprovedby' className='text-danger' >  </span>
+                <TextField label="Approved By:" className="required" id="approvedby" margin='normal' variant='standard' color="secondary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
               </td>
               <td className='thpad'>
-              <label className='adminlable'>Amount Needed:</label> 
-              <input type='text' className="form-control" id="ex2" value={userData['egmoneyneeded']} onChange={(e) => setuserData({ ...userData, "egmoneyneeded": e.target.value })} /><br></br>
+                <TextField label="Amount Needed" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} id='egmoneyneed' type="number" value={userData['egmoneyneeded']} onChange={(e) => setuserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="secondary" />
               </td>
             </tr>
             <tr>
               <td className='thpad'>
-              <label className='adminlable'>Approved Amount:</label>
-              <input type='text' className="form-control" id="ex2" value={userData['approvedammount']} onChange={(e) => setuserData({ ...userData, "approvedammount": e.target.value })} /><br></br>
+                <TextField label="Approved Amount:" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} className="required" type='number' id="approvedamount" margin='normal' variant='standard' color="secondary" /><span>  </span>
               </td>
               <td className='thpad'>
-              <label className='adminlable'>Comments:</label>
-              <input type='text' className="form-control" id="ex2" value={userData['comments']} onChange={(e) => setuserData({ ...userData, "comments": e.target.value })} /><br></br>
+                <TextField label="Comments:" id="comments" margin='normal' variant='standard' color="secondary" />
               </td>
             </tr>
           </table>
+          {/* <div className='datepick2'>
+       <Button variant='contained' color='primary' onClick={submit} >Submit</Button><span> </span>
+      <br></br><br></br>
+      
+
+      <hr class="solid"></hr><br></br>
+    <div>
+      <h6 class="fs-title">Approval Details</h6>
+    </div>
+    <br></br>
+    <div  className='viewadminborder'><br></br>
+    <table className='center'>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Approved By:" className ="required" id="approvedby" margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+          </td>
+          <td className='thpad'>
+          <TextField label="Amount Needed" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egmoneyneed' type="number" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" />
+          </td>
+        </tr>
+        <tr>
+          <td className='thpad'>
+          <TextField label="Approved Amount:" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} className ="required" type='number' id="approvedamount"  margin='normal' variant='standard' color="primary" /><span>  </span>
+          </td>
+          <td className='thpad'>
+          <TextField label="Comments:" id="comments"  margin='normal' variant='standard' color="primary" />
+          </td>
+        </tr>
+      </table>
+      {/* <div className='datepick2'>
+      <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
+      </div> */}
           <br></br>
 
           <div>
             <input type='checkbox' style={{ width: '30px' }} /><span>  Above details for Application ID {id} are correct and ready for Approve.</span>
           </div><br></br>
-        </div><br></br><br></br> */}
+        </div><br></br><br></br>
 
       </Box></Card>
 
-      {/* <Button variant='contained' color='secondary' onClick={reject}>Reject</Button><span> </span>
-      <Button variant='contained' color='primary' onClick={approve} >Approve</Button><br></br><br></br><br></br><br></br> */}
-      
+    <Button variant='contained' color='secondary' onClick={reject}>Reject</Button><span> </span>
+    <Button variant='contained' color='primary' onClick={approve} >Approve</Button><br></br><br></br><br></br><br></br>
+
   </div>
 }
 
