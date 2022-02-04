@@ -342,7 +342,13 @@ const formschema = new mongoose.Schema({
   referraladdress : String,
   surveydoneby : String,
   surveydetails : String,
-  specialnotes : String
+  specialnotes : String,
+  approvedby : String,
+  approvedammount : String,
+  comments : String,
+  bankname : String,
+  bankaccountno : String,
+  chequeneft : String,
 
 });
 

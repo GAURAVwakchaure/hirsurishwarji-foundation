@@ -186,7 +186,12 @@ const StepContext = () => {
         formData.append('surveydoneby', userData.surveydoneby)
         formData.append('surveydetails', userData.surveydetails)
         formData.append('specialnotes', userData.specialnotes)
-
+        formData.append('approvedby', userData.approvedby)
+        formData.append('approvedammount', userData.approvedammount)
+        formData.append('comments', userData.comments)
+        formData.append('bankname', userData.bankname)
+        formData.append('bankaccountno', userData.bankaccountno)
+        formData.append('chequeneft', userData.chequeneft)
 
         // console.log(dependenttableData)
 

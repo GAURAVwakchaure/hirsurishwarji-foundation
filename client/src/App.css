@@ -20,14 +20,95 @@
   
 }
 
+.appname{
+  width: 15rem;
+  text-align: center;
+}
+.thpadn{
+  font-size: 1.2rem;
+  color: #673AB7;
+  font-weight: 500;
+  padding-right: 15px;
+  padding-left: 15px;
+}
 .thpad{
-  padding-right: 80px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.adminlable{
+  padding-right: 13rem;
+  color: #585858;
+  font-weight: 500;
+}
+.vadminlable{
+  padding-right: 9rem;
+  color: #585858;
+  font-weight: 500;
+}
+.vadminlable1{
+  padding-right: 7.7rem;
+  color: #585858;
+  font-weight: 500;
+}
+.hrdminlable{
+  color: #585858;
+  font-weight: 500;
+  padding:10px 10px 0;
+}
+.gration{
+  width: 7rem;
+}
+.fgadminlable{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 5rem;
+}
+.fgadminlable1{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 9rem;
+}
+.fgadminlable3{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 9.1rem;
+  margin-left: 2rem;
+}
+.gadminlable{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 10rem;
+}
+
+.gadminlable2{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 10rem;
+  padding-left: 30px;
+}
+.gadminlable3{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 10rem;
+  padding-left: 50px;
+}
+.gadminlable4{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 10rem;
+}
+
+.form-control{
+  max-width: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 10px;
 }
 
 .date{
   font-size: 1.1rem;
-  color: rgb(88, 88, 88);
-  font-weight: bold;
+  color: #585858;
+  font-weight: 500;
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -37,7 +118,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-right: 80px;
-  /* padding-left: 20px; */
+  padding-left: 50px;
   margin-top: 1.8rem;
   font-size: 2rem;
 }
@@ -52,6 +133,7 @@
 .center {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1.5rem;
 }
 
 .text-dark{
@@ -501,7 +583,11 @@ body {
   border-style: inset;
   border-radius: 20px;
 }
-
+.gboxborder{
+  border-style: inset;
+  border-radius: 20px;
+  margin: 0 30px;
+}
 .viewborder{
   border-style: groove;
   border-radius: 20px;
@@ -511,6 +597,12 @@ body {
 .viewadminborder{
   border-style: groove;
   border-radius: 20px;
+}
+
+.grantadminborder{
+  border-style: groove;
+  border-radius: 20px;
+  margin: 0 31px;
 }
 
 .rentbox{

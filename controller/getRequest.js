@@ -120,7 +120,15 @@ export const createApplication = (req, res) =>{
               referraladdress: req.body.referraladdress,
               surveydoneby: req.body.surveydoneby,
               surveydetails: req.body.surveydetails,
-              specialnotes: req.body.specialnotes       
+              specialnotes: req.body.specialnotes,
+              approvedby: req.body.approvedby,
+              approvedammount: req.body.approvedammount,
+              comments: req.body.comments,
+              bankname: req.body.bankname,
+              bankaccountno: req.body.bankaccountno,
+              chequeneft: req.body.chequeneft
+
+
             });  
             console.log("data recieved " +trust)
             trust.save()  
@@ -185,6 +193,15 @@ export const getFile  = async(req, res, next) => {
 //for suvery update
 export const updateSurvey = async (req, res) => {
   const id = req.params.id;
+  Form.findByIdAndUpdate(id,req.body,function(err,docs){
+    if (err){
+      console.log(err)
+  }
+  else{
+      console.log("Updated User : ", docs);
+  }
+  // res.send("Survey Details & Successfully Updated.")
+})
   try{
     const result = await Form.findByIdAndUpdate({_id: id},{
       $set :{
@@ -206,6 +223,15 @@ export const updateSurvey = async (req, res) => {
 //for aprrove
 export const updateApprove = async (req, res) => {
   const id = req.params.id;
+  Form.findByIdAndUpdate(id,req.body,function(err,docs){
+    if (err){
+      console.log(err)
+  }
+  else{
+      console.log("Updated User : ", docs);
+  }
+  // res.send("Survey Details & Successfully Updated.")
+})
   try{
     const result = await Form.findByIdAndUpdate({_id: id},{
       $set :{
@@ -249,6 +275,15 @@ export const updateReject = async (req, res) => {
 //for Grant
 export const updateGrant = async (req, res) => {
   const id = req.params.id;
+  Form.findByIdAndUpdate(id,req.body,function(err,docs){
+    if (err){
+      console.log(err)
+  }
+  else{
+      console.log("Updated User : ", docs);
+  }
+  // res.send("Survey Details & Successfully Updated.")
+})
   try{
     const result = await Form.findByIdAndUpdate({_id: id},{
       $set :{
@@ -268,22 +303,22 @@ export const updateGrant = async (req, res) => {
 }
 
 //for Grant Reject
-export const updateGrantreject = async (req, res) => {
-  const id = req.params.id;
-  try{
-    const result = await Form.findByIdAndUpdate({_id: id},{
-      $set :{
-        status :"Grant Rejected"
-      }
-    }
-    ,{
-      new: true,
-      useFindAndModify: false
-    }
-    );
-    console.log(result);
-  }catch(err){
-    console.log(err);
-  }
-  res.send("Application Grant Rejected ! ")
-}
+// export const updateGrantreject = async (req, res) => {
+//   const id = req.params.id;
+//   try{
+//     const result = await Form.findByIdAndUpdate({_id: id},{
+//       $set :{
+//         status :"Grant Rejected"
+//       }
+//     }
+//     ,{
+//       new: true,
+//       useFindAndModify: false
+//     }
+//     );
+//     console.log(result);
+//   }catch(err){
+//     console.log(err);
+//   }
+//   res.send("Application Grant Rejected ! ")
+// }

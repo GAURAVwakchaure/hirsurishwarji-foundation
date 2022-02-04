@@ -36,18 +36,18 @@ export default function TenthStep() {
         // else{
         //     document.getElementById('ereferraladdress').innerHTML=" "
         // }
-        if (surveydoneby == null || surveydoneby === "") {
-            document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
-        }
-        else if(!isNaN(surveydoneby)){
-            document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
-        }
-        else if(surveydoneby.length < 2  || surveydoneby.length > 50){
-            document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
-        } 
-        else{
-            document.getElementById('esurveydoneby').innerHTML=" "
-        }
+        // if (surveydoneby == null || surveydoneby === "") {
+        //     document.getElementById('esurveydoneby').innerHTML="Please Enter survey done by !"
+        // }
+        // else if(!isNaN(surveydoneby)){
+        //     document.getElementById('esurveydoneby').innerHTML="Numbers are not allowed !"
+        // }
+        // else if(surveydoneby.length < 2  || surveydoneby.length > 50){
+        //     document.getElementById('esurveydoneby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+        // } 
+        // else{
+        //     document.getElementById('esurveydoneby').innerHTML=" "
+        // }
         // if(referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50 || referraladdress == null || referraladdress === "" || referraladdress.length < 2  || referraladdress.length > 50 || surveydoneby == null || surveydoneby === "" || surveydoneby.length < 2  || surveydoneby.length > 50){
         //     document.getElementById('invalid').innerHTML="Invalid Input !!"
         // }
@@ -79,15 +79,24 @@ export default function TenthStep() {
                         <div>
                             <TextField label="Address of Referral: " className ="required" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='ereferraladdress' className='text-danger' >  </span>
                         </div> */}
-                        {/* <div>
+                        <div>
                             <TextField label="Survey Done By:" className ="required" id="surveydoneby" value={userData['surveydoneby']} onChange={(e) => setUserData({ ...userData, "surveydoneby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                             <TextField label="Survey Details:" id="surveydetails" value={userData['surveydetails']} onChange={(e) => setUserData({ ...userData, "surveydetails": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                             <TextField label="Special Notes:" id="specialnotes" value={userData['specialnotes']} onChange={(e) => setUserData({ ...userData, "specialnotes": e.target.value })} margin='normal' variant='standard' color="primary" />
-                        </div><br /> */}
+                            <TextField label="approved by:" id="approvedby" value={userData['approvedby']} onChange={(e) => setUserData({ ...userData, "approvedby": e.target.value })} margin='normal' variant='standard' color="primary" />
+
+                            <TextField label="approvedammount" id="approvedammount" value={userData['approvedammount']} onChange={(e) => setUserData({ ...userData, "approvedammount": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="comments:" id="comments" value={userData['comments']} onChange={(e) => setUserData({ ...userData, "comments": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="banknam:" id="bankname" value={userData['bankname']} onChange={(e) => setUserData({ ...userData, "bankname": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="bankaccountno:" id="bankaccountno" value={userData['bankaccountno']} onChange={(e) => setUserData({ ...userData, "bankaccountno": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            <TextField label="chequeneft:" id="chequeneft" value={userData['chequeneft']} onChange={(e) => setUserData({ ...userData, "chequeneft": e.target.value })} margin='normal' variant='standard' color="primary" />
+                            
+                            
+                        </div><br />
                         <div>
                             <Button variant='contained' color='secondary' onClick={() => setStep(9)}>Back</Button><span> </span>
-                            {/* <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button> */}
-                            <Button variant='contained' color='primary' onClick={handleAdmin}>Next</Button>
+                            <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button>
+                            {/* <Button variant='contained' color='primary' onClick={handleAdmin}>Next</Button> */}
                         </div><br />
                     </div><br></br></Box>
             </Card>

@@ -1,6 +1,6 @@
 
 import express, { Router } from 'express';
-import { getApplicantList,createApplication,getUserById,updateUserById, getFile, updateSurvey, updateApprove , updateReject, updateGrant, updateGrantreject} from '../controller/getRequest.js';
+import { getApplicantList,createApplication,getUserById,updateUserById, getFile, updateSurvey, updateApprove , updateReject, updateGrant} from '../controller/getRequest.js';
 
 const route = express.Router()
 
@@ -24,6 +24,6 @@ route.put('/user/updateReject/:id', updateReject)
 
 route.put('/user/updateGrant/:id', updateGrant)
 
-route.put('/user/updateGrantreject/:id', updateGrantreject)
+// route.put('/user/updateGrantreject/:id', updateGrantreject)
 
 export default route
