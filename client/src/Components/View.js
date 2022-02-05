@@ -1108,7 +1108,7 @@ export default function View(props) {
                   <div className='datepick'>
                     <tr>
                       <td>
-                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105'></DatePickerComponent></p>
+                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105' value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })}></DatePickerComponent></p>
                       </td>
                     </tr>
                   </div>

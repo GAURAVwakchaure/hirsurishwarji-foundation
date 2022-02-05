@@ -194,7 +194,10 @@ export const createApplication = (req, res) =>{
               comments: req.body.comments == "undefined" ? "" : req.body.comments,
               bankname: req.body.bankname == "undefined" ? "" : req.body.bankname ,
               bankaccountno: req.body.bankaccountno == "undefined" ? "" : req.body.bankaccountno,
-              chequeneft: req.body.chequeneft == "undefined" ? "" : req.body.chequeneft      
+              chequeneft: req.body.chequeneft == "undefined" ? "" : req.body.chequeneft,
+              surveydate: req.body.surveydate == "undefined" ? "" : req.body.surveydate,
+              approvaldate : req.body.approvaldate  == "undefined" ? "" : req.body.approvaldate ,
+              grantdate: req.body.grantdate == "undefined" ? "" : req.body.grantdate     
             });  
             console.log("data recieved " +trust)
             trust.save()  
@@ -389,8 +392,26 @@ export const updateGrant = async (req, res) => {
 //   res.send("Application Grant Rejected ! ")
 // }
 
-const getRation = async () => {
+// const getRation = async () => {
+//   try{
+//     const ration =await Form
+//     .find({Ration_Card_Number : 1234567890})
+//     .select({Name: 1})
+//     .select({status : 1})
+//     .select({Category : 1})
+//     .select({approvedammount : 1})
+//     console.log(ration);
+//   }
+//   catch(err){
+//     console.log(err);
+//   }
+// }
+// getRation();
+
+
+export const getRation = async (req, res) => {
   try{
+    // const rationcardnumber = req.params.Ration_Card_Number;
     const ration =await Form
     .find({Ration_Card_Number : 1234567890})
     .select({Name: 1})
@@ -398,10 +419,9 @@ const getRation = async () => {
     .select({Category : 1})
     .select({approvedammount : 1})
     console.log(ration);
+    res.send(ration);
   }
   catch(err){
     console.log(err);
   }
 }
-
-getRation();

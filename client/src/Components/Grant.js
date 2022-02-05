@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -8,10 +8,24 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
+import { post } from 'jquery';
 
 export default function Grant(props) {
     const { id } = useParams()
     const [userData, setuserData,] = useState([])
+
+    //  const state={
+    //   Name:'',
+    //   Category:'',
+    //   status:'',
+    //   approvedammount:'',
+    //   posts:[]
+    // };
+
+    // const componentDidMount = () => {
+    //   this.rationhistory();
+    // };
+    
 
     useEffect(() => {
         loadUser();
@@ -62,8 +76,30 @@ export default function Grant(props) {
           console.log(err)
         })
       }
-    
+      
+      // const rationhistory = () => {
+      //   axios.get(`http://localhost:8000/user/history/rationnumber`)
+      //   .then((res) => {
+      //     const data = res.data;
+      //     this.setState({posts: data});
+      //     console.log('ration data recived');
+      //   })
+      //   .catch(err => {
+      //     console.log(err)
+      //   })
+      // }
 
+      // const displayBlogPost = (posts) => {
+      //   if (!posts.length) return null;
+
+      //   return posts.map((post, index) => (
+      //     <div key ={index}>
+      //       <h3>{post.Name}</h3>
+      //       <p>{post.body}</p>
+      //     </div>
+      //   ));
+      // };
+      
 
     return<div>
         <div class="form-title">
@@ -99,6 +135,11 @@ export default function Grant(props) {
                     </tr>
                 </table>
             </div>
+
+            {/* <div className='blog-'>
+              {this.displayBlogPost(this.state.posts)}
+            </div> */}
+
             <br></br><br></br>
             </div>
 
@@ -141,7 +182,13 @@ export default function Grant(props) {
               </td>
             </tr>
           </table>
-          <br></br>
+          <div className='adatepick'>
+                    <tr>
+                      <td>
+                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105' value={userData['approvaldate']} onChange={(e) => setuserData({ ...userData, "approvaldate": e.target.value })}></DatePickerComponent></p>
+                      </td>
+                    </tr>
+                  </div>
 
           <div>
             <input type='checkbox' style={{ width: '30px' }} /><span>  Above details for Application ID {id} are correct and ready for Approve.</span>
@@ -176,8 +223,14 @@ export default function Grant(props) {
                             <input type='text' className ="form-control" id="ex2" value={userData['chequeneft']} onChange={(e) => setuserData({ ...userData, "chequeneft": e.target.value })} /><br></br> <span id='etv' className='text-danger' >  </span>
                                 </td>
                             </tr>
-                        </table><br></br>
-                        
+                        </table>
+                        <div className='gdatepick'>
+                    <tr>
+                      <td>
+                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105' value={userData['grantdate']} onChange={(e) => setuserData({ ...userData, "grantdate": e.target.value })}></DatePickerComponent></p>
+                      </td>
+                    </tr>
+                  </div>
                         <div>
             <input type='checkbox' style={{ width: '30px' }} /><span>  Above details for Application ID {id} are correct and ready for Grant.</span>
           </div><br></br>

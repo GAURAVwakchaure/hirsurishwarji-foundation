@@ -123,6 +123,24 @@
   font-size: 2rem;
 }
 
+.adatepick{
+  width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-right: 50px; */
+  padding-left: 90px;
+  margin-top: 1.8rem;
+}
+
+.gdatepick{
+  width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 50px;
+  padding-left: 90px;
+  margin-top: 1.8rem;
+}
+
 .datepick2{
   width: 13rem;
   margin-left: auto;

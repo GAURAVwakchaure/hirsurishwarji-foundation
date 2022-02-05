@@ -352,7 +352,12 @@ const formschema = new mongoose.Schema({
   bankname : String,
   bankaccountno : String,
   chequeneft : String,
+  surveydate : Date,
+  approvaldate : Date,
+  grantdate : Date,
 
+},{
+  timestamps : true,
 });
 
 
