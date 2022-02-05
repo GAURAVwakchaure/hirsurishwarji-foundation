@@ -933,7 +933,7 @@ export default function View(props) {
 
         <tr>
 
-{userData.dependenttable ?
+{userData.earningmembertable ?
   //  ? userData.dependenttable[0]?
   //  <p>{userData.dependenttable[0]}</p>
   //  :<li>{"not available"}</li>
