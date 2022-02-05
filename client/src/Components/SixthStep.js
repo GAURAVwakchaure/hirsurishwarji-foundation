@@ -31,6 +31,20 @@ export default function SixthStep() {
 
 
     }
+    const floanStatus = (e) => {
+        setUserData({ ...userData, 'financialloanstatus': e.target.value })
+        if (userData['category'] === 'education' || userData['category'] === 'medical'){
+            document.getElementById('floanamount').style.visibility = 'hidden'
+        }
+        else{
+            if (e.target.value === 'yes') {
+                document.getElementById('floanamount').style.visibility = 'visible'
+            }
+            else {
+                document.getElementById('floanamount').style.visibility = 'hidden'
+            }
+        }
+    }
 
     const deleteRow = () => {
         // console.log(noOfRows)
@@ -408,15 +422,12 @@ export default function SixthStep() {
                             <div>
                                 <TextField label="Experience" id='mgexperience' value={userData['unemployedpersonexperience']} onChange={(e) => setUserData({ ...userData, "unemployedpersonexperience": e.target.value })} margin='normal' variant='standard' color="primary" />
                             </div><br />
-                                <h6 id="dtdetail" >2. Financial Loan Amount Needed : </h6>
-                                <div>
-                                <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} type="number" id='floanamountneeded' value={userData['financialamountneeded']} onChange={(e) => setUserData({ ...userData, "financialamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                                </div><br></br>
+                            
                             {/* <div><h6 id="edgl1" >2. Any Loan ? : </h6></div> */}
                            
                                 <table>
                                     <tr>
-                                        <td rowSpan={3}> <h6 id="dtdetail">3. Any Previous Loan?</h6></td>
+                                        <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan ?</h6></td>
                                         <td>
                                             <div className='jainradio'> <FormControl component="fieldset">
                                                 <FormLabel component="legend"></FormLabel>
@@ -457,6 +468,37 @@ export default function SixthStep() {
                                 <span id='loanamount' style={{ visibility: 'hidden' }}>
                                     <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </span><br />
+                                <br></br>
+                                <table>
+                                <tr>
+                                    <td>
+                                    <h6 id="dtdetail" >3. Financial Loan Needed ? </h6>
+                                    </td>
+                                    <td>
+                                    <div className='jainradio'> <FormControl component="fieldset">
+                                                <FormLabel component="legend"></FormLabel>
+                                                <RadioGroup
+                                                    aria-label="gender"
+                                                    name="controlled-radio-buttons-group"
+                                                    defaultValue="no"
+                                                    value={userData['financialloanstatus']}
+                                                    onChange={floanStatus}
+                                                    row={true}
+
+                                                    style={{ display: 'flex', alignItems: 'left' }}
+
+                                                >
+                                                    <FormControlLabel value="yes" control={<Radio />} label="Yes" />
+                                                    <FormControlLabel value="no" control={<Radio />} label="No" />
+                                                </RadioGroup>
+                                            </FormControl></div>
+                                    </td>
+                                </tr>
+                            </table>
+                                
+                                <span id='floanamount' style={{ visibility: 'hidden' }}>
+                                <TextField label="Enter Loan Amount Needed :" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} type="number" id='floanamountneeded' value={userData['loanamountneeded']} onChange={(e) => setUserData({ ...userData, "loanamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                </span><br></br>
 
                             </div>
 

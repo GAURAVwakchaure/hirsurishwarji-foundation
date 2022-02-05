@@ -20,6 +20,10 @@
   
 }
 
+.right{
+  /* margin-right: auto; */
+  margin-left: auto;
+}
 .appname{
   width: 15rem;
   text-align: center;
@@ -30,6 +34,13 @@
   font-weight: 500;
   padding-right: 15px;
   padding-left: 15px;
+}
+.thpadnd{
+  font-size: 1rem;
+  color: #673AB7;
+  font-weight: 500;
+  padding-right: 10px;
+  /* padding-left: 15px; */
 }
 .thpad{
   padding-right: 25px;
@@ -215,6 +226,13 @@
 
 .fs-title {
   font-size: 1.9rem;
+  color: #673AB7;
+  font-weight: normal;
+  text-align: center;
+  /* margin-left: 2cm; */
+}
+.fs-titleg {
+  font-size: 2.1rem;
   color: #673AB7;
   font-weight: normal;
   text-align: center;
@@ -461,7 +479,7 @@ body {
   color: #585858;
   text-align: left;
   margin-left:40px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 
@@ -500,7 +518,7 @@ body {
 
 
 .jainradio{
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -605,6 +623,14 @@ body {
   border-style: inset;
   border-radius: 20px;
   margin: 0 30px;
+}
+.ghboxborder{
+  border-style: inset;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30rem;
+  background-color: #f3f3f3;
 }
 .viewborder{
   border-style: groove;

@@ -131,9 +131,10 @@ const StepContext = () => {
         formData.append('phones', userData.phones)
         formData.append('unemployedpersoneducation', userData.unemployedpersoneducation)
         formData.append('unemployedpersonexperience', userData.unemployedpersonexperience)
+        formData.append('financialloanstatus', userData.financialloanstatus)
         formData.append('loanstatus', userData.loanstatus)
         formData.append('loanamount', userData.loanamount)
-        formData.append('financialamountneeded', userData.financialamountneeded)
+        formData.append('loanamountneeded', userData.loanamountneeded)
 
 
         // education grant
@@ -148,7 +149,7 @@ const StepContext = () => {
             formData.append('egannualfees', userData.egannualfees)
             formData.append('egdetailsofcourse', userData.egdetailsofcourse)
             formData.append('egindependent', userData.egindependent)
-            formData.append('egmoneyneeded', userData.egmoneyneeded)
+            formData.append('loanamountneeded', userData.loanamountneeded)
             formData.append('egselfmanagecontribution', userData.egselfmanagecontribution)
         } else {
 
@@ -165,7 +166,7 @@ const StepContext = () => {
             formData.append('mghaddress', userData.mghaddress)
             formData.append('mgdiseasedetails', userData.mgdiseasedetails)
             formData.append('mgaprxexpenses', userData.mgaprxexpenses)
-            formData.append('mgamountneeded', userData.mgamountneeded)
+            formData.append('loanamountneeded', userData.loanamountneeded)
             formData.append('mgamtcont', userData.mgamtcont)
             formData.append('mgmedicalaid', userData.mgmedicalaid)
             formData.append('mgmedamt', userData.mgmedamt)

@@ -156,7 +156,7 @@ export default function SeventhStep() {
                         </div><br />
                         <div>
                           <h6 id="dtdetail" className ="requireds" ><p>Money Needed :</p></h6>
-                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egmoneyneed' type="number" label="" value={userData['egmoneyneeded']} onChange={(e) => setUserData({ ...userData, "egmoneyneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegmoneyneed' className='text-danger' >  </span>
+                            <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>}} id='egmoneyneed' type="number" label="" value={userData['loanamountneeded']} onChange={(e) => setUserData({ ...userData, "loanamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> <span id='eegmoneyneed' className='text-danger' >  </span>
                         </div><br />
                         <div>
                             <h6 id="dtdetail" >Self Manage Contribution: </h6>

@@ -149,18 +149,18 @@ export default function FourthStep() {
                             </tr>
                             <tr>
                                 <td>
-                                    <TextField InputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0} id='telephone' type="number" onBlur = {totalexpenses} label="Telephone Expense " value={userData['telephoneexpense']} onChange={(e) => setUserData({ ...userData, "telephoneexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0} id='telephone' type="number" onBlur = {totalexpenses} label="Telephone Expense " value={userData['telephoneexpense']} onChange={(e) => setUserData({ ...userData, "telephoneexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </td>
                                 <td>
-                                    <TextField InputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  id='education' type="number" onBlur = {totalexpenses} label="Education Expense " value={userData['educationexpense']} onChange={(e) => setUserData({ ...userData, "educationexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  id='education' type="number" onBlur = {totalexpenses} label="Education Expense " value={userData['educationexpense']} onChange={(e) => setUserData({ ...userData, "educationexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <TextField InputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  type="number" label="Tuition Expense " onBlur = {totalexpenses} id='tuition' value={userData['tuitionexpense']} onChange={(e) => setUserData({ ...userData, "tuitionexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  type="number" label="Tuition Expense " onBlur = {totalexpenses} id='tuition' value={userData['tuitionexpense']} onChange={(e) => setUserData({ ...userData, "tuitionexpense": e.target.value })} margin='normal' variant='standard' color="primary" />
                                 </td>
                                 <td className='col-md-7'>
-                                    <TextField InputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  id='other' type="number" onBlur = {totalexpenses} label="Other Expense  " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment>, inputMode: 'numeric', pattern: '[0-9]*' }} defaultValue={0}  id='other' type="number" onBlur = {totalexpenses} label="Other Expense  " value={userData['otherexpense']} onChange={(e) => setUserData({ ...userData, "otherexpense": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </td>
                             </tr>
                         </table>

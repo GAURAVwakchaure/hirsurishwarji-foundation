@@ -102,10 +102,10 @@ export default function Grant(props) {
       
 
     return<div>
-        <div class="form-title">
-            <h2 class="fs-title">Grant for Application ID: {id}</h2>
+        <div class="form-title ghboxborder">
+            <h2 class="fs-titleg">Grant for Application ID: {id}</h2>
         </div>
-        <div>
+        <div><br></br>
             <table className='center'>
                 <tr>
                     <td className='thpadn'>
@@ -114,33 +114,57 @@ export default function Grant(props) {
                     <td>
                     <TextField inputProps={{ readOnly: true }} className='appname' value={userData['Name']} onChange={(e) => setuserData({ ...userData, "Name": e.target.value })} id="ex2"  ></TextField>
                     </td>
-                </tr>
-            </table>
-              </div><br></br>
-        <div>
-            <h3 className='hml'>History⬇</h3>
-        </div>
-        <br></br>
-        <div className='gboxborder'><br></br>
-
-            <div>
-                <table className='center'>
-                    <tr>
-                        <td>
-                        <label className='hrdminlable'>Ration Card No:</label>
+                    <td className='thpadn'>
+                      Catagory :
+                    </td>
+            <td>
+                <TextField inputProps={{ readOnly: true }} className='gration' value={userData['Category']} onChange={(e) => setuserData({ ...userData, "Category": e.target.value })} id="ex2" type="text" />
+              
+            </td>
+                    <td className='thpadn'>
+                        Ration Card No:
                         </td>
                         <td>
                         <TextField className='gration' inputProps={{ readOnly: true }} value={userData['Ration_Card_Number']} onChange={(e) => setuserData({ ...userData, "Ration_Card_Number": e.target.value })} id="ex2" type="text" />
                         </td>
+
+                </tr>
+            </table>
+              </div><br></br>
+        
+        <div className='gboxborder'><br></br>
+        <div>
+            <h3 className='hml'>History⬇</h3>
+        </div>
+            <div>
+                <table className='right'>
+                    <tr>
+                        <td>
+                        <label className='hrdminlable'>Survey Date :</label>
+                        </td>
+                        <td className='thpadnd'>
+                        {/* <TextField className='gration' inputProps={{ readOnly: true }} value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })} id="ex2" type="text" /> */}
+                        <DatePickerComponent  inputProps={{ readOnly: true }} placeholder='Enter Date' format="dd-MMM-yy" width='91' value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })}></DatePickerComponent>
+                        </td>
+                        <td >
+                        <label className='hrdminlable'>Applied Date :</label>
+                        </td>
+                        <td className='thpadnd'>
+                        <DatePickerComponent inputProps={{ readOnly: true }} placeholder='Enter Date' format="dd-MMM-yy" width='91' value={userData['createdAt']} onChange={(e) => setuserData({ ...userData, "createdAt": e.target.value })}></DatePickerComponent>
+                        </td>
                     </tr>
                 </table>
             </div>
+            
+            <h5 className='hrdminlable'>
+              Applications With Similar Ration Card Number 
+            </h5>
 
             {/* <div className='blog-'>
               {this.displayBlogPost(this.state.posts)}
             </div> */}
 
-            <br></br><br></br>
+            <br></br><br></br><br></br><br></br>
             </div>
 
 
@@ -170,7 +194,7 @@ export default function Grant(props) {
               </td>
               <td >
               <label className='gadminlable2'>Amount Needed:</label> 
-              <input type='text' className="form-control" id="ex2" value={userData['egmoneyneeded']} onChange={(e) => setuserData({ ...userData, "egmoneyneeded": e.target.value })} /><br></br>
+              <input type='text' className="form-control" id="ex2" value={userData['loanamountneeded']} onChange={(e) => setuserData({ ...userData, "loanamountneeded": e.target.value })} /><br></br>
               </td>
               <td >
               <label className='gadminlable3'>Approved Amount:</label>
