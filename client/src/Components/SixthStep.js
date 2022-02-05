@@ -22,7 +22,7 @@ export default function SixthStep() {
     // const { setStep, userData, setUserData, } = useContext(multiStepContext);
     console.log(userData)
     const loanStatus = (e) => {
-        setUserData({ ...userData, 'mgloanstatus': e.target.value })
+        setUserData({ ...userData, 'loanstatus': e.target.value })
         if (e.target.value === 'yes') {
             document.getElementById('loanamount').style.visibility = 'visible'
         } else {

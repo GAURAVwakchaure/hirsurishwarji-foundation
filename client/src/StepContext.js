@@ -209,7 +209,10 @@ const StepContext = () => {
         formData.append('bankname', userData.bankname)
         formData.append('bankaccountno', userData.bankaccountno)
         formData.append('chequeneft', userData.chequeneft)
-
+        formData.append('surveydate', userData.surveydate)
+        formData.append('approvaldate', userData.approvaldate)
+        formData.append('grantdate', userData.grantdate)
+        
         // console.log(dependenttableData)
 
         // Dependent details
