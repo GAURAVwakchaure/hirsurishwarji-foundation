@@ -191,12 +191,20 @@ const StepContext = () => {
 
 
         // skill table data
-        for (const [key, value] of Object.entries(skilltableData)) {
-            skilltableDataarray.push(`${key}: ${value}`);
-        }
-        formData.append('skilltableData', skilltableDataarray)
+        userData.skilltable.forEach((item) => formData.append("skilltableData", item))
+
+        console.log("skill table  data in formdata object",formData.getAll('skilltableData'))
+
+        // for (const [key, value] of Object.entries(skilltableData)) {
+        //     skilltableDataarray.push(`${key}: ${value}`);
+        // }
+        // formData.append('skilltableData', skilltableDataarray)
 
         // formData.append('skilltableData', userData.skilltableData)
+
+
+
+
         // administration details
         formData.append('referredby', userData.referredby)
         formData.append('referraladdress', userData.referraladdress)

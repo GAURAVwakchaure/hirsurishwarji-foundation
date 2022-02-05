@@ -8,7 +8,7 @@ import '..'
 
 
 export default function EleventhStep() {
-    const { setStep, setUserData, userData, submitData, skilltableData, setskilltableData } = useContext(multiStepContext);
+    const { setStep, setUserData, userData, submitData, skilltableData, setskilltableData,skilltableDataarray  } = useContext(multiStepContext);
     //use of hook for couting
     const [noOfRows, setNoOfRows] = useState(1);
     // let referredby = document.getElementById('referredby').value
@@ -56,7 +56,17 @@ export default function EleventhStep() {
 
 
     const skillArray= () => {
-        
+        for(let i = 0; i<noOfRows; i++){
+            let val = i+1
+            skilltableDataarray.push(val + '.Name,'+document.getElementById('skillname'+i).value+","+val+".Work,"+document.getElementById('skillwork'+i).value+","+val+".Education,"+document.getElementById("skilleducation"+i).value+","+val+".Phone Number,"+document.getElementById("skillphonenum"+i).value)
+
+        }
+        console.log(skilltableDataarray)
+        setUserData({ ...userData, "skilltable": skilltableDataarray })
+
+        {submitData()}
+
+
     }
     return (
         <div className="table1">
@@ -157,7 +167,9 @@ export default function EleventhStep() {
 
                                 <Button variant='contained' color='secondary' onClick={() => setStep(9)}>Back</Button><span> </span>
 
-                                <Button variant='contained' color='primary' onClick={submitData}>Submit</Button><span> </span>
+                                <Button variant='contained' color='primary' onClick={skillArray}>Submit</Button><span> </span>
+
+                                {/* <Button onClick={skillArray}>Save</Button> */}
 
 
 

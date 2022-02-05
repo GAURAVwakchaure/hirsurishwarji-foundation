@@ -1036,7 +1036,135 @@ export default function View(props) {
           </tr>
         </thead>
         <tbody>
-          <tr>
+        <tr>
+
+{userData.skilltableData ?
+  //  ? userData.dependenttable[0]?
+  //  <p>{userData.dependenttable[0]}</p>
+  //  :<li>{"not available"}</li>
+
+
+
+
+
+
+
+  // Object.entries(userData.dependenttable).forEach(([key, value]) => {
+  //   let var1 = "hello";
+  //   let var2 = "world"
+  //   console.log(`${key} ${value}`);
+  //   <tr>
+  //   <td>{var1}</td></tr>
+  //   // "a 5", "b 7", "c 9"
+  // })
+  // userData.dependenttable.forEach()
+  userData.skilltableData.map(function (d) {
+    const myArray = d.split(",")
+
+    console.log("array after splitting", myArray)
+    return (
+      <tr>
+        {myArray[0]?<td>{myArray[0]}</td>:<td></td>}
+        {myArray[1]
+        ?
+        <td>
+        {myArray[1] === "undefined"? "No"
+          :
+          <div class="w-75 d-inline-block">
+            <input readOnly class="form-control" value={myArray[1]} id="ex2" type="text" />
+          </div>
+          
+          }
+          
+        </td>
+        :<td></td>}
+        
+       
+        {myArray[2]?<td>{myArray[2]}</td>:<td></td>}
+
+        {myArray[3]
+        ?
+        <td>
+        {myArray[3] === 'undefined'? "No"
+          :
+          <div class="w-75 d-inline-block">
+            <input readOnly class="form-control" value={myArray[3]} id="ex2" type="text" />
+          </div>
+          
+          }
+          
+          {/* <div class="w-75 d-inline-block">
+            <input class="form-control" value={myArray[3]} id="ex2" type="text" />
+          </div> */}
+        </td>
+        :<td></td>}
+        {myArray[4]?<td>{myArray[4]}</td>:<td></td>}
+        {/* <td>
+          {myArray[4]?<td></td>
+          :<td></td>
+          }
+        
+        </td> */}
+
+        {myArray[5]?
+        
+        <td>
+          {myArray[5] === 'undefined'|| "" ? "No"
+          :
+          <div class="w-75 d-inline-block">
+            <input readOnly class="form-control" value={myArray[5]} id="ex2" type="text" />
+          </div>
+          
+          }
+
+          {/* <div class="w-75 d-inline-block">
+            <input class="form-control" value={myArray[5]} id="ex2" type="text" />
+          </div> */}
+        </td>
+        :<td></td>}
+
+{myArray[6]?
+        
+        <td>
+          {myArray[6] === 'undefined'|| "" ? "No"
+          :
+          <div class="w-75 d-inline-block">
+            <input readOnly class="form-control" value={myArray[6]} id="ex2" type="text" />
+          </div>
+          
+          }
+
+          {/* <div class="w-75 d-inline-block">
+            <input class="form-control" value={myArray[5]} id="ex2" type="text" />
+          </div> */}
+        </td>
+        :<td></td>}
+
+{myArray[7]?
+        
+        <td>
+          {myArray[7] === 'undefined'|| "" ? "No"
+          :
+          <div class="w-75 d-inline-block">
+            <input readOnly class="form-control" value={myArray[7]} id="ex2" type="text" />
+          </div>
+          
+          }
+
+          {/* <div class="w-75 d-inline-block">
+            <input class="form-control" value={myArray[5]} id="ex2" type="text" />
+          </div> */}
+        </td>
+        :<td></td>}
+
+      </tr>
+    )
+  })
+
+  : <li></li>
+}
+</tr>
+          {/* <tr>
             <td>Name:</td>
             <td>uname</td>
             <td>Work:</td>
@@ -1045,7 +1173,7 @@ export default function View(props) {
             <td>uph no</td>
             <td>Phone Number:</td>
             <td>uph no</td>
-          </tr>
+          </tr> */}
         </tbody>
       </table>
       <br></br>
@@ -1058,11 +1186,10 @@ export default function View(props) {
         <tbody>
           <tr>
             <td>Referred By:</td>
-            <td>uname</td>
+            <td>{userData['referredby']}</td>
             <td>Address of Referral:</td>
-            <td>uwork</td>
-            <td>Survey Done By:</td>
-            <td>uph no</td>
+            <td>{userData['referraladdress']}</td>
+           
           </tr>
         </tbody>
       </table>
