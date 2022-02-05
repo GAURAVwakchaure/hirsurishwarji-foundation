@@ -115,46 +115,60 @@ export default function SixthStep() {
     const makeArray = () => {
 
 
+
         for (let i = 0; i < noOfRows; i++) {
             let val = i + 1
-            dependettablearray.push('Dependent' + val + "Name")
-            dependettablearray.push(document.getElementById('dtname' + i).value)
+            dependettablearray.push( val +'. Dependent Name,' +document.getElementById('dtname' + i).value+ ","+val+". Dependent Age,"+document.getElementById('dtage' + i).value+","+val+". Dependent Aadhaar,"+document.getElementById('dtaadhar' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Age")
-            dependettablearray.push(document.getElementById('dtage' + i).value)
+            dependettablearray.push( val +'. Dependent Education,' +document.getElementById('dteducation' + i).value+ ","+val+". Dependent Prefession,"+document.getElementById('dtprofession' + i).value+","+val+". Dependent Income,"+document.getElementById('dtincome' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Aadhaar")
-            dependettablearray.push(document.getElementById('dtaadhar' + i).value)
+            dependettablearray.push( val +'. Dependent Religious Education,' +document.getElementById('dtreligiouseducation' + i).value+ ","+val+". Dependent Kanmool,"+dependenttableData["dependent"+val+"kanmool"]+","+val+". Dependent Nakarshi,"+dependenttableData["dependent"+val+"nakarshi"])
+           
+            dependettablearray.push( val +'. Dependent Pooja,' + dependenttableData["dependent"+val+"pooja"]+ ","+val+". Dependent Night Dinner,"+ dependenttableData["dependent"+val+"nighdinner"])
 
-            dependettablearray.push("Dependent" + val + "Education")
-            dependettablearray.push(document.getElementById('dteducation' + i).value)
+            // dependettablearray.push('Dependent' + val + "Education," +document.getElementById('dteducation' + i).value+ ",Dependent" + val + "Prefession,"+document.getElementById('dtprofession' + i).value+",Dependent" + val + "Income,"+document.getElementById('dtincome' + i).value)
+            // dependettablearray.push('Dependent' + val + "Religious Education," +document.getElementById('dtreligiouseducation' + i).value+ ",Dependent" + val + "Kanmool,"+ dependenttableData["dependent"+val+"kanmool"]+  ",Dependent" + val + "Nakarshi,"+ dependenttableData["dependent"+val+"nakarshi"])
+            
+            // dependettablearray.push("Dependent" + val + "Pooja,"+ dependenttableData["dependent"+val+"pooja"]+",Dependent" + val + "Night Dinner,"+ dependenttableData["dependent"+val+"nighdinner"])
 
-            dependettablearray.push("Dependent" + val + "Prefession")
-            dependettablearray.push(document.getElementById('dtprofession' + i).value)
+            console.log("kanmool value is:",dependenttableData["dependent"+val+"kanmool"])
+            // dependettablearray.push()
 
-            dependettablearray.push("Dependent" + val + "Income")
-            dependettablearray.push(document.getElementById('dtincome' + i).value)
+            // dependettablearray.push("Dependent" + val + "Age")
+            // dependettablearray.push(document.getElementById('dtage' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Religious Education")
-            dependettablearray.push(document.getElementById('dtreligiouseducation' + i).value)
+            // dependettablearray.push("Dependent" + val + "Aadhaar")
+            // dependettablearray.push(document.getElementById('dtaadhar' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Kanmool")
-            document.getElementById('dtkanmool' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
-            // dependettablearray.push(document.getElementById('dtkanmool' + i).checked)
+            // dependettablearray.push("Dependent" + val + "Education")
+            // dependettablearray.push(document.getElementById('dteducation' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Nakarshi")
-            document.getElementById('dtnakarshi' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
+            // dependettablearray.push("Dependent" + val + "Prefession")
+            // dependettablearray.push(document.getElementById('dtprofession' + i).value)
+
+            // dependettablearray.push("Dependent" + val + "Income")
+            // dependettablearray.push(document.getElementById('dtincome' + i).value)
+
+            // dependettablearray.push("Dependent" + val + "Religious Education")
+            // dependettablearray.push(document.getElementById('dtreligiouseducation' + i).value)
+
+            // dependettablearray.push("Dependent" + val + "Kanmool")
+            // document.getElementById('dtkanmool' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
+            // // dependettablearray.push(document.getElementById('dtkanmool' + i).checked)
+
+            // dependettablearray.push("Dependent" + val + "Nakarshi")
+            // document.getElementById('dtnakarshi' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
 
             // dependettablearray.push(document.getElementById('dtnakarshi' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Pooja")
-            document.getElementById('dtpooja' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
+            // dependettablearray.push("Dependent" + val + "Pooja")
+            // document.getElementById('dtpooja' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
 
 
             // dependettablearray.push(document.getElementById('dtpooja' + i).value)
 
-            dependettablearray.push("Dependent" + val + "Night Dinner")
-            document.getElementById('dtnightdinner' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
+            // dependettablearray.push("Dependent" + val + "Night Dinner")
+            // document.getElementById('dtnightdinner' + i).checked ? dependettablearray.push("Yes") : dependettablearray.push("No")
 
             // dependettablearray.push(document.getElementById('dtnightdinner' + i).value)
 
@@ -166,8 +180,8 @@ export default function SixthStep() {
 
         }
 
-        dependettablearray.push("Total Income ")
-        dependettablearray.push(dependenttableData['totalincomedependent'])
+        dependettablearray.push("Total Income ,"+dependenttableData['totalincomedependent'])
+        // dependettablearray.push(dependenttableData['totalincomedependent'])
 
         setUserData({ ...userData, "dependenttable": dependettablearray })
 
@@ -278,13 +292,13 @@ export default function SixthStep() {
                                                         size="small"
                                                         onChange={(e, val) => {
                                                             if (val === true) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })
                                                             } else if (val === false) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'no' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'no' })
 
                                                             }
                                                         }}
-                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: 'yes' })}
+                                                    // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "kanmool"]: e.target.value })}
                                                     />
 
 
@@ -303,9 +317,9 @@ export default function SixthStep() {
                                                         size="small"
                                                         onChange={(e, val) => {
                                                             if (val === true) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'yes' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'yes' })
                                                             } else if (val === false) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'no' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nakarshi"]: 'no' })
 
                                                             }
                                                         }}
@@ -321,9 +335,9 @@ export default function SixthStep() {
 
                                                         onChange={(e, val) => {
                                                             if (val === true) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'yes' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'yes' })
                                                             } else if (val === false) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'no' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "pooja"]: 'no' })
 
                                                             }
                                                         }}
@@ -339,9 +353,9 @@ export default function SixthStep() {
                                                         size="small"
                                                         onChange={(e, val) => {
                                                             if (val === true) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'yes' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'yes' })
                                                             } else if (val === false) {
-                                                                // setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'no' })
+                                                                setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "nighdinner"]: 'no' })
 
                                                             }
                                                         }}
@@ -454,7 +468,7 @@ export default function SixthStep() {
                             <Button variant='contained' color='secondary' onClick={() => setStep(5)}>Back</Button><span> </span>
 
                             <Button variant='contained' color='primary' onClick={makeArray}>Next</Button><span> </span>
-                            <Button variant='contained' color='primary' onClick={() => setStep(9)}>NextnPage</Button><span> </span>
+                            {/* <Button variant='contained' color='primary' onClick={() => setStep(9)}>NextnPage</Button><span> </span> */}
                             {/* <Button variant='contained' color='primary' onClick={nextPage}>Next</Button><span> </span> */}
 
 

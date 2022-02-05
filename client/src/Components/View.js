@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 import { Button, TextField, Box } from '@material-ui/core';
@@ -826,23 +826,103 @@ export default function View(props) {
 
           {/* {data}
              */}
+          <tr>
 
-          {userData.dependenttable ?
-                userData.dependenttable.map(function (d) {
-                  return (
-                    <tr>
-                    <td >{d}</td>
+            {userData.dependenttable ?
+              //  ? userData.dependenttable[0]?
+              //  <p>{userData.dependenttable[0]}</p>
+              //  :<li>{"not available"}</li>
 
-                    </tr>
-                  )
-                })
 
-                :<li></li>            
+
+
+
+
+
+              // Object.entries(userData.dependenttable).forEach(([key, value]) => {
+              //   let var1 = "hello";
+              //   let var2 = "world"
+              //   console.log(`${key} ${value}`);
+              //   <tr>
+              //   <td>{var1}</td></tr>
+              //   // "a 5", "b 7", "c 9"
+              // })
+              // userData.dependenttable.forEach()
+              userData.dependenttable.map(function (d) {
+                const myArray = d.split(",")
+
+                console.log("array after splitting", myArray)
+                return (
+                  <tr>
+                    {myArray[0]?<td>{myArray[0]}</td>:<td></td>}
+                    {myArray[1]
+                    ?
+                    <td>
+                    {myArray[1] === 'undefined'? "No"
+                      :
+                      <div class="w-75 d-inline-block">
+                        <input class="form-control" value={myArray[1]} id="ex2" type="text" />
+                      </div>
+                      
+                      }
+                      
+                    </td>
+                    :<td></td>}
+                    
+                   
+                    {myArray[2]?<td>{myArray[2]}</td>:<td></td>}
+
+                    {myArray[3]
+                    ?
+                    <td>
+                    {myArray[3] === 'undefined'? "No"
+                      :
+                      <div class="w-75 d-inline-block">
+                        <input class="form-control" value={myArray[3]} id="ex2" type="text" />
+                      </div>
+                      
+                      }
+                      
+                      {/* <div class="w-75 d-inline-block">
+                        <input class="form-control" value={myArray[3]} id="ex2" type="text" />
+                      </div> */}
+                    </td>
+                    :<td></td>}
+                    {myArray[4]?<td>{myArray[4]}</td>:<td></td>}
+                    {/* <td>
+                      {myArray[4]?<td></td>
+                      :<td></td>
+                      }
+                    
+                    </td> */}
+
+                    {myArray[5]?
+                    
+                    <td>
+                      {myArray[5] === 'undefined'|| "" ? "No"
+                      :
+                      <div class="w-75 d-inline-block">
+                        <input class="form-control" value={myArray[5]} id="ex2" type="text" />
+                      </div>
+                      
+                      }
+
+                      {/* <div class="w-75 d-inline-block">
+                        <input class="form-control" value={myArray[5]} id="ex2" type="text" />
+                      </div> */}
+                    </td>
+                    :<td></td>}
+
+                  </tr>
+                )
+              })
+
+              : <li></li>
             }
+          </tr>
 
 
 
-          
 
 
 
@@ -930,31 +1010,31 @@ export default function View(props) {
           <div>
             <table className='center'>
               <tr>
-              <td>
-                <label className='vadminlable1 required'>Survey Done By:</label>
-                <input type='text' className="form-control" id="ex2" value={userData['surveydoneby']} onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
+                <td>
+                  <label className='vadminlable1 required'>Survey Done By:</label>
+                  <input type='text' className="form-control" id="ex2" value={userData['surveydoneby']} onChange={(e) => setuserData({ ...userData, "surveydoneby": e.target.value })} /><br></br> <span id='esurveydoneby' className='text-danger' >  </span>
                 </td>
                 <td>
-                <label className='vadminlable'>Survey Details:</label> 
-                <input type='text' className="form-control" id="ex2" value={userData['surveydetails']} onChange={(e) => setuserData({ ...userData, "surveydetails": e.target.value })}  /> <br></br><span>  </span>
+                  <label className='vadminlable'>Survey Details:</label>
+                  <input type='text' className="form-control" id="ex2" value={userData['surveydetails']} onChange={(e) => setuserData({ ...userData, "surveydetails": e.target.value })} /> <br></br><span>  </span>
                 </td>
               </tr>
               <tr>
-              <td>
-                <label className='vadminlable'>Special Notes:</label> 
-                <input type='text' className="form-control" id="ex2" value={userData['specialnotes']} onChange={(e) => setuserData({ ...userData, "specialnotes": e.target.value })} /><br></br>
+                <td>
+                  <label className='vadminlable'>Special Notes:</label>
+                  <input type='text' className="form-control" id="ex2" value={userData['specialnotes']} onChange={(e) => setuserData({ ...userData, "specialnotes": e.target.value })} /><br></br>
                 </td>
                 <td>
                   <div className='datepick'>
                     <tr>
                       <td>
-                      <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105'></DatePickerComponent></p>
+                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105'></DatePickerComponent></p>
                       </td>
                     </tr>
                   </div>
                 </td>
               </tr>
-              </table><br></br>
+            </table><br></br>
 
             {/* <div>
         <p>Above details for Application ID {id} are correct and ready for Approve.</p>
@@ -990,7 +1070,7 @@ export default function View(props) {
               </td>
             </tr>
           </table> */}
-          {/* <div className='datepick2'>
+        {/* <div className='datepick2'>
        <Button variant='contained' color='primary' onClick={submit} >Submit</Button><span> </span>
       <br></br><br></br>
       
@@ -1022,7 +1102,7 @@ export default function View(props) {
       {/* <div className='datepick2'>
       <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" ></DatePickerComponent>
       </div> */}
-          {/* <br></br>
+        {/* <br></br>
 
           <div>
             <input type='checkbox' style={{ width: '30px' }} /><span>  Above details for Application ID {id} are correct and ready for Approve.</span>
