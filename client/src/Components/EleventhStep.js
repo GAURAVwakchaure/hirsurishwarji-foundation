@@ -8,41 +8,41 @@ import '..'
 
 
 export default function EleventhStep() {
-    const { setStep, setUserData, userData, submitData, skilltableData,setskilltableData} = useContext(multiStepContext);
+    const { setStep, setUserData, userData, submitData, skilltableData, setskilltableData } = useContext(multiStepContext);
     //use of hook for couting
     const [noOfRows, setNoOfRows] = useState(1);
-        // let referredby = document.getElementById('referredby').value
-        // let referraladdress = document.getElementById('referraladdress').value
-        // // let surveydetails = document.getElementById('surveydetails').value
-        // // let specialnotes = document.getElementById('specialnotes').value
+    // let referredby = document.getElementById('referredby').value
+    // let referraladdress = document.getElementById('referraladdress').value
+    // // let surveydetails = document.getElementById('surveydetails').value
+    // // let specialnotes = document.getElementById('specialnotes').value
 
-        // if (referredby == null || referredby === "") {
-        //     document.getElementById('ereferredby').innerHTML="Please Enter Referred By !"
-        // } 
-        // else if(!isNaN(referredby)){
-        //     document.getElementById('ereferredby').innerHTML="Numbers are not allowed !"
-        // }
-        // else if(referredby.length < 2  || referredby.length > 50){
-        //     document.getElementById('ereferredby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
-        // }
-        // else{
-        //     document.getElementById('ereferredby').innerHTML=" "
-        // }
-        // if (referraladdress == null || referraladdress === "") {
-        //     document.getElementById('ereferraladdress').innerHTML="Please Enter Referral Address !"
-        // } 
-        // else if(referraladdress.length < 2  || referraladdress.length > 50){
-        //     document.getElementById('ereferraladdress').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
-        // }
-        // else{
-        //     document.getElementById('ereferraladdress').innerHTML=" "
-        // }
-        // if(referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50 || referraladdress == null || referraladdress === "" || referraladdress.length < 2  || referraladdress.length > 50 ){
-        //     document.getElementById('invalid').innerHTML="Invalid Input !!"
-        // }
-        //  else {
-        //     document.getElementById('invalid').innerHTML=" "
-        // }
+    // if (referredby == null || referredby === "") {
+    //     document.getElementById('ereferredby').innerHTML="Please Enter Referred By !"
+    // } 
+    // else if(!isNaN(referredby)){
+    //     document.getElementById('ereferredby').innerHTML="Numbers are not allowed !"
+    // }
+    // else if(referredby.length < 2  || referredby.length > 50){
+    //     document.getElementById('ereferredby').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+    // }
+    // else{
+    //     document.getElementById('ereferredby').innerHTML=" "
+    // }
+    // if (referraladdress == null || referraladdress === "") {
+    //     document.getElementById('ereferraladdress').innerHTML="Please Enter Referral Address !"
+    // } 
+    // else if(referraladdress.length < 2  || referraladdress.length > 50){
+    //     document.getElementById('ereferraladdress').innerHTML="Minimum 2 and Maximum 50 characters are allowed !"
+    // }
+    // else{
+    //     document.getElementById('ereferraladdress').innerHTML=" "
+    // }
+    // if(referredby == null || referredby === "" || referredby.length < 2  || referredby.length > 50 || referraladdress == null || referraladdress === "" || referraladdress.length < 2  || referraladdress.length > 50 ){
+    //     document.getElementById('invalid').innerHTML="Invalid Input !!"
+    // }
+    //  else {
+    //     document.getElementById('invalid').innerHTML=" "
+    // }
 
     const deleteRow = () => {
         delete skilltableData["skill" + noOfRows + "name"]
@@ -53,6 +53,11 @@ export default function EleventhStep() {
     }
 
     console.log(skilltableData)
+
+
+    const skillArray= () => {
+        
+    }
     return (
         <div className="table1">
 
@@ -67,7 +72,7 @@ export default function EleventhStep() {
                 >
 
                     <div className='boxborder'><br></br>
-                    <h6 class="fs-title">Skill Details</h6><br></br>
+                        <h6 class="fs-title">Skill Details</h6><br></br>
                         <div>
                             <div className="app container mx-8 my-0">
                                 <table class="table table-striped table-hover table-bordered p-5">
@@ -93,19 +98,24 @@ export default function EleventhStep() {
 
                                                     <th scope="row">{index + 1}</th>
                                                     <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={"skillname" + index}
                                                         value={skilltableData["skill" + newVal + "name"]}
                                                         onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "name"]: e.target.value })}
                                                     /></td>
                                                     <td><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={"skillwork" + index}
+
                                                         value={skilltableData["skill" + newVal + "work"]}
                                                         onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "work"]: e.target.value })}
                                                     /></td>
                                                     <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={"skilleducation" + index}
                                                         value={skilltableData["skill" + newVal + "education"]}
                                                         onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "education"]: e.target.value })}
                                                     /></td>
 
                                                     <td ><input type="number" style={{ width: "15rem", border: "0" }}
+                                                        id={"skillphonenum" + index}
                                                         value={skilltableData["skill" + newVal + "phonenumber"]}
                                                         onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "phonenumber"]: e.target.value })}
                                                     /></td>
@@ -126,19 +136,19 @@ export default function EleventhStep() {
                             {/* <hr class="solid"></hr><br></br> */}
 
                             <div className='dadminbox'><br></br>
-                            <h6 class="fs-title">Administrative Details</h6><br></br>
+                                <h6 class="fs-title">Administrative Details</h6><br></br>
 
-                            <div>
-                                <span id='invalid' class="text-danger size font-weight-bold"></span>
-                            </div>
-                            <div>
-                                <TextField label="Referred By: " className ="" id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> 
-                                {/* <span id='ereferredby' className='text-danger' >  </span> */}
-                            </div>
-                            <div>
-                                <TextField label="Address of Referral: " className ="" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br> 
-                                {/* <span id='ereferraladdress' className='text-danger' >  </span> */}
-                            </div>
+                                <div>
+                                    <span id='invalid' class="text-danger size font-weight-bold"></span>
+                                </div>
+                                <div>
+                                    <TextField label="Referred By: " className="" id="referredby" value={userData['referredby']} onChange={(e) => setUserData({ ...userData, "referredby": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br>
+                                    {/* <span id='ereferredby' className='text-danger' >  </span> */}
+                                </div>
+                                <div>
+                                    <TextField label="Address of Referral: " className="" id="referraladdress" value={userData['referraladdress']} onChange={(e) => setUserData({ ...userData, "referraladdress": e.target.value })} margin='normal' variant='standard' color="primary" /><br></br>
+                                    {/* <span id='ereferraladdress' className='text-danger' >  </span> */}
+                                </div>
                             </div>
 
                             <div>
@@ -148,11 +158,11 @@ export default function EleventhStep() {
                                 <Button variant='contained' color='secondary' onClick={() => setStep(9)}>Back</Button><span> </span>
 
                                 <Button variant='contained' color='primary' onClick={submitData}>Submit</Button><span> </span>
-                                
+
 
 
                             </div><br />
-                        </div>                      
+                        </div>
 
                         <div>
                         </div><br />

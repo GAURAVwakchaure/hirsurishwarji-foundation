@@ -48,6 +48,7 @@ export default function NinethStep() {
 
         console.log("Earning member array is :", earningmembertablearray)
         setUserData({ ...userData, "earningmembertable": earningmembertablearray })
+        setStep(11)
 
 
     }
@@ -123,9 +124,9 @@ export default function NinethStep() {
 
                                 <Button variant='contained' color='secondary' onClick={backPage}>Back</Button><span> </span>
 
-                                <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button><span> </span>
+                                <Button variant='contained' color='primary' onClick={emArray}>Next</Button><span> </span>
 
-                                <Button onClick={emArray}>Save</Button>
+                                {/* <Button onClick={emArray}>Save</Button> */}
 
 
                             </div><br />
