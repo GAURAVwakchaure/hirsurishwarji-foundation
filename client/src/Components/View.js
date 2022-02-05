@@ -906,6 +906,166 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
+
+      <table>
+        {userData['Category'] === "Financial"?
+        <tr>
+          <td>Financial Amoount Needed :</td>
+          <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['financialamountneeded']} onChange={(e) => setuserData({ ...userData, "financialamountneeded": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+        </tr>
+
+
+        :userData['Category'] === "education" ?
+        // <tr><td>Education grant needed</td></tr>
+        <table class="table">
+        <thead class="thead-secondary">
+          <tr>
+            <th>Education Grant Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>School/College Name:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egscname']} onChange={(e) => setuserData({ ...userData, "egscname": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>School/College Address:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" id="ex2" value={userData['egscaddress']} onChange={(e) => setuserData({ ...userData, "egscaddress": e.target.value })} type="text" />
+              </div>
+            </td>
+          
+            <td>Course/Degree Name:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egcoursename']} onChange={(e) => setuserData({ ...userData, "egcoursename": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            </tr>
+          <tr>
+            <td>Annual Fees:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egannualfees']} onChange={(e) => setuserData({ ...userData, "egannualfees": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+         
+            <td>Detail Of Course:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egdetailsofcourse']} onChange={(e) => setuserData({ ...userData, "egdetailsofcourse": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Independent:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egindependent']} onChange={(e) => setuserData({ ...userData, "egindependent": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Money Needed:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egmoneyneeded']} onChange={(e) => setuserData({ ...userData, "egmoneyneeded": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Self Manage Contribution:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['egselfmanagecontribution']} onChange={(e) => setuserData({ ...userData, "egselfmanagecontribution": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+        :
+        <table class="table">
+        <thead class="thead-secondary">
+          <tr>
+            <th>Medical Grant Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hospital Name:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mghname']} onChange={(e) => setuserData({ ...userData, "mghname": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Hospital Address:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" id="ex2" value={userData['mghaddress']} onChange={(e) => setuserData({ ...userData, "mghaddress": e.target.value })} type="text" />
+              </div>
+            </td>
+          
+            <td>Disease Name:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mgdiseasedetails']} onChange={(e) => setuserData({ ...userData, "mgdiseasedetails": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            </tr>
+          <tr>
+            <td>Approximate Expenses:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mgaprxexpenses']} onChange={(e) => setuserData({ ...userData, "mgaprxexpenses": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          
+            <td>Amount Needed:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mgamountneeded']} onChange={(e) => setuserData({ ...userData, "mgamountneeded": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Amount Contributed(Self):</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['State']} onChange={(e) => setuserData({ ...userData, "State": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Existing Medical Aid:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mgmedicalaid']} onChange={(e) => setuserData({ ...userData, "mgmedicalaid": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Medical Insurance Details:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mginsurancedetails']} onChange={(e) => setuserData({ ...userData, "mginsurancedetails": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+         
+            <td>Medical Insurance Amount :</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['mgmedamt']} onChange={(e) => setuserData({ ...userData, "mgmedamt": e.target.value })} id="ex2" type="Number" />
+              </div>
+            </td>            
+          </tr>
+        </tbody>
+      </table>
+              }
+      </table>
+
+
       <table class="table">
         <thead class="thead-secondary">
           <tr>
@@ -949,7 +1109,7 @@ export default function View(props) {
         {myArray[1] === "undefined"? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[1]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[1]} id="ex2" type="text" />
           </div>
           
           }
@@ -966,7 +1126,7 @@ export default function View(props) {
         {myArray[3] === 'undefined'? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[3]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[3]} id="ex2" type="text" />
           </div>
           
           }
@@ -990,7 +1150,7 @@ export default function View(props) {
           {myArray[5] === 'undefined'|| "" ? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[5]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[5]} id="ex2" type="text" />
           </div>
           
           }
@@ -1054,7 +1214,7 @@ export default function View(props) {
         {myArray[1] === "undefined"? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[1]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[1]} id="ex2" type="text" />
           </div>
           
           }
@@ -1071,7 +1231,7 @@ export default function View(props) {
         {myArray[3] === 'undefined'? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[3]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[3]} id="ex2" type="text" />
           </div>
           
           }
@@ -1095,7 +1255,7 @@ export default function View(props) {
           {myArray[5] === 'undefined'|| "" ? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[5]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[5]} id="ex2" type="text" />
           </div>
           
           }
@@ -1114,7 +1274,7 @@ export default function View(props) {
           {myArray[7] === 'undefined'|| "" ? "No"
           :
           <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[7]} id="ex2" type="text" />
+            <input  class="form-control" value={myArray[7]} id="ex2" type="text" />
           </div>
           
           }

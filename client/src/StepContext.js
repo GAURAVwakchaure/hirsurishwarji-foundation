@@ -137,7 +137,7 @@ const StepContext = () => {
 
 
         // education grant
-        if (userData.egunemployedpersoneducation) {
+        if (userData.category === 'education') {
             formData.append('egunemployedpersoneducation', userData.egunemployedpersoneducation)
             formData.append('egunemployedpersonexperience', userData.egunemployedpersonexperience)
             formData.append('egloanstatus', userData.egloanstatus)
@@ -155,7 +155,7 @@ const StepContext = () => {
         }
         // medical grant
 
-        if (userData.mgunemployedpersoneducation) {
+        if (userData.category==='medical') {
 
             formData.append('mgunemployedpersoneducation', userData.mgunemployedpersoneducation)
             formData.append('mgunemployedpersonexperience', userData.mgunemployedpersonexperience)
