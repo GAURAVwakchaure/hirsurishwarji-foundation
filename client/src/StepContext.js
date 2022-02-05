@@ -11,7 +11,7 @@ const StepContext = () => {
     let dependettablearray = [];
     const [dependenttableData, setdependenttableData] = useState([]);
     const [earningmembertableData, setearningmembertableData] = useState([])
-    const earningmembertablearray = []
+    let earningmembertablearray = []
     const [skilltableData, setskilltableData] = useState([])
 
     const skilltableDataarray = []
@@ -174,10 +174,22 @@ const StepContext = () => {
 
         }
         // Earning member table
-        for (const [key, value] of Object.entries(earningmembertableData)) {
-            earningmembertablearray.push(`${key}: ${value}`);
-        }
-        formData.append('earningmembertable', earningmembertablearray)
+        // for (const [key, value] of Object.entries(earningmembertableData)) {
+        //     earningmembertablearray.push(`${key}: ${value}`);
+        // }
+        // formData.append('earningmembertable', earningmembertablearray)
+
+        userData.earningmembertable.forEach((item) => formData.append("earningmembertable", item))
+
+        console.log("earning member data in formdata object",formData.getAll('earningmembertable'))
+
+
+
+
+
+
+
+
         // skill table data
         for (const [key, value] of Object.entries(skilltableData)) {
             skilltableDataarray.push(`${key}: ${value}`);
@@ -208,7 +220,7 @@ const StepContext = () => {
         // formData.append('dependenttable', dependettablearray)
 
 
-        console.log("dependent array after submitting", userData.dependenttable)
+        // console.log("dependent array after submitting", userData.dependenttable)
 
         // formData.append('dependenttable', userData.dependenttable)
 

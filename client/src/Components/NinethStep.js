@@ -14,7 +14,7 @@ export default function NinethStep() {
     const [noOfRows, setNoOfRows] = useState(1);
 
 
-    const { setStep, userData,  earningmembertableData, setearningmembertableData } = useContext(multiStepContext);
+    const { setStep, userData, setUserData, earningmembertableData, setearningmembertableData ,earningmembertablearray} = useContext(multiStepContext);
 
    
     console.log(earningmembertableData)
@@ -36,6 +36,20 @@ export default function NinethStep() {
             setStep(6)
 
         }
+    }
+
+    const emArray = () => {
+
+        for(let i = 0; i<noOfRows; i++){
+            let val = i+1
+            earningmembertablearray.push(val + '.Earning Member Name,'+document.getElementById('emname'+i).value+","+val+". Earning Member Work,"+document.getElementById('emwork'+i).value+","+val+". Earning Member Phone Number,"+document.getElementById("emphnum"+i).value)
+        }
+        
+
+        console.log("Earning member array is :", earningmembertablearray)
+        setUserData({ ...userData, "earningmembertable": earningmembertablearray })
+
+
     }
 
 
@@ -73,17 +87,21 @@ export default function NinethStep() {
                                                     <th scope="row">{index + 1}</th>
                                                     <td ><input type="text" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "name"]}
-                                                        onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "name"]: e.target.value })}
+                                                        id={"emname" + index}
+                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "name"]: e.target.value })}
                                                     /></td>
                                                     <td><input type="text" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "work"]}
+                                                        id={"emwork" + index}
 
-                                                        onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "work"]: e.target.value })}
+                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "work"]: e.target.value })}
                                                     /></td>
                                                     <td ><input type="number" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "phonenumber"]}
+                                                        id={"emphnum" + index}
 
-                                                        onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "phonenumber"]: e.target.value })}
+
+                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "phonenumber"]: e.target.value })}
                                                     /></td>
                                                 </tr>
                                             );
@@ -106,6 +124,8 @@ export default function NinethStep() {
                                 <Button variant='contained' color='secondary' onClick={backPage}>Back</Button><span> </span>
 
                                 <Button variant='contained' color='primary' onClick={() => setStep(11)}>Next</Button><span> </span>
+
+                                <Button onClick={emArray}>Save</Button>
 
 
                             </div><br />
