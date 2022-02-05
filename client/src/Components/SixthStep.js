@@ -33,18 +33,39 @@ export default function SixthStep() {
     }
     const floanStatus = (e) => {
         setUserData({ ...userData, 'financialloanstatus': e.target.value })
-        if (userData['category'] === 'education' || userData['category'] === 'medical'){
-            document.getElementById('floanamount').style.visibility = 'hidden'
-        }
-        else{
             if (e.target.value === 'yes') {
                 document.getElementById('floanamount').style.visibility = 'visible'
             }
             else {
                 document.getElementById('floanamount').style.visibility = 'hidden'
             }
-        }
     }
+
+    // const floanStatus = (e) => {
+    //     setUserData({ ...userData, 'financialloanstatus': e.target.value })
+    //     if (userData['category'] === 'education' || userData['category'] === 'medical'){
+    //         document.getElementById('floanamount').style.display = 'none'
+    //     }
+    //     else{
+    //         if (e.target.value === 'yes') {
+    //             document.getElementById('floanamount').style.visibility = 'visible'
+    //         }
+    //         else {
+    //             document.getElementById('floanamount').style.visibility = 'hidden'
+    //         }
+    //     }
+    // }
+
+
+    const hide  = (e) => {
+        if (userData['category'] === 'education' || userData['category'] === 'medical'){
+            document.getElementById('financehide').style.display = 'none'
+        }
+        else{
+            document.getElementById('financehide').style.display = 'visible'    
+                }   
+    }
+   
 
     const deleteRow = () => {
         // console.log(noOfRows)
@@ -469,6 +490,7 @@ export default function SixthStep() {
                                     <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </span><br />
                                 <br></br>
+                                <div id='financehide' onClick={hide}>
                                 <table>
                                 <tr>
                                     <td>
@@ -496,9 +518,10 @@ export default function SixthStep() {
                                 </tr>
                             </table>
                                 
-                                <span id='floanamount' style={{ visibility: 'hidden' }}>
+                            <span id='floanamount' style={{ visibility: 'hidden' }}>
                                 <TextField label="Enter Loan Amount Needed :" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} type="number" id='floanamountneeded' value={userData['loanamountneeded']} onChange={(e) => setUserData({ ...userData, "loanamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
                                 </span><br></br>
+                                </div>
 
                             </div>
 

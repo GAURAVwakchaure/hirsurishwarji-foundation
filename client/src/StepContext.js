@@ -134,7 +134,7 @@ const StepContext = () => {
         formData.append('financialloanstatus', userData.financialloanstatus)
         formData.append('loanstatus', userData.loanstatus)
         formData.append('loanamount', userData.loanamount)
-        formData.append('loanamountneeded', userData.loanamountneeded)
+        
 
 
         // education grant
@@ -173,6 +173,9 @@ const StepContext = () => {
             formData.append('mginsurancedetails', userData.mginsurancedetails)
 
 
+        }
+        if (userData.category==='financial'){
+            formData.append('loanamountneeded', userData.loanamountneeded)
         }
         // Earning member table
         // for (const [key, value] of Object.entries(earningmembertableData)) {
