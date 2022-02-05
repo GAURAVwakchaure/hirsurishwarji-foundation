@@ -300,7 +300,7 @@ export default function View(props) {
             <th>Documents Uploaded</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody>          
           <tr>
 
             {/* <td>Ration Card:</td> */}
@@ -508,7 +508,7 @@ export default function View(props) {
                     : <span />
                   : <span />
               }
-            </td></tr>
+            </td></tr>             
           <tr>
             <td>Ration Card Number:</td>
             <td>
