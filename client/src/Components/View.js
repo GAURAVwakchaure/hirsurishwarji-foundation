@@ -516,10 +516,6 @@ export default function View(props) {
                 <input class="form-control" value={userData['Ration_Card_Number']} onChange={(e) => setuserData({ ...userData, "Ration_Card_Number": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
-            {/* </tr>
-          <tr> */}
-            {/* <td>Rent/Maintenance Receipt:</td> */}
-
             <td>Rent/Maintenance Receipt Number:</td>
             <td>
               <div class="w-75 d-inline-block">
@@ -527,19 +523,15 @@ export default function View(props) {
               </div>
             </td>
           </tr>
-          <tr>
-            <td>Electric Bill:</td>
-            <td>UEBILL</td>
+          <tr>            
             <td>Electric Bill Number:</td>
             <td>
               <div class="w-75 d-inline-block">
                 <input class="form-control" value={userData['Electricity_Consumer_Number']} onChange={(e) => setuserData({ ...userData, "Jain": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
-          </tr>
-          <tr>
-            <td>Medical Insurance:</td>
-            <td>UMINSURANCE</td>
+          
+            
             <td>Medical Insurance Number:</td>
             <td>
               <div class="w-75 d-inline-block">
@@ -548,18 +540,15 @@ export default function View(props) {
             </td>
           </tr>
           <tr>
-            <td>Salary Certificate:</td>
-            <td>USCERTI</td>
+            
             <td>Salary Certificate Number:</td>
             <td>
               <div class="w-75 d-inline-block">
                 <input class="form-control" value={userData['Salary_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Salary_Certificate_ID": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
-          </tr>
-          <tr>
-            <td>Bank Passbook:</td>
-            <td>UBPASSBOOK</td>
+          
+           
             <td>Bank Passbook Number:</td>
             <td>
               <div class="w-75 d-inline-block">
@@ -568,18 +557,15 @@ export default function View(props) {
             </td>
           </tr>
           <tr>
-            <td>Jain Minority Certificate:</td>
-            <td>UJMCERTI</td>
+           
             <td>Jain Minority Certificate Number:</td>
             <td>
               <div class="w-75 d-inline-block">
                 <input class="form-control" value={userData['Jain_Minority_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Jain_Minority_Certificate_ID": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
-          </tr>
-          <tr>
-            <td>Telephone Bill:</td>
-            <td>UTBILL</td>
+          
+            
             <td>Telephone Bill Number:</td>
             <td>
               <div class="w-75 d-inline-block">
@@ -588,18 +574,15 @@ export default function View(props) {
             </td>
           </tr>
           <tr>
-            <td>Referral Letter:</td>
-            <td>URLETTER</td>
+           
             <td>Referral Letter Number:</td>
             <td>
               <div class="w-75 d-inline-block">
                 <input class="form-control" value={userData['Referral_Letter_Serial_Number']} onChange={(e) => setuserData({ ...userData, "Referral_Letter_Serial_Number": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
-          </tr>
-          <tr>
-            <td>Aadhar Card:</td>
-            <td>UACARD</td>
+          
+            
             <td>Aadhar Card Number:</td>
             <td>
               <div class="w-75 d-inline-block">
@@ -607,20 +590,20 @@ export default function View(props) {
               </div>
             </td>
           </tr>
-          <tr>
-            <td>School/College Fees Receipt:</td>
-            <td>USCFRECEIPT</td>
+          <tr>            
             <td>School/College Fees Receipt:</td>
             <td>
               <div class="w-75 d-inline-block">
                 <input class="form-control" value={userData['School_College_Fees_Receipt_Number']} onChange={(e) => setuserData({ ...userData, "School_College_Fees_Receipt_Number": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
-          </tr>
-          <tr>
+          
             <td>Others:</td>
-            <td>UOTHERS</td>
-          </tr>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control"  id="ex2" type="text" />
+              </div>
+            </td>          </tr>
         </tbody>
       </table>
       <br></br>
@@ -917,7 +900,7 @@ export default function View(props) {
                 )
               })
 
-              : <li></li>
+              : <tr></tr>
             }
           </tr>
         </tbody>
@@ -1123,22 +1106,7 @@ export default function View(props) {
         </td>
         :<td></td>}
 
-{myArray[6]?
-        
-        <td>
-          {myArray[6] === 'undefined'|| "" ? "No"
-          :
-          <div class="w-75 d-inline-block">
-            <input readOnly class="form-control" value={myArray[6]} id="ex2" type="text" />
-          </div>
-          
-          }
-
-          {/* <div class="w-75 d-inline-block">
-            <input class="form-control" value={myArray[5]} id="ex2" type="text" />
-          </div> */}
-        </td>
-        :<td></td>}
+{myArray[6]?<td>{myArray[6]}</td>:<td></td>}
 
 {myArray[7]?
         
