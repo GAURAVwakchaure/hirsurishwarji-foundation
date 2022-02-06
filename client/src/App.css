@@ -19,7 +19,9 @@
 @media(max-width:1200px){
   
 }
-
+.smalltext{
+  color: #7b7b7b;
+}
 .right{
   /* margin-right: auto; */
   margin-left: auto;

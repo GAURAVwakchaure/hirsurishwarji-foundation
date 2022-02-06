@@ -910,10 +910,10 @@ export default function View(props) {
       <table>
         {userData['Category'] === "Financial"?
         <tr>
-          <td>Financial Amoount Needed :</td>
+          <td>Financial Loan <h12 className='smalltext'> (Amount Needed)</h12>:</td>
           <td>
               <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['financialamountneeded']} onChange={(e) => setuserData({ ...userData, "financialamountneeded": e.target.value })} id="ex2" type="text" />
+                <input class="form-control" value={userData['loanamountneeded']} onChange={(e) => setuserData({ ...userData, "loanamountneeded": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
         </tr>
@@ -971,10 +971,10 @@ export default function View(props) {
             </td>
           </tr>
           <tr>
-            <td>Money Needed:</td>
+            <td>Education Loan <h12 className='smalltext'> (Amount Needed)</h12>:</td>
             <td>
               <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['egmoneyneeded']} onChange={(e) => setuserData({ ...userData, "egmoneyneeded": e.target.value })} id="ex2" type="text" />
+                <input class="form-control" value={userData['loanamountneeded']} onChange={(e) => setuserData({ ...userData, "loanamountneeded": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
             <td>Self Manage Contribution:</td>
@@ -1026,10 +1026,10 @@ export default function View(props) {
               </div>
             </td>
           
-            <td>Amount Needed:</td>
+            <td>Medical Loan   <h12 className='smalltext'>  (Amount Needed)</h12>:</td>
             <td>
               <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['mgamountneeded']} onChange={(e) => setuserData({ ...userData, "mgamountneeded": e.target.value })} id="ex2" type="text" />
+                <input class="form-control" value={userData['loanamountneeded']} onChange={(e) => setuserData({ ...userData, "loanamountneeded": e.target.value })} id="ex2" type="text" />
               </div>
             </td>
             <td>Amount Contributed(Self):</td>
