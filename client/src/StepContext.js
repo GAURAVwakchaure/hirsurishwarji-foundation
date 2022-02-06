@@ -131,7 +131,6 @@ const StepContext = () => {
         formData.append('phones', userData.phones)
         formData.append('unemployedpersoneducation', userData.unemployedpersoneducation)
         formData.append('unemployedpersonexperience', userData.unemployedpersonexperience)
-        formData.append('financialloanstatus', userData.financialloanstatus)
         formData.append('loanstatus', userData.loanstatus)
         formData.append('loanamount', userData.loanamount)
         
@@ -151,12 +150,11 @@ const StepContext = () => {
             formData.append('egindependent', userData.egindependent)
             formData.append('loanamountneeded', userData.loanamountneeded)
             formData.append('egselfmanagecontribution', userData.egselfmanagecontribution)
-        } else {
-
-        }
+        } 
+        
         // medical grant
 
-        if (userData.category==='medical') {
+        else if (userData.category==='medical') {
 
             formData.append('mgunemployedpersoneducation', userData.mgunemployedpersoneducation)
             formData.append('mgunemployedpersonexperience', userData.mgunemployedpersonexperience)
@@ -174,7 +172,9 @@ const StepContext = () => {
 
 
         }
-        if (userData.category==='financial'){
+
+        else {
+            formData.append('financialloanstatus', userData.financialloanstatus)
             formData.append('loanamountneeded', userData.loanamountneeded)
         }
         // Earning member table

@@ -24,27 +24,27 @@ export default function SixthStep() {
     const loanStatus = (e) => {
         setUserData({ ...userData, 'loanstatus': e.target.value })
         if (e.target.value === 'yes') {
-            document.getElementById('loanamount').style.visibility = 'visible'
+            document.getElementById('loanamount').style.display = 'block'
         } else {
-            document.getElementById('loanamount').style.visibility = 'hidden'
+            document.getElementById('loanamount').style.display = 'none'
         }
 
 
     }
-    const floanStatus = (e) => {
-        setUserData({ ...userData, 'financialloanstatus': e.target.value })
-            if (e.target.value === 'yes') {
-                document.getElementById('floanamount').style.visibility = 'visible'
-            }
-            else {
-                document.getElementById('floanamount').style.visibility = 'hidden'
-            }
-    }
+    // const floanStatus = (e) => {
+    //     setUserData({ ...userData, 'financialloanstatus': e.target.value })
+    //         if (e.target.value === 'yes') {
+    //             document.getElementById('floanamount').style.visibility = 'visible'
+    //         }
+    //         else {
+    //             document.getElementById('floanamount').style.visibility = 'hidden'
+    //         }
+    // }
 
     // const floanStatus = (e) => {
     //     setUserData({ ...userData, 'financialloanstatus': e.target.value })
     //     if (userData['category'] === 'education' || userData['category'] === 'medical'){
-    //         document.getElementById('floanamount').style.display = 'none'
+    //         document.getElementById('floanamount').style.visibility = 'hidden'
     //     }
     //     else{
     //         if (e.target.value === 'yes') {
@@ -62,7 +62,7 @@ export default function SixthStep() {
             document.getElementById('financehide').style.display = 'none'
         }
         else{
-            document.getElementById('financehide').style.display = 'visible'    
+            document.getElementById('financehide').style.display = 'block'    
                 }   
     }
    
@@ -233,7 +233,7 @@ export default function SixthStep() {
     return (
         <div className="table1">
 
-            <Card style={{ width: '130ch' }} className='mx-auto'>
+            <Card style={{ width: '130ch' }} className='mx-auto' onClick={hide}>
                 <Box
                     component="form"
                     sx={{
@@ -448,7 +448,7 @@ export default function SixthStep() {
                            
                                 <table>
                                     <tr>
-                                        <td rowSpan={3}> <h6 id="dtdetail">2. Any Previous Loan ?</h6></td>
+                                        <td> <h6 id="dtdetail">2. Any Previous Loan ?</h6></td>
                                         <td>
                                             <div className='jainradio'> <FormControl component="fieldset">
                                                 <FormLabel component="legend"></FormLabel>
@@ -486,12 +486,11 @@ export default function SixthStep() {
                                     <FormControlLabel value="no" control={<Radio />} label="No" />
                                 </RadioGroup>
                             </FormControl> */}
-                                <span id='loanamount' style={{ visibility: 'hidden' }}>
-                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Loan Amount" type="number" id='mgloanamount' value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                                </span><br />
-                                <br></br>
-                                <div id='financehide' onClick={hide}>
-                                <table>
+                                <span id='loanamount' >
+                                    <TextField InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} label="Enter Previous Loan Amount" type="number" id='mgloanamount' value={userData['loanamount']} onChange={(e) => setUserData({ ...userData, "loanamount": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                </span><br></br><br></br>
+                                <div id='financehide' >
+                                {/* <table>
                                 <tr>
                                     <td>
                                     <h6 id="dtdetail" >3. Financial Loan Needed ? </h6>
@@ -516,11 +515,12 @@ export default function SixthStep() {
                                             </FormControl></div>
                                     </td>
                                 </tr>
-                            </table>
-                                
-                            <span id='floanamount' style={{ visibility: 'hidden' }}>
-                                <TextField label="Enter Loan Amount Needed :" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} type="number" id='floanamountneeded' value={userData['loanamountneeded']} onChange={(e) => setUserData({ ...userData, "loanamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
-                                </span><br></br>
+                            </table> */}
+                            <h6 id="dtdetail" >3. Financial Loan : </h6>
+                            {/* <span id='floanamount' style={{ visibility: 'hidden' }}> */}
+                                <TextField label="Enter Amount Needed :" InputProps={{ startAdornment: <InputAdornment position="start">Rs.</InputAdornment> }} type="number" id='floanamountneeded' value={userData['loanamountneeded']} onChange={(e) => setUserData({ ...userData, "loanamountneeded": e.target.value })} margin='normal' variant='standard' color="primary" /><span>  </span>
+                                {/* </span> */}
+                                <br></br>
                                 </div>
 
                             </div>
