@@ -191,10 +191,11 @@ export default function View(props) {
       <h2 class="fs-title">Details for Application ID: {id}</h2>
     </div><br></br>
     <div className='viewpad viewborder' id='view'><br></br>
+    <h5 className='viewdth viewhp'>Personal Details</h5>
       <table class="table">
         <thead class="thead-secondary">
           <tr>
-            <th>Personal Details</th>
+            {/* <th>Personal Details</th> */}
           </tr>
         </thead>
         <tbody>
@@ -293,16 +294,111 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
-
+      <h5 className='viewdth viewhp'>Documents Uploaded</h5>
       <table class="table">
         <thead class="thead-secondary">
           <tr>
-            <th>Documents Uploaded</th>
+            {/* <th>Documents Uploaded</th> */}
           </tr>
         </thead>
-        <tbody>          
+        <tbody>  
+        <tr>
+            <td>Ration Card Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Ration_Card_Number']} onChange={(e) => setuserData({ ...userData, "Ration_Card_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+            <td>Rent/Maintenance Receipt Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Rent_Reciept_Number']} onChange={(e) => setuserData({ ...userData, "Rent_Reciept_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>            
+            <td>Electric Bill Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Electricity_Consumer_Number']} onChange={(e) => setuserData({ ...userData, "Jain": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          
+            
+            <td>Medical Insurance Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Insurance_ID_Number']} onChange={(e) => setuserData({ ...userData, "Insurance_ID_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
           <tr>
-
+            
+            <td>Salary Certificate Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Salary_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Salary_Certificate_ID": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          
+           
+            <td>Bank Passbook Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Bank_Account_Details']} onChange={(e) => setuserData({ ...userData, "Bank_Account_Details": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+           
+            <td>Jain Minority Certificate Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Jain_Minority_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Jain_Minority_Certificate_ID": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          
+            
+            <td>Telephone Bill Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Telephone_Account_Number']} onChange={(e) => setuserData({ ...userData, "Telephone_Account_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+           
+            <td>Referral Letter Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Referral_Letter_Serial_Number']} onChange={(e) => setuserData({ ...userData, "Referral_Letter_Serial_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          
+            
+            <td>Aadhar Card Number:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['Aadhaar_Card_Number']} onChange={(e) => setuserData({ ...userData, "Aadhaar_Card_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          </tr>
+          <tr>            
+            <td>School/College Fees Receipt:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control" value={userData['School_College_Fees_Receipt_Number']} onChange={(e) => setuserData({ ...userData, "School_College_Fees_Receipt_Number": e.target.value })} id="ex2" type="text" />
+              </div>
+            </td>
+          
+            <td>Others:</td>
+            <td>
+              <div class="w-75 d-inline-block">
+                <input class="form-control"  id="ex2" type="text" />
+              </div>
+            </td>          
+            </tr>        
+          <tr>
             {/* <td>Ration Card:</td> */}
             <td>
               {
@@ -508,109 +604,17 @@ export default function View(props) {
                     : <span />
                   : <span />
               }
-            </td></tr>             
-          <tr>
-            <td>Ration Card Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Ration_Card_Number']} onChange={(e) => setuserData({ ...userData, "Ration_Card_Number": e.target.value })} id="ex2" type="text" />
-              </div>
             </td>
-            <td>Rent/Maintenance Receipt Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Rent_Reciept_Number']} onChange={(e) => setuserData({ ...userData, "Rent_Reciept_Number": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          </tr>
-          <tr>            
-            <td>Electric Bill Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Electricity_Consumer_Number']} onChange={(e) => setuserData({ ...userData, "Jain": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
+            </tr>             
           
-            
-            <td>Medical Insurance Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Insurance_ID_Number']} onChange={(e) => setuserData({ ...userData, "Insurance_ID_Number": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            
-            <td>Salary Certificate Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Salary_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Salary_Certificate_ID": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          
-           
-            <td>Bank Passbook Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Bank_Account_Details']} onChange={(e) => setuserData({ ...userData, "Bank_Account_Details": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-           
-            <td>Jain Minority Certificate Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Jain_Minority_Certificate_ID']} onChange={(e) => setuserData({ ...userData, "Jain_Minority_Certificate_ID": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          
-            
-            <td>Telephone Bill Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Telephone_Account_Number']} onChange={(e) => setuserData({ ...userData, "Telephone_Account_Number": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-           
-            <td>Referral Letter Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Referral_Letter_Serial_Number']} onChange={(e) => setuserData({ ...userData, "Referral_Letter_Serial_Number": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          
-            
-            <td>Aadhar Card Number:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['Aadhaar_Card_Number']} onChange={(e) => setuserData({ ...userData, "Aadhaar_Card_Number": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          </tr>
-          <tr>            
-            <td>School/College Fees Receipt:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control" value={userData['School_College_Fees_Receipt_Number']} onChange={(e) => setuserData({ ...userData, "School_College_Fees_Receipt_Number": e.target.value })} id="ex2" type="text" />
-              </div>
-            </td>
-          
-            <td>Others:</td>
-            <td>
-              <div class="w-75 d-inline-block">
-                <input class="form-control"  id="ex2" type="text" />
-              </div>
-            </td>          </tr>
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Miscellaneous Question</h5>
       <table class="table">
         <thead class="thead-secondary">
           <tr>
-            <th>Miscellaneous Question</th>
+            {/* <th>Miscellaneous Question</th> */}
           </tr>
         </thead>
         <tbody>
@@ -656,10 +660,11 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Monthly Expenses Details</h5>
       <table class="table">
         <thead class="thead-secondary">
           <tr>
-            <th>Monthly Expenses Details</th>
+            {/* <th>Monthly Expenses Details</th> */}
           </tr>
         </thead>
         <tbody>
@@ -743,10 +748,11 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Home Furniture Details</h5>
       <table class="table">
         <thead class="thead-secondary">
           <tr>
-            <th>Home Furniture Details</th>
+            {/* <th>Home Furniture Details</th> */}
           </tr>
         </thead>
         <tbody>
@@ -799,10 +805,11 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Dependent Details</h5>
       <table class="table">
         <thead class="thead-secondary">
-          <tr>
-            <th>Dependent Details</th>
+          <tr className='viewdth'>
+            {/* <th>Dependent Details</th> */}
           </tr>
         </thead>
         <tbody>
@@ -906,7 +913,7 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
-
+      {/* <h5 className='viewdth viewhp'>Financial Grant Details</h5> */}
       <table>
         {userData['Category'] === "Financial"?
         <tr>
@@ -917,15 +924,15 @@ export default function View(props) {
               </div>
             </td>
         </tr>
-
-
+        
         :userData['Category'] === "education" ?
         // <tr><td>Education grant needed</td></tr>
         <table class="table">
         <thead class="thead-secondary">
-          <tr>
+        <h5 className='viewdth viewhp padd'>Education Grant Details</h5>
+          {/* <tr>
             <th>Education Grant Details</th>
-          </tr>
+          </tr> */}
         </thead>
         <tbody>
           <tr>
@@ -992,9 +999,10 @@ export default function View(props) {
         :
         <table class="table">
         <thead class="thead-secondary">
-          <tr>
+        <h5 className='viewdth viewhp padd'>Education Grant Details</h5>
+          {/* <tr>
             <th>Medical Grant Details</th>
-          </tr>
+          </tr> */}
         </thead>
         <tbody>
           <tr>
@@ -1065,11 +1073,12 @@ export default function View(props) {
               }
       </table>
 
-
+<br></br>
+<h5 className='viewdth viewhp'>Earning Member Details</h5>
       <table class="table">
         <thead class="thead-secondary">
-          <tr>
-            <th>Earning Member Details</th>
+          <tr className='viewdth'>
+            {/* <th>Earning Member Details</th> */}
           </tr>
         </thead>
         <tbody>
@@ -1172,10 +1181,11 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Skill Details</h5>
       <table class="table">
         <thead class="thead-secondary">
-          <tr>
-            <th>Skill Details</th>
+          <tr className='viewdth'>
+            {/* <th>Skill Details</th> */}
           </tr>
         </thead>
         <tbody>
@@ -1305,12 +1315,10 @@ export default function View(props) {
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Administrative Details</h5>
       <table class="table">
-        <thead class="thead-secondary">
           <tr>
-            <th>Administrative Details</th>
           </tr>
-        </thead>
         <tbody>
           <tr>
             <td>Referred By:</td>

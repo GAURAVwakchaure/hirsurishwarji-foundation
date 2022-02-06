@@ -19,6 +19,16 @@
 @media(max-width:1200px){
   
 }
+.viewhp{
+  padding: 7px 0;
+  font-weight: 700;
+}
+.thwidth{
+  width: 100rem;
+}
+.viewdth{
+  background-color: #e6e6e6;
+}
 .smalltext{
   color: #7b7b7b;
 }
