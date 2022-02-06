@@ -999,7 +999,7 @@ export default function View(props) {
         :
         <table class="table">
         <thead class="thead-secondary">
-        <h5 className='viewdth viewhp padd'>Education Grant Details</h5>
+        <h5 className='viewdth viewhp padd'>Medical Grant Details</h5>
           {/* <tr>
             <th>Medical Grant Details</th>
           </tr> */}
