@@ -27,12 +27,35 @@ const StepContext = () => {
 
     const showData = () => {
 
-        axios.get('https://hirsurishwarji-foundation.herokuapp.com/')
-            .then((response) => {
-                setFinalData(response.data);
-            })
+        console.log(skilltableData)
 
-        console.log(finalData)
+        // skilltableData.forEach((item) => console.log(item))
+
+        // for(var key in skilltableData){
+        //     console.log(key, skilltableData[key])
+        // }
+
+        // console.log("json stringify", skilltableData.json())
+
+        formData.append("skilltable", skilltableData)
+
+
+        console.log("skill data in formdata object ", formData.getAll('skilltable'))
+
+        console.log(JSON.parse(formData.get("skilltable")))
+
+
+        // for(let key of formData.keys()){
+        //     console.log(formData.get(key))
+        // }
+
+
+        // axios.get('https://hirsurishwarji-foundation.herokuapp.com/')
+        //     .then((response) => {
+        //         setFinalData(response.data);
+        //     })
+
+        // console.log(finalData)
     }
 
 
@@ -194,10 +217,14 @@ const StepContext = () => {
 
 
 
-        // skill table data
-        userData.skilltable.forEach((item) => formData.append("skilltableData", item))
+        // // skill table data
+        // userData.skilltable.forEach((item) => formData.append("skilltableData", item))
 
-        console.log("skill table  data in formdata object",formData.getAll('skilltableData'))
+        // console.log("skill table  data in formdata object",formData.getAll('skilltableData'))
+
+
+
+        formData.append("skilltableData", JSON.stringify(skilltableData))
 
         // for (const [key, value] of Object.entries(skilltableData)) {
         //     skilltableDataarray.push(`${key}: ${value}`);

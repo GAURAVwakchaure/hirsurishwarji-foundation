@@ -8,7 +8,7 @@ import '..'
 
 
 export default function EleventhStep() {
-    const { setStep, setUserData, userData, submitData, skilltableData, setskilltableData,skilltableDataarray  } = useContext(multiStepContext);
+    const { setStep, setUserData, userData, submitData, skilltableData, setskilltableData,skilltableDataarray , showData } = useContext(multiStepContext);
     //use of hook for couting
     const [noOfRows, setNoOfRows] = useState(1);
     // let referredby = document.getElementById('referredby').value
@@ -43,6 +43,8 @@ export default function EleventhStep() {
     //  else {
     //     document.getElementById('invalid').innerHTML=" "
     // }
+
+    console.log(typeof(skilltableData))
 
     const deleteRow = () => {
         delete skilltableData["skill" + noOfRows + "name"]
@@ -170,6 +172,8 @@ export default function EleventhStep() {
                                 <Button variant='contained' color='primary' onClick={skillArray}>Submit</Button><span> </span>
 
                                 {/* <Button onClick={skillArray}>Save</Button> */}
+
+                                {/* <Button onClick = {showData}>showData</Button> */}
 
 
 

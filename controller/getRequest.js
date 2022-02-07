@@ -33,6 +33,7 @@ export const createApplication = (req, res) =>{
         // saving data into db
         try {
           console.log("In trust save method"+req.body.creed)
+          console.log("recieved skilldata object",JSON.parse(req.body.skilltableData))
           
             // console.log("in the post "+max1)
             const trust = new Form({
@@ -127,7 +128,9 @@ export const createApplication = (req, res) =>{
               mgmedamt: req.body.mgmedamt== "undefined" ? "" :req.body.mgmedamt,
               mginsurancedetails: req.body.mginsurancedetails== "undefined" ? "" :req.body.mginsurancedetails,
               earningmembertable: req.body.earningmembertable== "undefined" ? "" :req.body.earningmembertable,
-              skilltableData: req.body.skilltableData== "undefined" ? "" :req.body.skilltableData,
+              skilltableData: req.body.skilltableData== "undefined" ? "" :JSON.parse(req.body.skilltableData),
+              // skilltableData:JSON.parse(req.body.skilltableData),
+
               referredby: req.body.referredby== "undefined" ? "" :req.body.referredby,
               referraladdress: req.body.referraladdress== "undefined" ? "" :req.body.referraladdress,
               surveydoneby: req.body.surveydoneby== "undefined" ? "" :req.body.surveydoneby,

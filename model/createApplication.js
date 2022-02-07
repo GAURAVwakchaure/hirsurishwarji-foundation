@@ -341,7 +341,7 @@ const formschema = new mongoose.Schema({
   mgmedamt : String, 
   mginsurancedetails : String, 
   earningmembertable : [{type:String}],
-  skilltableData : [{ type:String}],
+  skilltableData :{type:Object},
   referredby : String, 
   referraladdress : String,
   surveydoneby : String,
