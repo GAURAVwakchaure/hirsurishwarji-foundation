@@ -186,10 +186,12 @@ export default function View(props) {
 
 const handleupdate = (key) => {
 
-  console.log("after removing cursor ", key, "value" ,document.getElementById("skillinput").value)
+  // console.log("after removing cursor ", key, "value" ,document.getElementById("skillinput").value)
+
+  console.log(document.getElementById(`${key}`).value)
 
 
-  userData.skilltableData[`${key}`] =document.getElementById("skillinput").value
+  userData.skilltableData[`${key}`] =document.getElementById(`${key}`).value
   setuserData(...userData)
 
 
@@ -204,7 +206,7 @@ const handleupdate = (key) => {
             
               <p key = {key}  >
               {key}:
-              <input type = "text" class = "form-control" id = "skillinput" defaultValue={userData.skilltableData[`${key}`]}
+              <input type = "text" class = "form-control" id = {key} defaultValue={userData.skilltableData[`${key}`]}
             onBlur={()=>handleupdate(key)}
             />  <span>  </span>    
               
