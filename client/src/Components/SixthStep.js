@@ -280,31 +280,31 @@ export default function SixthStep() {
                                                 <th scope="row">{index + 1}</th>
                                                 <td ><input id={"dtname" + index} type="text" className='input' style={{ width: "6.5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "name"]}
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
+                                                onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "name"]: e.target.value })}
                                                 /></td>
                                                 <td><input id={"dtage" + index} className='input' type="number" style={{ width: "3rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "age"]}
 
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}
+                                                onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "age"]: e.target.value })}
                                                 /></td>
                                                 <td ><input type="number" id={"dtaadhar" + index} className='input' style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "aadhaar_number"]}
 
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "aadhaar_number"]: e.target.value })}
+                                                onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "aadhaar_number"]: e.target.value })}
 
 
                                                 /></td>
                                                 <td ><input type="text" id={"dteducation" + index} className='input' style={{ width: "6.5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "education"]}
 
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "education"]: e.target.value })}
+                                                onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "education"]: e.target.value })}
 
 
                                                 /></td>
                                                 <td><input type="text" className='input' id={"dtprofession" + index} style={{ width: "6rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "profession"]}
 
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "profession"]: e.target.value })}
+                                                onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "profession"]: e.target.value })}
                                                 /></td>
                                                 <td><input id='dtincome' className='input' id={"dtincome" + index} type="number" style={{ width: "5.5rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "income"]}
@@ -317,7 +317,7 @@ export default function SixthStep() {
                                                 <td><input type="text" className='input' id={"dtreligiouseducation" + index} style={{ width: "7rem", border: "0" }}
                                                     value={dependenttableData["dependent" + newVal + "religiouseducation"]}
 
-                                                // onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "religiouseducation"]: e.target.value })}
+                                                onChange={(e) => setdependenttableData({ ...dependenttableData, ["dependent" + newVal + "religiouseducation"]: e.target.value })}
 
 
                                                 /></td>

@@ -308,7 +308,7 @@ const formschema = new mongoose.Schema({
     // required: [true, "please check your data entry, no Q6 Answer specified!"],
   },
   
-  dependenttable :[],
+  dependenttable :{type:Object},
   unemployedpersoneducation : String,
   unemployedpersonexperience : String,
   loanstatus : String,
@@ -340,7 +340,7 @@ const formschema = new mongoose.Schema({
   mgmedicalaid : String, 
   mgmedamt : String, 
   mginsurancedetails : String, 
-  earningmembertable : [{type:String}],
+  earningmembertable : {type:Object},
   skilltableData :{type:Object},
   referredby : String, 
   referraladdress : String,

@@ -89,20 +89,18 @@ export default function NinethStep() {
                                                     <td ><input type="text" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "name"]}
                                                         id={"emname" + index}
-                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "name"]: e.target.value })}
+                                                        onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "name"]: e.target.value })}
                                                     /></td>
                                                     <td><input type="text" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "work"]}
                                                         id={"emwork" + index}
 
-                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "work"]: e.target.value })}
+                                                        onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "work"]: e.target.value })}
                                                     /></td>
                                                     <td ><input type="number" style={{ width: "15rem", border: "0" }}
                                                         value={earningmembertableData["earning" + newVal + "phonenumber"]}
                                                         id={"emphnum" + index}
-
-
-                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "phonenumber"]: e.target.value })}
+                                                        onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "phonenumber"]: e.target.value })}
                                                     /></td>
                                                 </tr>
                                             );

@@ -181,6 +181,94 @@ export default function View(props) {
 
   // :<li></li>
 
+// logic for dependent table view
+
+const handleupdatedep = (key) => {
+
+  // console.log("after removing cursor ", key, "value" ,document.getElementById("skillinput").value)
+
+  console.log(document.getElementById(`${key}`).value)
+
+
+  userData.dependenttable[`${key}`] =document.getElementById(`${key}`).value
+  setuserData(...userData)
+
+
+}
+
+let arr3 = ''
+if (userData.dependenttable) {
+  arr3 = Object.entries(userData.dependenttable).map(([key, val]) => {
+    return (
+      <div style = {{display:'inline-block'}}>
+            <p key = {key}  >
+            {key}:
+            <input type = "text" class = "form-control" id = {key} defaultValue={userData.dependenttable[`${key}`]}
+          onBlur={()=>handleupdatedep(key)}
+          />  <span>  </span>    
+            
+           </p> 
+          
+        </div>         
+    )
+  
+  })
+}
+else {
+  return (
+    <td>{"No data found"}</td>
+  )
+}
+
+
+
+// logic for dependent table view ends here
+
+
+
+// logic for earning member table data
+const handleupdateem = (key) => {
+
+  // console.log("after removing cursor ", key, "value" ,document.getElementById("skillinput").value)
+
+  console.log(document.getElementById(`${key}`).value)
+
+
+  userData.earningmembertable[`${key}`] =document.getElementById(`${key}`).value
+  setuserData(...userData)
+
+
+}
+
+let arr2 = ''
+if (userData.earningmembertable) {
+  arr2 = Object.entries(userData.earningmembertable).map(([key, val]) => {
+    return (
+      <div style = {{display:'inline-block'}}>
+            <p key = {key}  >
+            {key}:
+            <input type = "text" class = "form-control" id = {key} defaultValue={userData.earningmembertable[`${key}`]}
+          onBlur={()=>handleupdateem(key)}
+          />  <span>  </span>    
+            
+           </p> 
+          
+        </div>         
+    )
+  
+  })
+}
+else {
+  return (
+    <td>{"No data found"}</td>
+  )
+}
+
+
+
+
+// logic for earning member table ends here
+
 
 // logic for displaying skill table data
 
@@ -201,9 +289,7 @@ const handleupdate = (key) => {
   if (userData.skilltableData) {
     arr1 = Object.entries(userData.skilltableData).map(([key, val]) => {
       return (
-
-        <div style = {{display:'inline-block'}}>         
-            
+        <div style = {{display:'inline-block'}}>
               <p key = {key}  >
               {key}:
               <input type = "text" class = "form-control" id = {key} defaultValue={userData.skilltableData[`${key}`]}
@@ -212,27 +298,7 @@ const handleupdate = (key) => {
               
              </p> 
             
-          </div>
-         
-        // <p key={key} style={{display:'inline-block'}}>{key}: <input type = "text" id = "skillinput" defaultValue={userData.skilltableData[`${key}`]}
-        //     onBlur={()=>handleupdate(key)}
-        //     /></p>
-
-
-            
-            
-        // <div class = "col">
-        //   <div class = "col">
-        // <div class= " card inline-block" >         
-        //   <div class= "card-body">
-        //   <p key={key} >{key}: <input type = "text" id = "skillinput" defaultValue={userData.skilltableData[`${key}`]}
-        //     onBlur={()=>handleupdate(key)}
-        //     /></p>
-         
-        //   </div>
-        // </div>
-        // </div>
-        // </div>
+          </div>         
       )
     
     })
@@ -870,6 +936,13 @@ const handleupdate = (key) => {
         </tbody>
       </table>
       <br></br>
+      <h5 className='viewdth viewhp'>Dependent Details New One</h5>
+        <table className='table'>
+        <tr>
+        {arr3}
+        </tr>           
+        </table>
+      <br></br>
       <h5 className='viewdth viewhp'>Dependent Details</h5>
       <table class="table">
         <thead class="thead-secondary">
@@ -877,104 +950,9 @@ const handleupdate = (key) => {
             {/* <th>Dependent Details</th> */}
           </tr>
         </thead>
+
         <tbody>
 
-          {/* {data}
-             */}
-          <tr>
-
-            {userData.dependenttable ?
-              //  ? userData.dependenttable[0]?
-              //  <p>{userData.dependenttable[0]}</p>
-              //  :<li>{"not available"}</li>
-
-
-
-
-
-
-
-              // Object.entries(userData.dependenttable).forEach(([key, value]) => {
-              //   let var1 = "hello";
-              //   let var2 = "world"
-              //   console.log(`${key} ${value}`);
-              //   <tr>
-              //   <td>{var1}</td></tr>
-              //   // "a 5", "b 7", "c 9"
-              // })
-              // userData.dependenttable.forEach()
-              userData.dependenttable.map(function (d) {
-                const myArray = d.split(",")
-
-                console.log("array after splitting", myArray)
-                return (
-                  <tr>
-                    {myArray[0]?<td>{myArray[0]}</td>:<td></td>}
-                    {myArray[1]
-                    ?
-                    <td>
-                    {myArray[1] === 'undefined'? "No"
-                      :
-                      <div class="w-75 d-inline-block">
-                        <input class="form-control" value={myArray[1]} id="ex2" type="text" />
-                      </div>
-                      
-                      }
-                      
-                    </td>
-                    :<td></td>}
-                    
-                   
-                    {myArray[2]?<td>{myArray[2]}</td>:<td></td>}
-
-                    {myArray[3]
-                    ?
-                    <td>
-                    {myArray[3] === 'undefined'? "No"
-                      :
-                      <div class="w-75 d-inline-block">
-                        <input class="form-control" value={myArray[3]} id="ex2" type="text" />
-                      </div>
-                      
-                      }
-                      
-                      {/* <div class="w-75 d-inline-block">
-                        <input class="form-control" value={myArray[3]} id="ex2" type="text" />
-                      </div> */}
-                    </td>
-                    :<td></td>}
-                    {myArray[4]?<td>{myArray[4]}</td>:<td></td>}
-                    {/* <td>
-                      {myArray[4]?<td></td>
-                      :<td></td>
-                      }
-                    
-                    </td> */}
-
-                    {myArray[5]?
-                    
-                    <td>
-                      {myArray[5] === 'undefined'|| "" ? "No"
-                      :
-                      <div class="w-75 d-inline-block">
-                        <input class="form-control" value={myArray[5]} id="ex2" type="text" />
-                      </div>
-                      
-                      }
-
-                      {/* <div class="w-75 d-inline-block">
-                        <input class="form-control" value={myArray[5]} id="ex2" type="text" />
-                      </div> */}
-                    </td>
-                    :<td></td>}
-
-                  </tr>
-                )
-              })
-
-              : <tr></tr>
-            }
-          </tr>
         </tbody>
       </table>
       <br></br>
@@ -1149,113 +1127,34 @@ const handleupdate = (key) => {
       </table>
 
 <br></br>
-<h5 className='viewdth viewhp'>Earning Member Details</h5>
-      <table class="table">
-        <thead class="thead-secondary">
-          <tr className='viewdth'>
-            {/* <th>Earning Member Details</th> */}
-          </tr>
-        </thead>
-        <tbody>
-
-        <tr>
-
-{userData.earningmembertable ?
-  //  ? userData.dependenttable[0]?
-  //  <p>{userData.dependenttable[0]}</p>
-  //  :<li>{"not available"}</li>
 
 
-
-
-
-
-
-  // Object.entries(userData.dependenttable).forEach(([key, value]) => {
-  //   let var1 = "hello";
-  //   let var2 = "world"
-  //   console.log(`${key} ${value}`);
-  //   <tr>
-  //   <td>{var1}</td></tr>
-  //   // "a 5", "b 7", "c 9"
-  // })
-  // userData.dependenttable.forEach()
-  userData.earningmembertable.map(function (d) {
-    const myArray = d.split(",")
-
-    console.log("array after splitting", myArray)
-    return (
-      <tr>
-        {myArray[0]?<td>{myArray[0]}</td>:<td></td>}
-        {myArray[1]
-        ?
-        <td>
-        {myArray[1] === "undefined"? "No"
-          :
-          <div class="w-75 d-inline-block">
-            <input  class="form-control" value={myArray[1]} id="ex2" type="text" />
-          </div>
-          
-          }
-          
-        </td>
-        :<td></td>}
         
-       
-        {myArray[2]?<td>{myArray[2]}</td>:<td></td>}
 
-        {myArray[3]
-        ?
-        <td>
-        {myArray[3] === 'undefined'? "No"
-          :
-          <div class="w-75 d-inline-block">
-            <input  class="form-control" value={myArray[3]} id="ex2" type="text" />
-          </div>
-          
-          }
-          
-          {/* <div class="w-75 d-inline-block">
-            <input class="form-control" value={myArray[3]} id="ex2" type="text" />
-          </div> */}
-        </td>
-        :<td></td>}
-        {myArray[4]?<td>{myArray[4]}</td>:<td></td>}
-        {/* <td>
-          {myArray[4]?<td></td>
-          :<td></td>
-          }
-        
-        </td> */}
 
-        {myArray[5]?
-        
-        <td>
-          {myArray[5] === 'undefined'|| "" ? "No"
-          :
-          <div class="w-75 d-inline-block">
-            <input  class="form-control" value={myArray[5]} id="ex2" type="text" />
-          </div>
-          
-          }
-
-          {/* <div class="w-75 d-inline-block">
-            <input class="form-control" value={myArray[5]} id="ex2" type="text" />
-          </div> */}
-        </td>
-        :<td></td>}
-
-      </tr>
-    )
-  })
-
-  : <li></li>
-}
-</tr>
-
-        </tbody>
-      </table>
       <br></br>
+
+      <h5 className='viewdth viewhp'>Earning Member  Details New One</h5>
+
+
+      <table className='table'>
+        <thead>
+        {/* <h6>Skill table New one</h6> */}
+        </thead>
+        <tr>
+        {arr2}
+
+        </tr>       
+
+      </table>
+      
+
+
+
+
+
+
+
       {/* <h5 className='viewdth viewhp'>Skill Details</h5>
       {/* <table class="table"> */}
         {/* <thead class="thead-secondary"> */}
@@ -1399,10 +1298,7 @@ const handleupdate = (key) => {
         <tr>
         {arr1}
 
-        </tr>
-      
-         
-        
+        </tr>       
 
       </table>
 

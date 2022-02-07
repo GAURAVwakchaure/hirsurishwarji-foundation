@@ -206,9 +206,16 @@ const StepContext = () => {
         // }
         // formData.append('earningmembertable', earningmembertablearray)
 
-        userData.earningmembertable.forEach((item) => formData.append("earningmembertable", item))
+        // userData.earningmembertable.forEach((item) => formData.append("earningmembertable", item))
 
-        console.log("earning member data in formdata object",formData.getAll('earningmembertable'))
+        // console.log("earning member data in formdata object",formData.getAll('earningmembertable'))
+        
+        
+        formData.append("earningmembertable", JSON.stringify(earningmembertableData))
+
+
+
+
 
 
 
@@ -266,10 +273,12 @@ const StepContext = () => {
 
         // formData.append('dependenttable', userData.dependenttable)
 
-        userData.dependenttable.forEach((item) => formData.append("dependenttable", item))
+        // userData.dependenttable.forEach((item) => formData.append("dependenttable", item))
 
 
-        console.log("dependent data in formdata object",formData.getAll('dependenttable'))
+        // console.log("dependent data in formdata object",formData.getAll('dependenttable'))
+        formData.append("dependenttable", JSON.stringify(dependenttableData))
+
 
 
 

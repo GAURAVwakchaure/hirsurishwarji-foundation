@@ -94,8 +94,10 @@ export const createApplication = (req, res) =>{
               WashingMachine:req.body.washingmachine == "undefined" ? "" :req.body.washingmachine,
               Vehicle:req.body.vehicle == "undefined" ? "" :req.body.vehicle,
               Bike:req.body.bike == "undefined" ? "" :req.body.bike,
-              Phones:req.body.phones == "undefined" ? "" :req.body.phones,             
-              dependenttable : req.body.dependenttable == "undefined" ? "" :req.body.dependenttable,
+              Phones:req.body.phones == "undefined" ? "" :req.body.phones,    
+
+              dependenttable : req.body.dependenttable == "undefined" ? "" :JSON.parse(req.body.dependenttable),
+
               unemployedpersoneducation : req.body.unemployedpersoneducation == "undefined" ? "" :req.body.unemployedpersoneducation,
               unemployedpersonexperience : req.body.unemployedpersonexperience == "undefined" ? "" :req.body.unemployedpersonexperience,
               loanstatus : req.body.loanstatus == "undefined" ? "No" :req.body.loanstatus,
@@ -127,7 +129,7 @@ export const createApplication = (req, res) =>{
               mgmedicalaid: req.body.mgmedicalaid== "undefined" ? "" :req.body.mgmedicalaid,
               mgmedamt: req.body.mgmedamt== "undefined" ? "" :req.body.mgmedamt,
               mginsurancedetails: req.body.mginsurancedetails== "undefined" ? "" :req.body.mginsurancedetails,
-              earningmembertable: req.body.earningmembertable== "undefined" ? "" :req.body.earningmembertable,
+              earningmembertable: req.body.earningmembertable== "undefined" ? "" :JSON.parse(req.body.earningmembertable),
               skilltableData: req.body.skilltableData== "undefined" ? "" :JSON.parse(req.body.skilltableData),
               // skilltableData:JSON.parse(req.body.skilltableData),
 
