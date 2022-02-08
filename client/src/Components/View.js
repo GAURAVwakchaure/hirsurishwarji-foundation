@@ -936,14 +936,14 @@ const handleupdate = (key) => {
         </tbody>
       </table>
       <br></br>
-      <h5 className='viewdth viewhp'>Dependent Details New One</h5>
+      <h5 className='viewdth viewhp'>Dependent Details </h5>
         <table className='table'>
         <tr>
         {arr3}
         </tr>           
         </table>
       <br></br>
-      <h5 className='viewdth viewhp'>Dependent Details</h5>
+      {/* <h5 className='viewdth viewhp'>Fiancial Grant Details</h5> */}
       <table class="table">
         <thead class="thead-secondary">
           <tr className='viewdth'>
@@ -962,7 +962,7 @@ const handleupdate = (key) => {
         <div>
         <table>  
         <thead class="thead-secondary">
-        {/* <h5 className='viewdth viewhp padd'>Financial Grant Details</h5> */}
+        <h5 className='viewdth viewhp padd'>Financial Grant Details</h5>
         
         </thead>  
         <tbody>    
@@ -1134,7 +1134,7 @@ const handleupdate = (key) => {
 
       <br></br>
 
-      <h5 className='viewdth viewhp'>Earning Member  Details New One</h5>
+      <h5 className='viewdth viewhp'>Earning Member  Details</h5>
 
 
       <table className='table'>
