@@ -68,14 +68,14 @@ export default function Application() {
     }
     function referButton(cell, row, rowIndex, formatExtraData) {
         return <div>
-            <button type="button" class="btn btn-outline-primary btn-sm">Refer</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm">Refer</button>
         </div>
     }
 
     function ViewButton(cell, row, rowIndex, formatExtraData) {
         return <div>
             <Link to={`/${row._id}`}>
-                <button type="button" class="btn btn-outline-info btn-sm" >View</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" >View</button>
 
             </Link>
         </div>

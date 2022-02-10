@@ -122,7 +122,7 @@ export default function Grant(props) {
               
             </td>
                     <td className='thpadn'>
-                        Ration Card No:
+                        Ration Card Number :
                         </td>
                         <td>
                         <TextField className='gration' inputProps={{ readOnly: true }} value={userData['Ration_Card_Number']} onChange={(e) => setuserData({ ...userData, "Ration_Card_Number": e.target.value })} id="ex2" type="text" />
@@ -130,31 +130,38 @@ export default function Grant(props) {
 
                 </tr>
             </table>
-              </div><br></br>
+              </div>
+              <div>
+                <table className='center'>
+                    <tr>
+                    <td className='thpadn'>
+                       Application Status :
+                        </td>
+                        <td>
+                        <TextField className='gration' inputProps={{ readOnly: true }} value={userData['status']} onChange={(e) => setuserData({ ...userData, "status": e.target.value })} id="ex2" type="text" />
+                        </td>
+                        <td>
+                        <label className=' thpadn'>Survey Date :</label>
+                        </td>
+                        <td className='thpadnd'>
+                        {/* <TextField className='gration' inputProps={{ readOnly: true }} value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })} id="ex2" type="text" /> */}
+                        <DatePickerComponent  inputProps={{ readOnly: true }} placeholder='Enter Date' format="dd-MMM-yyyy" width='105' value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })}></DatePickerComponent>
+                        </td>
+                        <td >
+                        <label className='thpadn'>Applied Date :</label>
+                        </td>
+                        <td className='thpadnd'>
+                        <DatePickerComponent inputProps={{ readOnly: true }} placeholder='Enter Date' format="dd-MMM-yyyy" width='105' value={userData['createdAt']} onChange={(e) => setuserData({ ...userData, "createdAt": e.target.value })}></DatePickerComponent>
+                        </td>
+                    </tr>
+                </table>
+            </div><br></br>
         
         <div className='gboxborder'><br></br>
         <div>
             <h3 className='hml'>History⬇</h3>
         </div>
-            <div>
-                <table className='right'>
-                    <tr>
-                        <td>
-                        <label className='hrdminlable'>Survey Date :</label>
-                        </td>
-                        <td className='thpadnd'>
-                        {/* <TextField className='gration' inputProps={{ readOnly: true }} value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })} id="ex2" type="text" /> */}
-                        <DatePickerComponent  inputProps={{ readOnly: true }} placeholder='Enter Date' format="dd-MMM-yy" width='91' value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })}></DatePickerComponent>
-                        </td>
-                        <td >
-                        <label className='hrdminlable'>Applied Date :</label>
-                        </td>
-                        <td className='thpadnd'>
-                        <DatePickerComponent inputProps={{ readOnly: true }} placeholder='Enter Date' format="dd-MMM-yy" width='91' value={userData['createdAt']} onChange={(e) => setuserData({ ...userData, "createdAt": e.target.value })}></DatePickerComponent>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            
             
             <h5 className='hrdminlable'>
               Applications With Similar Ration Card Number 
@@ -194,7 +201,7 @@ export default function Grant(props) {
               </td>
               <td >
               <label className='gadminlable2'>Amount Needed:</label> 
-              <input type='text' className="form-control" id="ex2" value={userData['loanamountneeded']} onChange={(e) => setuserData({ ...userData, "loanamountneeded": e.target.value })} /><br></br>
+              <input type='text' className="form-control" id="ex2" value={userData['loanamountneeded']} onChange={(e) => setuserData({ ...userData, "loanamountneeded": e.target.value })} readonly="readonly" /><br></br>
               </td>
               <td >
               <label className='gadminlable3'>Approved Amount:</label>
@@ -240,18 +247,24 @@ export default function Grant(props) {
                                 </td>
                                 <td >
                                 <label className='fgadminlable3 '>Amount Aprroved :</label>
-                            <input type='text' className ="form-control" label="Amount" id="ex2" value={userData['approvedammount']} onChange={(e) => setuserData({ ...userData, "approvedammount": e.target.value })}/><br></br> <span id='etv' className='text-danger' >  </span>
+                            <input readonly="readonly" type='text' className ="form-control" label="Amount" id="ex2" value={userData['approvedammount']} onChange={(e) => setuserData({ ...userData, "approvedammount": e.target.value })}/><br></br> <span id='etv' className='text-danger' >  </span>
                                 </td>
                                 <td>
-                                    <label className='fgadminlable1 '>Cheque/NEFT :</label>
+                                    <label className='fgadminlable11 '>Cheque/NEFT Number:</label>
                             <input type='text' className ="form-control" id="ex2" value={userData['chequeneft']} onChange={(e) => setuserData({ ...userData, "chequeneft": e.target.value })} /><br></br> <span id='etv' className='text-danger' >  </span>
                                 </td>
+                            </tr>
+                            <tr>
+                            <td>
+                              <label className='fgadminlable12 '>Grant Amount:</label>
+                              <input type='text' className ="form-control" id="ex2" value={userData['grantamount']} onChange={(e) => setuserData({ ...userData, "grantamount": e.target.value })} /><br></br> <span id='etv' className='text-danger' >  </span>
+                              </td>
                             </tr>
                         </table>
                         <div className='gdatepick'>
                     <tr>
                       <td>
-                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105' value={userData['grantdate']} onChange={(e) => setuserData({ ...userData, "grantdate": e.target.value })}></DatePickerComponent></p>
+                        <p className='date'>Date : <DatePickerComponent format="dd-MMM-yy" width='105' value={userData['grantdate']} onChange={(e) => setuserData({ ...userData, "grantdate": e.target.value })}></DatePickerComponent></p>
                       </td>
                     </tr>
                   </div>

@@ -258,6 +258,8 @@ const StepContext = () => {
         formData.append('surveydate', userData.surveydate)
         formData.append('approvaldate', userData.approvaldate)
         formData.append('grantdate', userData.grantdate)
+        formData.append('grantamount', userData.grantamount)
+        
         
         // console.log(dependenttableData)
 

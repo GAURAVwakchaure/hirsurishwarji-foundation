@@ -146,7 +146,8 @@ export const createApplication = (req, res) =>{
               chequeneft: req.body.chequeneft == "undefined" ? "" : req.body.chequeneft,
               surveydate: req.body.surveydate == "undefined" ? "" : req.body.surveydate,
               approvaldate : req.body.approvaldate  == "undefined" ? "" : req.body.approvaldate ,
-              grantdate: req.body.grantdate == "undefined" ? "" : req.body.grantdate     
+              grantdate: req.body.grantdate == "undefined" ? "" : req.body.grantdate,
+              grantamount : req.body.grantamount == "undefined" ? "" : req.body.grantamount    
             });  
             console.log("data recieved " +trust)
             trust.save()  

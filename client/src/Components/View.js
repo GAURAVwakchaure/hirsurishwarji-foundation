@@ -19,6 +19,8 @@ export default function View(props) {
   const [userData, setuserData,] = useState([])
   console.log('user data in view file', userData)
 
+  // const dateValue: Date = new Date(new Date().getFullYear(), new Date().getMonth(), 10);
+
   // const submit = () => {
   //   let surveydoneby = document.getElementById('surveydoneby').value
 
@@ -1318,14 +1320,12 @@ const handleupdate = (key) => {
       </table>
 
 
-      <button className='btn btn-secondary' onClick={update}>
+      <button className='btn btn-primary' onClick={update}>
         Update
       </button>
 
     </div><br></br><br></br><hr class="solid"></hr><br></br>
-    <div>
-      <h6 class="fs-title">Survey Details</h6>
-    </div>
+    
     <br></br>
     <Card style={{ width: '147ch' }} className='mx-auto'>
       <Box
@@ -1336,7 +1336,9 @@ const handleupdate = (key) => {
         noValidate
         autoComplete="off">
         <div className='viewadminborder'><br></br>
-
+        <div>
+      <h6 class="fs-title">Survey Details</h6>
+    </div><br></br>
           <div>
             <table className='center'>
               <tr>
@@ -1346,19 +1348,19 @@ const handleupdate = (key) => {
                 </td>
                 <td>
                   <label className='vadminlable'>Survey Details:</label>
-                  <input type='text' className="form-control" id="ex2" value={userData['surveydetails']} onChange={(e) => setuserData({ ...userData, "surveydetails": e.target.value })} /> <br></br><span>  </span>
+                  <textarea type='text' className="form-control" id="ex2" value={userData['surveydetails']} onChange={(e) => setuserData({ ...userData, "surveydetails": e.target.value })} /> <br></br><span>  </span>
                 </td>
               </tr>
               <tr>
                 <td>
                   <label className='vadminlable'>Special Notes:</label>
-                  <input type='text' className="form-control" id="ex2" value={userData['specialnotes']} onChange={(e) => setuserData({ ...userData, "specialnotes": e.target.value })} /><br></br>
+                  <textarea type='text' className="form-control" id="ex2" value={userData['specialnotes']} onChange={(e) => setuserData({ ...userData, "specialnotes": e.target.value })} /><br></br>
                 </td>
                 <td>
                   <div className='datepick'>
                     <tr>
                       <td>
-                        <p className='date'>Date : <DatePickerComponent placeholder='Enter Date' format="dd-MMM-yy" width='105' value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })}></DatePickerComponent></p>
+                        <p className='date'>Date : <DatePickerComponent valu format="dd-MMM-yyyy" width='105' value={userData['surveydate']} onChange={(e) => setuserData({ ...userData, "surveydate": e.target.value })}></DatePickerComponent></p>
                       </td>
                     </tr>
                   </div>
@@ -1371,8 +1373,8 @@ const handleupdate = (key) => {
       </div> */}
 
           </div>
+          <Button variant='contained' color='primary' onClick={submit} >Update Survey</Button><br></br><br></br>
         </div><br></br>
-        <Button variant='contained' color='primary' onClick={submit} >Submit</Button><br></br><br></br>
         <br></br><br></br>
 
 

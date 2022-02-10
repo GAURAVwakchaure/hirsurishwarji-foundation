@@ -81,7 +81,7 @@
   padding:10px 10px 0;
 }
 .gration{
-  width: 7rem;
+  width: 5rem;
 }
 .fgadminlable{
   color: #585858;
@@ -91,7 +91,17 @@
 .fgadminlable1{
   color: #585858;
   font-weight: 500;
+  margin-right: 10rem;
+}
+.fgadminlable12{
+  color: #585858;
+  font-weight: 500;
   margin-right: 9rem;
+}
+.fgadminlable11{
+  color: #585858;
+  font-weight: 500;
+  margin-right: 5rem;
 }
 .fgadminlable3{
   color: #585858;

@@ -356,6 +356,7 @@ const formschema = new mongoose.Schema({
   surveydate : Date,
   approvaldate : Date,
   grantdate : Date,
+  grantamount : String,
 
 },{
   timestamps : true,
