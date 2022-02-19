@@ -1,6 +1,6 @@
 
 import express, { Router } from 'express';
-import { getApplicantList,createApplication,getUserById,updateUserById, getFile, updateSurvey, updateApprove , updateReject, updateGrant, getRation} from '../controller/getRequest.js';
+import { getApplicantList,createApplication,getUserById,updateUserById, getFile, updateSurvey, updateApprove , updateReject, updateGrant,  updateRowsk, deleteRowsk} from '../controller/getRequest.js';
 
 const route = express.Router()
 
@@ -24,6 +24,10 @@ route.put('/user/updateReject/:id', updateReject)
 
 route.put('/user/updateGrant/:id', updateGrant)
 
-route.get('/user/history/rationnumber', getRation )
+route.put('/user/updaterowsk/:id', updateRowsk)
+
+route.put('/user/deleterowsk/:id/:noOfRows', deleteRowsk)
+
+// route.get('/user/history/rationnumber', getRation )
 
 export default route

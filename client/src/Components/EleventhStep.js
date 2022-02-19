@@ -53,18 +53,20 @@ export default function EleventhStep() {
         delete skilltableData["skill" + noOfRows + "phonenumber"]
         setNoOfRows(noOfRows - 1)
     }
-
     console.log(skilltableData)
 
 
     const skillArray= () => {
-        for(let i = 0; i<noOfRows; i++){
-            let val = i+1
-            skilltableDataarray.push(val + '.Name,'+document.getElementById('skillname'+i).value+","+val+".Work,"+document.getElementById('skillwork'+i).value+","+val+".Education,"+document.getElementById("skilleducation"+i).value+","+val+".Phone Number,"+document.getElementById("skillphonenum"+i).value)
+        // for(let i = 0; i<noOfRows; i++){
+        //     let val = i+1
+        //     skilltableDataarray.push(val + '.Name,'+document.getElementById('skillname'+i).value+","+val+".Work,"+document.getElementById('skillwork'+i).value+","+val+".Education,"+document.getElementById("skilleducation"+i).value+","+val+".Phone Number,"+document.getElementById("skillphonenum"+i).value)
 
-        }
-        console.log(skilltableDataarray)
-        setUserData({ ...userData, "skilltable": skilltableDataarray })
+        // }
+        // console.log(skilltableDataarray)
+        // setUserData({ ...userData, "skilltable": skilltableDataarray })
+
+
+        setskilltableData({ ...skilltableData, ["noOfRows"]: noOfRows })
 
         {submitData()}
 

@@ -3,6 +3,7 @@ import Form from '../model/createApplication.js'
 import upload from './fileUpload.js';
 
 import path from 'path';
+import nodemon from 'nodemon';
 
 
 // all application list
@@ -345,11 +346,14 @@ export const updateGrant = async (req, res) => {
 // const getRation = async () => {
 //   try{
 //     const ration =await Form
-//     .find({Ration_Card_Number : 1234567890})
+//     .find({Ration_Card_Number : 12345})
 //     .select({Name: 1})
 //     .select({status : 1})
 //     .select({Category : 1})
 //     .select({approvedammount : 1})
+//     .select({surveydate:1})
+//     .select({approvaldate:1})
+//     .select({createdAt:1})
 //     console.log(ration);
 //   }
 //   catch(err){
@@ -374,4 +378,64 @@ export const getRation = async (req, res) => {
   catch(err){
     console.log(err);
   }
+}
+
+
+export const updateRowsk = async (req, res) => {
+  const id = req.params.id;
+  
+  try{
+    const result = await Form.findByIdAndUpdate({_id: id},{
+      $inc :{
+      'skilltableData.noOfRows': 1,
+      }
+    }
+    ,{
+      new: true,
+      useFindAndModify: false
+    }
+    );
+    console.log(result);
+  }catch(err){
+    console.log(err);
+  }
+  res.send("row updated ! ")
+}
+
+
+export const deleteRowsk = async (req, res) => {
+  const id = req.params.id;
+  let noOfRows = req.params.noOfRows
+  console.log(noOfRows)
+  // let first = `skilltableData.skill${noOfRows}name`
+  // console.log(first)
+  let removeObj = []
+  removeObj.push(`skilltableData.skill${noOfRows}name`)
+  removeObj.push(`skilltableData.skill${noOfRows}work`)
+  
+  try{
+    const result = await Form.findByIdAndUpdate({_id: id},{
+
+        $inc:{'skilltableData.noOfRows': -1},
+
+        $unset: removeObj 
+
+      // $inc :{
+      // 'skilltableData.noOfRows': -1,
+      // },
+      // $unset:{
+      //   first : 1,
+      //   // "skilltableData.skill4work": 1,
+      //   // "skilltableData.skill4phonenumber":1,
+      //   // "skilltableData.skill4education":1,
+      // },
+      // new: true,
+      // useFindAndModify: false
+    }
+    );
+    console.log(result);
+  }catch(err){
+    console.log(err);
+  }
+  res.send("row updated ! ")
 }

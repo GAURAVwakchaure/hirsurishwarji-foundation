@@ -185,17 +185,62 @@ export default function View(props) {
 
 // logic for dependent table view
 
+// skill table new one logics
+// const [noOfRows, setNoOfRows] = useState(1)
+// if(userData.skilltableData){
+//   setNoOfRows(userData.skilltableData['noOfRows'])
+// }
+
+
+let noOfRows = 1
+
+if(userData.skilltableData){
+  noOfRows = userData.skilltableData['noOfRows']
+}
+
+const updateskrow = () =>{
+  axios.put(`http://localhost:8000/user/updaterowsk/${id}`)
+  loadUser()
+}
+
+
+const deleteskrow = (noOfRows) =>{
+  console.log("new val value is ", noOfRows)
+  // delete userData.skilltableData
+  delete userData.skilltableData['skill4name']
+
+  axios.put(`http://localhost:8000/user/deleteRowsk/${id}/${noOfRows}`)
+  loadUser()
+}
+
+
+// else{
+//   noOfRows = 1
+
+// }
+
+// const addrowsST=()=>{
+
+//   userData.skilltableData['noOfRows'] = userData.skilltableData['noOfRows']+1;
+
+//   noOfRows = userData.skilltableData['noOfRows']
+//   console.log(noOfRows,"there are rows ")
+
+// }
+// addrowsST()
+
+
+
+// userData.skilltableData?
+// setNoOfRows(userData.skilltableData['noOfRows'])
+// :setNoOfRows(1)
+
+
 const handleupdatedep = (key) => {
-
   // console.log("after removing cursor ", key, "value" ,document.getElementById("skillinput").value)
-
   console.log(document.getElementById(`${key}`).value)
-
-
   userData.dependenttable[`${key}`] =document.getElementById(`${key}`).value
   setuserData(...userData)
-
-
 }
 
 let arr3 = ''
@@ -287,29 +332,31 @@ const handleupdate = (key) => {
 
 }
 
-  let arr1 = ''
-  if (userData.skilltableData) {
-    arr1 = Object.entries(userData.skilltableData).map(([key, val]) => {
-      return (
-        <div style = {{display:'inline-block'}}>
-              <p key = {key}  >
-              {key}:
-              <input type = "text" class = "form-control" id = {key} defaultValue={userData.skilltableData[`${key}`]}
-            onBlur={()=>handleupdate(key)}
-            />  <span>  </span>    
+
+  // let arr1 = ''
+  // if (userData.skilltableData) {
+  //   console.log(userData.skilltableData['noOfRows'])
+  //   arr1 = Object.entries(userData.skilltableData).map(([key, val]) => {
+  //     return (
+  //       <div style = {{display:'inline-block'}}>
+  //             <p key = {key}  >
+  //             {key}:
+  //             <input type = "text" class = "form-control" id = {key} defaultValue={userData.skilltableData[`${key}`]}
+  //           onBlur={()=>handleupdate(key)}
+  //           />  <span>  </span>    
               
-             </p> 
+  //            </p> 
             
-          </div>         
-      )
+  //         </div>         
+  //     )
     
-    })
-  }
-  else {
-    return (
-      <td>{"No data found"}</td>
-    )
-  }
+  //   })
+  // }
+  // else {
+  //   return (
+  //     <td>{"No data found"}</td>
+  //   )
+  // }
 
   // onChange={(e) => setuserData({...userData, [userData.skilltableData[`${key}`]]:e.target.value})}>
 // logic for displaying skill table ends here
@@ -1149,6 +1196,100 @@ const handleupdate = (key) => {
         </tr>       
 
       </table>
+
+
+      <br></br>
+
+      <Card style={{ width: '120ch' }} className='mx-auto'>
+                <Box
+                    component="form"
+                    sx={{
+                        '& .MuiTextField-root': { m: 1, width: '40ch' },
+                    }}
+                    noValidate
+                    autoComplete="off"
+                >
+
+                    <div className='boxborder'><br></br>
+                        <h6 class="fs-title">Skill Details</h6><br></br>
+                        <div>
+                            <div className="app container mx-8 my-0">
+                                <table class="table table-striped table-hover table-bordered p-5">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Work</th>
+                                            <th scope="col">Education</th>
+                                            <th scope="col">Phone Number</th>
+
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        {[...Array(noOfRows)].map((elementInArray, index) => {
+
+                                            var newVal = index + 1
+
+                                            return (
+                                                <tr>
+                                                    <th scope="row">{index + 1}</th>
+                                                    <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={'skill'+newVal+'name'}
+                                                        defaultValue = {userData.skilltableData['skill'+newVal+'name']}
+                                                        onBlur={()=>handleupdate('skill'+newVal+'name')}                                                        // value={skilltableData["skill" + newVal + "name"]}
+                                                        // onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "name"]: e.target.value })}
+                                                    /></td>
+                                                    <td><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={'skill'+newVal+'work'}
+                                                        defaultValue = {userData.skilltableData['skill'+newVal+'work']}
+                                                        onBlur={()=>handleupdate('skill'+newVal+'work')} 
+                                                        // id={"skillwork" + index}
+                                                        // value={skilltableData["skill" + newVal + "work"]}
+                                                        // onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "work"]: e.target.value })}
+                                                    /></td>
+                                                    <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={'skill'+newVal+'education'}
+                                                        defaultValue = {userData.skilltableData['skill'+newVal+'education']}
+                                                        onBlur={()=>handleupdate('skill'+newVal+'education')} 
+                                                        // id={"skilleducation" + index}
+                                                        // value={skilltableData["skill" + newVal + "education"]}
+                                                        // onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "education"]: e.target.value })}
+                                                    /></td>
+
+                                                    <td ><input type="number" style={{ width: "15rem", border: "0" }}
+                                                        // id={"skillphonenum" + index}
+                                                        id={'skill'+newVal+'phonenumber'}
+                                                        defaultValue = {userData.skilltableData['skill'+newVal+'phonenumber']}
+                                                        onBlur={()=>handleupdate('skill'+newVal+'phonenumber')} 
+                                                        // value={skilltableData["skill" + newVal + "phonenumber"]}
+                                                        // onChange={(e) => setskilltableData({ ...skilltableData, ["skill" + newVal + "phonenumber"]: e.target.value })}
+                                                    /></td>
+                                                </tr>
+                                            );
+                                        })}
+                                    </tbody>
+                                </table>
+
+                                <div className='float-left adpad'>
+                                    <button type="button" class="btn btn-outline-primary " onClick={() => updateskrow()} >Add</button><span></span>
+                                </div>
+                                <div className='float-left'>
+                                    <button type="button" class="btn btn-outline-danger "  onClick={() => deleteskrow(noOfRows)} >Delete</button><span></span>
+                                </div>
+
+                            </div><br></br><br></br>
+                            {/* <hr class="solid"></hr><br></br> */}
+
+                    
+
+                            
+                        </div>
+
+                        <div>
+                        </div><br />
+                    </div><br></br></Box>
+            </Card>
       
 
 
@@ -1291,18 +1432,9 @@ const handleupdate = (key) => {
         {/* </tbody> */}
       {/* </table> */}
       <br></br>
-      <h5 className='viewdth viewhp'>Skill  Details</h5>
 
-      <table className='table'>
-        <thead>
-        {/* <h6>Skill table New one</h6> */}
-        </thead>
-        <tr>
-        {arr1}
 
-        </tr>       
 
-      </table>
 
       <h5 className='viewdth viewhp'>Administrative Details</h5>
       <table class="table">
