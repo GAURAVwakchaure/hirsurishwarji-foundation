@@ -40,10 +40,10 @@ export default function NinethStep() {
 
     const emArray = () => {
 
-        for(let i = 0; i<noOfRows; i++){
-            let val = i+1
-            earningmembertablearray.push(val + '.Earning Member Name,'+document.getElementById('emname'+i).value+","+val+". Earning Member Work,"+document.getElementById('emwork'+i).value+","+val+". Earning Member Phone Number,"+document.getElementById("emphnum"+i).value)
-        }
+        // for(let i = 0; i<noOfRows; i++){
+        //     let val = i+1
+        //     earningmembertablearray.push(val + '.Earning Member Name,'+document.getElementById('emname'+i).value+","+val+". Earning Member Work,"+document.getElementById('emwork'+i).value+","+val+". Earning Member Phone Number,"+document.getElementById("emphnum"+i).value)
+        // }
         
 
         console.log("Earning member array is :", earningmembertablearray)

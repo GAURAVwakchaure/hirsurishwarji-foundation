@@ -199,7 +199,7 @@ if(userData.skilltableData){
 }
 
 const updateskrow = () =>{
-  axios.put(`http://localhost:8000/user/updaterowsk/${id}`)
+  axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updaterowsk/${id}`)
   loadUser()
 }
 
@@ -209,7 +209,7 @@ const deleteskrow = (noOfRows) =>{
   // delete userData.skilltableData
   delete userData.skilltableData['skill4name']
 
-  axios.put(`http://localhost:8000/user/deleteRowsk/${id}/${noOfRows}`)
+  axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/deleteRowsk/${id}/${noOfRows}`)
   loadUser()
 }
 
@@ -287,29 +287,29 @@ const handleupdateem = (key) => {
 
 }
 
-let arr2 = ''
-if (userData.earningmembertable) {
-  arr2 = Object.entries(userData.earningmembertable).map(([key, val]) => {
-    return (
-      <div style = {{display:'inline-block'}}>
-            <p key = {key}  >
-            {key}:
-            <input type = "text" class = "form-control" id = {key} defaultValue={userData.earningmembertable[`${key}`]}
-          onBlur={()=>handleupdateem(key)}
-          />  <span>  </span>    
+// let arr2 = ''
+// if (userData.earningmembertable) {
+//   arr2 = Object.entries(userData.earningmembertable).map(([key, val]) => {
+//     return (
+//       <div style = {{display:'inline-block'}}>
+//             <p key = {key}  >
+//             {key}:
+//             <input type = "text" class = "form-control" id = {key} defaultValue={userData.earningmembertable[`${key}`]}
+//           onBlur={()=>handleupdateem(key)}
+//           />  <span>  </span>    
             
-           </p> 
+//            </p> 
           
-        </div>         
-    )
+//         </div>         
+//     )
   
-  })
-}
-else {
-  return (
-    <td>{"No data found"}</td>
-  )
-}
+//   })
+// }
+// else {
+//   return (
+//     <td>{"No data found"}</td>
+//   )
+// }
 
 
 
@@ -318,6 +318,27 @@ else {
 
 
 // logic for displaying skill table data
+let noOfRows = 1
+
+if(userData.skilltableData){
+  noOfRows = userData.skilltableData['noOfRows']
+}
+
+const updateskrow = () =>{
+  axios.put(`http://localhost:8000/user/updaterowsk/${id}`)
+  loadUser()
+}
+
+
+const deleteskrow = (noOfRows) =>{
+  console.log("new val value is ", noOfRows)
+  // delete userData.skilltableData
+  delete userData.skilltableData['skill4name']
+
+  axios.put(`http://localhost:8000/user/deleteRowsk/${id}/${noOfRows}`)
+  loadUser()
+}
+
 
 const handleupdate = (key) => {
 
@@ -331,34 +352,6 @@ const handleupdate = (key) => {
 
 
 }
-
-
-  // let arr1 = ''
-  // if (userData.skilltableData) {
-  //   console.log(userData.skilltableData['noOfRows'])
-  //   arr1 = Object.entries(userData.skilltableData).map(([key, val]) => {
-  //     return (
-  //       <div style = {{display:'inline-block'}}>
-  //             <p key = {key}  >
-  //             {key}:
-  //             <input type = "text" class = "form-control" id = {key} defaultValue={userData.skilltableData[`${key}`]}
-  //           onBlur={()=>handleupdate(key)}
-  //           />  <span>  </span>    
-              
-  //            </p> 
-            
-  //         </div>         
-  //     )
-    
-  //   })
-  // }
-  // else {
-  //   return (
-  //     <td>{"No data found"}</td>
-  //   )
-  // }
-
-  // onChange={(e) => setuserData({...userData, [userData.skilltableData[`${key}`]]:e.target.value})}>
 // logic for displaying skill table ends here
 
 
@@ -1186,19 +1179,11 @@ const handleupdate = (key) => {
       <h5 className='viewdth viewhp'>Earning Member  Details</h5>
 
 
-      <table className='table'>
-        <thead>
-        {/* <h6>Skill table New one</h6> */}
-        </thead>
-        <tr>
-        {arr2}
-
-        </tr>       
-
-      </table>
+     
 
 
       <br></br>
+      <h5 className='viewdth viewhp'>Skill Table  Details</h5>
 
       <Card style={{ width: '120ch' }} className='mx-auto'>
                 <Box
