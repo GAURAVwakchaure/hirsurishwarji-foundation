@@ -192,26 +192,26 @@ export default function View(props) {
 // }
 
 
-let noOfRows = 1
+// let noOfRows = 1
 
-if(userData.skilltableData){
-  noOfRows = userData.skilltableData['noOfRows']
-}
+// if(userData.skilltableData){
+//   noOfRows = userData.skilltableData['noOfRows']
+// }
 
-const updateskrow = () =>{
-  axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updaterowsk/${id}`)
-  loadUser()
-}
+// const updateskrow = () =>{
+//   axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updaterowsk/${id}`)
+//   loadUser()
+// }
 
 
-const deleteskrow = (noOfRows) =>{
-  console.log("new val value is ", noOfRows)
-  // delete userData.skilltableData
-  delete userData.skilltableData['skill4name']
+// const deleteskrow = (noOfRows) =>{
+//   console.log("new val value is ", noOfRows)
+//   // delete userData.skilltableData
+//   delete userData.skilltableData['skill4name']
 
-  axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/deleteRowsk/${id}/${noOfRows}`)
-  loadUser()
-}
+//   axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/deleteRowsk/${id}/${noOfRows}`)
+//   loadUser()
+// }
 
 
 // else{
@@ -274,6 +274,30 @@ else {
 
 
 // logic for earning member table data
+
+let noOfRows2 = 1
+
+if(userData.skilltableData){
+  noOfRows2 = userData.earningmembertable['noOfRows2']
+}
+
+
+// const updateemrow = () =>{
+//   axios.put(`http://localhost:8000/user/updaterowem/${id}`)
+//   loadUser()
+// }
+
+
+// const deleteemrow = (noOfRows) =>{
+//   console.log("new val value is ", noOfRows)
+//   // delete userData.skilltableData
+//   delete userData.skilltableData['skill4name']
+
+//   axios.put(`http://localhost:8000/user/deleteRowem/${id}/${noOfRows}`)
+//   loadUser()
+// }
+
+
 const handleupdateem = (key) => {
 
   // console.log("after removing cursor ", key, "value" ,document.getElementById("skillinput").value)
@@ -1177,6 +1201,74 @@ const handleupdate = (key) => {
       <br></br>
 
       <h5 className='viewdth viewhp'>Earning Member  Details</h5>
+
+      <Card style={{ width: '100ch' }} className='mx-auto'>
+                <Box
+                    component="form"
+                    sx={{
+                        '& .MuiTextField-root': { m: 1, width: '50ch' },
+                    }}
+                    noValidate
+                    autoComplete="off"
+                >
+
+                    <div className='boxborder'><br></br>
+                    <h6 class="fs-title">Earning Member Details</h6><br></br>
+                        <div>
+                            <div className="app container mx-10 my-0">
+                                <table className="table table-striped table-hover table-bordered p-5">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">No</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Work</th>
+                                            <th scope="col">Phone Number</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {[...Array(noOfRows2)].map((elementInArray, index) => {
+                                            var newVal = index + 1
+                                            return (
+                                                <tr>
+                                                    <th scope="row">{index + 1}</th>
+                                                    <td ><input type="text" style={{ width: "15rem", border: "0" }}
+                                                        id={'earning'+newVal+'name'}
+                                                        defaultValue = {userData.earningmembertable['earning'+newVal+'name']}
+                                                        onBlur={()=>handleupdateem('earning'+newVal+'name')} 
+                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "name"]: e.target.value })}
+                                                    /></td>
+                                                    <td><input type="text" style={{ width: "15rem", border: "0" }}
+                                                    id={'earning'+newVal+'work'}
+                                                    defaultValue = {userData.earningmembertable['earning'+newVal+'work']}
+                                                    onBlur={()=>handleupdateem('earning'+newVal+'work')} 
+
+                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "work"]: e.target.value })}
+                                                    /></td>
+                                                    <td ><input type="number" style={{ width: "15rem", border: "0" }}
+                                                    id={'earning'+newVal+'phonenumber'}
+                                                    defaultValue = {userData.earningmembertable['earning'+newVal+'phonenumber']}
+                                                    onBlur={()=>handleupdateem('earning'+newVal+'phonenumber')} 
+                                                        // onChange={(e) => setearningmembertableData({ ...earningmembertableData, ["earning" + newVal + "phonenumber"]: e.target.value })}
+                                                    /></td>
+                                                </tr>
+                                            );
+                                        })}
+                                    </tbody>
+                                </table>
+
+                                <div className='float-left adpad'>
+                                    <button type="button" class="btn btn-outline-primary " onClick={() => updateemrow()}>Add</button><span></span>
+                                </div>
+
+                                <div className='float-left'>
+                                    <button type="button" class="btn btn-outline-danger " onClick={() => deleteemrow()}>Delete</button><span></span>
+                                </div>
+
+                            </div><br/><br></br>
+
+                        </div>                        
+                    </div><br></br></Box>
+            </Card> 
 
 
      

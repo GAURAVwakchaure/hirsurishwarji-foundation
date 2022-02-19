@@ -46,8 +46,10 @@ export default function NinethStep() {
         // }
         
 
-        console.log("Earning member array is :", earningmembertablearray)
-        setUserData({ ...userData, "earningmembertable": earningmembertablearray })
+        // console.log("Earning member array is :", earningmembertablearray)
+        // setUserData({ ...userData, "earningmembertable": earningmembertablearray })
+        setearningmembertableData({ ...earningmembertableData, ["noOfRows2"]: noOfRows })
+
         setStep(11)
 
 

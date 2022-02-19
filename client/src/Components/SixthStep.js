@@ -218,7 +218,8 @@ export default function SixthStep() {
         dependettablearray.push("Total Income ,"+dependenttableData['totalincomedependent'])
         // dependettablearray.push(dependenttableData['totalincomedependent'])
 
-        setUserData({ ...userData, "dependenttable": dependettablearray })
+        // setUserData({ ...userData, "dependenttable": dependettablearray })
+        // setskilltableData({ ...earningmembertableData, ["noOfRows2"]: noOfRows })
 
         
 

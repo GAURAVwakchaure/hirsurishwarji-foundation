@@ -437,5 +437,49 @@ export const deleteRowsk = async (req, res) => {
   }catch(err){
     console.log(err);
   }
+  res.send("row deleted ! ")
+}
+
+
+
+export const updateRowem = async (req, res) => {
+  const id = req.params.id;
+  
+  try{
+    const result = await Form.findByIdAndUpdate({_id: id},{
+      $inc :{
+      'earningmembertable.noOfRows2': 1,
+      }
+    }
+    ,{
+      new: true,
+      useFindAndModify: false
+    }
+    );
+    console.log(result);
+  }catch(err){
+    console.log(err);
+  }
   res.send("row updated ! ")
+}
+
+
+export const deleteRowem = async (req, res) => {
+  const id = req.params.id;
+  let noOfRows = req.params.noOfRows
+
+  
+  try{
+    const result = await Form.findByIdAndUpdate({_id: id},{
+
+        $inc:{
+          'earningmembertable.noOfRows2':-1,
+        },
+    }
+    );
+    console.log(result);
+  }catch(err){
+    console.log(err);
+  }
+  res.send("row deleted ! ")
 }
