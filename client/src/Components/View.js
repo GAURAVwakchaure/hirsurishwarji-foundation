@@ -282,20 +282,20 @@ if(userData.skilltableData){
 }
 
 
-// const updateemrow = () =>{
-//   axios.put(`http://localhost:8000/user/updaterowem/${id}`)
-//   loadUser()
-// }
+const updateemrow = () =>{
+  axios.put(`http://localhost:8000/user/updaterowem/${id}`)
+  loadUser()
+}
 
 
-// const deleteemrow = (noOfRows) =>{
-//   console.log("new val value is ", noOfRows)
-//   // delete userData.skilltableData
-//   delete userData.skilltableData['skill4name']
+const deleteemrow = (noOfRows) =>{
+  console.log("new val value is ", noOfRows)
+  // delete userData.skilltableData
+  delete userData.skilltableData['skill4name']
 
-//   axios.put(`http://localhost:8000/user/deleteRowem/${id}/${noOfRows}`)
-//   loadUser()
-// }
+  axios.put(`http://localhost:8000/user/deleteRowem/${id}/${noOfRows}`)
+  loadUser()
+}
 
 
 const handleupdateem = (key) => {
