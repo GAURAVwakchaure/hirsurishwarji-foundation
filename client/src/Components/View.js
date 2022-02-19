@@ -283,18 +283,23 @@ if(userData.skilltableData){
 
 
 const updateemrow = () =>{
-  axios.put(`http://localhost:8000/user/updaterowem/${id}`)
+  axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updaterowem/${id}`)
   loadUser()
 }
 
 
-const deleteemrow = (noOfRows) =>{
+const deleteemrow = (noOfRows2) =>{
+  if(noOfRows2>1){
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/deleteRowem/${id}/${noOfRows2}`)
+    loadUser()
+
+  }
+
   console.log("new val value is ", noOfRows)
   // delete userData.skilltableData
-  delete userData.skilltableData['skill4name']
+  // delete userData.skilltableData['skill4name']
 
-  axios.put(`http://localhost:8000/user/deleteRowem/${id}/${noOfRows}`)
-  loadUser()
+
 }
 
 
@@ -349,18 +354,21 @@ if(userData.skilltableData){
 }
 
 const updateskrow = () =>{
-  axios.put(`http://localhost:8000/user/updaterowsk/${id}`)
+  axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/updaterowsk/${id}`)
   loadUser()
 }
 
 
 const deleteskrow = (noOfRows) =>{
-  console.log("new val value is ", noOfRows)
-  // delete userData.skilltableData
-  delete userData.skilltableData['skill4name']
-
-  axios.put(`http://localhost:8000/user/deleteRowsk/${id}/${noOfRows}`)
-  loadUser()
+  if(noOfRows>1){
+    console.log("new val value is ", noOfRows)
+    // delete userData.skilltableData
+    delete userData.skilltableData['skill4name']
+  
+    axios.put(`https://hirsurishwarji-foundation.herokuapp.com/user/deleteRowsk/${id}/${noOfRows}`)
+    loadUser()
+  }
+ 
 }
 
 
@@ -1261,7 +1269,7 @@ const handleupdate = (key) => {
                                 </div>
 
                                 <div className='float-left'>
-                                    <button type="button" class="btn btn-outline-danger " onClick={() => deleteemrow()}>Delete</button><span></span>
+                                    <button type="button" class="btn btn-outline-danger " onClick={() => deleteemrow(noOfRows2)}>Delete</button><span></span>
                                 </div>
 
                             </div><br/><br></br>
